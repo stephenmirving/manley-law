@@ -1,0 +1,8 @@
+# robots.txt file of https://pappyjr.com/
+# www.robotstxt.org/
+
+Sitemap: https://pappyjr.com/sitemap.xml
+
+# Allow crawling of all content
+User-agent: *
+Disallow:

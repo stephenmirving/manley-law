@@ -1,0 +1,14 @@
+{
+  "short_name": "Pappy's",
+  "name": "Pappy's Jr Restaurant",
+  "description": "The website for the Monck's Corner, SC restaurant Pappy's Jr.",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "index.html",
+  "background_color": "#133941",
+  "theme_color": "#133941"
+}

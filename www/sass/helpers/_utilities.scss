@@ -1,0 +1,110 @@
+// Hide visually and from screen readers
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+///
+/// Hide only visually, but have it available for screen readers:
+/// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+///
+/// 1. For long content, line feeds are not interpreted as spaces and small width
+///    causes content to wrap 1 word per line:
+///    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+///
+
+.sr-only {
+  border: 0;
+  // clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+  height: 1px;
+  // margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// ///
+// /// Extends the .sr-only class to allow the element
+// /// to be focusable when navigated to via the keyboard:
+// /// https://www.drupal.org/node/897638
+// ///
+
+// .sr-only.focusable:active,
+// .sr-only.focusable:focus {
+//   clip: auto;
+//   clip-path: none;
+//   height: auto;
+//   margin: 0;
+//   overflow: visible;
+//   position: static;
+//   white-space: inherit;
+//   width: auto;
+// }
+
+// /// Hide visually and from screen readers, but maintain layout
+
+// .invisible {
+//   visibility: hidden !important;
+// }
+
+// /// Clearfix: contain floats
+
+// .clearfix {
+//   @extend %clearfix;
+// }
+
+// /// Modern way of avoiding clearfix
+
+// .group {
+//   display: flow-root;
+// }
+
+/// Utility to apply italics for a font when it is not semantically
+/// appropriate to use <em> or <i>
+
+.italic {
+  font-style: italic;
+}
+
+/// Utility to apply an underline for a font
+
+.uline {
+  text-decoration: underline;
+}
+
+/// Gets rid of the scrollbar when the nav flyout menu is open
+
+.no-scroll {
+  @supports (scrollbar-gutter: stable) {
+    overflow: hidden !important;
+  }
+}
+
+/// When flyout menu is open this makes it blend better with the original nav bar.
+
+.flyout-nav-open {
+  background-image: none;
+  border-color: transparent;
+}
+
+/// Fixes the vertical centering of items in cards that are small and have no heading
+
+.fix-card-vert-centering {
+  .card__text {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      > .btn {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

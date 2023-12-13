@@ -1,0 +1,23 @@
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  a,
+  button,
+  button > span,
+  .card,
+  .faq__question {
+    transition: none !important;
+  }
+
+  .navbar__menu,
+  .pagehead__title,
+  .pagehead__subtitle,
+  .pagehead__h3,
+  .faq__tooltip[open] .faq__question ~ * {
+    animation: none !important;
+  }
+}

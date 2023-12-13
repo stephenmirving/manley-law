@@ -1,0 +1,29 @@
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/placeholders";
+
+@import "components/fonts";
+@import "components/animations";
+
+@import "layout/defaults";
+@import "layout/grid";
+@import "layout/nav";
+@import "layout/content";
+@import "layout/footer";
+
+@import "components/cards";
+@import "components/buttons";
+@import "components/icons";
+
+@import "pages/home";
+
+@import "helpers/utilities";
+@import "helpers/accessibility";
+
+// @media print,
+//   (-webkit-min-device-pixel-ratio: 1.25),
+//   (min-resolution: 1.25dppx),
+//   (min-resolution: 120dpi) {
+//   /* Style adjustments for high resolution devices */
+// }

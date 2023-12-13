@@ -1,0 +1,1229 @@
+@use "sass:math";
+
+/// Returns the truthiness of `$value`.
+/// @access public
+///
+/// @param {*} $value - A value to check.
+/// @return {Boolean} Returns true if `value` has truthiness.
+@function is-true($value) {
+  @return if(
+    not $value,
+    false,
+    $value and $value != '' and $value != () and $value != (())
+  );
+}
+
+
+/// Checks if a value is an absolute length.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is an absolute length, false if it is not.
+@function is-absolute-length($value) {
+  @return (
+    type-of($value) == 'number' and
+    index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null
+  );
+}
+
+
+/// Checks if a value is a relative length.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a relative length, false if it is not.
+@function is-relative-length($value) {
+  @return (
+    type-of($value) == 'number' and
+    index(
+      'em' 'ex' 'ch' 'rem' '%' 'vw' 'vh' 'vmin' 'vmax',
+      unit($value)
+    ) != null
+  );
+}
+
+
+/// Checks if a value is a length.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a length, false if it is not.
+///
+/// @require {function} is-relative-length
+/// @require {function} is-absolute-length
+@function is-length($value) {
+  @return is-relative-length($value) or is-absolute-length($value);
+}
+
+
+/// Checks if a value is an angle
+/// @access public
+///
+/// @param {*} $value - A value to be checked
+/// @return {Boolean} True if $value is an angle, false if it is not
+@function is-angle($value) {
+  @return (
+    type-of($value) == 'number' and
+    index('deg' 'rad' 'grad' 'turn', unit($value)) != null
+  );
+}
+
+
+/// Checks if a value is a duration.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a duration, false if it is not.
+///
+/// @alias is-time
+@function is-duration($value) {
+  @return type-of($value) == 'number' and index('ms' 's', unit($value)) != null;
+}
+
+
+/// Checks if a value is a floating point (decimal) number.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a float, false if it is not.
+@function is-float($value) {
+  @return type-of($value) == 'number' and round($value) != $value;
+}
+
+
+/// Checks if a value is a frequency.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a frequency, false if it is not.
+@function is-frequency($value) {
+  @return (
+    type-of($value) == 'number' and index('Hz' 'kHz', unit($value)) != null
+  );
+}
+
+
+/// Checks if a value is an integer.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is an integer, false if it is not.
+@function is-integer($value) {
+  @return type-of($value) == 'number' and round($value) == $value;
+}
+
+
+/// Checks if a value is a string.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a string, false if it is not.
+@function is-string($value) {
+  @return type-of($value) == 'string';
+}
+
+
+/// Checks if a value is a number.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a number, false if it is not.
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+
+
+/// Checks if a value is a percentage.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a percentage, false if it is not.
+@function is-percentage($value) {
+  @return type-of($value) == 'number' and unit($value) == '%';
+}
+
+
+/// Checks if a value is a position.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a position, false if it is not.
+///
+/// @require {function} is-length
+/// @require {function} is-percentage
+@function is-position($value) {
+  @return (
+    is-length($value) or is-percentage($value) or
+    index('top' 'right' 'bottom' 'left' 'center', $value) != null
+  );
+}
+
+
+/// Checks if a value is a resolution.
+/// @access public
+///
+/// @param {*} $value - A value to be checked
+/// @return {Boolean} True if $value is a resolution, false if it is not
+@function is-resolution($value) {
+  @return (
+    type-of($value) == 'number' and
+    index('dpi' 'dpcm' 'dppx' 'x', unit($value)) != null
+  );
+}
+
+
+/// Checks if a value is a time.
+/// @access public
+///
+/// @param {*} $value - A value to be checked.
+/// @return {Boolean} True if $value is a time, false if it is not.
+///
+/// @alias is-duration
+@function is-time($value) {
+  @return type-of($value) == 'number' and index('ms' 's', unit($value)) != null;
+}
+
+
+/// Checks if a string contains only conventional naming chacters, which
+/// includes the 26 character alphabet and the standard hyphen.
+/// @access public
+///
+/// @param {String} $string - The string to check.
+/// @param {Boolean} $tolerate-capitals [false] - If true, the function will
+/// allow for capital letters. When false, the function will return as false if
+/// $string contains capital letter characters.
+/// @return {Boolean} True if $string only contians hyphens and characters from
+/// the 26 character alphabet.
+@function is-conventional($string, $tolerate-capitals: false) {
+  @if $tolerate-capitals {
+    $string: to-lower-case($string);
+  }
+
+  @for $i from 1 through str-length($string) {
+    $char: str-slice($string, $i, $i);
+
+    @if (
+      not index(
+        '-' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n'
+        'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z', $char
+      )
+    ) {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+
+/// Returns whether `$list` contains `$value`.
+///
+/// @param {List} $list - The list to check.
+/// @param {*} $value - The value to look in `$list` for.
+/// @return {Boolean} True if `$list` contains `$value`.
+@function in-list($list, $value) {
+  @return not not index($list, $value);
+}
+
+/// Casts `$value` into a list.
+/// @access public
+///
+/// @param {*} $value - Value to cast into a list
+/// @param {String} $separator [space] - The separator to use in the new list.
+/// @return {List} - The new list.
+///
+/// @alias parse-list
+@function to-list($value, $separator: list-separator($value)) {
+  @return join((), $value, $separator);
+}
+
+/// Casts `$value` into a list.
+/// @access public
+///
+/// @param {*} $value - Value to cast into a list
+/// @param {String} $separator [space] - The separator to use in the new list.
+/// @return {List} - The new list.
+///
+/// @alias to-list
+@function parse-list($value, $separator: list-separator($value)) {
+  @return join((), $value, $separator);
+}
+
+
+/// Removes all false and null values from `$list`.
+///
+/// @param {List} $list - The list to purge.
+/// @return {List} The purged list.
+///
+/// @require {function} is-true
+/// @require {function} to-list
+/// @alias clean-list
+@function purge-list($list) {
+  $_: missing-dependencies('is-true', 'to-list');
+
+  $result: ();
+
+  @each $item in $list {
+    @if is-true($item) {
+      $result: append($result, $item, list-separator($list));
+    }
+  }
+
+  @return to-list($result);
+}
+
+/// Removes all false and null values from `$list`.
+///
+/// @param {List} $list - The list to purge.
+/// @return {List} The purged list.
+///
+/// @require {function} is-true
+/// @require {function} to-list
+/// @alias purge-list
+@function clean-list($list) {
+  $_: missing-dependencies('is-true', 'to-list');
+
+  $result: ();
+
+  @each $item in $list {
+    @if is-true($item) {
+      $result: append($result, $item, list-separator($list));
+    }
+  }
+
+  @return to-list($result);
+}
+
+
+/// Replaces `$old-value` with `$new-value` in `$list`.
+/// @access public
+///
+/// @param {List} $list - The list to update.
+/// @param {*} $old-value - The old value to replace in `$list`.
+/// @param {*} $new-value - The new value that is replacing the `$old-value`.
+/// @return {List} The new, updated list.
+///
+/// @require {function} is-true
+/// @require {function} purge-list
+/// @require {function} to-list
+@function update-list($list, $old-value, $new-value) {
+  $_: missing-dependencies('is-true', 'purge-list', 'to-list');
+
+  $running: true;
+
+  @while $running {
+    $index: index($list, $old-value);
+
+    @if not $index {
+      $running: false;
+    }
+
+    @else {
+      $list: set-nth($list, $index, $new-value);
+    }
+  }
+
+  $list: if(is-true($new-value), $list, purge-list($list));
+
+  @return to-list($list);
+}
+
+
+/// Removes `$value` from `$list`.
+///
+/// @param {List} $list - The list to update.
+/// @param {*} $value - The value to remove from `$list`.
+/// @return {List} The updated list.
+///
+/// @require {function} update-list
+@function remove-list($list, $value) {
+  $_: missing-dependencies('update-list');
+
+  @return update-list($list, $value, null);
+}
+
+/// Removes `$value` from `$list`.
+///
+/// @param {List} $list - The list to update.
+/// @param {*} $value - The value to remove from `$list`.
+/// @return {List} The updated list.
+///
+/// @require {function} update-list
+/// @alias remove-list
+@function trim-list($list, $value) {
+  $_: missing-dependencies('update-list');
+
+  @return update-list($list, $value, null);
+}
+
+
+/// Return a copy of $list with all elements for which $condition returns `true`
+/// removed.
+/// @access public
+///
+/// @param {List} $list - A list containing values to be checked and possibly
+/// removed.
+/// @param {*} $condition - A conditional statement used to check every value in
+/// $list.
+/// @return {List} The updated list.
+@function remove-where($list, $condition) {
+  $new-list: ();
+  $separator: list-separator($list);
+  @each $element in $list {
+    @if not call($condition, $element) {
+      $new-list: append($new-list, $element, $separator: $separator);
+    }
+  }
+  @return $new-list;
+}
+
+
+/// Asset file location builder
+/// @access private
+///
+/// @param {String} $type - Asset type, matching folder name
+/// @param {String} $file - Asset file name, including extension
+///
+/// @return {String} A file location leading to the asset.
+/// @require {variable} $asset-base-path
+@function asset($type, $file) {
+  $asset-path: if(
+    global-variable-exists(asset-base-path),
+    $asset-base-path,
+    '../assets'
+  );
+  @return unquote($asset-path + '/' + $type + '/' + $file);
+}
+
+/// Image asset helper
+/// @access public
+///
+/// @param {String} $file - Asset file name, including extension
+/// @return {String} A file location leading to the asset.
+///
+/// @require {function} asset
+@function image($file) {
+  @return asset('images', $file);
+}
+
+/// Font asset helper
+/// @access public
+///
+/// @param {String} $file - Asset file name, including extension
+/// @return {String} A file location leading to the asset.
+///
+/// @require {function} asset
+@function font($file) {
+  @return asset('fonts', $file);
+}
+
+
+/// Helper function, mix black with a given opacity level.000
+/// @access public
+///
+/// @param {Number} $opacity [1] - An opacity level between either 0 and 1
+/// or 0% and 100%, inclusive.
+/// @return {Color} The black color at the given opacity level.
+///
+/// @throw Invalid data type for $opacity
+/// @throw Invalid unit type for $opacity
+/// @throw $opacity value out of range
+@function black($opacity: 1) {
+  @if type-of($opacity) != 'number' {
+    @error 'Invalid data type passed to black(). Opacity must be a number.';
+  }
+  @if not unitless($opacity) and unit($opacity) != '%' {
+    @error 'Invalid opacity unit type of [#{inspect(unit($opacity))}] passed '
+        + ' to black(). Opacity must be a unitless decimal or a percentage.';
+  }
+  @if (
+    (unit($opacity) == '%' and ($opacity < 0% or $opacity > 100%)) or
+    (unitless($opacity) and ($opacity < 0 or $opacity > 1))
+  ) {
+    @error 'Invalid opacity level of (#{inspect($opacity)}) passed to black().';
+  }
+
+  @if (unit($opacity) == '%') {
+    $opacity: math.div($opacity, 100%);
+  }
+
+  @if $opacity == 1 {
+    @return #000;
+  } @else if $opacity == 0 {
+    @return transparent;
+  } @else {
+    @return rgba(#000, $opacity);
+  }
+}
+
+/// Computes a bottom-shadow for a card effect (Used by `card` mixin).
+/// @access private
+///
+/// @param {Number} $depth - depth level
+/// @return {List} Computed values for the bottom-shadow
+@function bottom-shadow($depth, $color) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba($color, nth(0.24 0.23 0.23 0.22 0.22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+/// Converts a pixel value into em units.
+/// @access public
+///
+/// @param {Length-Percentage} $pixels - A value to convert to em units.
+/// @param {Number} $base-context [null] - The contextual base font-size.
+/// @return {Length} The values in em.
+///
+/// @require {function} strip-unit
+/// @throw Invalid data type or units for $pixels
+@function conv-to-em($pixels, $base-context: null) {
+  @if (
+    type-of($pixels) != 'number' or
+    (type-of($pixels) == 'number' and
+    not unitless($pixels) and unit($pixels) != 'px')
+  ) {
+    @error 'Invalid value of (#{inspect($pixels)}) passed to conv-to-em(). ' +
+        'Value of $pixels must be number in px units.';
+  }
+
+  // If no base is defined, defer to the $base-font-size variable. If that does
+  // not exist, default to 16
+  @if not $base-context {
+    $base-context: if(
+      global-variable-exists(base-font-size),
+      $base-font-size,
+      16
+    );
+  }
+
+  @if unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if unitless($base-context) {
+    $base-context: $base-context * 1px;
+  }
+
+  @return math.div($pixels, $base-context) * 1em;
+}
+
+
+/// Takes a given number value and returns that value multipled by pi.
+/// @access public
+///
+/// @param {Number} $number [1] - The given number. Can take any number,
+/// unitless or with any unit.
+/// @return {Number} - The new value.
+///
+/// @throw Invalid $number unit type.
+@function pi($number: 1) {
+  $pi: if(global-variable-exists('pi'), $pi, 3.1415926536);
+
+  @if type-of($number) != 'number' {
+    @error 'Value of $number for pi() must be a valid number.';
+  }
+
+  @return $number * $pi;
+}
+
+
+/// Takes a given $angle in either turns (turn), degrees (deg), gradians (grad),
+/// or radian (rad) units, and converts that angle into an alternate unit type
+/// defined by $conversion-unit,
+///
+/// @param {Angle} $angle - An angle value. Can be in turn, deg, grad, or rad
+/// units.
+/// @param {String} $conversion-unit
+/// @return {Angle} The converted angle.
+///
+/// @require {function} is-angle
+/// @require {function} strip-unit
+/// @require {function} pi
+/// @require {function} missing-dependencies
+@function conv-angle($angle, $conv-unit) {
+  $_: missing-dependencies('is-angle', 'strip-unit', 'pi');
+  $start-unit: unit($angle);
+  $divide-supported: if(function-exists('divide'), true, false);
+
+  @if not is-angle($angle) {
+    @error 'Value of $angle in conv-angle() must be a valid angle.';
+  }
+
+  @if $conv-unit == 'turn' or $conv-unit == 'turns' or $conv-unit == 't' {
+    $conv-unit: turn;
+  } @else if (
+    $conv-unit == 'degrees' or $conv-unit == 'degree' or
+    $conv-unit == 'deg' or $conv-unit == 'degs' or $conv-unit == 'd'
+  ) {
+    $conv-unit: deg;
+  } @else if (
+    $conv-unit == 'radians' or $conv-unit == 'radian' or $conv-unit == 'rads' or
+    $conv-unit == 'rad' or $conv-unit == 'r'
+  ) {
+    $conv-unit: rad;
+  } @else if (
+    $conv-unit == 'gradians' or $conv-unit == 'gradian' or
+    $conv-unit == 'grads' or $conv-unit == 'grad' or $conv-unit == 'g'
+  ) {
+    $conv-unit: grad;
+  }
+
+  @if unit($angle) == $conv-unit {
+    @return $angle;
+  }
+
+  $angle: strip-unit($angle);
+
+  @if $start-unit == 'turn' {
+    @if $conv-unit == 'deg' {
+      $angle: $angle * 360deg;
+    } @else if $conv-unit == 'rad' {
+      $angle: $angle * pi(2rad);
+    } @else if $conv-unit == 'grad' {
+      $angle: $angle * 400grad;
+    }
+  } @else if $start-unit == 'deg' {
+    @if $conv-unit == 'turn' {
+      $angle: if(
+        $divide-supported,
+        divide($angle, 360) * 1turn,
+        math.div($angle, 360) * 1turn
+      );
+    } @else if $conv-unit == 'rad' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(pi(), 180) * 1rad,
+        $angle * math.div(pi(), 180) * 1rad
+      );
+    } @else if $conv-unit == 'grad' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(200, 180) * 1grad,
+        $angle * math.div(200, 180) * 1grad
+      );
+    }
+  } @else if $start-unit == 'rad' {
+    @if $conv-unit == 'turn' {
+      $angle: if(
+        $divide-supported,
+        divide($angle, pi(2)) * 1turn,
+        math.div($angle, pi(2)) * 1turn
+      );
+    } @else if $conv-unit == 'deg' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(180, pi()) * 1deg,
+        $angle * math.div(180, pi()) * 1deg
+      );
+    } @else if $conv-unit == 'grad' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(200, pi()) * 1grad,
+        $angle * math.div(200, pi()) * 1grad
+      );
+    }
+  } @else if $start-unit == 'grad' {
+    @if $conv-unit == 'turn' {
+      $angle: if(
+        $divide-supported,
+        divide($angle, 400) * 1turn,
+        math.div($angle, 400) * 1turn
+      );
+    } @else if $conv-unit == 'deg' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(180, 200) * 1deg,
+        $angle * math.div(180, 200) * 1deg
+      );
+    } @else if $conv-unit == 'rad' {
+      $angle: if(
+        $divide-supported,
+        $angle * divide(pi(), 200) * 1rad,
+        $angle * math.div(pi(), 200) * 1rad
+      );
+    }
+  }
+
+  @return $angle;
+}
+
+
+/// Converts a rem value into pixel units.
+/// @access public
+///
+/// @param {Length} $rems - Values in REM's.
+/// @param {Number} $base - The base font-size.
+/// @return {Length} The values in pixels (px).
+@function conv-to-px($rems, $base: null) {
+  $px-vals: ();
+
+  // If no base is defined, defer to the $base-font-size variable. If that does
+  // not exist, default to 16
+  @if not $base {
+    $base: if($base-font-size, $base-font-size, 16);
+  }
+
+  // If the base font size is a %, then multiply it by 16px
+  // This is because 100% font size = 16px in most all browsers
+  @if unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+
+  @each $val in $rems {
+    $val-in-pixels: strip-unit($val) * $base-font-size * 1px;
+    $px-vals: append($px-vals, $val-in-pixels);
+  }
+
+  @if length($px-vals) == 1 {
+    @return nth($px-vals, 1);
+  } @else {
+    @return $px-vals;
+  }
+}
+
+
+/// Converts values into REM units.
+/// @access public
+///
+/// @param {Length-Percentage} $values - Values to convert to REM units.
+/// @param {Number} $base [null] - The base font-size.
+/// @return {Length} The values in REMs.
+///
+/// @require {function} strip-unit
+@function conv-to-rem($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+
+  // If no base is defined, defer to the $base-font-size variable. If that does
+  // not exist, default to 16
+  @if not $base {
+    $base: if(global-variable-exists(base-font-size), $base-font-size, 16);
+  }
+
+  // If the base font size is a %, then multiply it by 16px
+  // This is because 100% font size = 16px in most all browsers
+  @if unit($base) == '%' {
+    $base: math.div($base, 100%) * 16px;
+  }
+
+  // Using rem as base allows correct scaling
+  @if (unit($base) == 'rem') {
+    $base: strip-unit($base) * 16px;
+  }
+
+  @if ($count == 1) {
+    @return px-to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-vals: append($rem-vals, px-to-rem(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+/// Converts a pixel value to matching rem value. *Any* value passed, regardless
+/// of unit, is assumed to be a pixel value. By default, the base pixel value
+/// used to calculate the rem value is taken from the `$base-font-size` variable.
+/// @access private
+///
+/// @param {Number} $value - Pixel value to convert.
+/// @param {Number} $base [null] - Base for pixel conversion.
+/// @return {Number} A number in rems, calculated based on the given value and
+/// the base pixel value. rem values are passed through as is.
+///
+/// @require {function} strip-unit
+@function px-to-rem($value, $base: null) {
+  @if type-of($value) != 'number' {
+    @error inspect($value) + ', which is not a number, was passed to ' +
+        'conv-to-rem().';
+  }
+
+  // Transform em into rem if someone hands over 'em's
+  @if unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  // Calculate rem if units for $value is not rem or em
+  @if unit($value) != 'rem' {
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
+  }
+
+  // Eliminate units for 0rem
+  @if $value == 0rem {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+
+/// Complete an exponentiation. Used for the `pow` function that takes a number
+/// to a given power.
+/// @access private
+///
+/// @param {Number} $value
+/// @return {Number} The result of the operation
+@function exp($value) {
+  @return summation('exp-maclaurin', $value, 0, 100);
+}
+
+
+/// Complete the Maclaurin exponentiation. Used for the `pow` function that
+/// takes a number to a given power.
+/// @access private
+///
+/// @param {Number} $x
+/// @param {Number} $n
+/// @return {Number} The result of the operation
+///
+/// @require {function} pow
+/// @require {function} factorial
+@function exp-maclaurin($x, $n) {
+  @return math.div(pow($x, $n), factorial($n));
+}
+
+
+/// Takes a given number and returns the factorial of that number.
+/// @access public
+///
+/// @param {Number} $value - Any given number
+/// @return {Number} The factorial of $value
+@function factorial($value) {
+  $result: 1;
+
+  @if ($value == 0) {
+    @return $result;
+  }
+
+  @for $index from 1 through $value {
+    $result: $result * $index;
+  }
+
+  @return $result;
+}
+
+
+/// Returns the font stack chosen from a font-stack map
+/// @access public
+///
+/// @param {String} $stack - Name of the font-stack map key.
+/// @param {Map} $map - Map to retrieve a font-stack value from.
+/// @return {List} Found font-stack value.
+///
+/// @require {function} get-val
+@function font-stack($stack, $map: $font-stack) {
+  @return get-val($map, $stack);
+}
+
+
+/// Return a list made of the result of each function call from `$functions`
+/// with `$args`.
+/// @author Hugo Giraudel
+/// @access public
+///
+/// @param {List} $functions - List of functions to call
+/// @param {Arglist} $args - Extra arguments to pass to each function
+/// @return {List} The result of the function(s) being applied to the list
+///
+/// @throw Invalid function name
+@function functions-walk($functions, $args...) {
+  $list: ();
+
+  @each $function in $functions {
+    @if not function-exists($function) {
+      @error 'There is no `#{inspect($function)}` function.';
+    }
+
+    $list: append($list, call($function, $args...));
+  }
+
+  @return $list;
+}
+
+
+/// Finds a value in a nested map.
+/// @link https://css-tricks.com/snippets/sass/deep-getset-maps/
+///
+/// @param {Map} $map - Map to pull a value from.
+/// @param {String} $keys... - Keys to use when looking for a value.
+/// @return {Mixed} The value found in the map.
+@function get-deep-val($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+
+/// Given the key, safely returns a value from a map.
+/// @access public
+///
+/// @param {Map} $map - Map to retrieve a value from.
+/// @param {String} $key - Name of the map key.
+/// @return {List} Found value.
+@function get-val($map, $key) {
+  @if (
+    type-of($map) == 'map' or
+    (type-of($map) == 'list' and length($map) == 0)
+  ) {
+    @if map-has-key($map, $key) {
+      @return map-get($map, $key);
+    }
+    @else {
+      @error 'Key: [#{inspect($key)}] is not available in [#{inspect($map)}]';
+    }
+  } @else {
+    @error '[#{inspect($map)}] is not a valid map';
+  }
+}
+
+
+/// Returns the result of a natural logarithm.
+///
+/// @param {Number} $value - The input for the equation.
+///
+/// @return {Number} The result of the equation.
+@function ln($value) {
+  $ten-exp: 1;
+  $ln-ten: 2.30258509;
+
+  @while ($value > pow(10, $ten-exp)) {
+    $ten-exp: $ten-exp + 1;
+  }
+
+  @return (
+    summation(ln-maclaurin, math.div($value, pow(10, $ten-exp)), 1, 100) +
+    $ten-exp * $ln-ten
+  );
+}
+
+
+/// Computes the natural logarithm using the Maclaurin series.
+///
+/// @param {Number} $x
+/// @param {Number} $n
+///
+/// @return {Number} The result of the operation.
+/// @require {function} pow
+@function ln-maclaurin($x, $n) {
+  @return math.div(pow(-1, $n + 1), $n) * (pow($x - 1, $n));
+}
+
+
+/// Generates the values to create a long shadow. Used by `long-shadow` mixin.
+/// @access public
+///
+/// @param {Color} $color - The color of the long shadow.
+/// @param {Number} $longness - The integer length of the shadow.
+/// @return {Mixed} The value string for the long shadow effect.
+@function make-long-shadow($color, $longness) {
+  $val: 0 0 $color;
+  @for $i from 1 through $longness {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+
+/// Casts a map into a list.
+/// @access public
+/// @link http://hugogiraudel.com/2014/04/28/casting-map-into-list/
+///
+/// @param {Map} $map - Map to pull a value from.
+/// @return {List} Depending on the flag, returns either $keys, $values or both
+@function map-to-list($map, $keep: 'both') {
+  $keep: if(index('keys' 'values', $keep), $keep, 'both');
+
+  @if (type-of($map) == 'map') {
+    $keys: ();
+    $values: ();
+
+    @each $key, $val in $map {
+      $keys: append($keys, $key);
+      $values: append($values, $val);
+    }
+
+    @if ($keep == 'keys') {
+      @return $keys;
+    }
+    @else if ($keep == 'values') {
+      @return $values;
+    }
+    @else {
+      @return zip($keys, $values);
+    }
+  }
+
+  @return if(type-of($map) != 'list', ($value,), $map);
+}
+
+
+/// Checks whether `$functions` exist in global scope.
+/// @access public
+///
+/// @param {ArgList} $functions - list of functions to check for
+/// @return {Boolean} Whether or not there are missing dependencies
+@function missing-dependencies($functions...) {
+  $missing-dependencies: ();
+
+  @each $function in $functions {
+    @if not function-exists($function) {
+      $missing-dependencies: append($missing-dependencies, $function, comma);
+    }
+  }
+
+  @if length($missing-dependencies) > 0 {
+    @error 'You have unmet dependencies! The following functions are ' +
+        'required and have not been imported: #{inspect($missing-dependencies)}.';
+  }
+
+  @return length($missing-dependencies) > 0;
+}
+
+
+/// Used by the child-index mixin. It will returned the proper sorted numbers
+/// depending on the `$index` value.
+/// @access private
+///
+/// @param {number} $num - Number of children
+/// @param {number} $index - Index of the sorting
+@function order-index($i, $index) {
+  @return ($index + $i);
+}
+
+
+/// Takes a number to the given power.
+/// @access public
+///
+/// @param {Number} $number - A number, the base of the operation
+/// @param {Number} $exponent - The exponent taking the $number to its power
+/// @return {Number} The result of the operation
+///
+/// @require {function} exp
+/// @require {function} ln
+@function pow($number, $exponent) {
+  @if (round($exponent) != $exponent) {
+    @return exp($exponent * ln($number));
+  }
+
+  $value: 1;
+
+  @if ($exponent > 0) {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if ($exponent < 0) {
+    @for $i from 1 through -$exponent {
+      $value: math.div($value, $number);
+    }
+  }
+
+  @return $value;
+}
+
+
+/// Converts a ratio into a percentage.
+/// @access public
+///
+/// @param {List|Number} $ratio - A ratio value represented either by a two
+/// value list (ex: `16 9` for a 16:9 ratio) or by a single number (ex: .75 for
+/// a 4:3 ratio)
+///
+/// @return {Length-Percentage} A percentage value equal to the given ratio
+@function ratio-to-percentage($ratio) {
+  $percentage: 100%;
+
+  @if (type-of($ratio) == 'list' and length($ratio) == 2) {
+    $percentage: math.div(nth($ratio, 2), nth($ratio, 1)) * 100%;
+  } @else if (type-of($ratio) == 'number' and unitless($ratio)) {
+    $percentage: $ratio * 100%;
+  } @else {
+    @error 'Invalid $ratio value of `#{inspect($ratio)}` for ' +
+        '`ratio-to-percentage()`. Value must be a ratio represented by either' +
+        ' a two value list or a single number.';
+  }
+
+  @return $percentage;
+}
+
+
+/// Darken a color by mixing it with black at a given percentage.
+/// @access public
+///
+/// @param {Color} $color - The color being darkened.
+/// @param {Number} $percentage - The percentage of black mixed into the
+/// returned color.
+/// @return {Color} - The darkened color.
+@function shade($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
+
+
+/// Strips a given value of its associated unit (ex: 3rem returns 3)
+/// @access public
+///
+/// @param {Dimension} $num - A value with a unit to be stripped
+/// @return {Number} The unit-less number
+@function strip-unit($num) {
+  @return math.div($num, $num * 0 + 1);
+}
+
+
+/// Replace `$search` with `$replace` in `$string`.
+/// @access public
+///
+/// @param {String} $string - The initial string.
+/// @param {String} $search - The substring to replace.
+/// @param {String} $replace ('') - The new value that replaces `$search`.
+/// @return {String} The updated string.
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if ($index) {
+    @return (
+      str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index +
+      str-length($search)), $search, $replace)
+    );
+  }
+
+  @return $string;
+}
+
+
+/// Takes the summation of a range of numbers on an itaratee. Used in the `pow`
+/// function that takes a number to a given power.
+/// @access private
+///
+/// @param {Number} $itaratee
+/// @param {Number} $input
+/// @param {Number} $initial [0]
+/// @param {Number} $limit [100]
+///
+/// @return {Number} The result of the operation
+@function summation($iteratee, $input, $initial: 0, $limit: 100) {
+  $sum: 0;
+
+  @for $index from $initial to $limit {
+    $sum: $sum + call($iteratee, $input, $index);
+  }
+
+  @return $sum;
+}
+
+
+/// Lighten a color by mixing it with white at a given percentage.
+/// @access public
+///
+/// @param {Color} $color - The color being lightened.
+/// @param {Number} $percentage - The percentage of white mixed into the
+/// returned color.
+///
+/// @return {Color} - The lightened color.
+@function tint($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+
+/// Fixes a float to a given number of decimal places.
+/// @access public
+///
+/// @param {Number} $float - The number to format.
+/// @param {Integer} $digits [2] - Number of digits to leave after the decimal.
+/// @return {Number} The fixed digit number.
+///
+/// @require {function} pow
+/// @throw $digits precision too high (if greater than 10).
+@function to-fixed($float, $digits: 2) {
+  $sass-precision: 10;
+
+  @if ($digits > $sass-precision) {
+    @warn 'Sass numbers only support up to #{inspect($sass-precision)} digits' +
+        ' of precision after the decimal point. You have attempted to set the' +
+        ' precision to `#{inspect($digits)}` in the `to-fixed` function. The ' +
+        'number of digits after the decimal point was reduced from your ' +
+        'requested precision to the maximum of 10.';
+    $digits: 10;
+  }
+
+  $pow: pow(10, $digits);
+  @return math.div(round($float * $pow), $pow);
+}
+
+
+/// Computes the top-shadow for a card effect. Used by the card-depth mixin.
+/// @access private
+///
+/// @param {Number} $depth - The depth level.
+/// @return {List} Computed values for the top-shadow.
+@function top-shadow($depth, $color) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba($color, nth(0.12 0.16 0.19 0.25 0.3, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+
+/// Apply `$function` with `$args` to each item from `$list`.
+/// @author Hugo Giraudel
+/// @access public
+///
+/// @param {List} $list - List of items
+/// @param {String} $function - Function to apply to every item from `$list`
+/// @param {Arglist} $args - Extra arguments to pass to `$function`
+/// @return {List} The result of the function being applied to the list
+/// @throw Invalid function name
+@function walk($list, $function, $args...) {
+  @if (not function-exists($function)) {
+    @error 'There is no `#{inspect($function)}` function.';
+  }
+
+  @for $i from 1 through length($list) {
+    $list: set-nth($list, $i, call($function, nth($list, $i), $args...));
+  }
+
+  @return $list;
+}
+
+
+/// Helper function, mix white with a given opacity level.
+/// @access public
+///
+/// @param {Number} $opacity [1] - An opacity level between either 0 and 1
+/// or 0% and 100%, inclusive.
+/// @return {Color} The white color at the given opacity level.
+///
+/// @throw Invalid data type for $opacity
+/// @throw Invalid unit type for $opacity
+/// @throw $opacity value out of range
+@function white($opacity: 1) {
+  @if type-of($opacity) != 'number' {
+    @error 'Invalid data type passed to white(). Opacity must be a number.';
+  }
+  @if not unitless($opacity) and unit($opacity) != '%' {
+    @error 'Invalid opacity unit type of [#{inspect(unit($opacity))}] passed '
+        + ' to white(). Opacity must be a unitless decimal or a percentage.';
+  }
+  @if (
+    (unit($opacity) == '%' and ($opacity < 0% or $opacity > 100%)) or
+    (unitless($opacity) and ($opacity < 0 or $opacity > 1))
+  ) {
+    @error 'Invalid opacity level of (#{inspect($opacity)}) passed to white().';
+  }
+
+  @if (unit($opacity) == '%') {
+    $opacity: math.div($opacity, 100%);
+  }
+
+  @if $opacity == 1 {
+    @return #fff;
+  } @else if $opacity == 0 {
+    @return transparent;
+  } @else {
+    @return rgba(#fff, $opacity);
+  }
+}

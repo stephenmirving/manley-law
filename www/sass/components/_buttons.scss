@@ -1,0 +1,76 @@
+@mixin _btn-state-hover-and-focus() {
+  background-color: $color--btn-bg--hover;
+  border-color: $color--white;
+  color: $color--tan;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.24), 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+%btn {
+  background: $color--btn-bg;
+  border-radius: 4px;
+  border: 0.25rem double $color--brand-dark;
+  color: $color--btn-text;
+  cursor: pointer;
+  display: inline-block;
+  font: 700 1rem $font--headings;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  outline-offset: 3px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $btn-transition;
+  vertical-align: middle;
+  max-width: 100%;
+
+  // Shadow for depth (subtle)
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.36), 0 0 1px rgba(0, 0, 0, 0.12);
+
+  &:-moz-focusring {
+    @include _btn-state-hover-and-focus;
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include _btn-state-hover-and-focus;
+  }
+
+  &:active {
+    background-color: shade($color--brand-green, 15%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  // Accessibility: Focus state
+  &:focus-visible {
+    outline: 2px solid $color--brand;
+  }
+
+  // // Ripple effect
+  // position: relative;
+  // overflow: hidden;
+
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: $color--brand-light;
+  //   opacity: 0;
+  //   transform: scale(0);
+  //   transition: opacity 0.3s, transform 0.3s;
+  //   border-radius: 50%;
+  // }
+
+  // &:active:after {
+  //   opacity: 0.3;
+  //   transform: scale(2);
+  //   transition: transform 0s;
+  // }
+}
+
+.btn {
+  @extend %btn;
+}
