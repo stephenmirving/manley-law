@@ -20,7 +20,6 @@
   }
 }
 
-
 %links-nav-widescreen {
   background: 0 0;
   border: 2px solid transparent;
@@ -43,6 +42,34 @@
   }
 }
 
+// %content-links {
+//   transition: $link-transition;
+
+//   &,
+//   &:link,
+//   &:visited {
+//     color: $color--brand-green;
+//   }
+
+//   &:-moz-focusring {
+//     color: $color--brand-contrast;
+//   }
+
+//   &:hover,
+//   &:focus-visible {
+//     color: $color--brand-contrast;
+//   }
+
+//   &:active {
+//     color: shade($color--brand-contrast, 20%);
+//   }
+
+//   &:focus-visible {
+//     outline: 1px solid shade($color--brand-contrast, 20%);
+//     outline-offset: 2px;
+//   }
+// }
+
 /// Default styles for the navbar links when not in mobile-view mode.
 %links-footer-base {
   transition: $link-transition;
@@ -59,7 +86,7 @@
 
   &:hover,
   &:focus-visible {
-    color: $color--brand-contrast;
+    color: $color--blue-light;
   }
 
   &:active {
@@ -67,34 +94,6 @@
   }
 }
 
-
-%content-links {
-  transition: $link-transition;
-
-  &,
-  &:link,
-  &:visited {
-    color: $color--brand-green;
-  }
-
-  &:-moz-focusring {
-    color: $color--brand-contrast;
-  }
-
-  &:hover,
-  &:focus-visible {
-    color: $color--brand-contrast;
-  }
-
-  &:active {
-    color: shade($color--brand-contrast, 20%);
-  }
-
-  &:focus-visible {
-    outline: 1px solid shade($color--brand-contrast, 20%);
-    outline-offset: 2px;
-  }
-}
 
 %footer-links {
   @extend %links-footer-base;

@@ -72,6 +72,7 @@ h4,
 h5,
 h6,
 blockquote {
+  font-family: $font--headings;
   text-wrap: balance;
   white-space: unset;
 }
@@ -430,6 +431,10 @@ ul dl,
 ul ol,
 ul ul {
   margin: 0;
+}
+
+address {
+  font-style: normal;
 }
 
 svg:not(:root) {

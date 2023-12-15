@@ -36,48 +36,48 @@
   }
 }
 
-.card {
-  @extend %card;
+// .card {
+//   @extend %card;
 
-  a:not([class^='btn']) {
-    @extend %content-links;
-  }
+//   a:not([class^='btn']) {
+//     @extend %content-links;
+//   }
 
-  &__heading {
-    color: $color--brand-dark;
-    font-family: $font--headings;
-    font-size: 2rem;
-    letter-spacing: 0.03333334ch;
-    margin: 1rem;
-    max-width: 100%;
-    text-transform: uppercase;
-    text-align: center;
+//   &__heading {
+//     color: $color--brand-dark;
+//     font-family: $font--headings;
+//     font-size: 2rem;
+//     letter-spacing: 0.03333334ch;
+//     margin: 1rem;
+//     max-width: 100%;
+//     text-transform: uppercase;
+//     text-align: center;
 
-    > span {
-      @media screen and (max-width: $breakpoint--xs) {
-        display: block;
-      }
-    }
-  }
+//     > span {
+//       @media screen and (max-width: $breakpoint--xs) {
+//         display: block;
+//       }
+//     }
+//   }
 
-  &__text {
-    font-size: 1.125rem;
-    margin: 0.5rem auto;
-    text-align: center;
-    text-wrap: balance;
-    white-space: unset;
-    width: 100%;
+//   &__text {
+//     font-size: 1.125rem;
+//     margin: 0.5rem auto;
+//     text-align: center;
+//     text-wrap: balance;
+//     white-space: unset;
+//     width: 100%;
 
-    @media screen and (min-width: $breakpoint--l) {
-      font-size: 1.25rem;
-    }
-  }
+//     @media screen and (min-width: $breakpoint--l) {
+//       font-size: 1.25rem;
+//     }
+//   }
 
-  // If there is any card that is being hovered over,
-  // selects all other cards that are not hovered
-  .main :has(&:hover) &:not(:hover) {
-    @include card-depth(0);
+//   // If there is any card that is being hovered over,
+//   // selects all other cards that are not hovered
+//   .main :has(&:hover) &:not(:hover) {
+//     @include card-depth(0);
 
-    border-color: tint($color--brand-dark, 20%);
-  }
-}
+//     border-color: tint($color--brand-dark, 20%);
+//   }
+// }

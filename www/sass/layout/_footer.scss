@@ -11,6 +11,8 @@
   padding: $footer-padding-y 0;
   text-align: center;
   width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
 
   @media screen and (min-width: $breakpoint--xl) {
     text-align: left;

@@ -33,8 +33,10 @@ $color--brand: #223752;
 $color--brand-lightest: rgba(11, 47, 91, 0.36);
 $color--brand-light: rgba(11, 47, 91, 0.76);
 $color--brand-green: #2D535C;
+$color--green-lime: #0DB694;
 $color--violet: #CFB2F3; // brand-green contrast ??
 $color--blue-faint: #C0FAFF;
+$color--blue: #008ecc;
 $color--blue-light: #00B1FF;
 $color--violet-faint: #DBDDEA;
 $color--tan: #C5C5BB;
@@ -69,10 +71,12 @@ $font--serif:
   'Georgia', serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
 
 
-$link-transition-time: 500ms;
-$link-transition: all $link-transition-time ease;
-$icon-transition-time: 0.22s;
-$icon-transition: color $icon-transition-time ease-in;
+$link-transition-time: 0.4s;
+$link-transition-time--nav: 0.6s;
+$link-transition: all $link-transition-time ease-in-out;
+$link-transition--nav: all $link-transition-time--nav ease-in-out;
+$icon-transition-time: 0.2s;
+$icon-transition: all $icon-transition-time ease-out;
 
 $btn-transition-time: 333ms;
 $btn-transition: all $btn-transition-time ease;

@@ -85,7 +85,7 @@
   &__link {
     @extend %links-nav-widescreen;
 
-    transition: $link-transition;
+    transition: $link-transition--nav;
 
     &,
     &:link,
@@ -110,7 +110,7 @@
     &--active {
       @extend %links-nav-widescreen;
 
-      transition: $link-transition;
+      transition: $link-transition--nav;
 
       &,
       &:link,
