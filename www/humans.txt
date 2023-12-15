@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Metric Design & Development
+    Stephen M Irving -- Site Developer -- <stephenirving.net>
+
+# THANKS
+
+    Aimee Ledbetter -- Paralegal at Manley & Halverstadt
+    Rebecca Vetter -- Moncks Corner Business Development Manager
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, Sass, JavaScript
+    Apache Server Configs

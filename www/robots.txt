@@ -1,7 +1,7 @@
-# robots.txt file of https://pappyjr.com/
+# robots.txt file of https://www.manleyandhalverstadt.com/
 # www.robotstxt.org/
 
-Sitemap: https://pappyjr.com/sitemap.xml
+Sitemap: https://www.manleyandhalverstadt.com/sitemap.xml
 
 # Allow crawling of all content
 User-agent: *

@@ -1,37 +1,31 @@
 .legal {
-  background-image: none;
   padding: 1.25rem 2.5rem;
-
-  &:hover,
-  &:focus-within {
-    @include card-depth(4, $color--brand-contrast);
-
-    border-color: $color--brand-contrast;
-    transform: none;
-  }
 
   &__wrapper {
     width: 100%;
   }
 
-  .card__text {
+  &__section {
+    scroll-margin-top: 15.5rem;
+  }
+
+  &__text {
     text-align: justify;
     text-wrap: pretty;
     white-space-collapse: collapse;
     margin: 1rem auto;
   }
 
-  & &__updated {
-    text-align: center;
+  &__toc-link {
+
+  }
+
+  &__updated {
     font-style: italic;
   }
 
   h3 {
     font-size: 1.375rem;
-  }
-
-  a {
-    text-decoration: underline !important;
   }
 
   table {
@@ -45,5 +39,28 @@
     &:last-child {
       text-align: right;
     }
+  }
+
+  .tel,
+  .email,
+  &__toc-link, {
+    transition: $link-transition;
+
+    &,
+    &:link,
+    &:visited {
+      color: $color--brand;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color--blue;
+      text-decoration: underline;
+    }
+  }
+
+  .tel:before {
+    content: '';
+    margin: 0;
   }
 }

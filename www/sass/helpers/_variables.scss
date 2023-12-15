@@ -1,7 +1,7 @@
 // Layout viewport width breakpoint sizes
 // Breakpoints based on specific breakpoints in the layout
 $breakpoint--228: 14.25em;
-$breakpoint--307: 19.1875em;
+$breakpoint--304: 19em;
 $breakpoint--336: 21em;
 $breakpoint--390: 24.375em;
 $breakpoint--430: 26.875em;
@@ -15,7 +15,7 @@ $breakpoint--1280: 80em;
 $breakpoint--1440: 90em;
 
 // Breakpoints based on general device sizes
-$breakpoint--tiny: 15.25em; // 244px
+$breakpoint--tiny: 15.75em; // 252px
 $breakpoint--xxxs: 17.5em;// 280px
 $breakpoint--xxs: 23.5em; // 376px
 $breakpoint--xs: 35em;    // 560px
@@ -35,6 +35,7 @@ $color--brand-light: rgba(11, 47, 91, 0.76);
 $color--brand-green: #2D535C;
 $color--green-lime: #0DB694;
 $color--violet: #CFB2F3; // brand-green contrast ??
+$color--purple: #881C9E;
 $color--blue-faint: #C0FAFF;
 $color--blue: #008ecc;
 $color--blue-light: #00B1FF;
@@ -55,6 +56,21 @@ $color--body-heading: $color--brand;
 $color--body-bg: $color--off-white;
 
 $color--nav-bg: $color--tan;
+
+$color--nav-bg-gradient:
+  linear-gradient(
+    135deg,
+    $color--nav-bg,
+    shade($color--nav-bg, 12%)
+  );
+
+$color--footer-bg: $color--brand;
+$color--footer-bg-gradient:
+  linear-gradient(
+    135deg,
+    $color--footer-bg,
+    shade($color--footer-bg, 30%)
+  );
 
 $color--btn-text: $color--white;
 $color--btn-bg: $color--brand;
@@ -86,6 +102,8 @@ $btn-transition: all $btn-transition-time ease;
 $color--brand-dark: #3A3044;
 
 
+
+
 $color--card-bg: $color--off-white;
 $color--card-bg-gradient:
   linear-gradient(
@@ -95,13 +113,7 @@ $color--card-bg-gradient:
     rgba($color--brand-dark, 0.167) 100%
   );
 
-$color--footer-bg: $color--brand;
-$color--footer-bg-gradient:
-  linear-gradient(
-    135deg,
-    $color--footer-bg,
-    shade($color--footer-bg, 30%)
-  );
+
 
 $header-padding-x: 0;
 $header-padding-y: 0.5rem;

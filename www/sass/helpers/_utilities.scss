@@ -70,8 +70,28 @@
   font-style: italic;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 /// Utility to apply an underline for a font
 
 .uline {
   text-decoration: underline;
+}
+
+.txt-c {
+  text-align: center;
+}
+
+.txt-l {
+  text-align: left;
+}
+
+.txt-r {
+  text-align: right;
+}
+
+.txt-j {
+  text-align: justify;
 }

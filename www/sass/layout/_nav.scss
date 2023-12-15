@@ -1,14 +1,14 @@
 .sitehead {
   align-self: start;
   align-items: center;
-  background: $color--nav-bg;
+  background: $color--nav-bg-gradient $color--nav-bg;
   border: 0;
   display: flex;
   flex-wrap: wrap;
   font-family: $font--headings;
   grid-area: navigation;
   justify-content: space-between;
-  min-height: 7.25rem;
+  min-height: 10.3125rem;
   padding: $header-padding-y $header-padding-x;
   position: sticky;
   top: 0;
@@ -44,7 +44,7 @@
     width: 12.91666667rem;
     margin: 0 auto;
 
-    @media screen and (max-width: 18.75rem) {
+    @media screen and (max-width: $breakpoint--304) {
       height: 6.375rem;
       width: 9.6875rem;
     }
@@ -63,7 +63,7 @@
     font-size: 1rem;
     text-align: center;
 
-    @media screen and (max-width: 18.75rem) {
+    @media screen and (max-width: $breakpoint--304) {
       font-size: 0.675rem;
     }
 
@@ -80,6 +80,10 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+
+    .homepage & {
+      @include slide($direction: 'right');
+    }
   }
 
   &__link {
