@@ -806,6 +806,10 @@ svg:not([fill]) {
   width: 100%;
 }
 
+.article {
+  scroll-margin-top: 15.5rem;
+}
+
 .contact__section {
   display: flex;
   flex-direction: column;

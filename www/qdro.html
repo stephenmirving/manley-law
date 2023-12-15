@@ -55,7 +55,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#223752">
 </head>
-<body class="homepage grid-layout" itemscope itemtype="https://schema.org/LegalService">
+<body class="grid-layout" itemscope itemtype="https://schema.org/LegalService">
   <header id="site-head" class="sitehead">
     <div class="container">
       <div class="sitehead__branding-wrapper">
@@ -99,7 +99,7 @@
         <div id="nav-menu-wrapper" class="nav__menu-wrapper">
           <ul class="nav__menu" id="nav-menu" aria-expanded="true">
             <li>
-              <a class="nav__link--active" href="index.html" tabindex="0">Home</a>
+              <a class="nav__link" href="index.html" tabindex="0">Home</a>
             </li>
             <li>
               <a class="nav__link" href="calendar.html" tabindex="0">Calendar</a>
@@ -108,7 +108,7 @@
               <a class="nav__link" href="firm.html" tabindex="0">Firm</a>
             </li>
             <li>
-              <a class="nav__link" href="qdro.html" tabindex="0">QDRO</a>
+              <a class="nav__link--active" href="qdro.html" tabindex="0">QDRO</a>
             </li>
             <li>
               <a class="nav__link" href="#contact" tabindex="0">Contact</a>
@@ -124,21 +124,19 @@
       </nav>
     </div>
   </header>
-  <div class="hero">
-    <div class="container">
-      <div id="hero-text-box" class="hero__text-box">
-        <p class="hero__text">Manley &amp; Halverstadt, LLC provides full legal
-        service to individuals and businesses throughout the South Carolina
-        coastal region, including Mount Pleasant, Charleston, Moncks Corner, and
-        Summerville. Todd Manley and Matthew Halverstadt offer a mediation and
-        litigation practice with a focus on South Carolina family law.</p>
-      </div>
-    </div>
-  </div>
   <main id="main" class="content">
-    <article class="contact" aria-labelledby="contact">
+    <article class="article qdro" aria-labelledby="qdro-heading">
       <header class="content__header">
-        <h2 id="contact" class="content__title">Contact Us</h2>
+        <h2 id="qdro-heading" class="content__title">Qualified Domestic Relations Orders</h2>
+      </header>
+      <div class="container">
+
+      </div>
+    </article>
+
+    <article id="contact" class="article contact" aria-labelledby="contact-heading">
+      <header class="content__header">
+        <h2 id="contact-heading" class="content__title">Contact Us</h2>
       </header>
       <div class="container grid-locations">
         <section class="contact__section vcard" aria-labelledby="chs-office-heading" itemprop="location" itemscope itemtype="https://schema.org/Place">

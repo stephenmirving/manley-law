@@ -68,6 +68,10 @@
   }
 }
 
+.article {
+  scroll-margin-top: 15.5rem; // Adjust for nav header height
+}
+
 .contact {
   &__section {
     display: flex;
