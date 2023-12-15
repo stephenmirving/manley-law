@@ -1,31 +1,33 @@
 @mixin _btn-state-hover-and-focus() {
-  background-color: $color--btn-bg--hover;
-  border-color: $color--white;
-  color: $color--tan;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.24), 0 0 3px rgba(0, 0, 0, 0.12);
+  background: $color--btn-bg--hover;
 }
 
 %btn {
-  background: $color--btn-bg;
+  background: $color--brand-light;
   border-radius: 4px;
-  border: 0.25rem double $color--brand-dark;
+  border: 0;
   color: $color--btn-text;
   cursor: pointer;
   display: inline-block;
-  font: 700 1rem $font--headings;
+  font-family: $font--headings;
+  font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.15;
-  outline-offset: 3px;
-  padding: 0.5rem;
+  outline: none;
+  outline-offset: 2px;
+  padding: 0.875rem 1.125rem;
+  position: relative;
   margin: 0.5rem;
   text-align: center;
   text-transform: uppercase;
   transition: $btn-transition;
   vertical-align: middle;
   max-width: 100%;
+  box-shadow:
+    inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0 rgba(0, 0, 0, 0.1);
 
-  // Shadow for depth (subtle)
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.36), 0 0 1px rgba(0, 0, 0, 0.12);
 
   &:-moz-focusring {
     @include _btn-state-hover-and-focus;
@@ -37,38 +39,43 @@
   }
 
   &:active {
-    background-color: shade($color--brand-green, 15%);
+    background: shade($color--brand-green, 15%);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
   }
 
   // Accessibility: Focus state
   &:focus-visible {
-    outline: 2px solid $color--brand;
+    outline: $color--brand auto 2px;
   }
 
-  // // Ripple effect
-  // position: relative;
-  // overflow: hidden;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: $color--brand;
+    box-shadow:
+      -1px -1px 5px 0 $color--violet,
+      7px 7px 20px 0 #0003,
+      4px 4px 5px 0 #0002;
+    transition: all 333ms ease;
+  }
 
-  // &:after {
-  //   content: '';
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: $color--brand-light;
-  //   opacity: 0;
-  //   transform: scale(0);
-  //   transition: opacity 0.3s, transform 0.3s;
-  //   border-radius: 50%;
-  // }
+  &:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
 
-  // &:active:after {
-  //   opacity: 0.3;
-  //   transform: scale(2);
-  //   transition: transform 0s;
-  // }
+  &:hover:before,
+  &:hover:after {
+    transition: all 666ms ease;
+    width: 100%;
+  }
 }
 
 .btn {

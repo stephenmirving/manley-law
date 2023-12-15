@@ -2,7 +2,7 @@
   align-self: start;
   align-items: center;
   background: $color--nav-bg;
-  border-bottom: 2px solid $color--brand-white;
+  border: 0;
   display: flex;
   flex-wrap: wrap;
   font-family: $font--headings;
@@ -22,9 +22,13 @@
     justify-content: space-between;
     -webkit-user-select: none;
     user-select: none;
+
+    @media screen and (max-width: $breakpoint--tiny) {
+      justify-content: center;
+    }
   }
 
-  &__branding {
+  &__branding-wrapper {
     // Nothing needed here yet
   }
 
@@ -36,7 +40,19 @@
   }
 
   &__logo {
-    // Nothing needed here yet
+    height: 8.5rem;
+    width: 12.91666667rem;
+    margin: 0 auto;
+
+    @media screen and (max-width: 18.75rem) {
+      height: 6.375rem;
+      width: 9.6875rem;
+    }
+
+    @media screen and (min-width: $breakpoint--1080) {
+      height: 12.75rem;
+      width: 19.375rem;
+    }
   }
 
   &__branding-subhead {
@@ -44,8 +60,16 @@
     margin: 0;
     padding: 0;
     color: $color--black-lightest;
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: center;
+
+    @media screen and (max-width: 18.75rem) {
+      font-size: 0.675rem;
+    }
+
+    @media screen and (min-width: $breakpoint--1080) {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -97,24 +121,130 @@
       }
 
       &:-moz-focusring {
-        color: shade($color--brand, 10%);
-        border-color: shade($color--brand, 10%);
+        color: $color--black-light;
+        border-color: rgba($color--brand-green, 0.7);
       }
 
       &:hover,
       &:focus-visible {
-        color: shade($color--brand, 10%);
-        border-color: shade($color--brand, 10%);
+        color: $color--black-light;
+        border-color: rgba($color--brand-green, 0.7);
       }
 
       &:active {
         border-color: shade($color--brand, 20%);
-        color: shade($color--brand, 20%);
+        color: $color--black;
+      }
+    }
+  }
+
+  &__burger-btn {
+    $_patty-thickness: 0.25rem;
+
+    @include puff($timing: 0.5s, $timing-func: ease-in);
+
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline-offset: 5px;
+    position: relative;
+    height: 1.875rem;
+    width: 3.125rem;
+
+    &:before,
+    &:after {
+      background: tint($color--brand-light, 10%);
+      backface-visibility: hidden;
+      content: "";
+      height: $_patty-thickness;
+      left: 0;
+      transition: 0.75s;
+      width: 3.125rem;
+    }
+
+    &:before {
+      box-shadow: tint($color--brand-light, 10%) 0 0.875rem 0 0;
+      position: absolute;
+      top: 0;
+    }
+
+    &:after {
+      position: absolute;
+      top: calc(100% - $_patty-thickness);
+    }
+
+    &:-moz-focusring {
+      border: 0;
+      padding: 0;
+      outline: $color--brand auto 2px;
+    }
+
+    &:focus-visible {
+      border: 0;
+      padding: 0;
+      outline: $color--brand auto 2px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      &:before,
+      &:after {
+        background: shade($color--brand-green, 10%);
+      }
+
+      &:before {
+        box-shadow: shade($color--brand-green, 10%) 0 0.875rem 0 0;
       }
     }
 
-    &:hover + .nav__link--active {
-      border-color: transparent;
+    @media screen and (min-width: $breakpoint--widescreen) {
+      display: none;
     }
+  }
+
+  &__checkbox {
+    display: none;
+    visibility: hidden;
+
+    &:checked {
+      + .nav__burger-btn {
+        &:before {
+          box-shadow: transparent 0 0 0 0;
+          top: 50%;
+          transform: rotate(225deg);
+        }
+
+        &:after {
+          top: 50%;
+          transform: rotate(315deg);
+        }
+
+        &:before,
+        &:after {
+          background: $color--brand;
+        }
+
+        &:hover,
+        &:focus-visible {
+          &:before,
+          &:after {
+            background: $color--brand-light;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    $_btn-padding--static: 0.75rem 1rem;
+    $_btn-padding-x--fb: min(max(0.75rem, calc(0.125rem + 1.25vw)), 1.125rem);
+    $_btn-padding-x: clamp(0.75rem, calc(0.125rem + 1.25vw), 1.125rem);
+    $_btn-padding-y--fb: min(max(0.625rem, calc(0.125rem + 0.9vw)), 0.875rem);
+    $_btn-padding-y: clamp(0.625rem, calc(0.125rem + 0.9vw), 0.875rem);
+
+    padding: $_btn-padding--static;
+    padding: $_btn-padding-y--fb $_btn-padding-x--fb;
+    padding: $_btn-padding-y $_btn-padding-x;
+    margin-right: 0;
   }
 }

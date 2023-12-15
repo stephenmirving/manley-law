@@ -1,7 +1,7 @@
 {
   "name": "manley-law",
   "version": "0.0.1",
-  "description": "The business website for the Manley Law Firm in Monck's Corner, SC",
+  "description": "The business website for the Manley Law Firm in Moncks Corner, SC",
   "main": "index.html",
   "scripts": {
     "dev": "sass --watch --update --style=expanded www/sass:www/css",
@@ -16,7 +16,7 @@
     "Manley",
     "Law",
     "Firm",
-    "Monck's",
+    "Moncks",
     "Corner",
     "Business",
     "Website"

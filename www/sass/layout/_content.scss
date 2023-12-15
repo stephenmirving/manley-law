@@ -1,99 +1,26 @@
-.pagehead {
-  align-items: center;
-  background:
-    url('../img/stock/breakfast-foods-illustrated.svg')
-    0 0 / contain
-    repeat
-    fixed
-    border-box
-    border-box
-    $color--brand-white;
-  color: $color--brand-original;
-  display: flex;
-  font-family: $font--headings;
-  grid-area: header;
-  justify-content: center;
-  margin: 0 0 $grid-gap-size;
-  text-align: center;
-  min-height: 55vh;
-  min-height: 55dvh;
-
-  @media screen
-      and (orientation: portrait)
-      and (min-resolution: 2dppx)
-      and (max-width: $breakpoint--l) {
-    background-attachment: scroll;
-  }
-
-  @media screen and (min-width: $breakpoint--l) {
-    background-position: 0 100%;
-  }
+.content {
+  grid-area: content;
 
   &__title {
-    @include long-shadow($color--brand-dark, 6);
-
-    animation: $pageheader-anim-time $pageheader-anim-func move-in-left;
-    font-weight: 900;
-    font-size: $pageheader-h1-fontsize--static;
-    font-size: $pageheader-h1-fontsize--fb;
-    font-size: $pageheader-h1-fontsize;
-    margin: $pageheader-h1-margins;
+    scroll-margin-top: 15.5rem; // Adjust for nav header height
+    text-align: center;
+    font-size: 1.75rem;
   }
 
-  &__subtitle {
-    @include text-outline($color--brand-light);
-
-    animation: $pageheader-anim-time $pageheader-anim-func move-in-right;
-    font-family: $font--headings;
-    font-size: $pageheader-h2-fontsize--static;
-    font-size: $pageheader-h2-fontsize--fb;
-    font-size: $pageheader-h2-fontsize;
-    font-weight: 300;
-    margin: $pageheader-h2-margins;
+  &__map-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Aspect ratio of iframe (height/width * 100%) */
+    margin: auto;
   }
 
-  &__h3 {
-    @include text-focus-in(
-      $timing: $pageheader-anim-time,
-      $timing-func: ease
-    );
-    @include text-bg-blur($color--brand-dark);
-
-    color: $color--brand-light;
-    font-family: $font--headings;
-    font-size: $pageheader-h3-fontsize--static;
-    font-size: $pageheader-h3-fontsize--fb;
-    font-size: $pageheader-h3-fontsize;
-    letter-spacing: 0.5ch;
-    margin: $pageheader-h3-margins;
-
-    > span {
-      @media screen and (max-width: $breakpoint--xs) {
-        display: block;
-      }
-
-      @media screen and (min-width: $breakpoint--xl) {
-        display: block;
-      }
-    }
-  }
-
-  &__title,
-  &__subtitle,
-  &__h3 {
-    letter-spacing: 0.125em;
-  }
-
-  > .container {
-    display: flex;
+  &__map-frame {
+    border: 0.25rem solid $color--brand;
+    border-radius: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-user-select: none;
-    user-select: none;
+    width: 100%;
   }
-}
-
-.main {
-  grid-area: content;
 }

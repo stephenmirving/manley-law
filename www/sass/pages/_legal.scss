@@ -1,0 +1,49 @@
+.legal {
+  background-image: none;
+  padding: 1.25rem 2.5rem;
+
+  &:hover,
+  &:focus-within {
+    @include card-depth(4, $color--brand-contrast);
+
+    border-color: $color--brand-contrast;
+    transform: none;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  .card__text {
+    text-align: justify;
+    text-wrap: pretty;
+    white-space-collapse: collapse;
+    margin: 1rem auto;
+  }
+
+  & &__updated {
+    text-align: center;
+    font-style: italic;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+  }
+
+  tr td {
+    padding: 0.25rem;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

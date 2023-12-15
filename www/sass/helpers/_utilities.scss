@@ -75,36 +75,3 @@
 .uline {
   text-decoration: underline;
 }
-
-/// Gets rid of the scrollbar when the nav flyout menu is open
-
-.no-scroll {
-  @supports (scrollbar-gutter: stable) {
-    overflow: hidden !important;
-  }
-}
-
-/// When flyout menu is open this makes it blend better with the original nav bar.
-
-.flyout-nav-open {
-  background-image: none;
-  border-color: transparent;
-}
-
-/// Fixes the vertical centering of items in cards that are small and have no heading
-
-.fix-card-vert-centering {
-  .card__text {
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-
-      > .btn {
-        margin-bottom: 0;
-      }
-    }
-  }
-}

@@ -3,7 +3,7 @@
   align-self: end;
   background: $color--footer-bg-gradient $color--footer-bg;
   border: 0;
-  color: $color--brand-white;
+  color: $color--off-white;
   grid-area: footer;
   font-size: 1rem;
   line-height: 1.6;
@@ -21,7 +21,7 @@
   }
 
   a {
-    color: $color--brand-white;
+    color: $color--off-white;
     line-height: 2;
   }
 
@@ -98,8 +98,6 @@
 
   &__logo {
     display: inline-block;
-    border: 4px solid $color--brand-white;
-    border-radius: 50%;
     margin: 1rem auto 0;
 
     &:focus {
@@ -112,8 +110,6 @@
 
     > img {
       box-sizing: content-box;
-      height: 8rem;
-      width: 8rem;
     }
   }
 
@@ -217,7 +213,7 @@
   }
 
   &__self-link {
-    @extend %links-nav-footer-base;
+    @extend %links-footer-base;
 
     text-transform: uppercase;
 

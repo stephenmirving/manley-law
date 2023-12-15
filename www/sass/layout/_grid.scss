@@ -27,3 +27,12 @@
     max-width: 1140px;
   }
 }
+
+.grid-locations {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}

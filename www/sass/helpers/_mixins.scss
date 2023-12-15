@@ -2581,64 +2581,6 @@
   }
 }
 
-
-/// A fast way to create vendor-prefixed keyframes with only a 0% and 100% value.
-///
-/// @content
-/// @param {String} $animation-name - The name given to the animation.
-/// @param {Property} $property - The name of the property being animated.
-/// @param {*} $from - The value of the property at 0%.
-/// @param {*} $to - The value of the property at 100%.
-///
-/// @group Animations
-@mixin fast-frames($animation-name, $property, $from, $to) {
-  @at-root {
-    @keyframes #{$animation-name} {
-      0% {
-        #{$property}: $from;
-      }
-
-      100% {
-        #{$property}: $to;
-      }
-    }
-  }
-}
-
-
-/// Sets all the length properties for the given dimension(s) at once for an
-/// element that you want to remain at a fixed size.
-///
-/// @param {Length-Percentage} $length - A length value (ex: 10rem or 200px).
-/// @param {String} $dimension [wh] - Can be `height`, `width`, or any shorter
-/// version of either (`w` or `h`) to only set those dimensions. To set both
-/// width AND height use either `wh`, `hw` or `both`.
-///
-/// @throw Incorrect keyword for $dimension
-@mixin fixed-length($length, $dimension: wh) {
-  @if (to-lower-case(str-slice($dimension, 1, 2)) == 'wh'
-      or to-lower-case(str-slice($dimension, 1, 2)) == 'hw'
-      or to-lower-case($dimension) == 'both') {
-    height: $length !important;
-    max-height: $length !important;
-    min-height: $length !important;
-    max-width: $length !important;
-    min-width: $length !important;
-    width: $length !important;
-  } @else if (to-lower-case(str-slice($dimension, 1, 1)) == 'h') {
-    height: $length !important;
-    max-height: $length !important;
-    min-height: $length !important;
-  } @else if (to-lower-case(str-slice($dimension, 1, 1)) == 'w') {
-    max-width: $length !important;
-    min-width: $length !important;
-    width: $length !important;
-  } @else {
-    @error 'Invalid $dimension of `#{inspect($dimension)}` for the `fixed-length` mixin.'l;
-  }
-}
-
-
 /// Uses flexbox to vertically and/or horizontally center an element, as well as
 /// set its flex-direction property.
 ///

@@ -1,7 +1,7 @@
 {
-  "short_name": "Pappy's",
-  "name": "Pappy's Jr Restaurant",
-  "description": "The website for the Monck's Corner, SC restaurant Pappy's Jr.",
+  "short_name": "M&amp;H Law",
+  "name": "Manley &amp; Halverstadt Law",
+  "description": "The website for the Manley &amp; Halverstadt law firm, which provides legal service to individuals & businesses throughout the South Carolina coastal region, including Mt. Pleasant, Charleston, Moncks Corner, and Summerville. Manley & Halverstadt, LLC offers a mediation and litigation practice with a focus on family law.",
   "display": "standalone",
   "icons": [{
     "src": "icon.png",
@@ -9,6 +9,6 @@
     "sizes": "192x192"
   }],
   "start_url": "index.html",
-  "background_color": "#133941",
-  "theme_color": "#133941"
+  "background_color": "#f0f0f0",
+  "theme_color": "#223752"
 }

@@ -9,11 +9,13 @@ $breakpoint--476: 29.75em; // This and larger has "Restaurant" in title bar
 $breakpoint--640: 40em;
 $breakpoint--756: 47.25em;
 $breakpoint--768: 48em;
+$breakpoint--878: 54.875rem; // Nav toggles here
 $breakpoint--1080: 67.5em;
 $breakpoint--1280: 80em;
 $breakpoint--1440: 90em;
 
 // Breakpoints based on general device sizes
+$breakpoint--tiny: 15.25em; // 244px
 $breakpoint--xxxs: 17.5em;// 280px
 $breakpoint--xxs: 23.5em; // 376px
 $breakpoint--xs: 35em;    // 560px
@@ -24,16 +26,25 @@ $breakpoint--xl: 62em;    // 992px
 $breakpoint--xxl: 75em;   // 1200px
 $breakpoint--xxxl: $breakpoint--1440;
 
+$breakpoint--widescreen: $breakpoint--878;
+
 // Colors
 $color--brand: #223752;
+$color--brand-lightest: rgba(11, 47, 91, 0.36);
+$color--brand-light: rgba(11, 47, 91, 0.76);
 $color--brand-green: #2D535C;
+$color--violet: #CFB2F3; // brand-green contrast ??
+$color--blue-faint: #C0FAFF;
+$color--blue-light: #00B1FF;
+$color--violet-faint: #DBDDEA;
 $color--tan: #C5C5BB;
 $color--brand-contrast: #B6C9EB;
-$color--light-blue: #00B1FF;
 $color--black: #0a0a0a;
 $color--black-light: #222;
-$color--black-lightest: #323232;
+$color--black-lighter: #323232;
+$color--black-lightest: #333445;
 $color--off-white: #F3FAFF;
+$color--off-white-2: #E2F1ED;
 $color--white: #f0fafa;
 $color--faint-blue: #D0E5DE;
 
@@ -45,7 +56,7 @@ $color--nav-bg: $color--tan;
 
 $color--btn-text: $color--white;
 $color--btn-bg: $color--brand;
-$color--btn-bg--hover: $color--brand-green;
+$color--btn-bg--hover: shade($color--brand-green, 5%);
 $color--btn-border: $color--faint-blue;
 $color--btn-border--hover: $color--brand;
 
@@ -58,33 +69,20 @@ $font--serif:
   'Georgia', serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
 
 
-$link-transition-time: 0.3s;
+$link-transition-time: 500ms;
 $link-transition: all $link-transition-time ease;
 $icon-transition-time: 0.22s;
 $icon-transition: color $icon-transition-time ease-in;
 
-$btn-transition-time: 0.3s;
-$btn-transition:
-  background-color $btn-transition-time ease-out,
-  color $btn-transition-time ease-out,
-  border-color $btn-transition-time ease-out,
-  box-shadow $btn-transition-time ease-out;
+$btn-transition-time: 333ms;
+$btn-transition: all $btn-transition-time ease;
 
 // Old vars TODO: Remove unused
 
 $color--brand-dark: #3A3044;
-$color--brand-original: #01755A;
-$color--brand-faint: #D6F1E9;
-$color--brand-light: #BFFAFF;
-$color--brand-lightest: #E7FDFF;
-$color--brand-white: #E2F1ED;
-$color--brand-med: #488D7D;
-$color--black-lightest: #333445;
-$color--black-lighter: #333;
-$color--yellow: #fcb336;
-$color--orange: #e96b02;
 
-$color--card-bg: $color--brand-white;
+
+$color--card-bg: $color--off-white;
 $color--card-bg-gradient:
   linear-gradient(
     180deg,
@@ -93,7 +91,7 @@ $color--card-bg-gradient:
     rgba($color--brand-dark, 0.167) 100%
   );
 
-$color--footer-bg: $color--brand-dark;
+$color--footer-bg: $color--brand;
 $color--footer-bg-gradient:
   linear-gradient(
     135deg,
@@ -101,51 +99,14 @@ $color--footer-bg-gradient:
     shade($color--footer-bg, 30%)
   );
 
-
-
-
-
 $header-padding-x: 0;
 $header-padding-y: 0.5rem;
-$container-padding-x: 0.75rem;
+$container-padding-x: 1rem;
 
-$nav-height--static: 11rem;
-$nav-height--fb: min(max(8.75rem, calc(33.33333svh + 0.75rem)), 10.625rem);
-$nav-height: clamp(8.75rem, calc(33.33333svh + 0.75rem), 10.625rem);
-$nav-height--xxs: 14rem;
-$nav-height--l-fb: min(max(11rem, calc(25svh + 1rem)), 13.75rem);
-$nav-height--l: clamp(11rem, calc(25svh + 1rem), 13.75rem);
-$nav-brand-padding: 0.3125rem;
-$nav-brand-margin-end: 1rem;
-$nav-brand-fontsize--fb-static: 1.625rem;
-$nav-brand-fontsize--fb: min(max(1.5rem, calc(0.25rem + 3vw)), 2.75rem);
-$nav-brand-fontsize: clamp(1.5rem, calc(0.25rem + 3vw), 2.75rem);
-$nav-brand-fontsize-mobile: 2rem;
-$nav-brand-fontsize-mobile--xxs: 1.625rem;
+
 $nav-link-fontsize--fb-static: 1.375rem;
 $nav-link-fontsize--fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
 $nav-link-fontsize: clamp(1.25rem, calc(0.125rem + 1.8125vw), 1.625rem);
-$nav-flyout-link-fontsize--static: 1.75rem;
-$nav-flyout-link-fontsize--fb: min(max(1.625rem, calc(0.5rem + 4.5vh)), 2.25rem);
-$nav-flyout-link-fontsize: clamp(1.625rem, calc(0.5rem + 4.5vh), 2.25rem);
-$nav-flyout-padding-static: 0.375rem 1.5rem;
-$nav-flyout-padding-fb: min(max(0.1875rem, calc(2vh - 0.5rem)), 0.75rem) 1.5rem;
-$nav-flyout-padding: clamp(0.1875rem, calc(2vh - 0.5rem), 0.75rem) 1.5rem;
-
-$pageheader-h1-fontsize--static: 3rem;
-$pageheader-h1-fontsize--fb: min(max(2rem, calc(1rem + 4vw)), 3.5rem);
-$pageheader-h1-fontsize: clamp(2rem, calc(1rem + 4vw), 3.5rem);
-$pageheader-h1-margins: 1.25rem 0 0.375rem;
-$pageheader-h2-fontsize--static: 2.5rem;
-$pageheader-h2-fontsize--fb: min(max(1.375rem, calc(0.125rem + 3.33333vw)), 2.5rem);
-$pageheader-h2-fontsize: clamp(1.375rem, calc(0.125rem + 3.33333vw) ,2.5rem);
-$pageheader-h2-margins: 0.25rem 0;
-$pageheader-h3-fontsize--static: 1.5rem;
-$pageheader-h3-fontsize--fb: min(max(1.125rem, calc(0.125rem + 1.75vw)), 1.75rem);
-$pageheader-h3-fontsize: clamp(1.125rem, calc(0.125rem + 1.75vw), 1.75rem);
-$pageheader-h3-margins: 1.25rem 0;
-$pageheader-anim-time: 0.9s;
-$pageheader-anim-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
 $card-padding: 1.25rem;
 
@@ -155,19 +116,7 @@ $grid-gap-size: 2.5rem;
 
 $footer-padding-y: 2rem;
 
-
-
 $burger-transition: all $btn-transition-time ease-out;
 
-$symbol--arrows--curved-left: '\21E6';
-$symbol--arrows--curved-right: '\21E8';
-$symbol--stars--full: '\2605';
-$symbol--stars--empty: '\2606';
 $symbol--quotes--double-thick-left: '\275D';
 $symbol--quotes--double-thick-right: '\275E';
-$symbol--emojis--silverwear: '🍴';
-$symbol--emojis--bacon: '🥓';
-$symbol--emojis--pancakes: '🥞';
-$symbol--clocks--two: '🕑';
-$symbol--clocks--six: '🕕';
-$symbol--clocks--eight: '🕗';

@@ -1,237 +1,83 @@
-.tothemenu {
-  &__caption {
-    color: $color--brand;
-    font-family: $font--headings;
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 0.5ch;
-    line-height: 1.2;
-    font-weight: 700;
-    margin: 0.5rem 0 1rem;
-
-    > span {
-      letter-spacing: 0.25ch;
-
-      &:before,
-      &:after {
-        position: relative;
-        font-family: $font--main-stack;
-      }
-
-      &:first-child {
-        &:before,
-        &:after {
-          content: $symbol--emojis--silverwear;
-          font-size: 1.6875rem;
-        }
-
-        &:before {
-          left: -3px;
-        }
-
-        &:after {
-          left: 3px;
-        }
-      }
-
-      &:last-child {
-        &:before,
-        &:after {
-          font-size: 2rem;
-          font-weight: 900;
-          top: 4px;
-        }
-
-        &:before {
-          content: $symbol--arrows--curved-left;
-          left: -4px;
-        }
-
-        &:after {
-          content: $symbol--arrows--curved-right;
-          left: 4px;
-        }
-      }
-    }
-  }
-}
-
-.facebook {
+.hero {
+  border: 0;
+  grid-area: hero;
   background:
-    url('../img/stock/pancake-syrup-1080w.webp')
-    0 0 / cover
+    url('../img/bridge-sunset-bg-980x676.webp')
+    50% 50% / cover
     no-repeat
     fixed
     border-box
     border-box
-    $color--card-bg;
+    $color--off-white;
+  margin: 0;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  height: min(676px, 66vh);
+  width: 100%;
 
   @media screen
-      and (max-width: $breakpoint--l)
+      and (max-width: $breakpoint--m)
       and (min-resolution: 2dppx)
-      and (orientation: portrait)
   {
     background-attachment: scroll;
   }
 
-  &:hover,
-  &:focus-within {
-    transform: none;
+  @media screen and (min-width: $breakpoint--widescreen) {
+    background-image: url('../img/bridge-sunset-bg-980x1040.webp');
   }
 
-  &__link {
-    border: 4px solid $color--brand-dark;
-    border-radius: 50%;
-    display: block;
-    transition:
-      border-color 0.6s ease-out,
-      box-shadow 0.6s ease-out,
-      opacity 0.6s ease-out;
-    opacity: 0.6;
+  @media screen and (min-width: $breakpoint--xxl) {
+    background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
+  }
 
-    &:hover,
-    &:focus-within,
-    &:focus-visible {
-      @include card-depth(4, $color--brand-contrast);
+  > .container {
+    position: relative;
+    height: 100%;
+  }
 
-      border-color: $color--brand-white;
-      opacity: 0.88;
+  &__text-box {
+    min-width: min(17.5rem, 100%);
+    max-width: 40%;
+    background: rgba($color--tan, 0.65);
+    background-attachment: scroll;
+    border-radius: 16px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: $breakpoint--widescreen) {
+      left: 100%;
+      top: 15%;
+      transform: translateX(-100%);
     }
 
-    &:focus-visible {
-      outline: 2px solid $color--brand-contrast;
-      outline-offset: 4px;
-    }
-
-    &:active {
-      border-color: shade($color--brand-white, 20%);
-      opacity: 1;
-    }
-  }
-}
-
-.review-card-list {
-  @include list-reset();
-}
-
-.grid-reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17.5em, 1fr));
-  gap: 0 $grid-gap-size;
-
-  @media screen and (max-width: $breakpoint--xxxs) {
-    grid-template-columns: repeat(auto-fit, minmax(7.75em, 1fr));
-  }
-}
-
-.review {
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  text-align: center;
-
-  > figure {
-    margin: 0.5rem auto;
   }
 
-  &__avatar {
-    display: flex;
-    align-items: center;
-    flex-flow: column nowrap;
-  }
-
-  &__name {
-    color: $color--brand-dark;
-    font-size: 1.25rem;
-    font-family: $font--headings;
-
-    @media screen and (min-width: $breakpoint--l) {
-      font-size: 1.375rem;
-    }
-
-    > h3 {
-      margin: 0.5rem auto;
-    }
-  }
-
-  &__rating {
-    margin-bottom: 0;
-  }
-
-  &__rating-stars {
-    color: $color--yellow;
-    font-size: 2rem;
-    transition: all 0.4s;
-  }
-
-  @media screen and (min-width: $breakpoint--m) {
-    &:hover &__rating-stars,
-    &:focus-within &__rating-stars {
-      color: $color--orange;
-      font-size: 2.25rem;
-    }
-  }
-
-  &__rating-caption {
-    font-style: italic;
-
-    > h5 {
-      margin-top: 0;
-    }
-  }
-
-  &__see-more-link {
-    color: $color--brand-original;
-    font-family: $font--headings;
+  &__text {
+    color: $color--black-lighter;
+    margin: 0;
+    font-size: 1rem;
     font-weight: 700;
-    font-style: italic;
-    margin-bottom: 1rem;
-    transition: $link-transition;
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    text-wrap: balance;
+    white-space: unset;
 
-    &:hover {
-      color: $color--brand-contrast;
+    @media screen and (max-width: 11.625em) {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
     }
 
-    &:active {
-      color: shade($color--brand-contrast, 20%);
+    @media screen and (max-width: $breakpoint--tiny) {
+      font-size: 0.875rem;
+      padding: 0.625rem 1.25rem;
     }
-  }
-}
 
-.location {
-  &__directions-link {
-    display: block;
-    font-weight: 700;
-    margin-top: 0.5rem;
-
-    > .icon--map-pin {
-      margin-left: 0;
-    }
-  }
-
-  &__map {
-    border: 1px solid $color--brand-dark;
-    height: 18.75rem;
-    height: min(max(9.5rem, calc(38vh - 5rem)), 28.125rem);
-    height: clamp(9.5rem, calc(38vh - 5rem), 28.125rem);
-    min-width: 18.75rem;
-    min-width: min(max(13.75rem, calc(75vw - 1rem)), 52rem);
-    min-width: clamp(13.75rem, calc(75vw - 1rem), 52rem);
-  }
-
-  &__map-caption {
-    margin-top: 1rem;
-    text-align: center;
-    font-style: italic;
-  }
-
-  > .card__text {
-    -webkit-user-select: text;
-    user-select: text;
-
-    > span:first-child {
-      font-style: italic;
-      display: block;
+    @media screen and (min-width: $breakpoint--widescreen) {
+      font-size: 1.25rem;
+      padding: 1rem 2rem;
     }
   }
 }
