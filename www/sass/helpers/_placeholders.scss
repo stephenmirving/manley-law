@@ -70,6 +70,36 @@
 //   }
 // }
 
+@mixin _contact-link-hover-focus-state() {
+  color: $color--brand;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+}
+
+
+%contact-links {
+  transition: $link-transition;
+
+  &,
+  &:link,
+  &:visited {
+    color: $color--brand-green;
+  }
+
+  &:-moz-focusring {
+    @include _contact-link-hover-focus-state();
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include _contact-link-hover-focus-state();
+  }
+
+  &:active {
+    color: $color--blue;
+  }
+}
+
 /// Default styles for the navbar links when not in mobile-view mode.
 %links-footer-base {
   transition: $link-transition;

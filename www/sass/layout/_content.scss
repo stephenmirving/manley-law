@@ -1,3 +1,9 @@
+@mixin _content-link-hover-focus-state() {
+  color: $color--blue;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+}
+
 .content {
   grid-area: content;
 
@@ -16,11 +22,13 @@
       color: $color--green-lime;
     }
 
+    &:-moz-focusring {
+      @include _content-link-hover-focus-state;
+    }
+
     &:hover,
-    &:focus {
-      color: $color--blue;
-      text-decoration: underline;
-      text-decoration-skip-ink: auto;
+    &:focus-visible {
+      @include _content-link-hover-focus-state;
     }
 
     &:active {
@@ -28,25 +36,7 @@
     }
 
     &--contact {
-      transition: $link-transition;
-
-      &,
-      &:link,
-      &:visited {
-        color: $color--brand-green;
-      }
-
-      &:hover,
-      &:focus {
-        color: $color--brand;
-        text-decoration: underline;
-        text-decoration-skip-ink: auto;
-      }
-
-      &:active {
-        color: $color--blue;
-      }
-
+      @extend %contact-links;
     }
   }
 
@@ -54,7 +44,6 @@
     position: relative;
     width: 100%;
     padding-top: 75%; /* Aspect ratio of iframe (height/width * 100%) */
-    // margin: auto;
   }
 
   &__map-frame {
