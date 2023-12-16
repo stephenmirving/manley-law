@@ -145,7 +145,7 @@
   &__burger-btn {
     $_patty-thickness: 0.25rem;
 
-    @include puff($timing: 0.5s, $timing-func: ease-in);
+    @include puff($timing: 0.5s, $timing-func: ease-in, $delay: 2.25s);
 
     background: transparent;
     border: 0;

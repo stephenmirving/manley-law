@@ -32,12 +32,14 @@
   }
 
   > .container {
+    @include zoom-in($timing: 3.5s);
+
     position: relative;
     height: 100%;
   }
 
   &__text-box {
-    @include fade($anim-num: 2);
+    @include fade($timing: 2s);
 
     min-width: min(17.5rem, 100%);
     max-width: 40%;
@@ -50,9 +52,9 @@
     transform: translate(-50%, -50%);
 
     @media screen and (min-width: $breakpoint--widescreen) {
-      left: 100%;
-      top: 15%;
-      transform: translateX(-100%);
+      left: 50%;
+      top: 22%;
+      transform: translateX(-50%);
     }
   }
 
