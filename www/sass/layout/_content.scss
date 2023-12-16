@@ -44,6 +44,11 @@
     position: relative;
     width: 100%;
     padding-top: 75%; /* Aspect ratio of iframe (height/width * 100%) */
+
+    @media screen and (max-width: $breakpoint--228) {
+      display: none;
+      visibility: hidden;
+    }
   }
 
   &__map-frame {
@@ -70,6 +75,7 @@
 
   &__office-title {
     font-size: 1.375rem;
+    margin-top: 0;
   }
 
   &__text {

@@ -70,6 +70,8 @@
   font-style: italic;
 }
 
+/// Utility to apply italics for a font when it is not semantically
+/// appropriate to use <strong> or <b>
 .bold {
   font-weight: 700;
 }

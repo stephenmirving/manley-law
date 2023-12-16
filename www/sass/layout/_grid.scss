@@ -35,4 +35,12 @@
   gap: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+
+  @media only screen and (max-width: $breakpoint--304) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  > * {
+    max-width: 100%;
+  }
 }
