@@ -1,3 +1,4 @@
+
 ((window) => {
   'use strict';
 
@@ -7,7 +8,6 @@
   const mobileMaxWidth = 878;
 
   function init() {
-    // DOM elements
     const navToggler = document.getElementById('nav-toggler');
     const burgerBtn = document.getElementById('nav-btn');
     const siteHeader = document.getElementById('site-head');
@@ -32,11 +32,7 @@
     }
 
     function setHeroSectionMinHeightStyle(navHeight) {
-      homepageHero.setAttribute(
-        'style',
-        `min-height:calc(100vh - ${navHeight}px);` +
-        `min-height:calc(100lvh - ${navHeight}px);`
-      );
+      homepageHero.style.minHeight = `calc(100vh - ${navHeight}px)`;
     }
 
     function toggleNavBurgerBtnDisplay(viewWidth) {
@@ -58,26 +54,12 @@
         burgerBtn.disabled = true;
         burgerBtn.hidden = true;
         burgerBtn.setAttribute('aria-hidden', 'true');
+
         navMenuWrapper.hidden = false;
         navMenu.hidden = false;
         navMenu.setAttribute('aria-expanded', 'true');
       }
     }
-
-    // function updateDomOpenDropdown() {
-      // navMenuWrapper.removeAttribute('hidden');
-      // navMenu.removeAttribute('hidden');
-      // pageHeader.setAttribute('hidden', '');
-      // burgerBtn.setAttribute('aria-expanded', 'true');
-      // navMenu.setAttribute('aria-expanded', 'false');
-    // }
-
-    // function updateDomCloseDropdown() {
-      // navMenuWrapper.setAttribute('hidden', '');
-      // navMenu.setAttribute('hidden', '');
-      // burgerBtn.setAttribute('aria-expanded', 'false');
-      // navMenu.setAttribute('aria-expanded', 'false');
-    // }
 
     function domSetup() {
       const vWidth = window.innerWidth;
@@ -88,7 +70,7 @@
         setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
       }
 
-      applyAnimationWhenInView(); // Check on initial load in case the element is already in view
+      applyAnimationWhenInView();
     }
 
     domSetup();
@@ -99,9 +81,7 @@
       const vWidth = window.innerWidth;
 
       if (vWidth > mobileMaxWidth) {
-        // Uncheck toggler
         navToggler.checked = false;
-        // Trigger change event for the toggler's listener
         navToggler.dispatchEvent(new Event('change'));
       }
 
@@ -112,22 +92,17 @@
       toggleNavBurgerBtnDisplay(vWidth);
     });
 
-    // Handle clicks
     document.body.addEventListener('click', (event) => {
-      // Check if nav hamburger button is clicked and simulate a click on
-      // the checkbox to toggle `checked` state
       if (event.target.matches('#nav-btn, #nav-btn-icon')) {
         navToggler.click();
       }
     });
 
-    // Listen for changes on the checkbox
     navToggler.addEventListener('change', () => {
-      // navToggler.checked ? updateDomOpenDropdown() : updateDomCloseDropdown();
+      // No-Op
     });
   }
 
-  // Ensure DOMContentLoaded did not fire before script runs
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

@@ -1,0 +1,39 @@
+@keyframes move-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+
+  80% {
+    transform: translateX(2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes move-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+
+  80% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.move-in-left {
+  animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-left;
+}
+
+.move-in-right {
+  animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-right;
+}

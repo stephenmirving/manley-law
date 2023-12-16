@@ -6,18 +6,14 @@
   }
 
   a,
-  button,
-  button > span,
-  .card,
-  .faq__question {
+  button {
     transition: none !important;
   }
 
-  .navbar__menu,
-  .pagehead__title,
-  .pagehead__subtitle,
-  .pagehead__h3,
-  .faq__tooltip[open] .faq__question ~ * {
+  .homepage .nav__menu,
+  .homepage .hero > .container,
+  .homepage .hero__text-box,
+  .nav__burger-btn {
     animation: none !important;
   }
 }

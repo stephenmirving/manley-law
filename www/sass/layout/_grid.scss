@@ -11,6 +11,14 @@
   min-height: 100vh;
   min-height: 100lvh;
   min-width: 9.25em;
+
+  &:not(.homepage) {
+    grid-template-areas:
+      'navigation'
+      'content'
+      'footer';
+    grid-template-rows: repeat(3, auto);
+  }
 }
 
 .container {
