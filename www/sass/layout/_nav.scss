@@ -20,12 +20,16 @@
       screen and (min-width: 14.6875em)
       and (max-width: $breakpoint--max-phone-width)
       and (-webkit-min-device-pixel-ratio: 2),
+
       screen and (min-width: 14.6875em)
       and (max-width: $breakpoint--max-phone-width)
       and (min-resolution: 192dpi),
+
       screen and (min-width: 14.6875em)
       and (max-width: $breakpoint--max-phone-width)
-      and (min-resolution: 2dppx)
+      and (min-resolution: 2dppx),
+
+      screen and (max-height: $breakpoint--height)
   {
     min-height: 0;
   }
@@ -65,16 +69,17 @@
     margin: 0 auto;
 
     @media
-        screen and (max-width: $breakpoint--304),
+        screen and (max-width: $breakpoint--308),
         screen and (max-width: $breakpoint--max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
         screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 192dpi),
-        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx)
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx),
+        screen and (max-height: $breakpoint--height)
     {
       height: 6.375rem;
       width: 9.6875rem;
     }
 
-    @media screen and (min-width: $breakpoint--1080) {
+    @media screen and (min-width: $breakpoint--1080) and (min-height: $breakpoint--heightplusone) {
       height: 12.75rem;
       width: 19.375rem;
     }
@@ -89,15 +94,20 @@
     text-align: center;
 
     @media
-        screen and (max-width: $breakpoint--304),
+        screen and (max-width: $breakpoint--308),
         screen and (max-width: $breakpoint--max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
         screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 192dpi),
-        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx)
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx),
+        screen and (max-height: $breakpoint--height)
     {
       font-size: 0.675rem;
     }
 
-    @media screen and (min-width: $breakpoint--1080) {
+    @media
+      screen
+      and (min-width: $breakpoint--1080)
+      and (min-height: $breakpoint--heightplusone)
+    {
       font-size: 1.25rem;
     }
   }

@@ -185,7 +185,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #F3FAFF;
   overflow-x: clip;
-  font-family: "Roboto", "Verdana", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -630,7 +630,7 @@ svg:not([fill]) {
   margin-bottom: 2rem;
   text-align: center;
 }
-@media only screen and (max-width: 19em) {
+@media only screen and (max-width: 19.25em) {
   .grid-locations {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
@@ -657,7 +657,7 @@ svg:not([fill]) {
   left: 0;
   z-index: 999;
 }
-@media screen and (min-width: 14.6875em) and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 2dppx) {
+@media screen and (min-width: 14.6875em) and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5rem) {
   .sitehead {
     min-height: 0;
   }
@@ -676,7 +676,7 @@ svg:not([fill]) {
   -webkit-user-select: none;
   user-select: none;
 }
-@media screen and (max-width: 15.75em) {
+@media screen and (max-width: 16em) {
   .sitehead > .container {
     justify-content: center;
   }
@@ -690,32 +690,32 @@ svg:not([fill]) {
   width: 12.91666667rem;
   margin: 0 auto;
 }
-@media screen and (max-width: 19em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
+@media screen and (max-width: 19.25em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5rem) {
   .sitehead__logo {
     height: 6.375rem;
     width: 9.6875rem;
   }
 }
-@media screen and (min-width: 67.5em) {
+@media screen and (min-width: 67.5em) and (min-height: 37.5625rem) {
   .sitehead__logo {
     height: 12.75rem;
     width: 19.375rem;
   }
 }
 .sitehead__branding-subhead {
-  font-family: "Georgia", serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+  font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
   color: #333445;
   font-size: 1rem;
   text-align: center;
 }
-@media screen and (max-width: 19em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
+@media screen and (max-width: 19.25em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5rem) {
   .sitehead__branding-subhead {
     font-size: 0.675rem;
   }
 }
-@media screen and (min-width: 67.5em) {
+@media screen and (min-width: 67.5em) and (min-height: 37.5625rem) {
   .sitehead__branding-subhead {
     font-size: 1.25rem;
   }
@@ -1290,7 +1290,7 @@ svg:not([fill]) {
   animation: fade 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   min-width: min(17.5rem, 100%);
   max-width: 40%;
-  background: rgba(197, 197, 187, 0.65);
+  background: rgba(197, 197, 187, 0.7);
   background-attachment: scroll;
   border-radius: 16px;
   position: relative;
@@ -1306,6 +1306,12 @@ svg:not([fill]) {
     opacity: 1;
   }
 }
+@media screen and (max-width: 10.375em) {
+  .hero__text-box {
+    top: 57.5%;
+    background: rgba(197, 197, 187, 0.8);
+  }
+}
 @media screen and (min-width: 54.875rem) {
   .hero__text-box {
     left: 50%;
@@ -1317,25 +1323,32 @@ svg:not([fill]) {
   color: #323232;
   margin: 0;
   font-size: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
   text-align: left;
   text-wrap: balance;
   white-space: unset;
 }
-@media screen and (max-width: 11.625em) {
-  .hero__text {
-    font-size: 0.75rem;
-    padding: 0.5rem 1rem;
-  }
-}
-@media screen and (max-width: 15.75em) {
+@media screen and (max-width: 16em) and (min-height: 37.5625rem) {
   .hero__text {
     font-size: 0.875rem;
     padding: 0.625rem 1.25rem;
   }
 }
-@media screen and (min-width: 54.875rem) {
+@media screen and (max-width: 11.625em), screen and (max-height: 37.5rem) {
+  .hero__text {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (max-width: 10.375em) and (min-height: 37.5625rem) {
+  .hero__text {
+    font-size: 0.6875rem;
+    padding: 0.5rem 0.625rem;
+  }
+}
+@media screen and (min-width: 54.875rem) and (min-height: 37.5625rem) {
   .hero__text {
     font-size: 1.25rem;
     padding: 1rem 2rem;

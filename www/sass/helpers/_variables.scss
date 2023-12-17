@@ -1,7 +1,8 @@
 // Layout viewport width breakpoint sizes
 // Breakpoints based on specific breakpoints in the layout
+$breakpoint--166: 10.375em;
 $breakpoint--228: 14.25em;
-$breakpoint--304: 19em;
+$breakpoint--308: 19.25em;
 $breakpoint--336: 21em;
 $breakpoint--390: 24.375em;
 $breakpoint--430: 26.875em;
@@ -14,8 +15,11 @@ $breakpoint--1080: 67.5em;
 $breakpoint--1280: 80em;
 $breakpoint--1440: 90em;
 
+$breakpoint--height: 37.5rem;
+$breakpoint--heightplusone: 37.5625rem;
+
 // Breakpoints based on general device sizes
-$breakpoint--tiny: 15.75em; // 252px
+$breakpoint--tiny: 16em;
 $breakpoint--xxxs: 17.5em;// 280px
 $breakpoint--xxs: 23.5em; // 376px
 $breakpoint--xs: 35em;    // 560px
@@ -81,12 +85,13 @@ $color--btn-border: $color--faint-blue;
 $color--btn-border--hover: $color--brand;
 
 $font--main-stack:
-  'Roboto', 'Verdana', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
   sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $font--headings:
   'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$font--serif:
-  'Georgia', serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+$font--fast-load:
+  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font--serif: 'Georgia', serif;
 
 
 $link-transition-time: 0.4s;

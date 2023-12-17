@@ -44,7 +44,7 @@
   margin-bottom: 2rem;
   text-align: center;
 
-  @media only screen and (max-width: $breakpoint--304) {
+  @media only screen and (max-width: $breakpoint--308) {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
 

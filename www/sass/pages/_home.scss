@@ -36,7 +36,7 @@
 
     min-width: min(17.5rem, 100%);
     max-width: 40%;
-    background: rgba($color--tan, 0.65);
+    background: rgba($color--tan, 0.7);
     background-attachment: scroll;
     border-radius: 16px;
     position: relative;
@@ -44,34 +44,48 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+    @media screen and (max-width: $breakpoint--166) {
+      top: 57.5%;
+      background: rgba($color--tan, 0.8);
+    }
+
     @media screen and (min-width: $breakpoint--widescreen) {
       left: 50%;
       top: 22%;
       transform: translateX(-50%);
     }
+
   }
 
   &__text {
     color: $color--black-lighter;
     margin: 0;
     font-size: 1rem;
+    font-family: $font--fast-load;
     font-weight: 700;
     padding: 0.75rem 1.5rem;
     text-align: left;
     text-wrap: balance;
     white-space: unset;
 
-    @media screen and (max-width: 11.625em) {
-      font-size: 0.75rem;
-      padding: 0.5rem 1rem;
-    }
 
-    @media screen and (max-width: $breakpoint--tiny) {
+    @media screen and (max-width: $breakpoint--tiny) and (min-height: $breakpoint--heightplusone) {
       font-size: 0.875rem;
       padding: 0.625rem 1.25rem;
     }
 
-    @media screen and (min-width: $breakpoint--widescreen) {
+    @media screen and (max-width: 11.625em),
+      screen and (max-height: $breakpoint--height) {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+
+    @media screen and (max-width: $breakpoint--166) and (min-height: $breakpoint--heightplusone) {
+      font-size: 0.6875rem;
+      padding: 0.5rem 0.625rem;
+    }
+
+    @media screen and (min-width: $breakpoint--widescreen) and (min-height: $breakpoint--heightplusone) {
       font-size: 1.25rem;
       padding: 1rem 2rem;
     }
