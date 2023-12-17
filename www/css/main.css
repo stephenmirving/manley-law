@@ -946,6 +946,20 @@ svg:not([fill]) {
   scroll-margin-top: 15.5rem;
   text-align: center;
   font-size: 2rem;
+  font-size: min(max(1.875rem, 0.5rem + 1.625vw), 2.625rem);
+  font-size: clamp(1.875rem, 0.5rem + 1.625vw, 2.625rem);
+  text-transform: uppercase;
+}
+.content__section-title {
+  font-size: 1.375rem;
+  font-size: min(max(1.3125rem, 0.5rem + 0.675vw), 1.8125rem);
+  font-size: clamp(1.3125rem, 0.5rem + 0.675vw, 1.8125rem);
+  margin-top: 0;
+}
+.content__text {
+  font-size: 1em;
+  font-size: min(max(1em, 0.5rem + 0.5vw), 1.375rem);
+  font-size: clamp(1em, 0.5rem + 0.5vw, 1.375rem);
 }
 .content__link {
   transition: all 0.4s ease-in-out;
@@ -996,20 +1010,16 @@ svg:not([fill]) {
   flex-direction: column;
   justify-content: space-between;
 }
-.contact__office-title {
-  font-size: 1.375rem;
-  margin-top: 0;
-}
-.contact__text .tel {
+.contact .tel {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto 0.125rem;
 }
-.contact__text .tel:before {
+.contact .tel:before {
   font-weight: 700;
 }
-.contact__address > .contact__text:first-child {
+.contact__address > .content__text:first-child {
   margin-top: 0;
 }
 

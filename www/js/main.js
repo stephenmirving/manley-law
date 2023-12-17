@@ -7,9 +7,9 @@
   const mobileMaxWidth = 878;
 
   // DOM elements
+  const siteHeader = document.getElementById('site-head');
   const navToggler = document.getElementById('nav-toggler');
   const burgerBtn = document.getElementById('nav-btn');
-  const siteHeader = document.getElementById('site-head');
   const navMenuWrapper = document.getElementById('nav-menu-wrapper');
   const navMenu = document.getElementById('nav-menu');
   const homepageHero = document.querySelector('.homepage > .hero');
