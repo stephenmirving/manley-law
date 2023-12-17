@@ -107,6 +107,8 @@
     window.addEventListener('resize', () => {
       const vWidth = window.innerWidth;
 
+      navMenu.classList.add('anim-off');
+
       if (vWidth > mobileMaxWidth) {
         // Uncheck toggler
         navToggler.checked = false;
@@ -126,6 +128,7 @@
       // Check if nav hamburger button is clicked and simulate a click on
       // the checkbox to toggle `checked` state
       if (event.target.id === 'nav-btn') {
+        navMenu.classList.remove('anim-off');
         navToggler.click();
       } else if (navToggler.checked) {
         // Hide toggler menu if user clicks outside of it

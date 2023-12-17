@@ -273,7 +273,7 @@
 
       ~ .nav__menu-wrapper {
         // Menu wrapper styles when burger btn clicked
-        animation: $nav-dropdown-animation-time cubic-bezier(0.55, 0.085, 0.68, 0.53) slide-down;
+        animation: $nav-dropdown-animation-time $nav-dropdown-animation-func slide-down;
         position: absolute;
         top: 100%;
         left: 100%;
@@ -291,7 +291,7 @@
         z-index: 99;
 
         > .nav__menu {
-          animation-delay: $nav-dropdown-animation-time;
+          animation-delay: $nav-dropdown-animation-2-delay;
           position: relative;
           flex-direction: column;
           padding: 0 1rem 0.75rem;
@@ -378,7 +378,7 @@
 }
 
 .nav-dropdown-open {
-  animation: $nav-dropdown-animation-time ease apply-border-color;
+  animation: $nav-dropdown-animation-time $nav-dropdown-animation-func apply-border-color;
   border-bottom-color: $color--brand;
   background-image: none;
 }

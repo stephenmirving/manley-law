@@ -99,7 +99,10 @@ $icon-transition: all $icon-transition-time ease-out;
 $btn-transition-time: 333ms;
 $btn-transition: all $btn-transition-time ease;
 
-$nav-dropdown-animation-time: 0.25s;
+$nav-dropdown-animation-time: 0.3s;
+$nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.1s;
+
 
 // Old vars TODO: Remove unused
 

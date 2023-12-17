@@ -39,6 +39,10 @@
     border-color: transparent;
   }
 
+  20% {
+    opacity: 0;
+  }
+
   100% {
     opacity: 1;
     top: 100%;
@@ -51,7 +55,7 @@
     border-bottom-color: transparent;
   }
 
-  90% {
+  99% {
     border-bottom-color: transparent;
   }
 
