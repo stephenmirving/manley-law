@@ -3,7 +3,7 @@
   align-self: start;
   align-items: center;
   background: $color--nav-bg-gradient $color--nav-bg;
-  border: 0;
+  border: 2px solid transparent;
   display: flex;
   flex-wrap: wrap;
   font-family: $font--headings;
@@ -28,6 +28,14 @@
       and (min-resolution: 2dppx)
   {
     min-height: 0;
+  }
+
+  // For the slidedown menu
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
   }
 
 
@@ -265,15 +273,15 @@
 
       ~ .nav__menu-wrapper {
         // Menu wrapper styles when burger btn clicked
-        // animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) slide-down;
+        animation: $nav-dropdown-animation-time cubic-bezier(0.55, 0.085, 0.68, 0.53) slide-down;
         position: absolute;
         top: 100%;
         left: 100%;
         transform: translateX(-100%);
         transition: none;
-        border: 2px solid $color--brand;
-        border-top: 0;
-        border-right: 0;
+        // border: 2px solid $color--brand;
+        // border-top: 0;
+        // border-right: 0;
         background-image:
           linear-gradient(
             -180deg,
@@ -283,7 +291,7 @@
         z-index: 99;
 
         > .nav__menu {
-          animation-delay: 0.5s;
+          animation-delay: $nav-dropdown-animation-time;
           position: relative;
           flex-direction: column;
           padding: 0 1rem 0.75rem;
@@ -370,6 +378,7 @@
 }
 
 .nav-dropdown-open {
+  animation: $nav-dropdown-animation-time ease apply-border-color;
+  border-bottom-color: $color--brand;
   background-image: none;
-  border-bottom: 2px solid $color--brand;
 }
