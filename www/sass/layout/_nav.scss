@@ -52,10 +52,6 @@
     }
   }
 
-  &__branding-wrapper {
-    // Nothing needed here yet
-  }
-
   &__branding-link {
     &:focus-visible {
       outline: $color--brand auto 1px;
@@ -284,9 +280,9 @@
         border-right: 0;
         background-image:
           linear-gradient(
-            -180deg,
+            180deg,
             $color--nav-bg,
-            shade($color--nav-bg, 10%)
+            shade($color--nav-bg, 15%)
           );
         z-index: 99;
 

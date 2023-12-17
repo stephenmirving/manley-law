@@ -3,4 +3,14 @@ TODO:
   ✔ Make favicons and other icons, dark and light versions @done(23-12-16 18:30)
   ☐ Fill out more areas with schema https://schema.org/LegalService
   ✔ Tidy up JS animation so that the second office location animates in when it is visible not when the section heading is visible @done(23-12-16 18:30)
-  ☐ Ensure the @media queries in accessibility.scss are working properly
+  ✔ Ensure the @media queries in accessibility.scss are working properly @done(23-12-16 22:49)
+  ☐ Do Calendar page
+    ☐ Do layout
+    ☐ figure out a new calendar widget (Google Calendar?)
+  ☐ Do Firm page
+    ☐ Do layout
+    ☐ Get text from existing website inserted
+    ☐ Add pictures of the attorneys? Check LinkedIn?
+  ☐ QDRO page
+    ☐ Do layout
+    ☐ Do Button with link
