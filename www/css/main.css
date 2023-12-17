@@ -107,6 +107,16 @@
     transform: translate(0);
   }
 }
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .move-in-left {
   animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-left;
 }
@@ -614,6 +624,7 @@ svg:not([fill]) {
   max-width: 100%;
 }
 
+/* stylelint-disable selector-max-specificity */
 .sitehead {
   align-self: start;
   align-items: center;
@@ -630,6 +641,11 @@ svg:not([fill]) {
   top: 0;
   left: 0;
   z-index: 999;
+}
+@media screen and (min-width: 14.6875em) and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (min-width: 14.6875em) and (max-width: 27.25em) and (min-resolution: 2dppx) {
+  .sitehead {
+    min-height: 0;
+  }
 }
 .sitehead > .container {
   display: flex;
@@ -653,7 +669,7 @@ svg:not([fill]) {
   width: 12.91666667rem;
   margin: 0 auto;
 }
-@media screen and (max-width: 19em) {
+@media screen and (max-width: 19em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
   .sitehead__logo {
     height: 6.375rem;
     width: 9.6875rem;
@@ -673,7 +689,7 @@ svg:not([fill]) {
   font-size: 1rem;
   text-align: center;
 }
-@media screen and (max-width: 19em) {
+@media screen and (max-width: 19em), screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
   .sitehead__branding-subhead {
     font-size: 0.675rem;
   }
@@ -820,11 +836,84 @@ svg:not([fill]) {
 .nav__checkbox:checked + .nav__burger-btn:hover:before, .nav__checkbox:checked + .nav__burger-btn:hover:after, .nav__checkbox:checked + .nav__burger-btn:focus-visible:before, .nav__checkbox:checked + .nav__burger-btn:focus-visible:after {
   background: rgba(11, 47, 91, 0.76);
 }
+.nav__checkbox:checked ~ .nav__menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translateX(-100%);
+  transition: none;
+  border: 2px solid #223752;
+  border-top: 0;
+  border-right: 0;
+  background-image: linear-gradient(-180deg, #C5C5BB, #b1b1a8);
+  z-index: 99;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu {
+  animation-delay: 0.5s;
+  position: relative;
+  flex-direction: column;
+  padding: 0 1rem 0.75rem;
+  min-width: 15.625rem;
+  width: 100%;
+  /* stylelint-disable-next-line no-descending-specificity */
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu li {
+  border-top: 2px solid #223752;
+  width: 100%;
+  text-align: center;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:-moz-focusring,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:-moz-focusring {
+  border: 0;
+  font-size: 1.375rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:hover,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:focus-visible,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:hover,
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:focus-visible {
+  border: 0;
+  font-size: 1.375rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link {
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:-moz-focusring {
+  background: #223752;
+  color: #f0fafa;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:hover, .nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link:focus-visible {
+  background: #223752;
+  color: #f0fafa;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active {
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+  background: #4e5f75;
+  color: #f0fafa;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:-moz-focusring {
+  background: #647386;
+}
+.nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:hover, .nav__checkbox:checked ~ .nav__menu-wrapper > .nav__menu .nav__link--active:focus-visible {
+  background: #647386;
+}
 .nav .btn {
   padding: 0.75rem 1rem;
   padding: min(max(0.625rem, 0.125rem + 0.9vw), 0.875rem) min(max(0.75rem, 0.125rem + 1.25vw), 1.125rem);
   padding: clamp(0.625rem, 0.125rem + 0.9vw, 0.875rem) clamp(0.75rem, 0.125rem + 1.25vw, 1.125rem);
   margin-right: 0;
+}
+
+.nav-dropdown-open {
+  background-image: none;
+  border-bottom: 2px solid #223752;
 }
 
 .content {
@@ -1149,11 +1238,6 @@ svg:not([fill]) {
   min-height: 100vh;
   width: 100%;
 }
-@media screen and (max-width: 48em) and (min-resolution: 2dppx) {
-  .hero {
-    background-attachment: scroll;
-  }
-}
 @media screen and (min-width: 54.875rem) {
   .hero {
     background-image: url("../img/bridge-sunset-bg-980x1040.webp");
@@ -1179,11 +1263,6 @@ svg:not([fill]) {
     transform-origin: bottom;
   }
 }
-@media screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
-  .hero > .container {
-    animation: none;
-  }
-}
 .hero__text-box {
   animation: fade 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   min-width: min(17.5rem, 100%);
@@ -1202,11 +1281,6 @@ svg:not([fill]) {
   }
   100% {
     opacity: 1;
-  }
-}
-@media screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
-  .hero__text-box {
-    animation: none;
   }
 }
 @media screen and (min-width: 54.875rem) {
@@ -1328,7 +1402,7 @@ svg:not([fill]) {
   text-align: justify;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media print, (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -1341,6 +1415,15 @@ svg:not([fill]) {
   .homepage .hero__text-box,
   .nav__burger-btn {
     animation: none !important;
+  }
+}
+@media print, screen and (max-width: 27.25em) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx) {
+  .hero {
+    background-attachment: scroll !important;
+  }
+  .homepage .hero > .container,
+  .homepage .hero__text-box {
+    animation: none;
   }
 }
 

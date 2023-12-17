@@ -1,3 +1,4 @@
+/* stylelint-disable selector-max-specificity */
 .sitehead {
   align-self: start;
   align-items: center;
@@ -14,6 +15,21 @@
   top: 0;
   left: 0;
   z-index: 999;
+
+  @media
+      screen and (min-width: 14.6875em)
+      and (max-width: $breakpoint--max-phone-width)
+      and (-webkit-min-device-pixel-ratio: 2),
+      screen and (min-width: 14.6875em)
+      and (max-width: $breakpoint--max-phone-width)
+      and (min-resolution: 192dpi),
+      screen and (min-width: 14.6875em)
+      and (max-width: $breakpoint--max-phone-width)
+      and (min-resolution: 2dppx)
+  {
+    min-height: 0;
+  }
+
 
   > .container {
     display: flex;
@@ -44,7 +60,12 @@
     width: 12.91666667rem;
     margin: 0 auto;
 
-    @media screen and (max-width: $breakpoint--304) {
+    @media
+        screen and (max-width: $breakpoint--304),
+        screen and (max-width: $breakpoint--max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 192dpi),
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx)
+    {
       height: 6.375rem;
       width: 9.6875rem;
     }
@@ -63,7 +84,12 @@
     font-size: 1rem;
     text-align: center;
 
-    @media screen and (max-width: $breakpoint--304) {
+    @media
+        screen and (max-width: $breakpoint--304),
+        screen and (max-width: $breakpoint--max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 192dpi),
+        screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx)
+    {
       font-size: 0.675rem;
     }
 
@@ -236,6 +262,96 @@
           }
         }
       }
+
+      ~ .nav__menu-wrapper {
+        // Menu wrapper styles when burger btn clicked
+        // animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) slide-down;
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        transform: translateX(-100%);
+        transition: none;
+        border: 2px solid $color--brand;
+        border-top: 0;
+        border-right: 0;
+        background-image:
+          linear-gradient(
+            -180deg,
+            $color--nav-bg,
+            shade($color--nav-bg, 10%)
+          );
+        z-index: 99;
+
+        > .nav__menu {
+          animation-delay: 0.5s;
+          position: relative;
+          flex-direction: column;
+          padding: 0 1rem 0.75rem;
+          min-width: 15.625rem;
+          width:100%;
+
+          li {
+            border-top: 2px solid $color--brand;
+            width: 100%;
+            text-align: center;
+          }
+
+          .nav__link:-moz-focusring,
+          .nav__link--active:-moz-focusring {
+            border: 0;
+            font-size: 1.375rem;
+            padding: 0.5rem 1rem;
+            margin: 0;
+          }
+
+          /* stylelint-disable-next-line no-descending-specificity */
+          .nav__link,
+          .nav__link:hover,
+          .nav__link:focus-visible,
+          .nav__link--active,
+          .nav__link--active:hover,
+          .nav__link--active:focus-visible {
+            border: 0;
+            font-size: 1.375rem;
+            padding: 0.5rem 1rem;
+            margin: 0;
+          }
+
+          // stylelint-disable-next-line no-descending-specificity
+          .nav__link {
+            transition-timing-function: ease;
+            transition-duration: 0.4s;
+
+            &:-moz-focusring {
+              background: $color--brand;
+              color: $color--white;
+            }
+
+            &:hover,
+            &:focus-visible {
+              background: $color--brand;
+              color: $color--white;
+            }
+          }
+
+          // stylelint-disable-next-line no-descending-specificity
+          .nav__link--active {
+            transition-timing-function: ease;
+            transition-duration: 0.4s;
+            background: tint($color--brand, 20%);
+            color: $color--white;
+
+            &:-moz-focusring {
+              background: tint($color--brand, 30%);
+            }
+
+            &:hover,
+            &:focus-visible {
+              background: tint($color--brand, 30%);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -251,4 +367,9 @@
     padding: $_btn-padding-y $_btn-padding-x;
     margin-right: 0;
   }
+}
+
+.nav-dropdown-open {
+  background-image: none;
+  border-bottom: 2px solid $color--brand;
 }

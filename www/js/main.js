@@ -6,94 +6,103 @@
   // Constants
   const mobileMaxWidth = 878;
 
-  function init() {
-    // DOM elements
-    const navToggler = document.getElementById('nav-toggler');
-    const burgerBtn = document.getElementById('nav-btn');
-    const siteHeader = document.getElementById('site-head');
-    const navMenuWrapper = document.getElementById('nav-menu-wrapper');
-    const navMenu = document.getElementById('nav-menu');
-    const homepageHero = document.querySelector('body.homepage > .hero');
-    const officeTitles = document.querySelectorAll('.contact__office-title');
-    const officeWrappers = document.querySelectorAll('body.homepage .js-office-wrapper');
+  // DOM elements
+  const navToggler = document.getElementById('nav-toggler');
+  const burgerBtn = document.getElementById('nav-btn');
+  const siteHeader = document.getElementById('site-head');
+  const navMenuWrapper = document.getElementById('nav-menu-wrapper');
+  const navMenu = document.getElementById('nav-menu');
+  const homepageHero = document.querySelector('.homepage > .hero');
+  const officeWrappers = document.querySelectorAll('body.homepage .js-office-wrapper');
 
-    let hasClassBeenAdded = false;
+  const isHomepage = !!homepageHero;
 
-    function applyAnimationWhenInView() {
-      const firstTitleRect = officeTitles[0].getBoundingClientRect();
-      const isInView =
-        firstTitleRect.top <= window.innerHeight && firstTitleRect.bottom >= 0;
+  let hasFirstAnimClassBeenAdded = false;
+  let hasSecondAnimClassBeenAdded = false;
 
-      if (isInView && !hasClassBeenAdded) {
-        officeWrappers[0]?.classList.add('move-in-left');
-        officeWrappers[1]?.classList.add('move-in-right');
-        hasClassBeenAdded = true;
-      }
+  function applyAnimationWhenInView() {
+    const firstElemRect = officeWrappers[0].getBoundingClientRect();
+    const secondElemRect = officeWrappers[1].getBoundingClientRect();
+
+    const isFirstInView =
+      firstElemRect.top <= window.innerHeight && firstElemRect.bottom >= 0;
+
+    const isSecondInView =
+      secondElemRect.top <= window.innerHeight && secondElemRect.bottom >= 0;
+
+    if (isFirstInView && !hasFirstAnimClassBeenAdded) {
+      officeWrappers[0]?.classList.add('move-in-left');
+      hasFirstAnimClassBeenAdded = true;
     }
 
-    function setHeroSectionMinHeightStyle(navHeight) {
-      homepageHero.setAttribute(
-        'style',
-        `min-height:calc(100vh - ${navHeight}px);` +
-        `min-height:calc(100lvh - ${navHeight}px);`
-      );
+    if (isSecondInView && !hasSecondAnimClassBeenAdded) {
+      officeWrappers[1]?.classList.add('move-in-right');
+      hasSecondAnimClassBeenAdded = true;
     }
+  }
 
-    function toggleNavBurgerBtnDisplay(viewWidth) {
-      const isNavTogglerChecked = navToggler.checked;
+  function setHeroSectionMinHeightStyle(navHeight) {
+    homepageHero.setAttribute(
+      'style',
+      `min-height:calc(100vh - ${navHeight}px);` +
+      `min-height:calc(100lvh - ${navHeight}px);`
+    );
+  }
 
-      if (viewWidth < mobileMaxWidth) {
-        navToggler.disabled = false;
-        burgerBtn.disabled = false;
-        burgerBtn.hidden = false;
-        burgerBtn.setAttribute('aria-hidden', 'false');
+  function toggleNavBurgerBtnDisplay(viewWidth) {
+    const isNavTogglerChecked = navToggler.checked;
 
-        if (!isNavTogglerChecked) {
-          navMenuWrapper.hidden = true;
-          navMenu.hidden = true;
-          navMenu.setAttribute('aria-expanded', 'false');
-        }
-      } else {
-        navToggler.disabled = true;
-        burgerBtn.disabled = true;
-        burgerBtn.hidden = true;
-        burgerBtn.setAttribute('aria-hidden', 'true');
-        navMenuWrapper.hidden = false;
-        navMenu.hidden = false;
-        navMenu.setAttribute('aria-expanded', 'true');
+    if (viewWidth < mobileMaxWidth) {
+      navToggler.removeAttribute('disabled');
+      burgerBtn.removeAttribute('disabled');
+      burgerBtn.removeAttribute('hidden');
+      burgerBtn.setAttribute('aria-hidden', 'false');
+
+      if (!isNavTogglerChecked) {
+        navMenuWrapper.setAttribute('hidden', '');
+        navMenu.setAttribute('hidden', '');
+        navMenu.setAttribute('aria-expanded', 'false');
       }
+    } else {
+      navToggler.setAttribute('disabled', '');
+
+      burgerBtn.setAttribute('disabled', '');
+      burgerBtn.setAttribute('hidden', '');
+      burgerBtn.setAttribute('aria-hidden', 'true');
+
+      navMenuWrapper.removeAttribute('hidden', '');
+
+      navMenu.removeAttribute('hidden');
+      navMenu.setAttribute('aria-expanded', 'true');
     }
+  }
 
-    // function updateDomOpenDropdown() {
-      // navMenuWrapper.removeAttribute('hidden');
-      // navMenu.removeAttribute('hidden');
-      // pageHeader.setAttribute('hidden', '');
-      // burgerBtn.setAttribute('aria-expanded', 'true');
-      // navMenu.setAttribute('aria-expanded', 'false');
-    // }
+  function updateDomToggleDropdown(isTogglerChecked) {
+    navMenuWrapper.hidden = !isTogglerChecked;
+    navMenu.hidden = !isTogglerChecked;
+    burgerBtn.setAttribute('aria-expanded', `${isTogglerChecked}`);
+    navMenu.setAttribute('aria-expanded', `${isTogglerChecked}`);
+    siteHeader.classList[isTogglerChecked ? 'add' : 'remove']('nav-dropdown-open');
+  }
 
-    // function updateDomCloseDropdown() {
-      // navMenuWrapper.setAttribute('hidden', '');
-      // navMenu.setAttribute('hidden', '');
-      // burgerBtn.setAttribute('aria-expanded', 'false');
-      // navMenu.setAttribute('aria-expanded', 'false');
-    // }
+  function initialize() {
+    const vWidth = window.innerWidth;
 
-    function domSetup() {
-      const vWidth = window.innerWidth;
+    toggleNavBurgerBtnDisplay(vWidth);
 
-      toggleNavBurgerBtnDisplay(vWidth);
-
-      if (homepageHero) {
-        setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
-      }
+    if (isHomepage) {
+      setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
 
       applyAnimationWhenInView(); // Check on initial load in case the element is already in view
     }
+  }
 
-    domSetup();
+  function pageSetup() {
+    initialize();
 
-    window.addEventListener('scroll', applyAnimationWhenInView);
+    if (isHomepage) {
+      window.addEventListener('scroll', applyAnimationWhenInView, {passive: true});
+    }
 
     window.addEventListener('resize', () => {
       const vWidth = window.innerWidth;
@@ -105,32 +114,36 @@
         navToggler.dispatchEvent(new Event('change'));
       }
 
-      if (homepageHero) {
+      if (isHomepage) {
         setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
       }
 
       toggleNavBurgerBtnDisplay(vWidth);
-    });
+    }, {passive: true});
 
-    // Handle clicks
+    // Handle all pager click events
     document.body.addEventListener('click', (event) => {
       // Check if nav hamburger button is clicked and simulate a click on
       // the checkbox to toggle `checked` state
-      if (event.target.matches('#nav-btn, #nav-btn-icon')) {
+      if (event.target.id === 'nav-btn') {
+        navToggler.click();
+      } else if (navToggler.checked) {
+        // Hide toggler menu if user clicks outside of it
         navToggler.click();
       }
     });
 
     // Listen for changes on the checkbox
     navToggler.addEventListener('change', () => {
-      // navToggler.checked ? updateDomOpenDropdown() : updateDomCloseDropdown();
-    });
+      updateDomToggleDropdown(navToggler.checked);
+    }, {passive: true});
   }
 
-  // Ensure DOMContentLoaded did not fire before script runs
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    // Loading hasn't finished yet
+    document.addEventListener('DOMContentLoaded', pageSetup, {passive: true});
   } else {
-    init();
+    // DOMContentLoaded has already fired
+    pageSetup();
   }
 })(window);
