@@ -128,11 +128,8 @@
   0% {
     border-bottom-color: transparent;
   }
-  99% {
+  95% {
     border-bottom-color: transparent;
-  }
-  100% {
-    border-bottom-color: #223752;
   }
 }
 .move-in-left {
@@ -865,8 +862,11 @@ svg:not([fill]) {
   position: absolute;
   top: 100%;
   left: 100%;
-  transform: translateX(-100%);
+  transform: translateX(calc(2px - 100%));
   transition: none;
+  border: 2px solid #223752;
+  border-top: 0;
+  border-right: 0;
   background-image: linear-gradient(-180deg, #C5C5BB, #b1b1a8);
   z-index: 99;
 }
