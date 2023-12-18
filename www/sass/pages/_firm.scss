@@ -43,7 +43,8 @@
 }
 
 .firm,
-.attorneys {
+.attorneys,
+.qdro {
   .content__section-title {
     text-align: center;
     background-color: $color--brand;
@@ -54,7 +55,8 @@
   }
 }
 
-.attorneys {
+.attorneys,
+.qdro {
   &__bio {
     background-color: $color--card-bg;
     background-image: $color--card-bg-gradient;
@@ -64,5 +66,9 @@
 
   .content__text {
     padding: 0 1rem;
+
+    &:first-child {
+      margin-top: 1.5em;
+    }
   }
 }
