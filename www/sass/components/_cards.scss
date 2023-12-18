@@ -1,20 +1,19 @@
 %card {
-  $_color--card-shadow: $color--brand-contrast;
+  $_color--card-shadow: $color--brand;
 
   @include card-depth(2, $_color--card-shadow);
 
   align-items: center;
   background-color: $color--card-bg;
   background-image: $color--card-bg-gradient;
-  border-radius: 40px;
-  border: 0.1875rem solid $color--brand-dark;
+  border-radius: 16px;
+  border: 0.1875rem solid tint($color--brand, 10%);
   color: $color--black-lightest;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: $card-padding;
-  min-height: 15rem;
+  padding: 0;
   transition: all 0.4s;
   margin: 0 0 $grid-gap-size;
   width: 100%;
@@ -30,54 +29,25 @@
     &:focus-within {
       @include card-depth(4, $_color--card-shadow);
 
-      border-color: $color--brand-contrast;
-      transform: translateY(-2px) scale(1.0125);
+      border-color: $color--brand;
+      transform: translateY(-0.125rem) scale(1.0125);
     }
   }
 }
 
-// .card {
-//   @extend %card;
+.card {
+  @extend %card;
 
-//   a:not([class^='btn']) {
-//     @extend %content-links;
-//   }
+  .content__section-title,
+  .content__text {
+    padding: 0 $card-padding;
+  }
 
-//   &__heading {
-//     color: $color--brand-dark;
-//     font-family: $font--headings;
-//     font-size: 2rem;
-//     letter-spacing: 0.03333334ch;
-//     margin: 1rem;
-//     max-width: 100%;
-//     text-transform: uppercase;
-//     text-align: center;
+  // If there is any card that is being hovered over,
+  // selects all other cards that are not hovered
+  .content :has(&:hover) &:not(:hover) {
+    @include card-depth(0);
 
-//     > span {
-//       @media screen and (max-width: $breakpoint--xs) {
-//         display: block;
-//       }
-//     }
-//   }
-
-//   &__text {
-//     font-size: 1.125rem;
-//     margin: 0.5rem auto;
-//     text-align: center;
-//     text-wrap: balance;
-//     white-space: unset;
-//     width: 100%;
-
-//     @media screen and (min-width: $breakpoint--l) {
-//       font-size: 1.25rem;
-//     }
-//   }
-
-//   // If there is any card that is being hovered over,
-//   // selects all other cards that are not hovered
-//   .main :has(&:hover) &:not(:hover) {
-//     @include card-depth(0);
-
-//     border-color: tint($color--brand-dark, 20%);
-//   }
-// }
+    border-color: tint($color--brand, 20%);
+  }
+}

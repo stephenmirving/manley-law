@@ -22,8 +22,8 @@
 
 %links-nav-widescreen {
   background: 0 0;
-  border: 2px solid transparent;
-  border-width: 2px 0;
+  border: 0.125rem solid transparent;
+  border-width: 0.125rem 0;
   display: block;
   font-weight: 700;
   padding: 0.25rem;
@@ -55,8 +55,8 @@
 
 @mixin links-tab-focus-state() {
   border-bottom-color: transparent !important;
-  outline: auto 1px $color--blue;
-  outline-offset: 2px;
+  outline: auto 0.0625rem $color--blue;
+  outline-offset: 0.125rem;
 }
 
 %content-links {
@@ -82,8 +82,8 @@
   }
 
   &:focus-visible {
-    outline: auto 1px s$color--blue;
-    outline-offset: 2px;
+    outline: auto 0.0625rem s$color--blue;
+    outline-offset: 0.125rem;
   }
 }
 
@@ -144,13 +144,17 @@
   }
 }
 
-
 %footer-links {
   @extend %links-footer-base;
 
+  &:-moz-focusring {
+    outline: 0.0625rem solid $color--brand-contrast;
+    outline-offset: 0.125rem;
+  }
+
   &:focus-visible {
-    outline: 1px solid $color--brand-contrast;
-    outline-offset: 2px;
+    outline: 0.0625rem solid $color--brand-contrast;
+    outline-offset: 0.125rem;
   }
 }
 

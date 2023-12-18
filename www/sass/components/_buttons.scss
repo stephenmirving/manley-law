@@ -10,7 +10,7 @@
   cursor: pointer;
   display: inline-block;
   font: 700 1rem/1.15 $font--headings;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   padding: 0.875rem 1.125rem;
   position: relative;
   margin: 0.5rem;
@@ -20,16 +20,16 @@
   vertical-align: middle;
   max-width: 100%;
   box-shadow:
-    inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+    inset 0.125rem 0.125rem 0.125rem 0 rgba(255, 255, 255, 0.5),
+    0.4375rem 0.4375rem 1.25rem 0 rgba(0, 0, 0, 0.1),
+    0.25rem 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.1);
 
 
   &:-moz-focusring {
     @include _btn-state-hover-and-focus;
 
-    outline: $color--brand auto 2px;
-    outline-offset: 2px;
+    outline: $color--brand auto 0.125rem;
+    outline-offset: 0.125rem;
   }
 
   &:hover,
@@ -39,13 +39,13 @@
 
   &:active {
     background: shade($color--brand-green, 15%);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
   }
 
   // Accessibility: Focus state
   &:focus-visible {
-    outline: $color--brand auto 2px;
-    outline-offset: 2px;
+    outline: $color--brand auto 0.125rem;
+    outline-offset: 0.125rem;
   }
 
   &:before,
@@ -54,13 +54,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 2px;
+    height: 0.125rem;
     width: 0;
     background-color: $color--brand;
     box-shadow:
-      -1px -1px 5px 0 $color--violet,
-      7px 7px 20px 0 #0003,
-      4px 4px 5px 0 #0002;
+      -0.0625rem -0.0625rem 0.3125rem 0 $color--violet,
+      0.4375rem 0.4375rem 1.25rem 0 #0003,
+      0.25rem 0.25rem 0.3125rem 0 #0002;
     transition:
       background-color $btn-transition-time ease,
       box-shadow $btn-transition-time ease,

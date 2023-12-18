@@ -3,7 +3,7 @@
   align-self: start;
   align-items: center;
   background: $color--nav-bg-gradient $color--nav-bg;
-  border: 2px solid transparent;
+  border: 0.125rem solid transparent;
   display: flex;
   flex-wrap: wrap;
   font-family: $font--headings;
@@ -58,8 +58,8 @@
 
   &__branding-link {
     &:focus-visible {
-      outline: $color--brand auto 1px;
-      outline-offset: 4px;
+      outline: $color--brand auto 0.0625rem;
+      outline-offset: 0.25rem;
     }
   }
 
@@ -160,8 +160,8 @@
       &:link,
       &:visited {
         color: $color--brand;
-        border: 2px solid $color--brand;
-        border-width: 2px 0;
+        border: 0.125rem solid $color--brand;
+        border-width: 0.125rem 0;
       }
 
       &:-moz-focusring {
@@ -190,7 +190,7 @@
     background: transparent;
     border: 0;
     cursor: pointer;
-    outline-offset: 5px;
+    outline-offset: 0.3125rem;
     position: relative;
     height: 1.875rem;
     width: 3.125rem;
@@ -220,13 +220,13 @@
     &:-moz-focusring {
       border: 0;
       padding: 0;
-      outline: $color--brand auto 2px;
+      outline: $color--brand auto 0.125rem;
     }
 
     &:focus-visible {
       border: 0;
       padding: 0;
-      outline: $color--brand auto 2px;
+      outline: $color--brand auto 0.125rem;
     }
 
     &:hover,
@@ -283,9 +283,9 @@
         position: absolute;
         top: 100%;
         left: 100%;
-        transform: translateX(calc(2px - 100%));
+        transform: translateX(calc(0.125rem - 100%));
         transition: none;
-        border: 2px solid $color--brand;
+        border: 0.125rem solid $color--brand;
         border-top: 0;
         border-right: 0;
         background-image:
@@ -305,7 +305,7 @@
           width:100%;
 
           li {
-            border-top: 2px solid $color--brand;
+            border-top: 0.125rem solid $color--brand;
             width: 100%;
             text-align: center;
           }

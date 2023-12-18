@@ -82,6 +82,21 @@ $color--btn-bg--hover: shade($color--brand-green, 5%);
 $color--btn-border: $color--faint-blue;
 $color--btn-border--hover: $color--brand;
 
+$color--card-bg: $color--off-white;
+$color--card-bg-gradient:
+  linear-gradient(
+    135deg,
+    rgba($color--card-bg, 1) 0%,
+    rgba($color--tan, 0.5) 100%
+  );
+
+$color--contact-bg-gradient:
+  linear-gradient(
+    135deg,
+    rgba($color--tan, 0.8),
+    rgba(shade($color--tan, 7.5%), 1)
+  );
+
 $font--main-stack:
   'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
   sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -101,8 +116,6 @@ $link-transition--nav:
   border-color $link-transition-time--nav ease-in-out,
   color $link-transition-time--nav ease-in-out;
 
-
-
 $icon-transition-time: 0.2s;
 $icon-transition: color $icon-transition-time ease-out;
 
@@ -119,24 +132,6 @@ $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.1s;
 
 // Old vars TODO: Remove unused
 
-$color--brand-dark: #3A3044;
-
-$color--card-bg: $color--off-white;
-$color--card-bg-gradient:
-  linear-gradient(
-    135deg,
-    rgba($color--card-bg, 1) 0%,
-    rgba($color--brand-light, 0.3) 90%,
-    rgba($color--brand-dark, 0.167) 100%
-  );
-
-$color--contact-bg-gradient:
-  linear-gradient(
-    135deg,
-    rgba($color--tan, 0.8),
-    rgba(shade($color--tan, 7.5%), 1)
-  );
-
 $header-padding-x: 0;
 $header-padding-y: 0.5rem;
 $container-padding-x: 1rem;
@@ -145,7 +140,7 @@ $nav-link-fontsize--fb-static: 1.375rem;
 $nav-link-fontsize--fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
 $nav-link-fontsize: clamp(1.25rem, calc(0.125rem + 1.8125vw), 1.625rem);
 
-$card-padding: 1.25rem;
+$card-padding: 0.75rem;
 
 $card-padding--xs: 0.75rem;
 
