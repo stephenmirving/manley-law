@@ -1,4 +1,13 @@
 .firm {
+  background:
+    url('../img/skyscrapers-looking-up.webp')
+    50% 50% / cover
+    no-repeat
+    fixed
+    border-box
+    border-box
+    $color--off-white;
+
   &__section {
     &:first-child {
       grid-area: mediation;
@@ -19,6 +28,12 @@
     &:nth-child(5) {
       grid-area: workers;
     }
+  }
+
+  .content__title {
+    background-color: rgba($color--white, 0.25);
+    margin: 0;
+    padding: 0.83em 0;
   }
 }
 

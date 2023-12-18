@@ -8,7 +8,7 @@ TODO:
     ✔ Do layout @done(23-12-17 18:24)
     ✔ figure out a new calendar widget (Google Calendar?) @done(23-12-17 18:24)
   ☐ Do Firm page
-    ☐ Do layout
+    ✔ Do layout @done(23-12-18 03:53)
       ✔ Do Markup @done(23-12-17 18:28)
       ✔ Get text from existing website inserted @done(23-12-17 18:28)
       ☐ Do Styling
@@ -16,5 +16,6 @@ TODO:
   ☐ QDRO page
     ☐ Do layout
     ☐ Do Button with link
+  ☐ Turn off fixed background-attachment on hero section and firm section for phones
   ☐ Redo parking directions PDF into an HTML page (make printable too)
-  ☐ Fix it so that the outlines don't have a transition time when using tab navigation
+  ✔ Fix it so that the outlines don't have a transition time when using tab navigation @done(23-12-18 03:53)
