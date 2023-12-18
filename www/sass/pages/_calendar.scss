@@ -1,0 +1,22 @@
+.calendar {
+  &__widget-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; // Maintain aspect ratio of iframe (height/width of iframe * width%)
+
+    @media only screen and (min-width: $breakpoint--s) {
+      width: 80%;
+      padding-top: 60%; // Maintain aspect ratio of iframe (height/width of iframe * width%)
+      margin: 0 auto;
+    }
+  }
+
+  &__widget-frame {
+    border: 1px solid $color--brand;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

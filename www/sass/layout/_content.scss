@@ -1,8 +1,14 @@
+%_content-link-base {
+
+}
+
+
 @mixin _content-link-hover-focus-state() {
-  color: $color--blue;
+  color: $color--green-lime;
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 }
+
 
 .content {
   grid-area: content;
@@ -10,9 +16,9 @@
   &__title {
     scroll-margin-top: 15.5rem; // Adjust for nav header height
     text-align: center;
-    font-size: 2rem;
-    font-size: min(max(1.875rem, calc(0.5rem + 1.625vw)), 2.625rem);
-    font-size: clamp(1.875rem, calc(0.5rem + 1.625vw), 2.625rem);
+    font-size: 1.875rem;
+    font-size: min(max(1.625rem, calc(0.5rem + 1.625vw)), 2.625rem);
+    font-size: clamp(1.625rem, calc(0.5rem + 1.625vw), 2.625rem);
     text-transform: uppercase;
   }
 
@@ -20,7 +26,6 @@
     font-size: 1.375rem;
     font-size: min(max(1.3125rem, calc(0.5rem + 0.675vw)), 1.8125rem);
     font-size: clamp(1.3125rem, calc(0.5rem + 0.675vw), 1.8125rem);
-    margin-top: 0;
   }
 
   &__text {
@@ -30,12 +35,12 @@
   }
 
   &__link {
-    transition: $link-transition;
+    @extend %_content-link-base;
 
     &,
     &:link,
     &:visited {
-      color: $color--green-lime;
+      color: $color--blue;
     }
 
     &:-moz-focusring {
@@ -69,7 +74,6 @@
 
   &__map-frame {
     border: 0.25rem solid $color--brand;
-    border-radius: 16px;
     position: absolute;
     top: 0;
     left: 0;
@@ -107,4 +111,11 @@
       }
     }
   }
+}
+
+body:not(.homepage) .contact {
+  background-color: $color--tan;
+  background-image: $color--contact-bg-gradient;
+  padding: 0.5rem 0 2rem;
+  margin: 2rem 0 0;
 }

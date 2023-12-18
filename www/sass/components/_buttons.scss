@@ -9,12 +9,11 @@
   color: $color--btn-text;
   cursor: pointer;
   display: inline-block;
-  font-family: $font--headings;
-  font-weight: 700;
+  font: 700 1rem/1.15 $font--headings;
+  // font-family: $font--headings;
+  // font-weight: 700;
+  // line-height: 1.15;
   letter-spacing: 1px;
-  line-height: 1.15;
-  outline: none;
-  outline-offset: 2px;
   padding: 0.875rem 1.125rem;
   position: relative;
   margin: 0.5rem;
@@ -31,6 +30,9 @@
 
   &:-moz-focusring {
     @include _btn-state-hover-and-focus;
+
+    outline: $color--brand auto 2px;
+    outline-offset: 2px;
   }
 
   &:hover,
@@ -46,6 +48,7 @@
   // Accessibility: Focus state
   &:focus-visible {
     outline: $color--brand auto 2px;
+    outline-offset: 2px;
   }
 
   &:before,

@@ -60,7 +60,6 @@ $color--gray: #95A8A4;
 $color--body-text: $color--black-light;
 $color--body-heading: $color--brand;
 $color--body-bg: $color--off-white;
-
 $color--nav-bg: $color--tan;
 
 $color--nav-bg-gradient:
@@ -69,7 +68,6 @@ $color--nav-bg-gradient:
     $color--nav-bg,
     shade($color--nav-bg, 12%)
   );
-
 $color--footer-bg: $color--brand;
 $color--footer-bg-gradient:
   linear-gradient(
@@ -93,10 +91,9 @@ $font--fast-load:
   system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font--serif: 'Georgia', serif;
 
-
-$link-transition-time: 0.4s;
+$link-transition-time: 0.3s;
 $link-transition-time--nav: 0.6s;
-$link-transition: all $link-transition-time ease-in-out;
+$link-transition: all $link-transition-time ease;
 $link-transition--nav: all $link-transition-time--nav ease-in-out;
 $icon-transition-time: 0.2s;
 $icon-transition: all $icon-transition-time ease-out;
@@ -116,10 +113,17 @@ $color--brand-dark: #3A3044;
 $color--card-bg: $color--off-white;
 $color--card-bg-gradient:
   linear-gradient(
-    180deg,
+    135deg,
     rgba($color--card-bg, 1) 0%,
     rgba($color--brand-light, 0.3) 90%,
     rgba($color--brand-dark, 0.167) 100%
+  );
+
+$color--contact-bg-gradient:
+  linear-gradient(
+    135deg,
+    rgba($color--tan, 0.8),
+    rgba(shade($color--tan, 7.5%), 1)
   );
 
 $header-padding-x: 0;

@@ -4,14 +4,17 @@ TODO:
   ☐ Fill out more areas with schema https://schema.org/LegalService
   ✔ Tidy up JS animation so that the second office location animates in when it is visible not when the section heading is visible @done(23-12-16 18:30)
   ✔ Ensure the @media queries in accessibility.scss are working properly @done(23-12-16 22:49)
-  ☐ Do Calendar page
-    ☐ Do layout
-    ☐ figure out a new calendar widget (Google Calendar?)
+  ✔ Do Calendar page @done(23-12-17 18:24)
+    ✔ Do layout @done(23-12-17 18:24)
+    ✔ figure out a new calendar widget (Google Calendar?) @done(23-12-17 18:24)
   ☐ Do Firm page
     ☐ Do layout
-    ☐ Get text from existing website inserted
+      ✔ Do Markup @done(23-12-17 18:28)
+      ✔ Get text from existing website inserted @done(23-12-17 18:28)
+      ☐ Do Styling
     ☐ Add pictures of the attorneys? Check LinkedIn?
   ☐ QDRO page
     ☐ Do layout
     ☐ Do Button with link
+  ☐ Redo parking directions PDF into an HTML page (make printable too)
   ☐ Fix it so that the outlines don't have a transition time when using tab navigation

@@ -7,6 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://calendar.google.com">
 
   <link rel="stylesheet" href="css/main.css">
 
@@ -53,7 +54,7 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#223752">
 </head>
-<body class="grid-layout" itemscope itemtype="https://schema.org/LegalService">
+<body class="calendar-page grid-layout" itemscope itemtype="https://schema.org/LegalService">
   <header id="site-head" class="sitehead">
     <div class="container">
       <div>
@@ -128,7 +129,19 @@
         <h2 id="calendar-heading" class="content__title">Calendar</h2>
       </header>
       <div class="container">
-
+        <section class="content__section" aria-labelledby="mediation-cal-sr-heading">
+          <h3 id="mediation-cal-sr-heading" class="sr-only">Mediation Calendar for Todd Manley</h3>
+          <div class="calendar__widget-wrapper">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTz=0&showTabs=0&showCalendars=0&title=Mediation%20Calendar%20for%20Todd%20Manley&src=bWFubGV5YW5kaGFsdmVyc3RhZHRAZ21haWwuY29t&color=%23039BE5"
+                class="calendar__widget-frame"
+                width="800"
+                height="600"
+                frameborder="0"
+                scrolling="no"
+            ></iframe>
+          </div>
+        </section>
       </div>
     </article>
 
@@ -169,7 +182,7 @@
               >paralegal@manleylawfirm.com</a>
             </p>
             <p class="content__text">
-              <a class="content__link" href="parking-directions.pdf" target="_blank" tabindex="0">Click here for parking directions</a>
+              <a class="btn" href="parking-directions.pdf" target="_blank" tabindex="0">Parking Directions</a>
             </p>
           </address>
           <div class="content__map-wrapper">

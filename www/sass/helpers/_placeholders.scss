@@ -70,15 +70,19 @@
 //   }
 // }
 
+%content-link-base {
+  font-weight: 500;
+  transition: $link-transition;
+}
+
 @mixin _contact-link-hover-focus-state() {
   color: $color--brand;
   text-decoration: underline;
   text-decoration-skip-ink: auto;
 }
 
-
 %contact-links {
-  transition: $link-transition;
+  @extend %content-link-base;
 
   &,
   &:link,
