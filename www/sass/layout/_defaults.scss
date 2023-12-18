@@ -23,14 +23,14 @@ html {
 ///
 
 ::-moz-selection {
-  background: $color--brand-light;
-  color: #000;
+  background: $color--brand;
+  color: $color--white;
   text-shadow: none;
 }
 
 ::selection {
-  background: $color--brand-light;
-  color: #000;
+  background: $color--brand;
+  color: $color--white;
   text-shadow: none;
 }
 
@@ -209,9 +209,28 @@ a:visited {
   text-decoration: none;
 }
 
+a[href^='tel:'],
+a[href^='mailto:'] {
+  &:before {
+    margin-right: 0.5rem;
+    font-weight: inherit;
+  }
+
+  &:hover {
+    border-bottom-color: transparent !important;
+  }
+}
+
 a[href^='tel:']:before {
-  content: '\260F';
-  margin-right: 8px;
+  content: $symbol--telephone;
+}
+
+a[href^='mailto:']:before {
+  content: $symbol--at;
+}
+
+a[href*="maps"]:hover {
+  border-bottom-color: transparent !important;
 }
 
 

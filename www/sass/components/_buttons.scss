@@ -1,5 +1,5 @@
 @mixin _btn-state-hover-and-focus() {
-  background: $color--btn-bg--hover;
+  background-color: $color--btn-bg--hover;
 }
 
 %btn {
@@ -10,9 +10,6 @@
   cursor: pointer;
   display: inline-block;
   font: 700 1rem/1.15 $font--headings;
-  // font-family: $font--headings;
-  // font-weight: 700;
-  // line-height: 1.15;
   letter-spacing: 1px;
   padding: 0.875rem 1.125rem;
   position: relative;
@@ -59,12 +56,15 @@
     right: 0;
     height: 2px;
     width: 0;
-    background: $color--brand;
+    background-color: $color--brand;
     box-shadow:
       -1px -1px 5px 0 $color--violet,
       7px 7px 20px 0 #0003,
       4px 4px 5px 0 #0002;
-    transition: all 333ms ease;
+    transition:
+      background-color $btn-transition-time ease,
+      box-shadow $btn-transition-time ease,
+      width $btn-transition-time ease;
   }
 
   &:after {
@@ -76,7 +76,10 @@
 
   &:hover:before,
   &:hover:after {
-    transition: all 666ms ease;
+    transition:
+      background-color $btn-transition-time--dbl ease,
+      box-shadow $btn-transition-time--dbl ease,
+      width $btn-transition-time--dbl ease;
     width: 100%;
   }
 }

@@ -29,7 +29,7 @@
   <meta property="og:title" content="Calendar | Manley &amp; Halverstadt | Family Law Attorneys">
   <meta
     property="og:description"
-    content="The scheduling calendar for the law firm of Manley &amp; Halverstadt, LLC with listed dates of availability."
+    content="The mediation scheduling availability calendar for Todd Manley, of the law firm of Manley &amp; Halverstadt, LLC."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.manleyandhalverstadt.com/calendar">
@@ -101,7 +101,7 @@
               <a class="nav__link" href="index.html" tabindex="0">Home</a>
             </li>
             <li>
-              <a class="nav__link--active" href="calendar.html" tabindex="0">Calendar</a>
+              <a class="nav__link--active" href="calendar.php" tabindex="0">Calendar</a>
             </li>
             <li>
               <a class="nav__link" href="firm.html" tabindex="0">Firm</a>
@@ -141,32 +141,29 @@
                 scrolling="no"
                 aria-describedby="mediation-cal-sr-heading"
             ></iframe>
-            <div class="calendar__info-wrapper">
-              <p class="content__text--calendar-note">
-                Please note all available Friday dates are for half-day
-                mediations, starting at 9:00 a.m. at our Charleston office.
-              </p>
-              <p class="content__text--calendar-note">
-                Full-day mediations will only be scheduled Monday - Thursday.
-              </p>
-              <p class="content__text--last-updated">
-                Last Updated:
-                <?php
-                  echo "Hello, World!";
-                ?>
-              </p>
-              <p class="content__text--scheduling">
-                To schedule an appointment with Matthew Halverstadt, please call
-                <a class="content__link--contact tel" href="+18433751288">(843) 375-1288</a>
-                or email Aimee Ledbetter at
-                <a
-                  class="content__link--contact email"
-                  href="mailto:paralegal@manleylawfirm.com?Subject=Schedule%20Mediation%20with%20Matthew%20Halverstadt"
-                >paralegal@manleylawfirm.com</a>.
-              </p>
-            </div>
           </div>
+          <div class="calendar__info-wrapper">
+            <p class="content__text">
+              <em>Last Updated&colon;&nbsp;<?php include 'php/cal-last-updated.php'; ?></em>
+            </p>
+            <p class="content__text--calendar">
+              <strong>Please note all available Friday dates are for half-day
+              mediations, starting at 9:00 A.M. at our Charleston office.</strong>
+            </p>
+            <p class="content__text--calendar">
+              <em>Full&hyphen;day mediations will only be scheduled Monday &ndash; Thursday.</em>
+            </p>
 
+            <p class="content__text--calendar">
+              To schedule an appointment with Matthew Halverstadt, please call
+              <a class="content__link--contact tel" href="tel:+18433751288">(843) 375-1288</a>
+              or email Aimee Ledbetter at
+              <a
+                class="content__link--contact email"
+                href="mailto:paralegal@manleylawfirm.com?Subject=Schedule%20Mediation%20with%20Matthew%20Halverstadt"
+              >paralegal@manleylawfirm.com</a>.
+            </p>
+          </div>
         </section>
       </div>
     </article>

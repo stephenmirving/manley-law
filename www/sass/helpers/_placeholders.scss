@@ -42,43 +42,54 @@
   }
 }
 
-// %content-links {
-//   transition: $link-transition;
-
-//   &,
-//   &:link,
-//   &:visited {
-//     color: $color--brand-green;
-//   }
-
-//   &:-moz-focusring {
-//     color: $color--brand-contrast;
-//   }
-
-//   &:hover,
-//   &:focus-visible {
-//     color: $color--brand-contrast;
-//   }
-
-//   &:active {
-//     color: shade($color--brand-contrast, 20%);
-//   }
-
-//   &:focus-visible {
-//     outline: 1px solid shade($color--brand-contrast, 20%);
-//     outline-offset: 2px;
-//   }
-// }
-
 %content-link-base {
   font-weight: 500;
   transition: $link-transition;
+  border-bottom: 1px solid transparent;
+}
+
+@mixin _content-link-hover-focus-state() {
+  color: $color--green-lime;
+  border-bottom-color: inherit;
+}
+
+@mixin links-tab-focus-state() {
+  border-bottom-color: transparent !important;
+  outline: auto 1px $color--blue;
+  outline-offset: 2px;
+}
+
+%content-links {
+  @extend %content-link-base;
+
+  &,
+  &:link,
+  &:visited {
+    color: $color--blue;
+  }
+
+  &:-moz-focusring {
+    @include _content-link-hover-focus-state;
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include _content-link-hover-focus-state;
+  }
+
+  &:active {
+    color: shade($color--blue-light, 20%);
+  }
+
+  &:focus-visible {
+    outline: auto 1px s$color--blue;
+    outline-offset: 2px;
+  }
 }
 
 @mixin _contact-link-hover-focus-state() {
   color: $color--brand;
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
+  border-bottom-color: inherit;
 }
 
 %contact-links {
@@ -92,6 +103,7 @@
 
   &:-moz-focusring {
     @include _contact-link-hover-focus-state();
+    @include links-tab-focus-state();
   }
 
   &:hover,
@@ -101,6 +113,10 @@
 
   &:active {
     color: $color--blue;
+  }
+
+  &:focus-visible {
+    @include links-tab-focus-state();
   }
 }
 

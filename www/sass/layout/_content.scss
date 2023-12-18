@@ -1,15 +1,3 @@
-%_content-link-base {
-
-}
-
-
-@mixin _content-link-hover-focus-state() {
-  color: $color--green-lime;
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
-}
-
-
 .content {
   grid-area: content;
 
@@ -29,13 +17,28 @@
   }
 
   &__text {
-    font-size: 1em;
-    font-size: min(max(1em, calc(0.5rem + 0.5vw)), 1.375rem);
-    font-size: clamp(1em, calc(0.5rem + 0.5vw), 1.375rem);
+    font-size: var(--default-text-size-static);
+    font-size: var(--default-text-size-fb);
+    font-size: var(--default-text-size);
+
+    &--legal {
+      text-align: justify;
+      text-wrap: pretty;
+      white-space-collapse: collapse;
+      margin: 1rem auto;
+    }
+
+    &--calendar {
+      $_size-multiple: 1.075;
+
+      font-size: calc($_size-multiple * var(--default-text-size-static));
+      font-size: calc($_size-multiple * var(--default-text-size-fb));
+      font-size: calc($_size-multiple * var(--default-text-size));
+    }
   }
 
   &__link {
-    @extend %_content-link-base;
+    @extend %content-links;
 
     &,
     &:link,
@@ -45,6 +48,7 @@
 
     &:-moz-focusring {
       @include _content-link-hover-focus-state;
+      @include links-tab-focus-state();
     }
 
     &:hover,
@@ -56,7 +60,12 @@
       color: shade($color--blue-light, 20%);
     }
 
-    &--contact {
+    &:focus-visible {
+      @include links-tab-focus-state();
+    }
+
+    &--contact,
+    &--toc {
       @extend %contact-links;
     }
   }

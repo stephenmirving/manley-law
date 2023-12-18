@@ -9,22 +9,6 @@
     scroll-margin-top: 15.5rem; // Adjust for nav header height
   }
 
-  &__text {
-    text-align: justify;
-    text-wrap: pretty;
-    white-space-collapse: collapse;
-    margin: 1rem auto;
-  }
-
-  &__toc-link {
-
-  }
-
-  &__updated {
-    font-style: italic;
-    text-align: left;
-  }
-
   &__heading {
     font-size: 1.5rem;
     font-size: min(max(1.5rem, calc(0.5rem + 0.75vw)), 2rem);
@@ -51,13 +35,12 @@
   }
 
   .tel,
-  .email,
-  &__toc-link, {
+  .email {
     @extend %contact-links;
   }
 
-  .tel:before {
-    content: '';
-    margin: 0;
+  .tel:before,
+  .email:before {
+    content: none;
   }
 }

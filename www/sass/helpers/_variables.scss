@@ -91,15 +91,26 @@ $font--fast-load:
   system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font--serif: 'Georgia', serif;
 
-$link-transition-time: 0.3s;
+$link-transition-time: 0.4s;
+$link-transition:
+  color $link-transition-time ease,
+  border-bottom-color $link-transition-time ease;
+
 $link-transition-time--nav: 0.6s;
-$link-transition: all $link-transition-time ease;
-$link-transition--nav: all $link-transition-time--nav ease-in-out;
+$link-transition--nav:
+  border-color $link-transition-time--nav ease-in-out,
+  color $link-transition-time--nav ease-in-out;
+
+
+
 $icon-transition-time: 0.2s;
-$icon-transition: all $icon-transition-time ease-out;
+$icon-transition: color $icon-transition-time ease-out;
 
 $btn-transition-time: 333ms;
-$btn-transition: all $btn-transition-time ease;
+$btn-transition-time--dbl: 333ms;
+$btn-transition:
+  background-color $btn-transition-time ease,
+  box-shadow $btn-transition-time ease;
 
 $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -146,3 +157,11 @@ $burger-transition: all $btn-transition-time ease-out;
 
 $symbol--quotes--double-thick-left: '\275D';
 $symbol--quotes--double-thick-right: '\275E';
+$symbol--telephone: '\260F';
+$symbol--at: '📧';
+
+:root {
+  --default-text-size-static: 1em;
+  --default-text-size-fb: min(max(1em, calc(0.5rem + 0.5vw)), 1.375rem);
+  --default-text-size: clamp(1em, calc(0.5rem + 0.5vw), 1.375rem);
+}

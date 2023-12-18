@@ -19,4 +19,20 @@
     height: 100%;
     width: 100%;
   }
+
+  &__info-wrapper {
+    text-align: center;
+    width: 100%;
+
+    @media only screen and (min-width: $breakpoint--s) {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .tel {
+    &:before {
+      content: none;
+    }
+  }
 }
