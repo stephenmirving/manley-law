@@ -1,12 +1,12 @@
 %card {
   $_color--card-shadow: $color--brand;
 
-  @include card-depth(2, $_color--card-shadow);
+  @include card-depth(3, $_color--card-shadow);
 
   align-items: center;
   background-color: $color--card-bg;
   background-image: $color--card-bg-gradient;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 0.1875rem solid tint($color--brand, 10%);
   color: $color--black-lightest;
   display: flex;

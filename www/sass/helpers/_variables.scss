@@ -82,11 +82,11 @@ $color--btn-bg--hover: shade($color--brand-green, 5%);
 $color--btn-border: $color--faint-blue;
 $color--btn-border--hover: $color--brand;
 
-$color--card-bg: $color--off-white;
+$color--card-bg: rgba($color--off-white, 0.9);
 $color--card-bg-gradient:
   linear-gradient(
     135deg,
-    rgba($color--card-bg, 1) 0%,
+    rgba($color--card-bg, 0.5) 0%,
     rgba($color--tan, 0.5) 100%
   );
 
@@ -144,7 +144,7 @@ $card-padding: 0.75rem;
 
 $card-padding--xs: 0.75rem;
 
-$grid-gap-size: 2.5rem;
+$grid-gap-size: 2rem;
 
 $footer-padding-y: 2rem;
 
