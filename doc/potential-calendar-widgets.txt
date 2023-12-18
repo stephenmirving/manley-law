@@ -4,7 +4,10 @@ manleyandhalverstadt@gmail.com
 
 embed code for Google:
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&title&showNav=1&showTabs=0&showCalendars=0&showTz=0&src=bWFubGV5YW5kaGFsdmVyc3RhZHRAZ21haWwuY29t&color=%23039BE5" style="border:solid 1px #223752" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTz=0&showTabs=0&showCalendars=0&title=Mediation%20Calendar%20for%20Todd%20Manley&src=bWFubGV5YW5kaGFsdmVyc3RhZHRAZ21haWwuY29t&color=%23039BE5"  width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+https://calendar.google.com/calendar/ical/manleyandhalverstadt%40gmail.com/public/basic.ics
+
 
 All about 100/yr for pro
  - eventscalendar.co - ready to go but needs $96/year to add all the events
