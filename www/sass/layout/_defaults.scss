@@ -229,11 +229,6 @@ a[href^='mailto:']:before {
   content: $symbol--at;
 }
 
-a[href*="maps"]:hover {
-  border-bottom-color: transparent !important;
-}
-
-
 // Remove the inheritance of text transform in Edge, Firefox, and IE.
 
 button,

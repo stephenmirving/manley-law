@@ -68,6 +68,10 @@
     &--toc {
       @extend %contact-links;
     }
+
+    &--contact[href*="maps"]:hover {
+      border-bottom-color: transparent !important;
+    }
   }
 
   &__map-wrapper {
@@ -93,6 +97,11 @@
 
 .article {
   scroll-margin-top: 15.5rem; // Adjust for nav header height
+
+  &:not(:first-child) {
+    padding: 0.5rem 0 2rem;
+    margin: 2rem 0 0;
+  }
 }
 
 .contact {
@@ -125,6 +134,4 @@
 body:not(.homepage) .contact {
   background-color: $color--tan;
   background-image: $color--contact-bg-gradient;
-  padding: 0.5rem 0 2rem;
-  margin: 2rem 0 0;
 }

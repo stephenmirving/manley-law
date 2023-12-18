@@ -153,7 +153,6 @@
             <p class="content__text--calendar">
               <em>Full&hyphen;day mediations will only be scheduled Monday &ndash; Thursday.</em>
             </p>
-
             <p class="content__text--calendar">
               To schedule an appointment with Matthew Halverstadt, please call
               <a class="content__link--contact tel" href="tel:+18433751288">(843) 375-1288</a>

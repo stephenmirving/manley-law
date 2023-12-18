@@ -374,10 +374,6 @@ a[href^="mailto:"]:before {
   content: "📧";
 }
 
-a[href*=maps]:hover {
-  border-bottom-color: transparent !important;
-}
-
 button,
 select {
   text-transform: none;
@@ -689,6 +685,19 @@ svg:not([fill]) {
 }
 .grid-locations > * {
   max-width: 100%;
+}
+
+.grid-firm {
+  display: grid;
+  grid-template-areas: "mediation family injury" "mediation . ." "mediation criminal workers";
+  gap: 2rem;
+}
+
+.grid-attorneys {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 2rem;
 }
 
 /* stylelint-disable selector-max-specificity */
@@ -1045,6 +1054,9 @@ svg:not([fill]) {
   outline: auto 1px #008ecc;
   outline-offset: 2px;
 }
+.content__link--contact[href*=maps]:hover {
+  border-bottom-color: transparent !important;
+}
 .content__map-wrapper {
   position: relative;
   width: 100%;
@@ -1068,6 +1080,10 @@ svg:not([fill]) {
 .article {
   scroll-margin-top: 15.5rem;
 }
+.article:not(:first-child) {
+  padding: 0.5rem 0 2rem;
+  margin: 2rem 0 0;
+}
 
 .contact__section {
   display: flex;
@@ -1090,8 +1106,6 @@ svg:not([fill]) {
 body:not(.homepage) .contact {
   background-color: #C5C5BB;
   background-image: linear-gradient(135deg, rgba(197, 197, 187, 0.8), #b6b6ad);
-  padding: 0.5rem 0 2rem;
-  margin: 2rem 0 0;
 }
 
 .footer {
@@ -1465,8 +1479,33 @@ body:not(.homepage) .contact {
     margin: 0 auto;
   }
 }
-.calendar .tel:before {
+.calendar__info-wrapper > p {
+  margin-block: 0.625em;
+}
+.calendar .tel:before,
+.calendar .email:before {
   content: none;
+}
+
+.firm__section:first-child {
+  grid-area: mediation;
+}
+.firm__section:nth-child(2) {
+  grid-area: family;
+}
+.firm__section:nth-child(3) {
+  grid-area: injury;
+}
+.firm__section:nth-child(4) {
+  grid-area: criminal;
+}
+.firm__section:nth-child(5) {
+  grid-area: workers;
+}
+
+.firm .content__section-title,
+.attorneys .content__section-title {
+  text-align: center;
 }
 
 .legal {

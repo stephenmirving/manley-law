@@ -1,0 +1,34 @@
+.firm {
+  &__section {
+    &:first-child {
+      grid-area: mediation;
+    }
+
+    &:nth-child(2) {
+      grid-area: family;
+    }
+
+    &:nth-child(3) {
+      grid-area: injury;
+    }
+
+    &:nth-child(4) {
+      grid-area: criminal;
+    }
+
+    &:nth-child(5) {
+      grid-area: workers;
+    }
+  }
+}
+
+.firm,
+.attorneys {
+  .content__section-title {
+    text-align: center;
+  }
+}
+
+.attorneys {
+
+}

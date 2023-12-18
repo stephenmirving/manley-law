@@ -28,9 +28,14 @@
       width: 80%;
       margin: 0 auto;
     }
+
+    > p {
+      margin-block: 0.625em;
+    }
   }
 
-  .tel {
+  .tel,
+  .email {
     &:before {
       content: none;
     }
