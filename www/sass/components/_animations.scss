@@ -8,7 +8,7 @@
     transform: translateX(2rem);
   }
 
-  100% {
+  to {
     opacity: 1;
     transform: translate(0);
   }
@@ -24,7 +24,7 @@
     transform: translateX(-2rem);
   }
 
-  100% {
+  to {
     opacity: 1;
     transform: translate(0);
   }
@@ -43,7 +43,7 @@
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
     top: 100%;
     border-color: $color--brand;
@@ -56,7 +56,7 @@
     transform: translateX(1000px);
   }
 
-  100% {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
@@ -69,6 +69,10 @@
 
   95% {
     border-bottom-color: transparent;
+  }
+
+  to {
+    border-bottom-color: $color--brand;
   }
 }
 
@@ -83,6 +87,5 @@
 }
 
 .reduce-opacity {
-  animation: reduce-opacity 1s ease-in-out;
-  opacity: 0.5;
+  opacity: 0.7;
 }

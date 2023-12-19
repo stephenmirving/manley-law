@@ -15,6 +15,8 @@
   const homepageHero = document.querySelector('body.homepage > .hero');
   const officeWrappers = document.querySelectorAll('body.homepage .js-office-wrapper');
   // const brandingSubhead = document.querySelector('.sitehead__branding-subhead');
+  const mainEl = document.getElementById('main');
+  const footer = document.getElementById('footer');
 
   const isHomepage = !!homepageHero;
 
@@ -123,12 +125,31 @@
     document.body.addEventListener('click', (event) => {
       // Check if nav hamburger button is clicked and simulate a click on
       // the checkbox to toggle `checked` state
+      // TODO: Clean up these nested ifs and write this section better
       if (event.target.id === 'nav-btn') {
         navMenu.classList.remove('anim-off');
         navToggler.click();
+        if (navToggler.checked) {
+          if (isHomepage) {
+            homepageHero.classList.add('reduce-opacity');
+          }
+          mainEl.classList.add('reduce-opacity');
+          footer.classList.add('reduce-opacity');
+        } else {
+          if (isHomepage) {
+            homepageHero.classList.remove('reduce-opacity');
+          }
+          mainEl.classList.remove('reduce-opacity');
+          footer.classList.remove('reduce-opacity');
+        }
       } else if (navToggler.checked) {
         // Hide toggler menu if user clicks outside of it
         navToggler.click();
+        if (isHomepage) {
+          homepageHero.classList.remove('reduce-opacity');
+        }
+        mainEl.classList.remove('reduce-opacity');
+        footer.classList.remove('reduce-opacity');
       }
     });
 

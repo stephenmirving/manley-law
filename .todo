@@ -13,7 +13,7 @@ TODO:
     ✔ Privacy policy text not showing up @done(23-12-19 14:33)
     ✔ Turn fixed background-attachment to scroll on mobile @done(23-12-19 14:54)
     ✔ Smaller nav dropdown link size for phone @done(23-12-19 15:54)
-    ☐ Make the whole page slightly reduce in opacity when dropdown menu opens
+    ✔ Make the whole page slightly reduce in opacity when dropdown menu opens @done(23-12-19 18:15)
     ☐ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy
       ☐ Maybe figure out how to mark them all busy?
     ✔ Fix nav dropdown for mobile in landscape mode @done(23-12-19 16:59)

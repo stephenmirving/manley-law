@@ -1,5 +1,6 @@
 .content {
   grid-area: content;
+  transition: $opacity-fade-transition;
 
   &__title {
     @extend %scroll-margin-top;
