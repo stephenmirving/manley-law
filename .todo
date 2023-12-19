@@ -1,10 +1,11 @@
 TODO:
-  ☐ **** Google social media link goes to Pappy Jr **** #IMPORTANT @started(23-12-18 23:10)
+  ✔ **** Google social media link goes to Pappy Jr **** @started(23-12-18 23:10) @done(23-12-18 23:48) @lasted(38m39s)
   ✔ <abbr> on QDRO page @started(23-12-18 22:34) @done(23-12-18 23:10) @lasted(36m45s)
-  ☐ Swap Firm and Calendar in link order
-  ☐ Make nav__link--active border color fade out on hover of a different nav link
+  ✔ Swap Firm and Calendar in link order @done(23-12-18 23:49)
+  ✔ Make nav__link--active border color fade out on hover of a different nav link @done(23-12-19 01:51)
   ☐ Make nav animate to a smaller height when the user scrolls down.
     ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
+  ☐ FIx images - bg images and invert logo came out grainey and shit from optimization when blown up. Too much compression
   ☐ Mobile fixes
     ☐ Cards on firm page have headings that dont extend all the way across
     ☐ Turn off card hover/focus effects
@@ -17,10 +18,10 @@ TODO:
       - Maybe stack the links in two rows in this view?
     ☐ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy
       ☐ Maybe figure out how to mark them all busy?
-    ☐ Change button active state to animate for phones
-  ☐ Fix images
-    ☐ Get different image sizes for hidpi screens with png backups
-    ☐ Change all img tags to picture tags
+    ✔ Change button active state to animate for phones @done(23-12-19 01:30)
+  ✔ Fix images @done(23-12-19 04:01)
+    ✔ Get different image sizes for hidpi screens with png backups @done(23-12-19 03:22)
+    ✔ Change all img tags to picture tags @done(23-12-19 04:01)
   ☐ Install Google analytics
   ☐ Get calendar issues worked out
   ☐ Modify htaccess for production
@@ -38,7 +39,6 @@ THINGS TO ADDRESS VIA EMAIL:
   ☐ Need Facebook page for firm
   ☐ Need cardepointe login in order to modify form
   ☐ Pictures of attorneys?
-  ☐
 
 
 Archive:

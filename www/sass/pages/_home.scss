@@ -2,7 +2,7 @@
   border: 0;
   grid-area: hero;
   background:
-    url('../img/bridge-sunset-bg-980x676.webp')
+    url('../img/bridge-sunset-bg-980x676.jpg')
     50% 50% / cover
     no-repeat
     fixed
@@ -17,11 +17,11 @@
   width: 100%;
 
   @media screen and (min-width: $breakpoint--widescreen) {
-    background-image: url('../img/bridge-sunset-bg-980x1040.webp');
+    background-image: url('../img/bridge-sunset-bg-980x1040.jpg');
   }
 
   @media screen and (min-width: $breakpoint--xxl) {
-    background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
+    background-image: url('../img/bridge-sunset-bg-1429x1055.original.webp');
   }
 
   > .container {

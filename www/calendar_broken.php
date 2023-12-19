@@ -42,10 +42,10 @@
     content="Manley &amp; Halverstadt logo with green &ldquo;M&rdquo; and blue &ldquo;H&rdquo; overlapping"
   >
 
+  <link rel="icon" href="favicon.ico" type="image/ico">
+  <link rel="icon" href="favicon-dark.ico" type="image/ico" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="img/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/favicon-dark-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="favicon.ico" type="image/ico" sizes="48x48">
-  <link rel="icon" href="favicon-dark-mode.ico" type="image/ico" sizes="48x48" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="img/apple-touch-icon.png" type="image/png" sizes="180x180">
   <link rel="icon" href="img/android-chrome-192x192.png" type="image/png" sizes="192x192">
   <link rel="icon" href="img/android-chrome-512x512.png" type="image/png" sizes="512x512">
@@ -60,14 +60,30 @@
       <div>
         <a href="https://www.manleyandhalverstadt.com/" class="sitehead__branding-link" tabindex="0">
           <h1 class="sr-only" itemprop="name">Manley &amp; Halverstadt</h1>
-          <img
-              src="img/logo.webp"
-              width="310"
-              height="204"
-              alt="Manley &amp; Halverstadt logo with green &ldquo;M&rdquo; and blue &ldquo;H&rdquo;"
-              class="sitehead__logo"
-              itemprop="logo"
-          >
+          <picture>
+            <source
+                type="image/webp"
+                srcset="img/logo-280x184@0.5x.webp 0.5x,
+                        img/logo-280x184.webp 1x,
+                        img/logo-280x184@1.5x.webp 1.5x,
+                        img/logo-280x184@2x.webp 2x,
+                        img/logo-280x184@3x.webp 3x">
+            <source
+                type="image/png"
+                srcset="img/logo-280x184@0.5x.png 0.5x,
+                        img/logo-280x184.png 1x,
+                        img/logo-280x184@1.5x.png 1.5x,
+                        img/logo-280x184@2x.png 2x,
+                        img/logo-280x184@3x.png 3x">
+            <img
+                src="img/logo-280x184.webp"
+                width="280"
+                height="184"
+                alt="Manley &amp; Halverstadt logo with green &ldquo;M&rdquo; and blue &ldquo;H&rdquo;"
+                class="sitehead__logo"
+                itemprop="logo"
+            >
+          </picture>
         </a>
           <h2 class="sitehead__branding-subhead" itemprop="description">Attorneys and Mediators</h2>
       </div>
@@ -98,16 +114,16 @@
         <div id="nav-menu-wrapper" class="nav__menu-wrapper">
           <ul class="nav__menu" id="nav-menu" aria-expanded="true">
             <li>
-              <a class="nav__link" href="index.html" tabindex="0">Home</a>
+              <a class="nav__link" href="index" tabindex="0">Home</a>
             </li>
             <li>
               <a class="nav__link--active" href="calendar.php" tabindex="0">Calendar</a>
             </li>
             <li>
-              <a class="nav__link" href="firm.html" tabindex="0">Firm</a>
+              <a class="nav__link" href="firm" tabindex="0">Firm</a>
             </li>
             <li>
-              <a class="nav__link" href="qdro.html" tabindex="0">QDRO</a>
+              <a class="nav__link" href="qdro" tabindex="0">QDRO</a>
             </li>
             <li>
               <a class="nav__link" href="#contact" tabindex="0">Contact</a>
@@ -276,16 +292,16 @@
           <div class="footer__col--subnav">
             <ul class="footer__menu">
               <li>
-                <a href="index.html" class="footer__link">Home</a>
+                <a href="index" class="footer__link">Home</a>
               </li>
               <li>
-                <a class="footer__link">Calendar</a>
+                <a class="footer__link" href="calendar">Calendar</a>
               </li>
               <li>
-                <a href="firm.html" class="footer__link">About</a>
+                <a href="firm" class="footer__link">About</a>
               </li>
               <li>
-                <a href="qdro.html" class="footer__link">
+                <a href="qdro" class="footer__link">
                   <abbr title="Qualified Domestic Relations Orders">QDRO</abbr>
                 </a>
               </li>
@@ -295,13 +311,30 @@
             </ul>
           </div>
           <div class="footer__col">
-            <a class="footer__logo" href="index.html" tabindex="-1">
-              <img
-                  src="img/logo-inverted.webp"
-                  alt="Manley &amp; Halverstadt law firm's logo"
-                  height="102"
-                  width="155"
-                  itemprop="logo">
+            <a class="footer__logo" href="index" tabindex="-1">
+              <picture>
+                <source
+                    type="image/webp"
+                    srcset="img/logo-invert-146x96@0.5x.webp 0.5x,
+                            img/logo-invert-146x96.webp 1x,
+                            img/logo-invert-146x96@1.5x.webp 1.5x,
+                            img/logo-invert-146x96@2x.webp 2x,
+                            img/logo-invert-146x96@3x.webp 3x">
+                <source
+                    type="image/png"
+                    srcset="img/logo-invert-146x96@0.5x.png 0.5x,
+                            img/logo-invert-146x96.png 1x,
+                            img/logo-invert-146x96@1.5x.png 1.5x,
+                            img/logo-invert-146x96@2x.png 2x,
+                            img/logo-invert-146x96@3x.png 3x">
+                <img
+                    src="img/logo-invert-146x96.webp"
+                    width="146"
+                    height="96"
+                    alt="Manley &amp; Halverstadt law firm's &ldquo;MH&rdquo; logo with inverted colors"
+                    itemprop="logo"
+                >
+              </picture>
             </a>
           </div>
         </div>
@@ -311,7 +344,7 @@
               <ul class="footer__social-menu">
                 <li>
                   <a
-                    href="https://g.co/kgs/uxi7yy"
+                    href="https://maps.app.goo.gl/jU3Lz6DgS3CMW6oh9"
                     aria-label="Visit Manley &amp; Halverstadt on Google. Opens a new window."
                     rel="noopener noreferrer"
                     target="_blank"
@@ -358,7 +391,7 @@
                 <li>
                   <a
                     href="https://www.linkedin.com/in/todd-manley-a9244537/"
-                    aria-label="Visit Matthew Halverstadt on LinkedIn. Opens a new window."
+                    aria-label="Visit Todd Manley on LinkedIn. Opens a new window."
                     rel="noopener noreferrer"
                     target="_blank"
                     tabindex="0"
@@ -405,20 +438,20 @@
             <div class="footer__col--legal">
               <ul class="footer__legal-menu">
                 <li>
-                  <a href="privacy-policy.html" class="footer__link--legal" tabindex="0"
+                  <a href="privacy-policy" class="footer__link--legal" tabindex="0"
                     >Privacy Policy</a
                   >
                 </li>
                 <li>
                   <a
-                    href="tac.html"
+                    href="tac"
                     class="footer__link--legal"
                     tabindex="0"
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li>
-                  <a href="accessibility.html" class="footer__link--legal" tabindex="0"
+                  <a href="accessibility" class="footer__link--legal" tabindex="0"
                     >Accessibility</a
                   >
                 </li>

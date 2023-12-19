@@ -26,7 +26,7 @@
 
   @media screen and (min-width: $breakpoint--m) {
     &:hover,
-    &:focus-within {
+    &:focus-visible {
       @include card-depth(4, $_color--card-shadow);
 
       border-color: $color--brand;

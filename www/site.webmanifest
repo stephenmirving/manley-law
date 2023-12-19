@@ -8,7 +8,7 @@
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "index.html",
-  "background_color": "#f0f0f0",
+  "start_url": "https://www.manleyandhalverstadt.com/",
+  "background_color": "#F3FAFF",
   "theme_color": "#223752"
 }
