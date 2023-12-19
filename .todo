@@ -1,13 +1,17 @@
 TODO:
   ☐ **** Google social media link goes to Pappy Jr **** #IMPORTANT @started(23-12-18 23:10)
   ✔ <abbr> on QDRO page @started(23-12-18 22:34) @done(23-12-18 23:10) @lasted(36m45s)
+  ☐ Swap Firm and Calendar in link order
   ☐ Make nav__link--active border color fade out on hover of a different nav link
+  ☐ Make nav animate to a smaller height when the user scrolls down.
+    ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
   ☐ Mobile fixes
     ☐ Cards on firm page have headings that dont extend all the way across
     ☐ Turn off card hover/focus effects
     ☐ Fix scroll margin for contact links on phone size
     ☐ Privacy policy text not showing up
     ☐ Turn fixed background-attachment to scroll on mobile
+    ☐ Smaller nav dropdown ink size for phone
     ☐ Fix nav dropdown for mobile in landscape mode
       - The links currently go down below the edge of the screen and aren't all visible
       - Maybe stack the links in two rows in this view?
@@ -25,6 +29,8 @@ TODO:
   ☐ Redo parking directions PDF into an HTML page (make printable too)
   ☐ Add pictures of the attorneys to firm page on their bio? Check LinkedIn?
   ☐ Add linkedin or Facebook links to attorneys on their bio page?
+  ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
+  ☐ Run validators on HTML, CSS, and JS
 
 THINGS TO ADDRESS VIA EMAIL:
   ☐ Google business is closed down, needs both locations in Google

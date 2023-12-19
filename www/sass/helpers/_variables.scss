@@ -15,9 +15,6 @@ $breakpoint--1080: 67.5em;
 $breakpoint--1280: 80em;
 $breakpoint--1440: 90em;
 
-$breakpoint--height: 37.5rem;
-$breakpoint--heightplusone: 37.5625rem;
-
 // Breakpoints based on general device sizes
 $breakpoint--tiny: 16em;
 $breakpoint--xxxs: 17.5em;// 280px
@@ -31,7 +28,10 @@ $breakpoint--xxl: 75em;   // 1200px
 $breakpoint--xxxl: $breakpoint--1440;
 
 $breakpoint--widescreen: $breakpoint--878;
-$breakpoint--max-phone-width: 27.25em;
+$breakpoint--max-phone-width: 27.25em; // 436px
+
+$breakpoint--height: 37.5em; // 600px
+$breakpoint--heightplusone: 37.5625em; // 601px
 
 // Colors
 $color--brand: #223752;
@@ -131,8 +131,6 @@ $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.1s;
 
 
-// Old vars TODO: Remove unused
-
 $header-padding-x: 0;
 $header-padding-y: 0.5rem;
 $container-padding-x: 1rem;
@@ -142,7 +140,6 @@ $nav-link-fontsize--fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
 $nav-link-fontsize: clamp(1.25rem, calc(0.125rem + 1.8125vw), 1.625rem);
 
 $card-padding: 0.75rem;
-
 $card-padding--xs: 0.75rem;
 
 $grid-gap-size: 2rem;
