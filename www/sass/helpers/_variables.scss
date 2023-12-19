@@ -3,6 +3,7 @@
 $breakpoint--166: 10.375em;
 $breakpoint--228: 14.25em;
 $breakpoint--308: 19.25em;
+$breakpoint--309: 19.3125em;
 $breakpoint--336: 21em;
 $breakpoint--390: 24.375em;
 $breakpoint--430: 26.875em;
@@ -16,7 +17,8 @@ $breakpoint--1280: 80em;
 $breakpoint--1440: 90em;
 
 // Breakpoints based on general device sizes
-$breakpoint--tiny: 16em;
+$breakpoint--xtiny: 14.8125em; // 237px
+$breakpoint--tiny: 16rem; // 256px
 $breakpoint--xxxs: 17.5em;// 280px
 $breakpoint--xxs: 23.5em; // 376px
 $breakpoint--xs: 35em;    // 560px
@@ -29,7 +31,9 @@ $breakpoint--xxxl: $breakpoint--1440;
 
 $breakpoint--widescreen: $breakpoint--878;
 $breakpoint--max-phone-width: 27.25em; // 436px
+$breakpoint--max-phone-width-plusone: 27.3125em; // 437px
 
+$breakpoint--height-tiny: 22.75em; // 364px
 $breakpoint--height: 37.5em; // 600px
 $breakpoint--heightplusone: 37.5625em; // 601px
 
@@ -128,7 +132,7 @@ $btn-transition:
 
 $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.1s;
+$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
 
 $container-padding-x: 1rem;
 

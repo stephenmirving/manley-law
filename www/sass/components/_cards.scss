@@ -20,17 +20,21 @@
   -webkit-user-select: none;
   user-select: none;
 
-  @media screen and (max-width: $breakpoint--xs) and (min-resolution: 2dppx) {
-    padding: $card-padding--xs;
-  }
-
   @media screen and (min-width: $breakpoint--m) {
     &:hover,
     &:focus-visible {
-      @include card-depth(4, $_color--card-shadow);
+      @include card-depth(5, $_color--card-shadow);
 
       border-color: $color--brand;
       transform: translateY(-0.125rem) scale(1.0125);
+    }
+
+    // If there is any card that is being hovered over,
+    // selects all other cards that are not hovered
+    .content :has(&:hover) &:not(:hover) {
+      @include card-depth(0);
+
+      border-color: tint($color--brand, 20%);
     }
   }
 }
@@ -41,13 +45,5 @@
   .content__section-title,
   .content__text {
     padding: 0 $card-padding;
-  }
-
-  // If there is any card that is being hovered over,
-  // selects all other cards that are not hovered
-  .content :has(&:hover) &:not(:hover) {
-    @include card-depth(0);
-
-    border-color: tint($color--brand, 20%);
   }
 }

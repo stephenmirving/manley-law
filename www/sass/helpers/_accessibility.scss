@@ -20,11 +20,23 @@
 
 @media
     print,
-    screen and (max-width: $breakpoint--max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
-    screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 192dpi),
-    screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx)
+
+    screen
+    and (max-width: $breakpoint--max-phone-width)
+    and (-webkit-min-device-pixel-ratio: 2),
+
+    screen
+    and (max-width: $breakpoint--max-phone-width)
+    and (min-resolution: 192dpi),
+
+    screen
+    and (max-width: $breakpoint--max-phone-width)
+    and (min-resolution: 2dppx),
+
+    (prefers-reduced-motion: reduce)
 {
-  .hero {
+  .hero,
+  .firm {
     background-attachment: scroll !important;
   }
 

@@ -171,3 +171,31 @@
     flex: none;
   }
 }
+
+%scroll-margin-top {
+  scroll-margin-top: 7.5625rem; // Adjust for nav header height
+
+  @media screen and (max-width: $breakpoint--xtiny) {
+    scroll-margin-top: 9.5625rem
+  }
+
+  @media
+    screen and (min-width: $breakpoint--309),
+
+    screen
+      and (min-width: $breakpoint--max-phone-width-plusone)
+      and (-webkit-min-device-pixel-ratio: 2),
+    screen
+      and (min-width: $breakpoint--max-phone-width-plusone)
+      and (min-resolution: 192dpi),
+    screen
+      and (min-width: $breakpoint--max-phone-width-plusone)
+      and (min-resolution: 2dppx)
+  {
+    scroll-margin-top: 9.75rem;
+  }
+
+  @media screen and (min-width: $breakpoint--1080) {
+    scroll-margin-top: 13.25rem;
+  }
+}

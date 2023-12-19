@@ -69,3 +69,8 @@
 .move-in-right {
   animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-right;
 }
+
+.reduce-opacity {
+  animation: 1s reuce-opacity ease;
+  opacity: 0.5;
+}

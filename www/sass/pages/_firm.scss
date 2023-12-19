@@ -34,6 +34,7 @@
     background-color: rgba($color--white, 0.25);
     margin: 0;
     padding: 0.83em 0;
+    text-shadow: 1px 1px 0.625rem #FFF;
   }
 
   .content__text {
@@ -50,7 +51,7 @@
     background-color: $color--brand;
     color: $color--white;
     margin: 0;
-    padding: 0.75em 0;
+    padding: 0.75em 0.25rem;
     width: 100%;
   }
 }
