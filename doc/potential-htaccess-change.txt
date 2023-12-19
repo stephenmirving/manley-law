@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# If the requested filename exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# If the requested directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# If the requested URI is /calendar, serve the calendar.php file
+RewriteRule ^calendar$ /calendar.php [L]
+
+# If the requested URI ends in .php, remove the extension
+RewriteRule ^(.+)\.php$ /$1 [L,R=301]
+
+# If the requested URI ends in .html, remove the extension
+RewriteRule ^(.+)\.html$ /$1 [L,R=301]
+
+# If the requested URI does not end in .php or .html, serve the .html file
+RewriteRule ^(.+)$ /$1.html [L,QSA]

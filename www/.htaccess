@@ -248,7 +248,7 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 
 # Redirect from the `http://` to the `https://` version of the URL.
-#
+# TODO: Turn this back on for production
 # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
 
 # (1) If you're using cPanel AutoSSL or the Let's Encrypt webroot method it
@@ -258,15 +258,15 @@ AddDefaultCharset utf-8
 #     https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml
 #     https://tools.ietf.org/html/draft-ietf-acme-acme-12
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} !=on
-    # (1)
-    RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
-    # RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[\w-]+$
-    # RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-</IfModule>
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} !=on
+#     # (1)
+#     RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+#     # RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[\w-]+$
+#     # RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | Suppressing the `.html` at the end of URLs                    |
@@ -290,7 +290,7 @@ AddDefaultCharset utf-8
   RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
   RewriteRule ^(.*)$ $1/ [L]
 
-  # Remove .html-extension from url
+  # Remove .html extension from url
 
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}\.html -f

@@ -144,7 +144,7 @@
           </div>
           <div class="calendar__info-wrapper">
             <p class="content__text">
-              <em>Last Updated&colon;&nbsp;<?php include 'php/cal-last-updated.php'; ?></em>
+              <em><?php include 'php/cal-last-updated.php'; ?></em>
             </p>
             <p class="content__text--calendar">
               <strong>Please note all available Friday dates are for half-day
@@ -439,6 +439,6 @@
         </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 </html>
