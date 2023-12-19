@@ -46,7 +46,19 @@
   100% {
     opacity: 1;
     top: 100%;
-    border-color: color--brand;
+    border-color: $color--brand;
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -63,14 +75,14 @@
 // Animations applied by JS
 
 .move-in-left {
-  animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-left;
+  animation: move-in-left 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .move-in-right {
-  animation: 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) move-in-right;
+  animation: move-in-right 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .reduce-opacity {
-  animation: 1s reuce-opacity ease;
+  animation: reduce-opacity 1s ease-in-out;
   opacity: 0.5;
 }

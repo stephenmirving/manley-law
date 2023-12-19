@@ -130,6 +130,8 @@ $btn-transition:
   background-color $btn-transition-time ease,
   box-shadow $btn-transition-time ease;
 
+$nav-slide-animation-time: 0.6s;
+$nav-puff-animation-time: 0.6s;
 $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;

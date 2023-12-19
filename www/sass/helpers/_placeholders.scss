@@ -55,7 +55,7 @@
 
 @mixin links-tab-focus-state() {
   border-bottom-color: transparent !important;
-  outline: auto 0.0625rem $color--blue;
+  outline: $color--blue solid 0.0625rem;
   outline-offset: 0.125rem;
 }
 
@@ -82,7 +82,7 @@
   }
 
   &:focus-visible {
-    outline: auto 0.0625rem s$color--blue;
+    outline: $color--blue solid 0.0625rem ;
     outline-offset: 0.125rem;
   }
 }
@@ -148,12 +148,12 @@
   @extend %links-footer-base;
 
   &:-moz-focusring {
-    outline: 0.0625rem solid $color--brand-contrast;
+    outline: $color--brand-contrast solid 0.0625rem;
     outline-offset: 0.125rem;
   }
 
   &:focus-visible {
-    outline: 0.0625rem solid $color--brand-contrast;
+    outline: $color--brand-contrast solid 0.0625rem;
     outline-offset: 0.125rem;
   }
 }

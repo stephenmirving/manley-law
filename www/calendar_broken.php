@@ -153,8 +153,6 @@
                 class="calendar__widget-frame"
                 width="800"
                 height="600"
-                frameborder="0"
-                scrolling="no"
                 aria-describedby="mediation-cal-sr-heading"
             ></iframe>
           </div>
@@ -397,7 +395,6 @@
                     tabindex="0"
                   >
                     <svg
-                      version="1.0"
                       focusable="false"
                       data-icon="linked-in"
                       role="img"

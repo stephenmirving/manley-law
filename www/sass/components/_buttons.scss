@@ -30,7 +30,7 @@
   &:-moz-focusring {
     @include _btn-state-hover-and-focus;
 
-    outline: $color--brand auto 0.125rem;
+    outline: $color--brand solid 0.125rem;
     outline-offset: 0.3125rem;
   }
 
@@ -47,7 +47,7 @@
 
   // Accessibility: Focus state
   &:focus-visible {
-    outline: $color--brand auto 0.125rem;
+    outline: $color--brand solid 0.125rem;
     outline-offset: 0.3125rem;
   }
 

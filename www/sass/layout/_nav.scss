@@ -39,7 +39,7 @@
 
   &__branding-link {
     &:focus-visible {
-      outline: $color--brand auto 0.0625rem;
+      outline: $color--brand solid 0.0625rem;
       outline-offset: 0.25rem;
     }
   }
@@ -92,7 +92,11 @@
     margin: 0 auto;
 
     .homepage & {
-      @include slide($direction: 'right');
+      animation:
+        slide-from-right
+        $nav-slide-animation-time
+        cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
     }
   }
 
@@ -162,7 +166,7 @@
   &__burger-btn {
     $_patty-thickness: 0.25rem;
 
-    @include puff($timing: 0.6s, $timing-func: ease-in);
+    @include puff($timing: $nav-puff-animation-time, $timing-func: ease-in);
 
     background: transparent;
     border: 0;
@@ -197,13 +201,13 @@
     &:-moz-focusring {
       border: 0;
       padding: 0;
-      outline: $color--brand auto 0.125rem;
+      outline: $color--brand solid 0.125rem;
     }
 
     &:focus-visible {
       border: 0;
       padding: 0;
-      outline: $color--brand auto 0.125rem;
+      outline: $color--brand solid 0.125rem;
     }
 
     &:hover,
@@ -256,7 +260,11 @@
 
       ~ .nav__menu-wrapper {
         // Menu wrapper styles when burger btn clicked
-        animation: $nav-dropdown-animation-time $nav-dropdown-animation-func slide-down;
+        animation:
+          slide-down
+          $nav-dropdown-animation-time
+          $nav-dropdown-animation-func
+          both;
         position: absolute;
         top: 100%;
         left: 100%;
@@ -282,7 +290,12 @@
         }
 
         > .nav__menu {
-          animation-delay: $nav-dropdown-animation-2-delay;
+          animation:
+            slide-from-right
+            $nav-slide-animation-time
+            cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            $nav-dropdown-animation-2-delay
+            both;
           position: relative;
           flex-direction: column;
           padding: 0 1rem 0.5rem;
@@ -390,7 +403,10 @@
 }
 
 .nav-dropdown-open {
-  animation: $nav-dropdown-animation-time $nav-dropdown-animation-func apply-border-color;
+  animation:
+    apply-border-color
+    $nav-dropdown-animation-time
+    $nav-dropdown-animation-func;
   border-bottom-color: $color--brand;
   background-image: none;
 }
