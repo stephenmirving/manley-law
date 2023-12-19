@@ -12,8 +12,9 @@
   const burgerBtn = document.getElementById('nav-btn');
   const navMenuWrapper = document.getElementById('nav-menu-wrapper');
   const navMenu = document.getElementById('nav-menu');
-  const homepageHero = document.querySelector('.homepage > .hero');
+  const homepageHero = document.querySelector('body.homepage > .hero');
   const officeWrappers = document.querySelectorAll('body.homepage .js-office-wrapper');
+  // const brandingSubhead = document.querySelector('.sitehead__branding-subhead');
 
   const isHomepage = !!homepageHero;
 
@@ -85,24 +86,19 @@
     siteHeader.classList[isTogglerChecked ? 'add' : 'remove']('nav-dropdown-open');
   }
 
-  function initialize() {
-    const vWidth = window.innerWidth;
-
-    toggleNavBurgerBtnDisplay(vWidth);
-
-    if (isHomepage) {
-      setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
-
-      applyAnimationWhenInView(); // Check on initial load in case the element is already in view
-    }
-  }
-
   function pageSetup() {
-    initialize();
-
     if (isHomepage) {
-      window.addEventListener('scroll', applyAnimationWhenInView, {passive: true});
+      applyAnimationWhenInView(); // Check on initial load in case the element is already in view
+
+      window.addEventListener('scroll', () => {
+        applyAnimationWhenInView();
+        // Move listener outside if statement if you turn this code on
+        // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        // brandingSubhead.classList[scrollPosition > 600 ? 'add' : 'remove']('sr-only');
+      }, {passive: true});
     }
+
+    toggleNavBurgerBtnDisplay(window.innerWidth);
 
     window.addEventListener('resize', () => {
       const vWidth = window.innerWidth;
@@ -140,6 +136,10 @@
     navToggler.addEventListener('change', () => {
       updateDomToggleDropdown(navToggler.checked);
     }, {passive: true});
+
+    if (isHomepage) {
+      setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
+    }
   }
 
   if (document.readyState === 'loading') {

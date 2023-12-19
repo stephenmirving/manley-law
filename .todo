@@ -5,7 +5,7 @@ TODO:
   ✔ Make nav__link--active border color fade out on hover of a different nav link @done(23-12-19 01:51)
   ☐ Make nav animate to a smaller height when the user scrolls down.
     ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
-  ☐ FIx images - bg images and invert logo came out grainey and shit from optimization when blown up. Too much compression
+  ✔ FIx images - bg images came out grainey and shit from optimization when blown up. Too much compression @done(23-12-19 14:00)
   ☐ Mobile fixes
     ☐ Cards on firm page have headings that dont extend all the way across
     ☐ Turn off card hover/focus effects

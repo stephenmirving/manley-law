@@ -10,7 +10,7 @@
   grid-area: navigation;
   justify-content: space-between;
   min-height: 10.3125rem;
-  padding: $header-padding-y $header-padding-x;
+  padding: 0.25rem 0;
   position: sticky;
   top: 0;
   left: 0;
@@ -64,8 +64,8 @@
   }
 
   &__logo {
-    height: 8.5rem;
-    width: 12.91666667rem;
+    width: 12.5rem;
+    height: 8.25rem;
     margin: 0 auto;
 
     @media
@@ -75,13 +75,13 @@
         screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx),
         screen and (max-height: $breakpoint--height)
     {
-      height: 6.375rem;
-      width: 9.6875rem;
+      width: 9.5rem;
+      height: 6.25rem;
     }
 
     @media screen and (min-width: $breakpoint--1080) and (min-height: $breakpoint--heightplusone) {
-      height: 12.75rem;
-      width: 19.375rem;
+      width: 17.5rem;
+      height: 11.5rem;
     }
   }
 
@@ -90,7 +90,7 @@
     margin: 0;
     padding: 0;
     color: $color--black-lightest;
-    font-size: 1rem;
+    font-size: 0.875rem;
     text-align: center;
 
     @media
@@ -100,7 +100,7 @@
         screen and (max-width: $breakpoint--max-phone-width) and (min-resolution: 2dppx),
         screen and (max-height: $breakpoint--height)
     {
-      font-size: 0.675rem;
+      font-size: 0.6875rem;
     }
 
     @media
@@ -108,7 +108,7 @@
       and (min-width: $breakpoint--1080)
       and (min-height: $breakpoint--heightplusone)
     {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
   }
 }
