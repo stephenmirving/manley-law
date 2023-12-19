@@ -21,6 +21,12 @@
         text-align: center;
       }
     }
+
+    .hr {
+      background: $color--brand-lightest;
+      width: 90%;
+      margin: 0 auto 0.5rem;
+    }
   }
 
   &__info {

@@ -1,9 +1,39 @@
 TODO:
-  ☐ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages
-  ☐ Add pictures of the attorneys to firm page? Check LinkedIn?
-  ☐ Turn off fixed background-attachment on hero section and firm section for phones
-  ☐ Redo parking directions PDF into an HTML page (make printable too)
+  ☐ **** Google social media link goes to Pappy Jr **** #IMPORTANT @started(23-12-18 23:10)
+  ✔ <abbr> on QDRO page @started(23-12-18 22:34) @done(23-12-18 23:10) @lasted(36m45s)
+  ☐ Make nav__link--active border color fade out on hover of a different nav link
+  ☐ Mobile fixes
+    ☐ Cards on firm page have headings that dont extend all the way across
+    ☐ Turn off card hover/focus effects
+    ☐ Fix scroll margin for contact links on phone size
+    ☐ Privacy policy text not showing up
+    ☐ Turn fixed background-attachment to scroll on mobile
+    ☐ Fix nav dropdown for mobile in landscape mode
+      - The links currently go down below the edge of the screen and aren't all visible
+      - Maybe stack the links in two rows in this view?
+    ☐ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy
+      ☐ Maybe figure out how to mark them all busy?
+    ☐ Change button active state to animate for phones
+  ☐ Fix images
+    ☐ Get different image sizes for hidpi screens with png backups
+    ☐ Change all img tags to picture tags
+  ☐ Install Google analytics
+  ☐ Get calendar issues worked out
   ☐ Modify htaccess for production
+  ☐ See if possible to get tooltips in brand colors
+  ☐ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages
+  ☐ Redo parking directions PDF into an HTML page (make printable too)
+  ☐ Add pictures of the attorneys to firm page on their bio? Check LinkedIn?
+  ☐ Add linkedin or Facebook links to attorneys on their bio page?
+
+THINGS TO ADDRESS VIA EMAIL:
+  ☐ Google business is closed down, needs both locations in Google
+  ☐ Calendar issue
+  ☐ Need Facebook page for firm
+  ☐ Need cardepointe login in order to modify form
+  ☐ Pictures of attorneys?
+  ☐
+
 
 Archive:
   ✔ Get framework of original site copied over and working @started(23-12-13 13:19) @done(23-12-16 18:30) @lasted(3d5h11m16s) @project(TODO)
