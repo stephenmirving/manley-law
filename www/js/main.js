@@ -45,10 +45,12 @@
   }
 
   function setHeroSectionMinHeightStyle(navHeight) {
+    navHeight /= 16; // Get value in rem
+
     homepageHero.setAttribute(
       'style',
-      `min-height:calc(100vh - ${navHeight}px);` +
-      `min-height:calc(100lvh - ${navHeight}px);`
+      `min-height:calc(100vh - ${navHeight}rem);` +
+      `min-height:calc(100svh - ${navHeight}rem);`
     );
   }
 
