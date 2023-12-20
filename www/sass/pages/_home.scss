@@ -11,14 +11,35 @@
     $color--off-white;
   margin: 0;
   min-height: calc(100vh - 7.6875rem);
+  min-height: calc(100svh - 7.6875rem);
   overflow: hidden;
   transition: $opacity-fade-transition;
   width: 100%;
   -webkit-user-select: none;
   user-select: none;
 
+  @media screen and (max-width: $breakpoint--xtiny) {
+    min-height: calc(100vh - 9.6875rem);
+    min-height: calc(100svh - 9.6875rem);
+  }
+
+  @media
+      screen and (min-width: $breakpoint--309) and (-webkit-max-device-pixel-ratio: 1.5),
+      screen and (min-width: $breakpoint--309) and (max-resolution: 144dpi),
+      screen and (min-width: $breakpoint--309) and (max-resolution: 1.5dppx),
+      screen and (min-width: $breakpoint--max-phone-width-plusone)
+  {
+    min-height: calc(100vh - 9.875rem);
+    min-height: calc(100svh - 9.875rem);
+  }
+
   @media screen and (min-width: $breakpoint--widescreen) {
     background-image: url('../img/bridge-sunset-bg-980x1040.webp');
+  }
+
+  @media screen and (min-width: $breakpoint--1080) {
+    min-height: calc(100vh - 13.375rem);
+    min-height: calc(100svh - 13.375rem);
   }
 
   @media screen and (min-width: $breakpoint--xxl) {

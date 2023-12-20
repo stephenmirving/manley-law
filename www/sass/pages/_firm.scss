@@ -8,6 +8,10 @@
     border-box
     $color--off-white;
 
+  @include target-phones-and-tiny-width-screens() {
+    background-image: none;
+  }
+
   &__section {
     &:first-child {
       grid-area: mediation;
