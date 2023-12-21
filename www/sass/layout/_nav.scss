@@ -9,6 +9,7 @@
   font-family: $font--headings;
   grid-area: navigation;
   justify-content: space-between;
+  justify-content: space-between;
   padding: 0.25rem 0;
   position: sticky;
   top: 0;
@@ -382,6 +383,14 @@
               color: $color--violet-faint;
             }
           }
+
+          .btn {
+            margin: 0.5rem 0 0;
+
+            @include target-tiny-height-screens() {
+              margin: 0;
+            }
+          }
         }
       }
     }
@@ -397,7 +406,6 @@
     padding: $_btn-padding--static;
     padding: $_btn-padding-y--fb $_btn-padding-x--fb;
     padding: $_btn-padding-y $_btn-padding-x;
-    margin: 0.5rem 0 0;
   }
 }
 

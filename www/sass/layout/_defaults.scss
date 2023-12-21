@@ -227,6 +227,8 @@ a[href^='tel:']:before {
 
 a[href^='mailto:']:before {
   content: $symbol--at;
+  position: relative;
+  top: 1px;
 }
 
 // Remove the inheritance of text transform in Edge, Firefox, and IE.

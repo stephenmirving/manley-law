@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://calendar.google.com">
 
-  <link rel="stylesheet" href="css/main-v1.css">
+  <link rel="stylesheet" href="css/main-v101.css">
 
   <meta
     name="description"
@@ -25,7 +25,7 @@
     gtag('config', 'G-8EBM4LYETC');
   </script> -->
 
-  <meta property="og:site_name" content="Manley &amp; Halverstadt Family Law Attorneys">
+  <meta property="og:site_name" content="Manley &amp; Halverstadt Law Firm">
   <meta property="og:title" content="Calendar | Manley &amp; Halverstadt | Family Law Attorneys">
   <meta
     property="og:description"
@@ -33,17 +33,20 @@
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.manleyandhalverstadt.com/calendar">
-  <meta property="og:image" content="https://www.manleyandhalverstadt.com/img/logo.png">
+  <meta property="og:image" content="https://www.manleyandhalverstadt.com/img/logo-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://www.manleyandhalverstadt.com/img/logo.png">
+  <meta name="twitter:image" content="https://www.manleyandhalverstadt.com/img/logo-1200x628.png">
   <meta
     name="twitter:image:alt"
     content="Manley &amp; Halverstadt logo with green &ldquo;M&rdquo; and blue &ldquo;H&rdquo; overlapping"
   >
 
-  <link rel="icon" href="favicon.ico" type="image/ico">
-  <link rel="icon" href="favicon-dark.ico" type="image/ico" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-dark.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="img/favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="img/favicon-dark-32x32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="img/apple-touch-icon.png" type="image/png" sizes="180x180">
