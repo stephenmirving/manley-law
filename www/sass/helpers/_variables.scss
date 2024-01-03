@@ -1,125 +1,137 @@
-// Layout viewport width breakpoint sizes
 // Breakpoints based on specific breakpoints in the layout
-$breakpoint--166: 10.375em;
-$breakpoint--228: 14.25em;
-$breakpoint--308: 19.25em;
-$breakpoint--309: 19.3125em;
-$breakpoint--336: 21em;
-$breakpoint--390: 24.375em;
-$breakpoint--430: 26.875em;
-$breakpoint--476: 29.75em; // This and larger has "Restaurant" in title bar
-$breakpoint--640: 40em;
-$breakpoint--756: 47.25em;
-$breakpoint--768: 48em;
-$breakpoint--878: 54.875rem; // Nav toggles here
-$breakpoint--1080: 67.5em;
-$breakpoint--1280: 80em;
-$breakpoint--1440: 90em;
+$bp-166: 10.375em;
+$bp-186: 11.625em;
+$bp-228: 14.25em;
+$bp-308: 19.25em;
+$bp-309: 19.3125em;
+$bp-336: 21em;
+$bp-390: 24.375em;
+$bp-430: 26.875em;
+$bp-476: 29.75em;
+$bp-640: 40em;
+$bp-756: 47.25em;
+$bp-768: 48em;
+$bp-878: 54.875rem; // Nav toggles here
+$bp-1080: 67.5em;
+$bp-1280: 80em;
+$bp-1440: 90em;
 
 // Breakpoints based on general device sizes
-$breakpoint--xtiny: 14.8125em; // 237px
-$breakpoint--tiny: 16rem; // 256px
-$breakpoint--xxxs: 17.5em;// 280px
-$breakpoint--xxs: 23.5em; // 376px
-$breakpoint--xs: 35em;    // 560px
-$breakpoint--s: 42em;     // 672px
-$breakpoint--m: $breakpoint--768;
-$breakpoint--l: 52em;     // 832px
-$breakpoint--xl: 62em;    // 992px
-$breakpoint--xxl: 75em;   // 1200px
-$breakpoint--xxxl: $breakpoint--1440;
 
-$breakpoint--widescreen: $breakpoint--878;
-$breakpoint--max-phone-width: 27.25em; // 436px
-$breakpoint--max-phone-width-plusone: 27.3125em; // 437px
-
-$breakpoint--height-tiny: 22.75em; // 364px
-$breakpoint--height: 37.5em; // 600px
-$breakpoint--heightplusone: 37.5625em; // 601px
+$bp-xtiny: 14.8125em; // 237px
+$bp-tiny: 16rem; // 256px
+$bp-xxxs: 17.5em; // 280px
+$bp-xxs: 23.5em; // 376px
+$bp-xs: 35em; // 560px
+$bp-s: 42em; // 672px
+$bp-m: $bp-768;
+$bp-l: 52em; // 832px
+$bp-xl: 62em; // 992px
+$bp-xxl: 75em; // 1200px
+$bp-xxxl: $bp-1440;
+$bp-widescreen: $bp-878;
+$bp-max-phone-width: 27.25em; // 436px
+$bp-max-phone-width-plusone: 27.3125em; // 437px
+$bp-height-tiny: 22.75em; // 364px
+$bp-height: 37.5em; // 600px
+$bp-heightplusone: 37.5625em; // 601px
 
 // Colors
-$color--brand: #223752;
-$color--brand-lightest: rgba(11, 47, 91, 0.36);
-$color--brand-light: rgba(11, 47, 91, 0.76);
-$color--brand-green: #2D535C;
-$color--green-lime: #0DB694;
-$color--violet: #CFB2F3; // brand-green contrast ??
-$color--purple: #881C9E;
-$color--blue-faint: #C0FAFF;
-$color--blue: #008ecc;
-$color--blue-light: #00B1FF;
-$color--violet-faint: #DBDDEA;
-$color--tan: #C5C5BB;
-$color--brand-contrast: #B6C9EB;
-$color--black: #0a0a0a;
-$color--black-light: #222;
-$color--black-lighter: #323232;
-$color--black-lightest: #333445;
-$color--off-white: #F3FAFF;
-$color--off-white-2: #E2F1ED;
-$color--white: #f0fafa;
-$color--faint-blue: #D0E5DE;
-$color--gray: #95A8A4;
-$color--silver: #737E8B;
+$color-brand: #223752;
+$color-brand-lightest: rgba(11, 47, 91, 0.36);
+$color-brand-light: rgba(11, 47, 91, 0.76);
+$color-brand-green: #2d535c;
+$color-green-lime: #0db694;
+$color-violet: #cfb2f3; // brand-green contrast ??
+$color-purple: #881c9e;
+$color-blue-faint: #c0faff;
+$color-blue: #008ecc;
+$color-blue-light: #00b1ff;
+$color-violet-faint: #dbddea;
+$color-tan: #c5c5bb;
+$color-brand-contrast: #b6c9eb;
+$color-black: #0a0a0a;
+$color-black-light: #222;
+$color-black-lighter: #323232;
+$color-black-lightest: #333445;
+$color-off-white: #f3faff;
+$color-off-white-2: #e2f1ed;
+$color-white: #f0fafa;
+$color-faint-blue: #d0e5de;
+$color-gray: #95a8a4;
+$color-silver: #737e8b;
 
-$color--body-text: $color--black-light;
-$color--body-heading: $color--brand;
-$color--body-bg: $color--off-white;
-$color--nav-bg: $color--tan;
+$color-body-text: $color-black-light;
+$color-body-heading: $color-brand;
+$color-body-bg: $color-off-white;
+$color-nav-bg: $color-tan;
 
-$color--nav-bg-gradient:
-  linear-gradient(
-    135deg,
-    $color--nav-bg,
-    shade($color--nav-bg, 12%)
-  );
-$color--footer-bg: $color--brand;
-$color--footer-bg-gradient:
-  linear-gradient(
-    135deg,
-    $color--footer-bg,
-    shade($color--footer-bg, 30%)
-  );
+$color-nav-bg-gradient: linear-gradient(
+  135deg,
+  $color-nav-bg,
+  shade($color-nav-bg, 12%)
+);
 
-$color--btn-text: $color--white;
-$color--btn-bg: $color--brand;
-$color--btn-bg--hover: shade($color--brand-green, 5%);
-$color--btn-border: $color--faint-blue;
-$color--btn-border--hover: $color--brand;
+$color-footer-bg: $color-brand;
+$color-footer-bg-gradient: linear-gradient(
+  135deg,
+  $color-footer-bg,
+  shade($color-footer-bg, 30%)
+);
 
-$color--card-bg: rgba($color--off-white, 0.9);
-$color--card-bg-gradient:
-  linear-gradient(
-    135deg,
-    rgba($color--card-bg, 0.5) 0%,
-    rgba($color--tan, 0.5) 100%
-  );
+$color-btn-text: $color-white;
+$color-btn-bg: $color-brand;
+$color-btn-bg--hover: shade($color-brand-green, 5%);
+$color-btn-border: $color-faint-blue;
+$color-btn-border--hover: $color-brand;
 
-$color--contact-bg-gradient:
-  linear-gradient(
-    135deg,
-    rgba($color--tan, 0.8),
-    rgba(shade($color--tan, 7.5%), 1)
-  );
+$color-card-bg: rgba($color-off-white, 0.9);
+$color-card-bg-gradient: linear-gradient(
+  180deg,
+  $color-card-bg 0%,
+  tint(rgba($color-tan, 0.5), 20%) 100%
+);
 
-$font--main-stack:
-  'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$font--headings:
-  'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$font--fast-load:
-  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$font--serif: 'Georgia', serif;
+$color-contact-bg-gradient: linear-gradient(
+  135deg,
+  rgba($color-tan, 0.8),
+  rgba(shade($color-tan, 7.5%), 1)
+);
+
+$font-main-stack:
+  'Roboto',
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol';
+$font-headings:
+  'Lato',
+  system-ui,
+  -apple-system,
+BlinkMacSystemFont,
+  'Segoe UI',
+  sans-serif;
+$font-fast-load:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  sans-serif;
+$font-serif: 'Georgia', serif;
 
 $link-transition-time: 0.4s;
 $link-transition:
-  color $link-transition-time ease,
-  border-bottom-color $link-transition-time ease;
+  color $link-transition-time,
+  border-bottom-color $link-transition-time;
 
 $link-transition-time--nav: 0.6s;
 $link-transition--nav:
-  border-color $link-transition-time--nav ease-in-out,
-  color $link-transition-time--nav ease-in-out;
+  border-color $link-transition-time--nav ease-in,
+  color $link-transition-time--nav ease-in;
 
 $icon-transition-time: 0.2s;
 $icon-transition: color $icon-transition-time ease-out;
@@ -127,8 +139,8 @@ $icon-transition: color $icon-transition-time ease-out;
 $btn-transition-time: 333ms;
 $btn-transition-time--dbl: 333ms;
 $btn-transition:
-  background-color $btn-transition-time ease,
-  box-shadow $btn-transition-time ease;
+  background-color $btn-transition-time,
+  box-shadow $btn-transition-time;
 
 $nav-slide-animation-time: 0.6s;
 $nav-puff-animation-time: 0.6s;
@@ -136,7 +148,8 @@ $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
 
-$opacity-fade-transition: $nav-slide-animation-time + $nav-dropdown-animation-2-delay;
+$opacity-fade-transition: $nav-slide-animation-time +
+  $nav-dropdown-animation-2-delay;
 
 $container-padding-x: 1rem;
 
@@ -149,14 +162,12 @@ $card-padding--xs: 0.75rem;
 
 $grid-gap-size: 2rem;
 
-$footer-padding-y: 2rem;
-
 $burger-transition: all $btn-transition-time ease-out;
 
-$symbol--quotes--double-thick-left: '\275D';
-$symbol--quotes--double-thick-right: '\275E';
-$symbol--telephone: '\260F';
-$symbol--at: '📧';
+$symbol-quotes--double-thick-left: '\275D';
+$symbol-quotes--double-thick-right: '\275E';
+$symbol-telephone: '\260F';
+$symbol-at: '📧';
 
 :root {
   --default-text-size-static: 1em;

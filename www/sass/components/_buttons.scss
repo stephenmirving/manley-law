@@ -1,36 +1,34 @@
 @mixin _btn-state-hover-and-focus() {
-  background-color: $color--btn-bg--hover;
+  background-color: $color-btn-bg--hover;
 }
 
 %btn {
-  background: $color--brand-light;
-  border-radius: 4px;
-  border: 0;
-  color: $color--btn-text;
-  cursor: pointer;
-  display: inline-block;
-  font: 700 1rem/1.15 $font--headings;
-  letter-spacing: 0.0625rem;
-  padding: 0.875rem 1.125rem;
   position: relative;
-  margin: 0.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  transition: $btn-transition;
+  display: inline-block;
   vertical-align: middle;
   max-width: 100%;
+  padding: 0.875rem 1.125rem;
+  border: 0;
+  border-radius: 4px;
+  margin: 0.5rem;
+  background: $color-brand-light;
+  color: $color-btn-text;
   box-shadow:
     inset 0.125rem 0.125rem 0.125rem 0 rgba(255, 255, 255, 0.5),
     0.4375rem 0.4375rem 1.25rem 0 rgba(0, 0, 0, 0.1),
     0.25rem 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.1);
-  -webkit-user-select: none;
+  font: 700 1rem/1.15 $font-headings;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
   user-select: none;
-
+  transition: $btn-transition;
 
   &:-moz-focusring {
     @include _btn-state-hover-and-focus;
 
-    outline: $color--brand solid 0.125rem;
+    outline: $color-brand solid 0.125rem;
     outline-offset: 0.3125rem;
   }
 
@@ -40,14 +38,14 @@
   }
 
   &:active {
-    background: shade($color--brand-green, 15%);
+    background: shade($color-brand-green, 15%);
+    color: $color-violet-faint;
     box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
-    color: $color--violet-faint;
   }
 
   // Accessibility: Focus state
   &:focus-visible {
-    outline: $color--brand solid 0.125rem;
+    outline: $color-brand solid 0.125rem;
     outline-offset: 0.3125rem;
   }
 
@@ -57,44 +55,44 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 0.125rem;
     width: 0;
-    background-color: $color--brand;
+    height: 0.125rem;
+    background-color: $color-brand;
     box-shadow:
-      -0.0625rem -0.0625rem 0.3125rem 0 $color--violet,
+      -0.0625rem -0.0625rem 0.3125rem 0 $color-violet,
       0.4375rem 0.4375rem 1.25rem 0 #0003,
       0.25rem 0.25rem 0.3125rem 0 #0002;
     transition:
-      background-color $btn-transition-time ease,
-      box-shadow $btn-transition-time ease,
-      width $btn-transition-time ease;
+      background-color $btn-transition-time,
+      box-shadow $btn-transition-time,
+      width $btn-transition-time;
   }
 
   &:after {
-    right: inherit;
     top: inherit;
-    left: 0;
+    right: inherit;
     bottom: 0;
+    left: 0;
   }
 
   &:-moz-focusring:before,
   &:-moz-focusring:after {
-    transition:
-      background-color $btn-transition-time--dbl ease,
-      box-shadow $btn-transition-time--dbl ease,
-      width $btn-transition-time--dbl ease;
     width: 100%;
+    transition:
+      background-color $btn-transition-time--dbl,
+      box-shadow $btn-transition-time--dbl,
+      width $btn-transition-time--dbl;
   }
 
   &:hover:before,
   &:hover:after,
   &:focus-visible:before,
   &:focus-visible:after {
-    transition:
-      background-color $btn-transition-time--dbl ease,
-      box-shadow $btn-transition-time--dbl ease,
-      width $btn-transition-time--dbl ease;
     width: 100%;
+    transition:
+      background-color $btn-transition-time--dbl,
+      box-shadow $btn-transition-time--dbl,
+      width $btn-transition-time--dbl;
   }
 }
 

@@ -1,16 +1,16 @@
 %qdro-info {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   margin: 0 auto;
   font-weight: 500;
-  width: 100%;
 }
 
 .qdro {
   &__section {
-    border: 0.1875rem solid $color--brand;
+    border: 0.1875rem solid $color-brand;
     border-radius: 12px;
     margin-bottom: 2rem;
 
@@ -22,10 +22,10 @@
       }
     }
 
-    .hr {
-      background: $color--brand-lightest;
+    hr {
       width: 90%;
       margin: 0 auto 0.5rem;
+      background: $color-brand-lightest;
     }
   }
 
@@ -36,10 +36,10 @@
       @extend %qdro-info;
 
       h4 {
+        margin: 2rem auto 0;
         font-size: calc(2.2 * var(--default-text-size-static));
         font-size: calc(2.2 * var(--default-text-size-fb));
         font-size: clamp(1.375rem, calc(0.25rem + 3vw), 2rem);
-        margin: 2rem auto 0;
         text-align: center;
       }
     }
@@ -52,31 +52,31 @@
   &__brand-q {
     $_square-size: 7.75rem;
     $_square-offset: 1.25rem;
-
-    background-color: rgba(#4A5B6E, 0.3);
-    height: $_square-size;
-    width: min($_square-size, 100%);
     position: relative;
     top: $_square-offset;
     left: $_square-offset;
+    width: min($_square-size, 100%);
+    height: $_square-size;
+
+    background-color: rgba(#4A5B6E, 0.3);
 
     > div {
-      background-color: rgba($color--silver, 1);
-      height: $_square-size;
-      width: min($_square-size, 100%);
       position: absolute;
       top: -#{$_square-offset};
       left: -#{$_square-offset};
       display: flex;
       align-items: center;
       justify-content: center;
+      width: min($_square-size, 100%);
+      height: $_square-size;
+      background-color: rgba($color-silver, 1);
 
       > span {
-        color: $color--white;
+        color: $color-white;
         font-family: Arial, sans-serif;
-        font-weight: 700;
         font-size: 5rem;
-        text-shadow: 0.25rem 0.25rem 0.75rem $color--brand;
+        font-weight: 700;
+        text-shadow: 0.25rem 0.25rem 0.75rem $color-brand;
       }
     }
   }

@@ -14,16 +14,16 @@
 ///
 
 .sr-only {
-  border: 0;
+  position: absolute;
+  overflow: hidden;
   clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
   width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  white-space: nowrap;
 }
 
 // ///
@@ -62,19 +62,6 @@
 //   display: flow-root;
 // }
 
-/// Utility to apply italics for a font when it is not semantically
-/// appropriate to use <em> or <i>
-
-.italic {
-  font-style: italic;
-}
-
-/// Utility to apply italics for a font when it is not semantically
-/// appropriate to use <strong> or <b>
-.bold {
-  font-weight: 700;
-}
-
 /// Utility to apply an underline for a font
 
 .uline {
@@ -99,8 +86,8 @@
 
 .flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .anim-off {

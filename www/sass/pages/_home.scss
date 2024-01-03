@@ -1,48 +1,38 @@
 .hero {
-  border: 0;
   grid-area: hero;
-  background:
-    url('../img/bridge-sunset-bg-980x676.webp')
-    50% 50% / cover
-    no-repeat
-    fixed
-    border-box
-    border-box
-    $color--off-white;
-  margin: 0;
+  overflow: hidden;
+  width: 100%;
   min-height: calc(100vh - 7.6875rem);
   min-height: calc(100svh - 7.6875rem);
-  overflow: hidden;
-  transition: $opacity-fade-transition;
-  width: 100%;
-  -webkit-user-select: none;
+  border: 0;
+  margin: 0;
+  background: url('../img/bridge-sunset-bg-980x676.webp') 50% 50% / cover
+    no-repeat fixed border-box border-box $color-off-white;
   user-select: none;
+  transition: $opacity-fade-transition;
 
-  @media screen and (max-width: $breakpoint--xtiny) {
+  @media screen and (max-width: $bp-xtiny) {
     min-height: calc(100vh - 9.6875rem);
     min-height: calc(100svh - 9.6875rem);
   }
 
-  @media
-      screen and (min-width: $breakpoint--309) and (-webkit-max-device-pixel-ratio: 1.5),
-      screen and (min-width: $breakpoint--309) and (max-resolution: 144dpi),
-      screen and (min-width: $breakpoint--309) and (max-resolution: 1.5dppx),
-      screen and (min-width: $breakpoint--max-phone-width-plusone)
-  {
+  @media screen and (min-width: $bp-309) and (max-resolution: 144dpi),
+    screen and (min-width: $bp-309) and (max-resolution: 1.5dppx),
+    screen and (min-width: $bp-max-phone-width-plusone) {
     min-height: calc(100vh - 9.875rem);
     min-height: calc(100svh - 9.875rem);
   }
 
-  @media screen and (min-width: $breakpoint--widescreen) {
+  @media screen and (min-width: $bp-widescreen) {
     background-image: url('../img/bridge-sunset-bg-980x1040.webp');
   }
 
-  @media screen and (min-width: $breakpoint--1080) {
+  @media screen and (min-width: $bp-1080) {
     min-height: calc(100vh - 13.375rem);
     min-height: calc(100svh - 13.375rem);
   }
 
-  @media screen and (min-width: $breakpoint--xxl) {
+  @media screen and (min-width: $bp-xxl) {
     background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
   }
 
@@ -56,60 +46,58 @@
   &__text-box {
     @include fade($timing: 2s);
 
-    min-width: min(17.5rem, 100%);
-    max-width: 40%;
-    background: rgba($color--tan, 0.7);
-    border-radius: 12px;
     position: relative;
     top: 50%;
     left: 50%;
+    min-width: min(17.5rem, 100%);
+    max-width: 40%;
+    border-radius: 12px;
+    background: rgba($color-tan, 0.7);
     transform: translate(-50%, -50%);
 
-    @media screen and (max-width: $breakpoint--166) {
+    @media screen and (max-width: $bp-166) {
       top: 57.5%;
-      background: rgba($color--tan, 0.8);
+      background: rgba($color-tan, 0.8);
     }
 
-    @media screen and (min-width: $breakpoint--widescreen) {
-      left: 50%;
+    @media screen and (min-width: $bp-widescreen) {
       top: 22%;
+      left: 50%;
       transform: translateX(-50%);
     }
-
   }
 
   &__text {
-    color: $color--black-lighter;
-    margin: 0;
-    font-size: 1rem;
-    font-family: $font--fast-load;
-    font-weight: 700;
     padding: 0.75rem 1.5rem;
+    margin: 0;
+    color: $color-black-lighter;
+    font-family: $font-fast-load;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: left;
     text-wrap: balance;
     text-wrap: pretty;
     white-space: unset;
 
-
-    @media screen and (max-width: $breakpoint--tiny) and (min-height: $breakpoint--heightplusone) {
-      font-size: 0.875rem;
+    @media screen and (max-width: $bp-tiny) and (min-height: $bp-heightplusone) {
       padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
     }
 
-    @media screen and (max-width: 11.625em),
-      screen and (max-height: $breakpoint--height) {
-      font-size: 0.75rem;
+    @media screen and (max-width: $bp-186),
+      screen and (max-height: $bp-height) {
       padding: 0.5rem 1rem;
+      font-size: 0.75rem;
     }
 
-    @media screen and (max-width: $breakpoint--166) and (min-height: $breakpoint--heightplusone) {
-      font-size: 0.6875rem;
+    @media screen and (max-width: $bp-166) and (min-height: $bp-heightplusone) {
       padding: 0.5rem 0.625rem;
+      font-size: 0.6875rem;
     }
 
-    @media screen and (min-width: $breakpoint--widescreen) and (min-height: $breakpoint--heightplusone) {
-      font-size: 1.25rem;
+    @media screen and (min-width: $bp-widescreen) and (min-height: $bp-heightplusone) {
       padding: 1rem 2rem;
+      font-size: 1.25rem;
     }
   }
 }

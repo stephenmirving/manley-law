@@ -21,21 +21,6 @@
   }
 }
 
-.container {
-  width: 100%;
-  padding: 0 $container-padding-x;
-  margin: 0 auto;
-
-  @media screen and (min-width: $bp-m) {
-    max-width: min(96%, 1140px);
-    padding: 0;
-  }
-
-  @media screen and (min-width: $bp-1280) {
-    max-width: 1140px;
-  }
-}
-
 .grid-locations {
   display: grid;
   grid-template-rows: auto;

@@ -1,40 +1,44 @@
 %card {
-  $_color--card-shadow: $color--brand;
+  $_color--card-shadow: $color-brand;
 
   @include card-depth(3, $_color--card-shadow);
 
-  align-items: center;
-  background-color: $color--card-bg;
-  background-image: $color--card-bg-gradient;
-  border-radius: 12px;
-  border: 0.1875rem solid tint($color--brand, 10%);
-  color: $color--black-lightest;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  padding: 0;
-  transition: all 0.4s;
-  margin: 0 0 $grid-gap-size;
   width: 100%;
+  padding: 0;
+  border: 0.1875rem solid rgba(tint($color-brand, 10%), 0.9);
+  border-radius: 12px;
+  margin: 0 0 $grid-gap-size;
+  background-color: $color-card-bg;
+  background-image: $color-card-bg-gradient;
+  background-clip: padding-box;
+  color: $color-black-lightest;
   -webkit-user-select: none;
   user-select: none;
+  transition:
+    box-shadow 0.4s,
+    border-color 0.4s,
+    transform 0.4s;
 
-  @media screen and (min-width: $breakpoint--m) {
+  @media screen and (min-width: $bp-m) {
     &:hover,
     &:focus-visible {
       @include card-depth(5, $_color--card-shadow);
 
-      border-color: $color--brand;
+      border-color: rgba($color-brand, 0.9);
       transform: translateY(-0.125rem) scale(1.0125);
     }
 
     // If there is any card that is being hovered over,
     // selects all other cards that are not hovered
-    .content :has(&:hover) &:not(:hover) {
+    .content:has(&:hover) &:not(:hover) {
       @include card-depth(0);
 
-      border-color: tint($color--brand, 20%);
+      border-color: rgba(tint($color-brand, 20%), 0.9);
     }
   }
 }
@@ -46,4 +50,6 @@
   .content__text {
     padding: 0 $card-padding;
   }
+
+
 }

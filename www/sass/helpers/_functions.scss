@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:color";
 
 /// Returns the truthiness of `$value`.
 /// @access public
@@ -1058,7 +1059,7 @@
 /// returned color.
 /// @return {Color} - The darkened color.
 @function shade($color, $percentage) {
-  @return mix(#000, $color, $percentage);
+  @return color.mix(#000, $color, $percentage);
 }
 
 
@@ -1124,7 +1125,7 @@
 ///
 /// @return {Color} - The lightened color.
 @function tint($color, $percentage) {
-  @return mix(#fff, $color, $percentage);
+  @return color.mix(#fff, $color, $percentage);
 }
 
 

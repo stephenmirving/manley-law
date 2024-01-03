@@ -1,26 +1,28 @@
-@import "helpers/functions";
-@import "helpers/mixins";
-@import "helpers/variables";
-@import "helpers/placeholders";
+@import 'helpers/functions';
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'helpers/placeholders';
 
-@import "components/fonts";
-@import "components/animations";
+@import 'components/fonts';
+@import 'components/animations';
 
-@import "layout/defaults";
-@import "layout/grid";
-@import "layout/nav";
-@import "layout/content";
-@import "layout/footer";
+@import 'layout/defaults';
+@import 'layout/grid';
+@import 'layout/nav';
+@import 'layout/content';
+@import 'layout/footer';
 
-@import "components/cards";
-@import "components/buttons";
-@import "components/icons";
+@import 'components/cards';
+@import 'components/buttons';
+@import 'components/icons';
 
-@import "pages/home";
-@import "pages/calendar";
-@import "pages/firm";
-@import "pages/qdro";
-@import "pages/legal";
+@import 'pages/home';
+@import 'pages/calendar';
+@import 'pages/firm';
+@import 'pages/qdro';
+@import 'pages/legal';
 
-@import "helpers/utilities";
-@import "helpers/accessibility";
+@import 'helpers/utilities';
+@import 'helpers/accessibility';
+
+@import 'layout/print';

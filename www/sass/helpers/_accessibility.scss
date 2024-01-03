@@ -1,5 +1,3 @@
-
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -18,21 +16,9 @@
   }
 }
 
-@media
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (-webkit-min-device-pixel-ratio: 2),
-
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (min-resolution: 192dpi),
-
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (min-resolution: 2dppx),
-
-    (prefers-reduced-motion: reduce)
-{
+@media screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
+  screen and (max-width: $bp-max-phone-width) and (min-resolution: 2dppx),
+  (prefers-reduced-motion: reduce) {
   .hero,
   .firm {
     background-attachment: scroll !important;

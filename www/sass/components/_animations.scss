@@ -8,7 +8,7 @@
     transform: translateX(2rem);
   }
 
-  to {
+  100% {
     opacity: 1;
     transform: translate(0);
   }
@@ -24,7 +24,7 @@
     transform: translateX(-2rem);
   }
 
-  to {
+  100% {
     opacity: 1;
     transform: translate(0);
   }
@@ -33,20 +33,16 @@
 @keyframes slide-down {
   0% {
     opacity: 0;
-    top: 0;
-    border-width: 0 0 0.125rem 0.125rem;
-    border-style: solid;
-    border-color: transparent;
+    transform: translate(calc(0.125rem - 100%), -100%);
   }
 
   20% {
     opacity: 0;
   }
 
-  to {
+  100% {
     opacity: 1;
-    top: 100%;
-    border-color: $color--brand;
+    transform: translate(calc(0.125rem - 100%), 0);
   }
 }
 
@@ -56,23 +52,9 @@
     transform: translateX(1000px);
   }
 
-  to {
+  100% {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes apply-border-color {
-  0% {
-    border-bottom-color: transparent;
-  }
-
-  95% {
-    border-bottom-color: transparent;
-  }
-
-  to {
-    border-bottom-color: $color--brand;
   }
 }
 

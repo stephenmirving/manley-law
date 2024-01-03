@@ -3702,7 +3702,7 @@
 /// to determine spacing.
 ///
 /// @param {Color} $color [$black] - Color to use for the icon.
-/// @param {Color} $color--hover [$dark-gray] - Color to use when the icon is
+/// @param {Color} $color-hover [$dark-gray] - Color to use when the icon is
 /// hovered over.
 /// @param {Length} $width [20px] - Width of the icon.
 /// @param {Length} $height [16px] - Total height of the icon.
@@ -3712,7 +3712,7 @@
 /// @group Shapes
 @mixin hamburger(
   $color: $black,
-  $color--hover: $dark-gray,
+  $color-hover: $dark-gray,
   $width: 20px,
   $height: 16px,
   $weight: 2px,
@@ -3757,14 +3757,14 @@
   }
 
   // Hover state
-  @if ($color--hover) {
+  @if ($color-hover) {
     @for $i from 2 through $bars {
       $offset: ($weight + $spacing) * ($i - 1);
-      $hover-shadow: append($hover-shadow, 0 $offset 0 $color--hover, comma);
+      $hover-shadow: append($hover-shadow, 0 $offset 0 $color-hover, comma);
     }
 
     &:hover:after {
-      background: $color--hover;
+      background: $color-hover;
       box-shadow: $hover-shadow;
     }
   }
@@ -5304,7 +5304,7 @@
 }
 
 /// Creates a 3D ribbon shape for headers. Apply the ribbon to a header element
-/// and include an inner inline element for the header's content.
+/// and include an inner inline element (like <span>) for the header's content.
 ///
 /// @example <h1 class="ribbon"><strong class="ribbon-content">HEADER</strong></h1>
 /// @link https://css-tricks.com/snippets/css/ribbon/
@@ -9830,32 +9830,36 @@
   }
 }
 
-@mixin target-phones-and-tiny-width-screens() {
-  @media
-    screen and (max-width: $breakpoint--308),
+/// Media query mixin that targets phones and tiny screens
+///
+/// @type query
+/// @content Apply the given styles inside the media query
+@mixin target-phones-and-tiny-width-screens {
+  @media screen and (max-width: $bp-308),
 
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (-webkit-min-device-pixel-ratio: 2),
+         screen
+         and (max-width: $bp-max-phone-width)
+         and (min-resolution: 192dpi),
 
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (min-resolution: 192dpi),
+         screen
+         and (max-width: $bp-max-phone-width)
+         and (min-resolution: 2dppx),
 
-    screen
-    and (max-width: $breakpoint--max-phone-width)
-    and (min-resolution: 2dppx),
-
-    screen and (max-height: $breakpoint--height)
+         screen and (max-height: $bp-height)
   {
     @content;
   }
 }
 
+/// Media query mixin that targets phones in landscape and with a view height
+/// less than 600px as well as any screen lower than 364px view height.
+///
+/// @type query
+/// @content Apply the given styles inside the media query
 @mixin target-tiny-height-screens {
   @media
-    screen and (max-height: $breakpoint--height-tiny),
-    screen and (orientation: landscape) and (max-height: $breakpoint--height)
+    screen and (max-height: $bp-height-tiny),
+    screen and (orientation: landscape) and (max-height: $bp-height)
   {
     @content;
   }

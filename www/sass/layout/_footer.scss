@@ -1,21 +1,20 @@
-
 .footer {
-  align-self: end;
-  background: $color--footer-bg-gradient $color--footer-bg;
-  border: 0;
-  color: $color--off-white;
   grid-area: footer;
+  align-self: end;
+  width: 100%;
+  padding: 2rem 0;
+  border: 0;
+  margin: 0;
+  background: $color-footer-bg-gradient $color-footer-bg;
+  color: $color-off-white;
   font-size: 1rem;
   line-height: 1.6;
-  margin: 0;
-  padding: $footer-padding-y 0;
   text-align: center;
-  transition: $opacity-fade-transition;
-  width: 100%;
   -webkit-user-select: none;
   user-select: none;
+  transition: $opacity-fade-transition;
 
-  @media screen and (min-width: $breakpoint--xl) {
+  @media screen and (min-width: $bp-xl) {
     text-align: left;
   }
 
@@ -24,7 +23,7 @@
   }
 
   a {
-    color: $color--off-white;
+    color: $color-off-white;
     line-height: 2;
   }
 
@@ -32,8 +31,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin: 0;
     width: 100%;
+    margin: 0;
   }
 
   &__col {
@@ -42,7 +41,7 @@
     &--subnav {
       @extend %footer-column;
 
-      @media screen and (min-width: $breakpoint--xl) {
+      @media screen and (min-width: $bp-xl) {
         display: flex;
         align-items: center;
       }
@@ -53,7 +52,7 @@
 
       padding: 0;
 
-      @media screen and (min-width: $breakpoint--xl) {
+      @media screen and (min-width: $bp-xl) {
         flex-grow: 1;
         flex-basis: 0;
         text-align: right;
@@ -64,21 +63,19 @@
   &__menu {
     vertical-align: baseline;
 
-    @media screen and (min-width: $breakpoint--xs) {
-      column-gap: 2rem;
+    @media screen and (min-width: $bp-xs) {
       column-count: 2;
+      column-gap: 2rem;
     }
 
-    @media screen and (min-width: $breakpoint--xl) {
+    @media screen and (min-width: $bp-xl) {
       column-gap: 4rem;
     }
 
     > li {
-      @media screen and (min-width: $breakpoint--xs) {
-        -webkit-column-break-inside: avoid;
-        -moz-column-break-inside: avoid;
-        page-break-inside: avoid;
+      @media screen and (min-width: $bp-xs) {
         break-inside: avoid;
+        page-break-inside: avoid;
       }
     }
   }
@@ -95,7 +92,6 @@
       &:visited {
         text-decoration: underline;
       }
-
     }
   }
 
@@ -107,7 +103,7 @@
       outline: 0;
     }
 
-    @media screen and (min-width: $breakpoint--xl) {
+    @media screen and (min-width: $bp-xl) {
       margin: 0;
     }
 
@@ -117,10 +113,10 @@
   }
 
   &__bottom {
-    margin-top: 2rem;
+    width: 100%;
     padding-top: 2rem;
     border-top: 1px solid hsla(0, 0%, 100%, 0.3);
-    width: 100%;
+    margin-top: 2rem;
   }
 
   &__social-menu {
@@ -128,7 +124,7 @@
     justify-content: center;
     margin-bottom: 0.5rem;
 
-    @media screen and (min-width: $breakpoint--xl) {
+    @media screen and (min-width: $bp-xl) {
       justify-content: flex-start;
     }
 
@@ -147,8 +143,8 @@
     }
 
     svg {
-      height: 2rem;
       width: auto;
+      height: 2rem;
       transition: $icon-transition;
     }
   }
@@ -159,10 +155,10 @@
     // stylelint-disable-next-line no-descending-specificity
     > li {
       display: inline-block;
-      font-size: 0.8125rem;
       margin: 0.125rem 0.5rem;
+      font-size: 0.8125rem;
 
-      @media screen and (min-width: $breakpoint--m) {
+      @media screen and (min-width: $bp-m) {
         margin: 0;
 
         &:not(:first-child) {
@@ -173,10 +169,10 @@
   }
 
   &__info {
-    font-size: 1rem;
-    line-height: 1;
-    font-weight: 400;
     margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
 
     &:nth-child(2) {
       margin-top: 0.3125rem;
@@ -199,11 +195,11 @@
         }
 
         &:focus-visible {
-          color: $color--brand-contrast;
+          color: $color-brand-contrast;
         }
       }
 
-      @media screen and (max-width: $breakpoint--390) {
+      @media screen and (max-width: $bp-390) {
         a {
           display: inline-block;
         }
@@ -218,6 +214,26 @@
 
     &:focus {
       outline: 0;
+    }
+  }
+}
+
+@include target-phones-and-tiny-width-screens {
+  .footer {
+    padding: 0.75rem 0;
+    line-height: 1.5;
+
+    a {
+      line-height: 1.5;
+    }
+
+    &__logo {
+      margin-top: 0.75rem;
+    }
+
+    &__bottom {
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
     }
   }
 }

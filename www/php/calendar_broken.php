@@ -58,10 +58,10 @@
   <meta name="theme-color" content="#223752">
 </head>
 <body class="calendar-page grid-layout" itemscope itemtype="https://schema.org/LegalService">
-  <header id="site-head" class="sitehead">
+  <header id="masthead" class="masthead">
     <div class="container">
       <div>
-        <a href="https://www.manleyandhalverstadt.com/" class="sitehead__branding-link" tabindex="0">
+        <a href="https://www.manleyandhalverstadt.com/" class="masthead__branding-link" tabindex="0">
           <h1 class="sr-only" itemprop="name">Manley &amp; Halverstadt</h1>
           <picture>
             <source
@@ -83,12 +83,12 @@
                 width="280"
                 height="184"
                 alt="Manley &amp; Halverstadt logo with green &ldquo;M&rdquo; and blue &ldquo;H&rdquo;"
-                class="sitehead__logo"
+                class="masthead__logo"
                 itemprop="logo"
             >
           </picture>
         </a>
-          <h2 class="sitehead__branding-subhead" itemprop="description">Attorneys and Mediators</h2>
+          <h2 class="masthead__branding-subhead" itemprop="description">Attorneys and Mediators</h2>
       </div>
       <nav id="nav" class="nav">
         <input

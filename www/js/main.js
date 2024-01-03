@@ -1,3 +1,4 @@
+// @ts-check
 ((window) => {
   'use strict';
 
@@ -7,18 +8,24 @@
   const mobileMaxWidth = 878;
 
   // DOM elements
-  const siteHeader = document.getElementById('site-head');
-  const navToggler = document.getElementById('nav-toggler');
-  const burgerBtn = document.getElementById('nav-btn');
-  const navMenuWrapper = document.getElementById('nav-menu-wrapper');
-  const navMenu = document.getElementById('nav-menu');
-  const homepageHero = document.querySelector('body.homepage > .hero');
-  const officeWrappers = document.querySelectorAll('body.homepage .js-office-wrapper');
-  // const brandingSubhead = document.querySelector('.sitehead__branding-subhead');
-  const mainEl = document.getElementById('main');
-  const footer = document.getElementById('footer');
+  const masthead = document.querySelector('#masthead');
+  const navToggler = masthead.querySelector('#nav-toggler');
+  const burgerBtn = masthead.querySelector('#nav-btn');
+  const navMenuWrapper = masthead.querySelector('#nav-menu-wrapper');
+  const navMenu = masthead.querySelector('#nav-menu');
+  const mainEl = document.querySelector('#main');
+  const footer = document.querySelector('#footer');
+  const isHomepage = !!document.querySelector('.homepage');
 
-  const isHomepage = !!homepageHero;
+  let homepageHero;
+  let officeWrappers;
+
+  if (isHomepage) {
+    homepageHero = document.querySelector('.hero');
+    officeWrappers = document.querySelectorAll('.js-office-wrapper');
+  }
+
+  // const brandingSubhead = document.querySelector('.masthead__branding-subhead');
 
   let hasFirstAnimClassBeenAdded = false;
   let hasSecondAnimClassBeenAdded = false;
@@ -50,7 +57,7 @@
     homepageHero.setAttribute(
       'style',
       `min-height:calc(100vh - ${navHeight}rem);` +
-      `min-height:calc(100svh - ${navHeight}rem);`
+        `min-height:calc(100svh - ${navHeight}rem);`
     );
   }
 
@@ -87,41 +94,53 @@
     navMenu.hidden = !isTogglerChecked;
     burgerBtn.setAttribute('aria-expanded', `${isTogglerChecked}`);
     navMenu.setAttribute('aria-expanded', `${isTogglerChecked}`);
-    siteHeader.classList[isTogglerChecked ? 'add' : 'remove']('nav-dropdown-open');
+    masthead.classList[isTogglerChecked ? 'add' : 'remove'](
+      'nav-dropdown-open'
+    );
   }
 
   function pageSetup() {
     if (isHomepage) {
       applyAnimationWhenInView(); // Check on initial load in case the element is already in view
 
-      window.addEventListener('scroll', () => {
-        applyAnimationWhenInView();
-        // Move listener outside if statement if you turn this code on
-        // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        // brandingSubhead.classList[scrollPosition > 600 ? 'add' : 'remove']('sr-only');
-      }, {passive: true});
+      window.addEventListener(
+        'scroll',
+        () => {
+          applyAnimationWhenInView();
+          // Move listener outside if statement if you turn this code on
+          // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+          // brandingSubhead.classList[scrollPosition > 600 ? 'add' : 'remove']('sr-only');
+        },
+        { passive: true }
+      );
     }
 
     toggleNavBurgerBtnDisplay(window.innerWidth);
 
-    window.addEventListener('resize', () => {
-      const vWidth = window.innerWidth;
+    window.addEventListener(
+      'resize',
+      () => {
+        const vWidth = window.innerWidth;
 
-      navMenu.classList.add('anim-off');
+        navMenu.classList.add('anim-off');
 
-      if (vWidth > mobileMaxWidth) {
-        // Uncheck toggler
-        navToggler.checked = false;
-        // Trigger change event for the toggler's listener
-        navToggler.dispatchEvent(new Event('change'));
-      }
+        if (vWidth > mobileMaxWidth) {
+          // Uncheck toggler
+          navToggler.checked = false;
+          // Trigger change event for the toggler's listener
+          navToggler.dispatchEvent(new Event('change'));
+        }
 
-      if (isHomepage) {
-        setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
-      }
+        toggleNavBurgerBtnDisplay(vWidth);
 
-      toggleNavBurgerBtnDisplay(vWidth);
-    }, {passive: true});
+        if (isHomepage) {
+          setHeroSectionMinHeightStyle(
+            masthead.getBoundingClientRect().height
+          );
+        }
+      },
+      { passive: true }
+    );
 
     // Handle all pager click events
     document.body.addEventListener('click', (event) => {
@@ -156,18 +175,22 @@
     });
 
     // Listen for changes on the checkbox
-    navToggler.addEventListener('change', () => {
-      updateDomToggleDropdown(navToggler.checked);
-    }, {passive: true});
+    navToggler.addEventListener(
+      'change',
+      () => {
+        updateDomToggleDropdown(navToggler.checked);
+      },
+      { passive: true }
+    );
 
     if (isHomepage) {
-      setHeroSectionMinHeightStyle(siteHeader.getBoundingClientRect().height);
+      setHeroSectionMinHeightStyle(masthead.getBoundingClientRect().height);
     }
   }
 
   if (document.readyState === 'loading') {
     // Loading hasn't finished yet
-    document.addEventListener('DOMContentLoaded', pageSetup, {passive: true});
+    document.addEventListener('DOMContentLoaded', pageSetup, { passive: true });
   } else {
     // DOMContentLoaded has already fired
     pageSetup();
