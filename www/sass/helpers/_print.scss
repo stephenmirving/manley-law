@@ -35,11 +35,6 @@
     content: ' (' attr(title) ')';
   }
 
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;

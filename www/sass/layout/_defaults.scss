@@ -18,8 +18,8 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
-  -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
@@ -40,9 +40,11 @@ body {
   overflow-x: clip;
   margin: 0;
   background: $color-body-bg;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
+
+  @media screen and (min-width: 80em) {
+    text-rendering: optimizeLegibility;
+  }
 }
 
 h1,
@@ -54,8 +56,8 @@ h6,
 blockquote {
   color: $color-brand;
   font-family: $font-headings;
-  text-wrap: balance;
   white-space: unset;
+  text-wrap: balance;
 }
 
 blockquote p {

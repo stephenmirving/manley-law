@@ -34,9 +34,9 @@
       margin: 1rem auto;
 
       @supports (white-space-collapse: collapse) and (text-wrap: pretty) {
+        white-space-collapse: collapse;
         text-align: justify;
         text-wrap: pretty;
-        white-space-collapse: collapse;
       }
     }
 

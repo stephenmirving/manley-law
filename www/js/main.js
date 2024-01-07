@@ -1,10 +1,17 @@
 // @ts-check
+
+/**
+ * @fileOverview JavaScript file for the Manley & Halverstadt Law website.
+ *
+ * This file contains the main JavaScript code for the website, including
+ * DOM manipulation, event handling, and other functionality.
+ */
 ((window) => {
   'use strict';
   const document = window.document;
 
   // Constants
-  const mobileMaxWidth = 878;
+  const MOBILE_MAX_WIDTH = 878;
 
   // DOM elements
   const masthead = document.querySelector('#masthead');
@@ -60,7 +67,7 @@
   function toggleNavBurgerBtnDisplay(viewWidth) {
     const isNavTogglerChecked = navToggler.checked;
 
-    if (viewWidth < mobileMaxWidth) {
+    if (viewWidth < MOBILE_MAX_WIDTH) {
       navToggler.removeAttribute('disabled');
       burgerBtn.removeAttribute('disabled');
       burgerBtn.removeAttribute('hidden');
@@ -90,9 +97,7 @@
     navMenu.hidden = !isTogglerChecked;
     burgerBtn.setAttribute('aria-expanded', `${isTogglerChecked}`);
     navMenu.setAttribute('aria-expanded', `${isTogglerChecked}`);
-    masthead.classList[isTogglerChecked ? 'add' : 'remove'](
-      'nav-dropdown-open'
-    );
+    masthead.classList[isTogglerChecked ? 'add' : 'remove']('nav-dropdown-open');
   }
 
   function pageSetup() {
@@ -100,14 +105,7 @@
       applyAnimationWhenInView(); // Check on initial load in case the element is already in view
 
       window.addEventListener(
-        'scroll',
-        () => {
-          applyAnimationWhenInView();
-          // Move listener outside if statement if you turn this code on
-          // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-          // brandingSubhead.classList[scrollPosition > 600 ? 'add' : 'remove']('sr-only');
-        },
-        { passive: true }
+        'scroll', applyAnimationWhenInView, { passive: true }
       );
     }
 
@@ -120,7 +118,7 @@
 
         navMenu.classList.add('anim-off');
 
-        if (vWidth > mobileMaxWidth) {
+        if (vWidth > MOBILE_MAX_WIDTH) {
           // Uncheck toggler
           navToggler.checked = false;
           // Trigger change event for the toggler's listener
@@ -135,15 +133,13 @@
         toggleNavBurgerBtnDisplay(vWidth);
 
         if (isHomepage) {
-          setHeroSectionMinHeightStyle(
-            masthead.getBoundingClientRect().height
-          );
+          setHeroSectionMinHeightStyle(masthead.getBoundingClientRect().height);
         }
       },
       { passive: true }
     );
 
-    // Handle all pager click events
+    // Handle all page click events
     document.body.addEventListener('click', (event) => {
       // Check if nav hamburger button is clicked and simulate a click on
       // the checkbox to toggle `checked` state
