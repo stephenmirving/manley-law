@@ -1,6 +1,6 @@
 .content {
   grid-area: content;
-  transition: $opacity-fade-transition;
+  transition: opacity $opacity-fade-transition-time;
 
   &__title {
     @extend %scroll-margin-top;
@@ -32,12 +32,11 @@
 
     &--legal {
       margin: 1rem auto;
-      white-space-collapse: collapse;
 
-      @supports (text-wrap: balance) {
+      @supports (white-space-collapse: collapse) and (text-wrap: pretty) {
         text-align: justify;
-        text-wrap: balance;
         text-wrap: pretty;
+        white-space-collapse: collapse;
       }
     }
 
@@ -73,12 +72,12 @@
       @include _content-link-hover-focus-state;
     }
 
-    &:active {
-      color: shade($color-blue-light, 20%);
-    }
-
     &:focus-visible {
       @include links-tab-focus-state;
+    }
+
+    &:active {
+      color: shade($color-blue-light, 20%);
     }
 
     &--contact,

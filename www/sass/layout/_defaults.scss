@@ -1,9 +1,9 @@
 /* ///////////////////////////////////////////////////////////////////////
-// -----------------------------------------------------------------------
-// -- #DEFAULT STYLES ----------------------------------------------------
-// -----------------------------------------------------------------------
-// -- Opinonated defaults and browser normalization ----------------------
-// -----------------------------------------------------------------------
+// -------------------------------------------------------------------- //
+// -- #DEFAULT STYLES ------------------------------------------------- //
+// -------------------------------------------------------------------- //
+// -- Opinonated defaults and browser normalization ------------------- //
+// -------------------------------------------------------------------- //
 // //////////////////////////////////////////////////////////////////// */
 
 html {
@@ -24,14 +24,14 @@ html {
 }
 
 *,
-::before,
-::after {
+:before,
+:after {
   box-sizing: inherit;
   background-repeat: no-repeat;
 }
 
-::before,
-::after {
+:before,
+:after {
   vertical-align: inherit;
   text-decoration: inherit;
 }
@@ -76,26 +76,28 @@ blockquote p {
 
 table {
   vertical-align: middle;
-  border-collapse: collapse;
-  border-color: currentcolor;
   border-spacing: 0;
+  border-collapse: collapse;
+  border-color: inherit;
   text-indent: 0;
   font-variant-numeric: tabular-nums;
 }
 
 dialog {
-  background-color: #fff;
-  border: solid;
-  color: #000;
-  height: -moz-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
   position: absolute;
   right: 0;
+  left: 0;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+  border: solid;
+  margin: auto;
+  background-color: #fff;
+  color: #000;
 }
 
 dialog:not([open]),
@@ -145,14 +147,13 @@ img {
   border-style: none;
   background-size: cover;
   background-repeat: no-repeat;
+  image-rendering: smooth;
   font-style: italic;
-  -ms-interpolation-mode: bicubic;
   shape-margin: 1rem;
 }
 
 img,
-picture,
-details {
+picture {
   display: block;
 }
 
@@ -251,16 +252,13 @@ button,
   text-shadow: none;
 }
 
-// Remove the inner border and padding in Firefox.
-::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
+:-moz-focusring {
+  outline: 2px solid #000;
+  outline-offset: 1px;
 }
 
-// Restore the focus styles unset by the previous rule.
-
-:-moz-focusring {
-  outline: 1px dotted ButtonText;
+:focus-visible {
+  outline-offset: 3px;
 }
 
 legend {
@@ -298,16 +296,18 @@ progress {
   box-shadow: none;
 }
 
-// A better looking default horizontal rule
+// A better looking default horizontal rule that looks the same in all browsers
 
 hr {
   display: block;
+  overflow: hidden;
   box-sizing: content-box;
-  height: 1px;
+  height: 0;
   padding: 0;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 2px solid currentcolor;
   margin: 1em 0;
+  color: inherit;
 }
 
 iframe {
@@ -335,15 +335,6 @@ select,
 textarea,
 video {
   max-width: 100%;
-}
-
-iframe,
-img,
-input,
-picture,
-select,
-textarea,
-video {
   height: auto;
 }
 
@@ -367,7 +358,6 @@ ul {
   margin-bottom: 1rem;
 }
 
-menu,
 nav ol,
 nav ul,
 footer ol,
@@ -423,9 +413,9 @@ svg:not([fill]) {
 
 [aria-hidden='false'][hidden] {
   display: initial;
-}
 
-[aria-hidden='false'][hidden]:not(:focus) {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+  &:not(:focus) {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
 }

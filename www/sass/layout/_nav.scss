@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-self: start;
   padding: 0.25rem 0;
-  border: 0.125rem solid transparent;
+  border: 2px solid transparent;
   background: $color-nav-bg-gradient $color-nav-bg;
   font-family: $font-headings;
   transition: border-color 0.3s $nav-dropdown-animation-func;
@@ -29,6 +29,7 @@
     flex-wrap: inherit;
     align-items: center;
     justify-content: space-between;
+    -webkit-user-select: none;
     user-select: none;
 
     @media screen and (max-width: $bp-tiny) {
@@ -38,8 +39,8 @@
 
   &__branding-link {
     &:focus-visible {
-      outline: $color-brand solid 0.0625rem;
-      outline-offset: 0.25rem;
+      outline: $color-brand solid 1px;
+      outline-offset: 4px;
     }
   }
 
@@ -109,6 +110,7 @@
     }
 
     &:-moz-focusring {
+      border-color: $color-brand;
       color: $color-brand;
     }
 
@@ -130,8 +132,8 @@
       &,
       &:link,
       &:visited {
-        border: 0.125rem solid $color-brand;
-        border-width: 0.125rem 0;
+        border: 2px solid $color-brand;
+        border-width: 2px 0;
         color: $color-brand;
       }
 
@@ -183,7 +185,7 @@
     height: 1.875rem;
     border: 0;
     background: transparent;
-    outline-offset: 0.3125rem;
+    outline-offset: 5px;
     cursor: pointer;
 
     &:before,
@@ -200,7 +202,7 @@
     &:before {
       position: absolute;
       top: 0;
-      box-shadow: tint($color-brand-light, 10%) 0 0.875rem 0 0;
+      box-shadow: tint($color-brand-light, 10%) 0 14px 0 0;
     }
 
     &:after {
@@ -211,13 +213,13 @@
     &:-moz-focusring {
       padding: 0;
       border: 0;
-      outline: $color-brand solid 0.125rem;
+      outline: $color-brand solid 2px;
     }
 
     &:focus-visible {
       padding: 0;
       border: 0;
-      outline: $color-brand solid 0.125rem;
+      outline: $color-brand solid 2px;
     }
 
     &:hover,
@@ -228,7 +230,7 @@
       }
 
       &:before {
-        box-shadow: shade($color-brand-green, 10%) 0 0.875rem 0 0;
+        box-shadow: shade($color-brand-green, 10%) 0 14px 0 0;
       }
     }
 
@@ -273,7 +275,7 @@
         top: 100%;
         left: 100%;
         z-index: 99;
-        border-width: 0 0 0.125rem 0.125rem;
+        border-width: 0 0 2px 2px;
         border-style: solid;
         border-color: $color-brand;
         background-image: linear-gradient(
@@ -317,7 +319,7 @@
 
           li {
             width: 100%;
-            border-top: 0.125rem solid $color-brand;
+            border-top: 2px solid $color-brand;
             text-align: center;
 
             @include target-tiny-height-screens {

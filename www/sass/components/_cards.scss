@@ -1,6 +1,6 @@
-%card {
-  $_color--card-shadow: $color-brand;
+$_color--card-shadow: $color-brand;
 
+%card {
   @include card-depth(3, $_color--card-shadow);
 
   display: flex;
@@ -23,33 +23,42 @@
     box-shadow 0.4s,
     border-color 0.4s,
     transform 0.4s;
-
-  @media screen and (min-width: $bp-m) {
-    &:hover,
-    &:focus-visible {
-      @include card-depth(5, $_color--card-shadow);
-
-      border-color: rgba($color-brand, 0.9);
-      transform: translateY(-0.125rem) scale(1.0125);
-    }
-
-    // If there is any card that is being hovered over,
-    // selects all other cards that are not hovered
-    .content:has(&:hover) &:not(:hover) {
-      @include card-depth(0);
-
-      border-color: rgba(tint($color-brand, 20%), 0.9);
-    }
-  }
 }
 
 .card {
   @extend %card;
 
-  .content__section-title,
-  .content__text {
-    padding: 0 $card-padding;
+  &--focusable {
+    @extend %card;
+
+    .content__section-title,
+    .content__text {
+      padding: 0 $card-padding;
+    }
+
+    @media screen and (min-width: $bp-m) {
+      &:-moz-focusring {
+        @include card-depth(5, $_color--card-shadow);
+
+        border-color: rgba($color-brand, 0.9);
+        transform: translateY(-0.125rem) scale(1.0125);
+      }
+
+      &:hover,
+      &:focus-visible {
+        @include card-depth(5, $_color--card-shadow);
+
+        border-color: rgba($color-brand, 0.9);
+        transform: translateY(-0.125rem) scale(1.0125);
+      }
+
+      // If there is any card that is being hovered over,
+      // selects all other cards that are not hovered
+      .content:has(&:hover, &:focus-visible) &:not(:hover, :focus-visible) {
+        @include card-depth(0);
+
+        border-color: rgba(tint($color-brand, 20%), 0.9);
+      }
+    }
   }
-
-
 }

@@ -55,8 +55,7 @@
 
 @mixin links-tab-focus-state() {
   border-bottom-color: transparent !important;
-  outline: $color-blue solid 0.0625rem;
-  outline-offset: 0.125rem;
+  outline: 1px solid $color-blue;
 }
 
 %content-links {
@@ -70,6 +69,8 @@
 
   &:-moz-focusring {
     @include _content-link-hover-focus-state;
+
+    outline: 1px solid $color-blue;
   }
 
   &:hover,
@@ -77,17 +78,16 @@
     @include _content-link-hover-focus-state;
   }
 
+  &:focus-visible {
+    outline: 1px solid $color-blue solid;
+  }
+
   &:active {
     color: shade($color-blue-light, 20%);
   }
-
-  &:focus-visible {
-    outline: $color-blue solid 0.0625rem;
-    outline-offset: 0.125rem;
-  }
 }
 
-@mixin _contact-link-hover-focus-state() {
+@mixin _contact-link-hover-focus-state {
   border-bottom-color: inherit;
   color: $color-brand;
 }
@@ -111,12 +111,12 @@
     @include _contact-link-hover-focus-state;
   }
 
-  &:active {
-    color: $color-blue;
-  }
-
   &:focus-visible {
     @include links-tab-focus-state;
+  }
+
+  &:active {
+    color: $color-blue;
   }
 }
 
@@ -148,13 +148,11 @@
   @extend %links-footer-base;
 
   &:-moz-focusring {
-    outline: $color-brand-contrast solid 0.0625rem;
-    outline-offset: 0.125rem;
+    outline: 1px solid $color-brand-contrast;
   }
 
   &:focus-visible {
-    outline: $color-brand-contrast solid 0.0625rem;
-    outline-offset: 0.125rem;
+    outline: 1px solid $color-brand-contrast;
   }
 }
 

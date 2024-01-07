@@ -33,8 +33,15 @@
     "no-mixed-spaces-and-tabs": ["error"],
     "no-tabs": ["error"],
     "no-trailing-spaces": ["error"],
-    // "no-var": "off",
-    // "one-var": ["warn", "consecutive"],
+    "no-var": "error",
+    "one-var": [
+      "warn",
+      {
+        "var": "consecutive",
+        "let": "consecutive",
+        "const": "never"
+      }
+    ],
     "object-curly-spacing": "off",
     "operator-linebreak": "off",
     "require-jsdoc": "off",

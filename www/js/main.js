@@ -1,7 +1,6 @@
 // @ts-check
 ((window) => {
   'use strict';
-
   const document = window.document;
 
   // Constants
@@ -17,18 +16,15 @@
   const footer = document.querySelector('#footer');
   const isHomepage = !!document.querySelector('.homepage');
 
-  let homepageHero;
-  let officeWrappers;
+  let hasFirstAnimClassBeenAdded = false,
+      hasSecondAnimClassBeenAdded = false,
+      homepageHero,
+      officeWrappers;
 
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
     officeWrappers = document.querySelectorAll('.js-office-wrapper');
   }
-
-  // const brandingSubhead = document.querySelector('.masthead__branding-subhead');
-
-  let hasFirstAnimClassBeenAdded = false;
-  let hasSecondAnimClassBeenAdded = false;
 
   function applyAnimationWhenInView() {
     const firstElemRect = officeWrappers[0].getBoundingClientRect();
@@ -129,6 +125,11 @@
           navToggler.checked = false;
           // Trigger change event for the toggler's listener
           navToggler.dispatchEvent(new Event('change'));
+          if (isHomepage) {
+            homepageHero.classList.remove('reduce-opacity');
+          }
+          mainEl.classList.remove('reduce-opacity');
+          footer.classList.remove('reduce-opacity');
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
@@ -188,11 +189,11 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    // Loading hasn't finished yet
-    document.addEventListener('DOMContentLoaded', pageSetup, { passive: true });
-  } else {
+  if (document.readyState === 'complete') {
     // DOMContentLoaded has already fired
     pageSetup();
+    return;
   }
+  // Loading hasn't finished yet
+  document.addEventListener('DOMContentLoaded', pageSetup, { passive: true });
 })(window);

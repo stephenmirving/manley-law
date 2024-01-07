@@ -8,8 +8,11 @@
   margin: 0;
   background: url('../img/bridge-sunset-bg-980x676.webp') 50% 50% / cover
     no-repeat fixed border-box border-box $color-off-white;
+  image-rendering: smooth;
+  image-rendering: high-quality;
+  -webkit-user-select: none;
   user-select: none;
-  transition: $opacity-fade-transition;
+  transition: opacity $opacity-fade-transition-time;
 
   @media screen and (max-width: $bp-xtiny) {
     min-height: calc(100vh - 9.6875rem);
@@ -72,12 +75,9 @@
     margin: 0;
     color: $color-black-lighter;
     font-family: $font-fast-load;
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 700;
-    text-align: left;
-    text-wrap: balance;
-    text-wrap: pretty;
-    white-space: unset;
+    text-align: center;
 
     @media screen and (max-width: $bp-tiny) and (min-height: $bp-heightplusone) {
       padding: 0.625rem 1.25rem;

@@ -90,8 +90,8 @@
       }
     ],
     "declaration-property-value-disallowed-list": {
-      "/^animation/": ["/ease/"],
-      "/^transition/": ["/ease/"]
+      "/^animation/": ["/^ease$/"],
+      "/^transition/": ["/^ease$/"]
     },
     "declaration-property-value-no-unknown": null,
     "font-family-name-quotes": "always-where-recommended",
@@ -292,6 +292,7 @@
         "background-origin",
         "background-size",
         "background-repeat",
+        "image-rendering",
         "color",
         "caret-color",
         "box-decoration-break",
@@ -467,7 +468,28 @@
     "rem-over-px/rem-over-px": [
       true,
       {
-        "ignore": ["border-radius", "1px", "-1px", "1000px", "1140px"]
+        "ignore": [
+          "background",
+          "background-position",
+          "background-size",
+          "border",
+          "border-radius",
+          "border-width",
+          "box-shadow",
+          "outline",
+          "outline-width",
+          "outline-offset",
+          "text-shadow",
+          "1px",
+          "-1px",
+          "2px",
+          "-2px",
+          "1000px",
+          "1140px"
+        ],
+        "ignoreAtRules": ["media"],
+        "ignoreFunctions": ["url"],
+        "fontSize": 16
       }
     ],
     "rule-empty-line-before": [
@@ -479,7 +501,7 @@
     ],
     "selector-anb-no-unmatchable": true,
     "selector-attribute-quotes": "always",
-    "selector-class-pattern": "^[a-z]+(?:-[a-z]+)*(?:__[a-z]+(?:-[a-z]+)*)*(?:--[a-z]+(?:-[a-z]+)*)*$",
+    "selector-class-pattern": "^[a-z]+(?:-[a-z]+)*(?:[1-9]*__[a-z]+(?:-[a-z]+)*)*(?:[1-9]*--[a-z]+(?:-[a-z]+)*)*$",
     "selector-max-attribute": 4,
     "selector-max-id": 0,
     "selector-max-specificity": "0,5,5",

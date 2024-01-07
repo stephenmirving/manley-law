@@ -12,7 +12,7 @@
   text-align: center;
   -webkit-user-select: none;
   user-select: none;
-  transition: $opacity-fade-transition;
+  transition: opacity $opacity-fade-transition-time;
 
   @media screen and (min-width: $bp-xl) {
     text-align: left;
@@ -98,10 +98,6 @@
   &__logo {
     display: inline-block;
     margin: 1rem auto 0;
-
-    &:focus {
-      outline: 0;
-    }
 
     @media screen and (min-width: $bp-xl) {
       margin: 0;
@@ -191,6 +187,11 @@
 
       a {
         &:focus {
+          outline: 0;
+        }
+
+        &:-moz-focusring {
+          color: $color-brand-contrast;
           outline: 0;
         }
 

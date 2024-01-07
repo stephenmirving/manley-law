@@ -112,16 +112,20 @@ $font-headings:
   'Lato',
   system-ui,
   -apple-system,
-BlinkMacSystemFont,
+  BlinkMacSystemFont,
   'Segoe UI',
   sans-serif;
 $font-fast-load:
+  Helvetica,
+  'Helvetica Neue',
+  Arial,
+  'Lucida Grande',
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
   'Segoe UI',
   sans-serif;
-$font-serif: 'Georgia', serif;
+$font-serif: 'Minion Pro', 'Times New Roman', serif;
 
 $link-transition-time: 0.4s;
 $link-transition:
@@ -148,7 +152,7 @@ $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
 
-$opacity-fade-transition: $nav-slide-animation-time +
+$opacity-fade-transition-time: $nav-slide-animation-time +
   $nav-dropdown-animation-2-delay;
 
 $container-padding-x: 1rem;
