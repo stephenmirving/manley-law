@@ -185,7 +185,7 @@
     }
   }
 
-  if (document.readyState === 'complete') {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
     // DOMContentLoaded has already fired
     pageSetup();
     return;
