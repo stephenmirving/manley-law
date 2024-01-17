@@ -244,7 +244,7 @@
             <h3 id="mc-office-heading" class="content__section-title" itemprop="name">Moncks Corner Office</h3>
             <address class="contact__address">
               <p class="content__text">
-                <a class="content__link--contact" title="Manley &amp; Halverstadt Moncks Corner Office directions" itemscope itemtype="https://schema.org/PostalAddress" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/oZs7KxF9rS8tGCfc6" tabindex="0">
+                <a class="content__link--contact" title="Manley &amp; Halverstadt Moncks Corner Office directions" itemscope itemtype="https://schema.org/PostalAddress" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/SzF7qR69TiL8B8nx6" tabindex="0">
                   <svg class="icon--map-pin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
                   <span class="street-address" itemprop="streetAddress">400 Suite B Altman Street</span><br>
                   <span class="locality" itemprop="addressLocality">Moncks Corner</span>,
@@ -363,29 +363,6 @@
                     >
                       <title>Google</title>
                       <path fill="currentColor" d="M0,105C0,47.103,47.103,0,105,0c23.383,0,45.515,7.523,64.004,21.756l-24.4,31.696C133.172,44.652,119.477,40,105,40 c-35.841,0-65,29.159-65,65s29.159,65,65,65c28.867,0,53.398-18.913,61.852-45H105V85h105v20c0,57.897-47.103,105-105,105 S0,162.897,0,105z"/>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/manleyandhalverstadt"
-                    aria-label="Visit Manley &amp; Halverstadt on Facebook. Opens a new window."
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    tabindex="0"
-                  >
-                    <svg
-                      focusable="false"
-                      data-icon="facebook-f"
-                      role="img"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 320 512"
-                    >
-                      <title>Facebook</title>
-                      <path
-                        fill="currentColor"
-                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                      />
                     </svg>
                   </a>
                 </li>

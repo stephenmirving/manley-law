@@ -63,13 +63,13 @@
     }
 
     &:-moz-focusring {
-      @include _content-link-hover-focus-state;
+      @include content-link-hover-focus-state_;
       @include links-tab-focus-state;
     }
 
     &:hover,
     &:focus-visible {
-      @include _content-link-hover-focus-state;
+      @include content-link-hover-focus-state_;
     }
 
     &:focus-visible {

@@ -3,7 +3,6 @@
     "node_modules/**",
     "**/*.css",
     "**/*.html",
-    "www/sass/layout/_defaults.scss",
     "www/sass/helpers/_functions.scss",
     "www/sass/helpers/_mixins.scss"
   ],
@@ -11,22 +10,17 @@
     "stylelint-scss",
     "stylelint-group-selectors",
     "stylelint-order",
-    "stylelint-high-performance-animation",
     "stylelint-rem-over-px",
     "stylelint-prettier"
   ],
-  "extends": [
-    "stylelint-config-standard-scss"
-  ],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "alpha-value-notation": "number",
     "annotation-no-unknown": true,
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
+        "except": ["first-nested"],
         "ignore": [
           "after-comment",
           "blockless-after-same-name-blockless",
@@ -86,7 +80,11 @@
       "always",
       {
         "except": ["first-nested"],
-        "ignore": ["after-comment", "after-declaration", "inside-single-line-block"]
+        "ignore": [
+          "after-comment",
+          "after-declaration",
+          "inside-single-line-block"
+        ]
       }
     ],
     "declaration-property-value-disallowed-list": {
@@ -409,7 +407,6 @@
       }
     ],
     "plugin/stylelint-group-selectors": true,
-    "plugin/no-low-performance-animation-properties": true,
     "prettier/prettier": [
       true,
       {
@@ -480,7 +477,15 @@
           "outline",
           "outline-width",
           "outline-offset",
+          "perspective",
           "text-shadow",
+          "transform",
+          "transform-origin",
+          "top",
+          "bottom",
+          "left",
+          "right",
+          "inset",
           "1px",
           "-1px",
           "2px",
@@ -591,22 +596,14 @@
     "scss/dollar-variable-empty-line-after": [
       "always",
       {
-        "except": [
-          "last-nested",
-          "before-dollar-variable"
-        ],
-        "ignore": [
-          "before-comment",
-          "inside-single-line-block"
-        ]
+        "except": ["last-nested", "before-dollar-variable"],
+        "ignore": ["before-comment", "inside-single-line-block"]
       }
     ],
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
+        "except": ["first-nested"],
         "ignore": [
           "after-comment",
           "inside-single-line-block",
@@ -616,8 +613,8 @@
     ],
     "scss/dollar-variable-first-in-block": null,
     "scss/dollar-variable-no-missing-interpolation": true,
-    "scss/dollar-variable-pattern": "^_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$",
-    "scss/percent-placeholder-pattern": "^_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$",
+    "scss/dollar-variable-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
+    "scss/percent-placeholder-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/block-no-redundant-nesting": null,
     "scss/comment-no-empty": true,
@@ -635,9 +632,7 @@
     "scss/property-no-unknown": [
       true,
       {
-        "ignoreSelectors": [
-          ":root"
-        ],
+        "ignoreSelectors": [":root"],
         "checkPrefixed": true
       }
     ],
@@ -646,10 +641,7 @@
     "scss/no-duplicate-dollar-variables": [
       true,
       {
-        "ignoreInside": [
-          "at-rule",
-          "nested-at-rule"
-        ],
+        "ignoreInside": ["at-rule", "nested-at-rule"],
         "ignoreDefaults": true
       }
     ],

@@ -1,20 +1,23 @@
+@charset "UTF-8";
+
 @import 'helpers/functions';
 @import 'helpers/mixins';
 @import 'helpers/variables';
-@import 'helpers/placeholders';
 
 @import 'components/fonts';
-@import 'components/animations';
 
-@import 'layout/defaults';
+@import 'layout/base';
 @import 'layout/grid';
+@import 'helpers/placeholders';
 @import 'layout/nav';
 @import 'layout/content';
 @import 'layout/footer';
 
+@import 'components/animations';
 @import 'components/cards';
 @import 'components/buttons';
 @import 'components/icons';
+
 
 @import 'pages/home';
 @import 'pages/calendar';

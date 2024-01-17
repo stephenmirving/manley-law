@@ -132,7 +132,7 @@ $link-transition:
   color $link-transition-time,
   border-bottom-color $link-transition-time;
 
-$link-transition-time--nav: 0.6s;
+$link-transition-time--nav: 0.45s;
 $link-transition--nav:
   border-color $link-transition-time--nav ease-in,
   color $link-transition-time--nav ease-in;
@@ -171,7 +171,7 @@ $burger-transition: all $btn-transition-time ease-out;
 $symbol-quotes--double-thick-left: '\275D';
 $symbol-quotes--double-thick-right: '\275E';
 $symbol-telephone: '\260F';
-$symbol-at: '📧';
+$symbol-mail: '📧';
 
 :root {
   --default-text-size-static: 1em;

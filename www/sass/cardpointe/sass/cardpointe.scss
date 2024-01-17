@@ -1,0 +1,208 @@
+// stylelint-disable
+body.design__page,
+body.design__pay {
+  padding: 0;
+}
+
+#mainContainer {
+  max-width: min(94%, 1140px);
+  padding: 0;
+  margin: 1.5rem auto;
+
+  @media screen and (min-width: 80em) {
+    max-width: 1140px;
+  }
+}
+
+#payForm {
+  margin: 1rem auto;
+
+  .form__row {
+    > span {
+      display: block;
+      width: 100%;
+    }
+
+    .form__input {
+      border-radius: 4px;
+      min-width: 13rem !important;
+      vertical-align: middle !important;
+      width: max(13rem, 100%) !important;
+
+      &:focus-visible {
+        outline: 0;
+        border-radius: 4px;
+        border: 2px solid #003f62;
+      }
+    }
+
+    label {
+      margin: 0 0 0 2px !important;
+      width: 100% !important;
+    }
+  }
+
+  // Logo and header wrapper
+  > div:first-of-type > .grid {
+    display: flex;
+    align-items: center;
+
+    > .col:nth-child(2) {
+      > .page__title {
+        text-align: right;
+
+        @media screen and (max-width: 27.25em) {
+          font-size: 1.625rem;
+        }
+      }
+    }
+  }
+
+  // Client name field, surcharge fee, and amount field wrapper
+  > div:nth-of-type(2) > .grid .col {
+    float: none;
+    margin: 0;
+
+    > .form__row:first-child {
+      position: static !important;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    // Surcharge fee field wrapper
+    > .form__row:nth-child(2) {
+      p {
+        text-align: center;
+        text-wrap: pretty;
+        font-weight: 500;
+      }
+    }
+
+    // Amount field wrapper
+    > .form__row:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      position: static;
+      align-items: start;
+      width: 50%;
+    }
+  }
+
+  // Payment & Billing info wrapper
+  > div:nth-of-type(3) > .grid {
+    // Payment Info Column Wrapper
+    > .col:first-child {
+      .mar--t {
+        margin: 0 !important;
+
+        // CC info
+        > div > .payment--cc {
+          // Expiration date
+          > div:nth-child(3) {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 27.25em) {
+              flex-direction: column;
+              align-items: start;
+            }
+
+            > .form__input {
+              width: auto !important;
+              display: block;
+              min-width: 7.5rem !important;
+              max-width: 7.5rem !important;
+            }
+          }
+
+          // Security code
+          > div:nth-child(4) {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 27.25em) {
+              flex-direction: column;
+              align-items: start;
+            }
+
+            #CreditCardCVV {
+              width: auto !important;
+              min-width: 15rem !important;
+              max-width: 15rem !important;
+
+              @media screen and (max-width: 27.25em) {
+                min-width: 7.5rem !important;
+                max-width: 7.5rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  min-width: 180px;
+}
+
+#submitBtn {
+  display: block;
+  margin: 0 auto;
+}
+
+// Phone & tablet styles - up to 768px
+
+@media screen and (max-width: 48em) {
+  #payForm {
+    // Logo and header
+    > div:first-of-type > .grid {
+      flex-direction: column;
+
+      // Logo column
+      > .col:first-child {
+        margin: 0;
+        width: auto;
+      }
+
+      // Header column
+      > .col:nth-child(2) {
+        margin: 0;
+        width: auto;
+
+        .page__title {
+          text-align: center;
+        }
+      }
+    }
+
+    > div:nth-of-type(2) > .grid > .col {
+      > .form__row:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// #Payment Accepted Screen
+
+.design__confPage {
+  > div:first-of-type .grid {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 27.25em) {
+      flex-direction: column;
+    }
+
+    .removable {
+      position: static;
+      text-align: center;
+    }
+  }
+
+  > div:nth-of-type(2) > .cols--1 {
+    text-align: center;
+  }
+}

@@ -48,7 +48,7 @@
   transition: $link-transition;
 }
 
-@mixin _content-link-hover-focus-state() {
+@mixin content-link-hover-focus-state_() {
   border-bottom-color: inherit;
   color: $color-green-lime;
 }
@@ -68,14 +68,14 @@
   }
 
   &:-moz-focusring {
-    @include _content-link-hover-focus-state;
+    @include content-link-hover-focus-state_;
 
     outline: 1px solid $color-blue;
   }
 
   &:hover,
   &:focus-visible {
-    @include _content-link-hover-focus-state;
+    @include content-link-hover-focus-state_;
   }
 
   &:focus-visible {

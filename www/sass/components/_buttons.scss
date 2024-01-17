@@ -30,7 +30,7 @@
     @include _btn-state-hover-and-focus;
 
     outline: 2px solid $color-brand solid;
-    outline-offset: 2px;
+    outline-offset: 5px;
   }
 
   &:hover,
@@ -46,7 +46,7 @@
 
   &:focus-visible {
     outline: 2px solid $color-brand;
-    outline-offset: 5px;
+    outline-offset: 4px;
   }
 
   &:before,

@@ -213,13 +213,13 @@
     &:-moz-focusring {
       padding: 0;
       border: 0;
-      outline: $color-brand solid 2px;
+      outline: 2px solid $color-brand;
     }
 
     &:focus-visible {
       padding: 0;
       border: 0;
-      outline: $color-brand solid 2px;
+      outline: 2px solid $color-brand;
     }
 
     &:hover,
