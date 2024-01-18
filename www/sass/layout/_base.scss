@@ -99,11 +99,11 @@ blockquote p {
   }
 
   &:before {
-    content: $symbol-quotes--double-thick-left;
+    content: $symbol-quotes-double-thick-left;
   }
 
   &:after {
-    content: $symbol-quotes--double-thick-right;
+    content: $symbol-quotes-double-thick-right;
   }
 }
 

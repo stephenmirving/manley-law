@@ -1,55 +1,49 @@
 TODO:
-  ✔ **** Google social media link goes to Pappy Jr **** @started(23-12-18 23:10) @done(23-12-18 23:48) @lasted(38m39s)
-  ✔ <abbr> on QDRO page @started(23-12-18 22:34) @done(23-12-18 23:10) @lasted(36m45s)
-  ✔ Swap Firm and Calendar in link order @done(23-12-18 23:49)
-  ✔ Make nav__link--active border color fade out on hover of a different nav link @done(23-12-19 01:51)
-  ☐ Make nav animate to a smaller height when the user scrolls down.
-    ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
-  ✔ FIx images - bg images came out grainey and shit from optimization when blown up. Too much compression @done(23-12-19 14:00)
-  ✔ Mobile fixes @done(23-12-19 18:23)
-    ✔ Cards on firm page have headings that dont extend all the way across @done(23-12-19 14:33)
-    ✔ Turn off card hover/focus effects @done(23-12-19 16:13)
-    ✔ Fix scroll margin for contact links on phone size @done(23-12-19 14:33)
-    ✔ Privacy policy text not showing up @done(23-12-19 14:33)
-    ✔ Turn fixed background-attachment to scroll on mobile @done(23-12-19 14:54)
-    ✔ Smaller nav dropdown link size for phone @done(23-12-19 15:54)
-    ✔ Make the whole page slightly reduce in opacity when dropdown menu opens @done(23-12-19 18:15)
-    ☐ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy
-      ☐ Maybe figure out how to mark them all busy?
-    ✔ Fix nav dropdown for mobile in landscape mode @done(23-12-19 16:59)
-      ✔ The links currently go down below the edge of the screen and aren't all visible @done(23-12-19 16:59)
-      ✔ Maybe stack the links in two rows in this view? @done(23-12-19 16:59)
-    ✔ Change button active state to animate for phones @done(23-12-19 01:30)
-  ✔ Fix images @done(23-12-19 04:01)
-    ✔ Get different image sizes for hidpi screens with png backups @done(23-12-19 03:22)
-    ✔ Change all img tags to picture tags @done(23-12-19 04:01)
-  ☐ Install Google analytics
-  ☐ Set up caniuse in the editor
-  ☐ Add more sass varialbes and pair down more frequent or shared styles into placeholders or mixins
   ☐ Get calendar issues worked out
   ☐ Modify htaccess for production
     ☐ Ensure redirect to https is on
     ☐ Ensure redirect to www is on
     ☐ Add and remove any other rules as you see fit to optimize it
-  ☐ Do more for SEO, more meta tags and schema
+  ☐ Install Google analytics - Email them instructions
+  ☐ Run validators on HTML, CSS, and JS
+  ☐ Run schema validator
+  ☐ Run SEO extension validators
+  ☐ Run site through lighthouse
+  ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
+  ☐ Make nav animate to a smaller height when the user scrolls down.
+    ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
   ☐ See if possible to get tooltips in brand colors
   ☐ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages
   ☐ Redo parking directions PDF into an HTML page (make printable too)
-  ☐ Add pictures of the attorneys to firm page on their bio? Check LinkedIn?
-  ☐ Add linkedin or Facebook links to attorneys on their bio page?
-  ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
-  ☐ Run validators on HTML, CSS, and JS
-  ☐ Run schema validator
-
-THINGS TO ADDRESS VIA EMAIL:
-  ☐ Google business is closed down, needs both locations in Google
-  ☐ Calendar issue
-  ☐ Need Facebook page for firm
-  ☐ Need cardepointe login in order to modify form
-  ☐ Pictures of attorneys?
-
 
 Archive:
+  ✔ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy @done(24-01-18 04:05) @project(TODO)
+  ✔ Maybe figure out how to mark them all busy? @done(24-01-18 04:05) @project(TODO)
+  ✔ **** Google social media link goes to Pappy Jr **** @started(23-12-18 23:10) @done(23-12-18 23:48) @lasted(38m39s) @project(TODO)
+  ✔ <abbr> on QDRO page @started(23-12-18 22:34) @done(23-12-18 23:10) @lasted(36m45s) @project(TODO)
+  ✔ Swap Firm and Calendar in link order @done(23-12-18 23:49) @project(TODO)
+  ✔ Make nav__link--active border color fade out on hover of a different nav link @done(23-12-19 01:51) @project(TODO)
+  ✔ FIx images - bg images came out grainey and shit from optimization when blown up. Too much compression @done(23-12-19 14:00) @project(TODO)
+  ✔ Mobile fixes @done(23-12-19 18:23) @project(TODO)
+  ✔ Cards on firm page have headings that dont extend all the way across @done(23-12-19 14:33) @project(TODO)
+  ✔ Turn off card hover/focus effects @done(23-12-19 16:13) @project(TODO)
+  ✔ Fix scroll margin for contact links on phone size @done(23-12-19 14:33) @project(TODO)
+  ✔ Privacy policy text not showing up @done(23-12-19 14:33) @project(TODO)
+  ✔ Turn fixed background-attachment to scroll on mobile @done(23-12-19 14:54) @project(TODO)
+  ✔ Smaller nav dropdown link size for phone @done(23-12-19 15:54) @project(TODO)
+  ✔ Make the whole page slightly reduce in opacity when dropdown menu opens @done(23-12-19 18:15) @project(TODO)
+  ✔ Fix nav dropdown for mobile in landscape mode @done(23-12-19 16:59) @project(TODO)
+  ✔ The links currently go down below the edge of the screen and aren't all visible @done(23-12-19 16:59) @project(TODO)
+  ✔ Maybe stack the links in two rows in this view? @done(23-12-19 16:59) @project(TODO)
+  ✔ Change button active state to animate for phones @done(23-12-19 01:30) @project(TODO)
+  ✔ Fix images @done(23-12-19 04:01) @project(TODO)
+  ✔ Get different image sizes for hidpi screens with png backups @done(23-12-19 03:22) @project(TODO)
+  ✔ Change all img tags to picture tags @done(23-12-19 04:01) @project(TODO)
+  ✔ Google business is closed down, needs both locations in Google @done(24-01-18 04:02) @project(THINGS TO ADDRESS VIA EMAIL)
+  ✔ Calendar issue @done(24-01-18 04:02) @project(THINGS TO ADDRESS VIA EMAIL)
+  ✔ Need Facebook page for firm @done(24-01-18 04:02) @project(THINGS TO ADDRESS VIA EMAIL)
+  ✔ Need cardepointe login in order to modify form @done(24-01-18 04:02) @project(THINGS TO ADDRESS VIA EMAIL)
+  ✔ Pictures of attorneys? @done(24-01-18 04:02) @project(THINGS TO ADDRESS VIA EMAIL)
   ✔ Get framework of original site copied over and working @started(23-12-13 13:19) @done(23-12-16 18:30) @lasted(3d5h11m16s) @project(TODO)
   ✔ Make favicons and other icons, dark and light versions @done(23-12-16 18:30) @project(TODO)
   ✔ Tidy up JS animation so that the second office location animates in when it is visible not when the section heading is visible @done(23-12-16 18:30) @project(TODO)

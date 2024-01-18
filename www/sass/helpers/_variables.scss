@@ -38,8 +38,8 @@ $bp-heightplusone: 37.5625em; // 601px
 
 // Colors
 $color-brand: #223752;
-$color-brand-lightest: rgba(11, 47, 91, 0.36);
-$color-brand-light: rgba(11, 47, 91, 0.76);
+$color-brand-lightest: rgb(11 47 91 / 0.36);
+$color-brand-light: rgb(11 47 91 / 0.76);
 $color-brand-green: #2d535c;
 $color-green-lime: #0db694;
 $color-violet: #cfb2f3; // brand-green contrast ??
@@ -79,11 +79,11 @@ $color-footer-bg-gradient: linear-gradient(
   shade($color-footer-bg, 30%)
 );
 
-$color-btn-text: $color-white;
+$color-btn-text: #fff;
 $color-btn-bg: $color-brand;
-$color-btn-bg--hover: shade($color-brand-green, 5%);
+$color-btn-bg-hover: shade($color-brand-green, 5%);
 $color-btn-border: $color-faint-blue;
-$color-btn-border--hover: $color-brand;
+$color-btn-border-hover: $color-brand;
 
 $color-card-bg: rgba($color-off-white, 0.9);
 $color-card-bg-gradient: linear-gradient(
@@ -99,7 +99,7 @@ $color-contact-bg-gradient: linear-gradient(
 );
 
 $font-main-stack:
-  'Roboto',
+  Roboto,
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -109,7 +109,7 @@ $font-main-stack:
   'Segoe UI Emoji',
   'Segoe UI Symbol';
 $font-headings:
-  'Lato',
+  Lato,
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -132,19 +132,25 @@ $link-transition:
   color $link-transition-time,
   border-bottom-color $link-transition-time;
 
-$link-transition-time--nav: 0.45s;
-$link-transition--nav:
-  border-color $link-transition-time--nav ease-in,
-  color $link-transition-time--nav ease-in;
+$link-transition-time-nav: 0.45s;
+$link-transition-nav:
+  background-color $link-transition-time-nav ease-in,
+  border-color $link-transition-time-nav ease-in,
+  color $link-transition-time-nav ease-in;
 
 $icon-transition-time: 0.2s;
 $icon-transition: color $icon-transition-time ease-out;
 
-$btn-transition-time: 333ms;
-$btn-transition-time--dbl: 333ms;
+$btn-transition-time: 0.4s;
+$btn-transition-2-time: 0.55s;
 $btn-transition:
-  background-color $btn-transition-time,
+  background-color $btn-transition-2-time,
   box-shadow $btn-transition-time;
+
+$btn-transition-2:
+  background-color $btn-transition-2-time,
+  box-shadow $btn-transition-2-time,
+  width $btn-transition-2-time;
 
 $nav-slide-animation-time: 0.6s;
 $nav-puff-animation-time: 0.6s;
@@ -157,19 +163,16 @@ $opacity-fade-transition-time: $nav-slide-animation-time +
 
 $container-padding-x: 1rem;
 
-$nav-link-fontsize--fb-static: 1.375rem;
-$nav-link-fontsize--fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
+$nav-link-fontsize-fb-static: 1.375rem;
+$nav-link-fontsize-fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
 $nav-link-fontsize: clamp(1.25rem, calc(0.125rem + 1.8125vw), 1.625rem);
-
-$card-padding: 0.75rem;
-$card-padding--xs: 0.75rem;
 
 $grid-gap-size: 2rem;
 
 $burger-transition: all $btn-transition-time ease-out;
 
-$symbol-quotes--double-thick-left: '\275D';
-$symbol-quotes--double-thick-right: '\275E';
+$symbol-quotes-double-thick-left: '\275D';
+$symbol-quotes-double-thick-right: '\275E';
 $symbol-telephone: '\260F';
 $symbol-mail: '📧';
 

@@ -101,7 +101,7 @@
   &__link {
     @extend %links-nav-widescreen;
 
-    transition: $link-transition--nav;
+    transition: $link-transition-nav;
 
     &,
     &:link,
@@ -127,7 +127,7 @@
     &--active {
       @extend %links-nav-widescreen;
 
-      transition: $link-transition--nav;
+      transition: $link-transition-nav;
 
       &,
       &:link,
@@ -164,19 +164,19 @@
   }
 
   .btn {
-    $_btn-padding--static: 0.75rem 1rem;
-    $_btn-padding-x--fb: min(max(0.75rem, calc(0.125rem + 1.25vw)), 1.125rem);
-    $_btn-padding-x: clamp(0.75rem, calc(0.125rem + 1.25vw), 1.125rem);
-    $_btn-padding-y--fb: min(max(0.625rem, calc(0.125rem + 0.9vw)), 0.875rem);
-    $_btn-padding-y: clamp(0.625rem, calc(0.125rem + 0.9vw), 0.875rem);
+    $btn-padding--static_: 0.75rem 1rem;
+    $btn-padding-x--fb_: min(max(0.75rem, calc(0.125rem + 1.25vw)), 1.125rem);
+    $btn-padding-x_: clamp(0.75rem, calc(0.125rem + 1.25vw), 1.125rem);
+    $btn-padding-y--fb_: min(max(0.625rem, calc(0.125rem + 0.9vw)), 0.875rem);
+    $btn-padding-y_: clamp(0.625rem, calc(0.125rem + 0.9vw), 0.875rem);
 
-    padding: $_btn-padding--static;
-    padding: $_btn-padding-y--fb $_btn-padding-x--fb;
-    padding: $_btn-padding-y $_btn-padding-x;
+    padding: $btn-padding--static_;
+    padding: $btn-padding-y--fb_ $btn-padding-x--fb_;
+    padding: $btn-padding-y_ $btn-padding-x_;
   }
 
   &__burger-btn {
-    $_patty-thickness: 0.25rem;
+    $patty-thickness_: 0.25rem;
 
     @include puff($timing: $nav-puff-animation-time, $timing-func: ease-in);
 
@@ -193,7 +193,7 @@
       content: '';
       left: 0;
       width: 3.125rem;
-      height: $_patty-thickness;
+      height: $patty-thickness_;
       background: tint($color-brand-light, 10%);
       transition: all 0.75s;
       backface-visibility: hidden;
@@ -207,7 +207,7 @@
 
     &:after {
       position: absolute;
-      top: calc(100% - $_patty-thickness);
+      top: calc(100% - $patty-thickness_);
     }
 
     &:-moz-focusring {
@@ -344,17 +344,16 @@
           // stylelint-disable-next-line no-descending-specificity
           .nav__link {
             transition-timing-function: ease;
-            transition-duration: 0.4s;
 
             &:-moz-focusring {
               background: $color-brand;
-              color: $color-white;
+              color: #fff;
             }
 
             &:hover,
             &:focus-visible {
               background: $color-brand;
-              color: $color-white;
+              color: #fff;
             }
 
             &:active {
@@ -366,9 +365,8 @@
           // stylelint-disable-next-line no-descending-specificity
           .nav__link--active {
             background: tint($color-brand, 20%);
-            color: $color-white;
+            color: #fff;
             transition-timing-function: ease;
-            transition-duration: 0.4s;
 
             &:-moz-focusring {
               background: tint($color-brand, 30%);

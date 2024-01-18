@@ -1,0 +1,77 @@
+Aimee,
+
+I have modified the website to include even more search engine optimization code, removed social media links, and fixed the map embeds and links for the Monck's Corner office. I have also finished improving the look and layout of the Cardpointe payment portal page so that the fields look good and are appropriately sized no matter what device is being used to access the portal. As per our phone call, the following is the step by step instructions for what we need to do to switch the Calendar embed to Google. Once this is done I can upload the new website to GoDaddy as discussed and the new look will be live at your current domain of https://www.manleyandhalverstadt.com/. Please call me if you have any issues or questions, and if it seems like to much and you would prefer to give me the access credentials I can get this all done for you inside an hour.
+
+
+Here are the instructions for what I need you to do:
+
+1. Go to https://calendar.google.com on a computer (not a mobile device) using Google Chrome or Microsoft Edge browser and login with the business Google account that you are going to use.
+2. On the left-hand sidebar, there will be an option that says "Other calendars" with a "+" next to it. Click on the "+" and from the flyout menu choose "Create new calendar" [insert screenshot 1]
+3. This should bring you to the screen that looks like the following  [insert screenshot 2]
+4. In the name field, type the name of the calendar, which according to the current website should be "Mediation Calendar for Todd Manley"
+5. In the description field just write "This is the mediation calendar for Todd Manley, which shows his daily availability" or something similar.
+6. Set the Time Zone field to (GMT-05:00) Eastern Time - New York
+7. Click on the blue "Create calendar" button that is below the name, description, and time-zone fields
+8. You will get a little box dark gray box at the bottom of the window saying "Calendar creation in progress..." which will then change to "Mediation Calendar for Todd Manley successfully created"
+9. Once that is done, click the back arrow <- at the top left of the screen
+10. Now on the left-hand sidebar, your new Calendar will be listed under My calendars. If you have multiple calendars, checking them all in the sidebar will put them all together on the screen so you can see the events from all of them at once, or you can check one at a time to only see the that particular calendar's events. For now, just check the new Calendar you just created, which will have no events visible on the screen.
+11. Hover over the calendar you just created under the My Calendars list in the left-hand sidebar, and when you do so you will see three little dots arranged vertically on top of one another to the right of the calendar name, hover over those little dots so that a tooltip comes up that says "Options for Mediation Calendar for Todd Manley" and click on the dots. You will get a flyout menu that says "Display this only" then "Settings and sharing" and then some color options to color-code the calendar. Choose "Settings and sharing" from this flyout menu.
+12. On this screen you will see more settings options for your new calendar. The screen looks like this [insert screenshot 5]
+13. Under Access permissions for events, ensure that the checkbox next to "Make available to the public" is checked.
+14. Next to that will be a dropdown menu, ensure "See only free/busy (hide details)" is chosen from that dropdown [insert screenshot 6]
+15. Under "Event Notifications" delete any notifications that may be there by clicking the X next to them. [insert screenshot 7] If there are no notifications there then move on to next step.
+16. Under Other Notifications you should turn all the dropdown menus to the "None" position, at least for now as you will be adding a lot of events when you create the calendar.
+17. Continue scrolling down to the Integrate Calendar section. [insert screenshot 8] This section has the things I will need from you to make the calendar embed work.
+18. Open up Notepad on your computer so that you can copy and paste each element of this section into a text file.
+19. You should set up your text file to look like this:
+
+PUBLIC URL:
+
+EMBED CODE:
+
+PUBLIC iCAL ADDRESS:
+
+SECRET ADDRESS:
+
+20. Now back in the Calendar settings under Integrate Calendar, click in the first field that says "Public URL to this calendar". When you click inside it should highlight the entire field. CTRL + C to copy it and then bring up the notepad file you made and CTRL + V to paste it next to the PUBLIC URL: label.
+21. Do the same with the next field that says "Embed Code". Copy and paste the text inside into the notepad file under the EMBED CODE label.
+22. Do the same for the field that says "Public address in iCal Format"
+23. For the last field, the one that says "Secret address in iCal Format", there will be a little icon on the far right of the field that looks like two rectangles on top of one another, hovering over it will bring up a tooltip that says "Copy to clipboard". Do this and then paste it into the text document under the SECRET ADDRESS label. [insert screenshot 9]
+24. When you are done with this, save your text file. It should look like this when you are done, but with the information that you copied from the calendar instead.
+
+PUBLIC URL: https://calendar.google.com/calendar/embed?src=manleyandhalverstadt%40gmail.com&ctz=America%2FNew_York
+
+EMBED CODE: <iframe src="https://calendar.google.com/calendar/embed?src=manleyandhalverstadt%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+PUBLIC iCAL ADDRESS: https://calendar.google.com/calendar/ical/manleyandhalverstadt%40gmail.com/public/basic.ics
+
+SECRET ADDRESS: https://calendar.google.com/calendar/ical/manleyandhalverstadt%40gmail.com/private-d3722fc225f56298201ec12de6fe41b2/basic.ics
+
+25. This is the text file you are going to email to me as an attachment when you are done with this set of instructions.
+26. Ok, now that is all done, you need to make the calendar have the same events as your current calendar does on Wix. I have done this for you by creating all the events in my own calendar and then exporting them for you. That is what you will do with the .ics file that I have attached to this email.
+27. If you have not done so already, download the .ics file attachment from this email
+27. On the same settings screen, on the left-hand sidebar, under General and Add Calendar, you will see an option that says "Import & export" choose this option. [insert screenshot 10]
+28. Under "Import" click on the button that says "Select file from your computer" and choose the .ics file that I sent you (probably in your Downloads folder if you did not choose a location for it).
+29. Under Add to Calendar field, choose the Mediation Calendar for Todd Manley calendar we created earlier in these instructions.
+30. Screen will look like this: [insert screenshot 11]. Now click on the import button
+31. You will get a popup window that says "Imported X out of X events". Click OK.
+32. Now the calendar has all the events that are currently on the calendar on your website. You should double check this, but it should have saved you a lot of time re-entering all those events.
+33. You can back out of settings as you are now completely done!
+
+Now, next time you need to add a new "Unavailable" event to the calendar, here are the instructions that you can follow:
+
+1. Under the My Calendars list on the left-hand side-bar, hover over it and then over the three little vertical dots for the options and choose "Display this only"
+2. You will see the full calendar on this screen [insert screnshot 12]
+3. Say you want to mark March 4th unavailable. Go to March on the calendar and then click in the square for the 4th on the calendar. You will get the following screen [screenshot 13]
+4. Click on the More Options button to get to the following screen [screenshot 14]
+5. Type Unavailable as the title for the event.
+5. Ensure that the checkbox for All Day is Checked
+6. If you want to mark off several consecutive days as Unavailable all at once, you can do so from the dropdown menu that says "Does not Repeat". Simply click on that dropdown and then choose Custom. I have used this already in the calendar you imported so that the weekends are always marked Unavailable.
+7. Ensure that the right Calendar is selected in the Calendar dropdown menu, and that you use the same color for every event.
+8. Below that but above the Description field, choose "Busy" from the dropdown and "Public" from the dropdown next to that.
+9. I also uncheck all the Guest Permissions checkboxes, bot that is probably not necessary since you won't be inviting guests. When you are done it will look like this: [screenshot 15]
+10. Click the blue Save button next to the event name field. Doing so will take you back to the calendar and you will see the new "Unavailable" event in the calendar.
+11. The embedded calendar on the website will be automatically updated instantly with the new event.
+12. You could also do this same process using the Google Calendar app on mobile, as long as you input everything I described in these steps.
+
+Let me know as soon as you have followed the first set of instructions and have imported the calendar events from the attached .ics file into your new Calendar. Send me back the text file you created in these steps and I will be able to quickly modify the code for the embedded calendar and get your new website up within an hour of two of receiving it. Please shoot me a text or call me if you have an difficulties at all.

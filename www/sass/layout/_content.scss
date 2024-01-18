@@ -41,11 +41,11 @@
     }
 
     &--calendar {
-      $_size-multiple: 1.075;
+      $size-multiple_: 1.075;
 
-      font-size: calc($_size-multiple * var(--default-text-size-static));
-      font-size: calc($_size-multiple * var(--default-text-size-fb));
-      font-size: calc($_size-multiple * var(--default-text-size));
+      font-size: calc($size-multiple_ * var(--default-text-size-static));
+      font-size: calc($size-multiple_ * var(--default-text-size-fb));
+      font-size: calc($size-multiple_ * var(--default-text-size));
     }
 
     .contact__section &:has(.btn) {

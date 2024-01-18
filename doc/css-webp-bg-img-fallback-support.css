@@ -1,0 +1,3 @@
+@supports not (background-image: image-set(url('../img/bridge-sunset-bg-980x676.webp') type('image/webp'))) {
+  background-image: url('../img/bridge-sunset-bg-980x676.jpg')
+}

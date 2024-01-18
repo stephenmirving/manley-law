@@ -1,5 +1,4 @@
 // @ts-check
-
 /**
  * @fileOverview JavaScript file for the Manley & Halverstadt Law website.
  *
@@ -14,19 +13,16 @@
   const MOBILE_MAX_WIDTH = 878;
 
   // DOM elements
-  const masthead = document.querySelector('#masthead');
+  const masthead = document.getElementById('masthead');
   const navToggler = masthead.querySelector('#nav-toggler');
   const burgerBtn = masthead.querySelector('#nav-btn');
   const navMenuWrapper = masthead.querySelector('#nav-menu-wrapper');
   const navMenu = masthead.querySelector('#nav-menu');
-  const mainEl = document.querySelector('#main');
-  const footer = document.querySelector('#footer');
-  const isHomepage = !!document.querySelector('.homepage');
+  const mainEl = document.getElementById('main');
+  const footer = document.getElementById('footer');
+  const isHomepage = !!document.getElementById('homepage');
 
-  let hasFirstAnimClassBeenAdded = false,
-      hasSecondAnimClassBeenAdded = false,
-      homepageHero,
-      officeWrappers;
+  let homepageHero, officeWrappers;
 
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
@@ -43,14 +39,12 @@
     const isSecondInView =
       secondElemRect.top <= window.innerHeight && secondElemRect.bottom >= 0;
 
-    if (isFirstInView && !hasFirstAnimClassBeenAdded) {
-      officeWrappers[0]?.classList.add('move-in-left');
-      hasFirstAnimClassBeenAdded = true;
+    if (isFirstInView) {
+      officeWrappers[0].classList.add('move-in-left');
     }
 
-    if (isSecondInView && !hasSecondAnimClassBeenAdded) {
-      officeWrappers[1]?.classList.add('move-in-right');
-      hasSecondAnimClassBeenAdded = true;
+    if (isSecondInView) {
+      officeWrappers[1].classList.add('move-in-right');
     }
   }
 
@@ -80,13 +74,10 @@
       }
     } else {
       navToggler.setAttribute('disabled', '');
-
       burgerBtn.setAttribute('disabled', '');
       burgerBtn.setAttribute('hidden', '');
       burgerBtn.setAttribute('aria-hidden', 'true');
-
       navMenuWrapper.removeAttribute('hidden', '');
-
       navMenu.removeAttribute('hidden');
       navMenu.setAttribute('aria-expanded', 'true');
     }
@@ -97,16 +88,24 @@
     navMenu.hidden = !isTogglerChecked;
     burgerBtn.setAttribute('aria-expanded', `${isTogglerChecked}`);
     navMenu.setAttribute('aria-expanded', `${isTogglerChecked}`);
-    masthead.classList[isTogglerChecked ? 'add' : 'remove']('nav-dropdown-open');
+    masthead.classList.toggle('nav-dropdown-open', isTogglerChecked);
+  }
+
+  function toggleReducePageOpacity(isReduced) {
+    if (isHomepage) {
+      homepageHero.classList.toggle('reduce-opacity', isReduced);
+    }
+    mainEl.classList.toggle('reduce-opacity', isReduced);
+    footer.classList.toggle('reduce-opacity', isReduced);
   }
 
   function pageSetup() {
     if (isHomepage) {
       applyAnimationWhenInView(); // Check on initial load in case the element is already in view
 
-      window.addEventListener(
-        'scroll', applyAnimationWhenInView, { passive: true }
-      );
+      window.addEventListener('scroll', applyAnimationWhenInView, {
+        passive: true
+      });
     }
 
     toggleNavBurgerBtnDisplay(window.innerWidth);
@@ -123,11 +122,7 @@
           navToggler.checked = false;
           // Trigger change event for the toggler's listener
           navToggler.dispatchEvent(new Event('change'));
-          if (isHomepage) {
-            homepageHero.classList.remove('reduce-opacity');
-          }
-          mainEl.classList.remove('reduce-opacity');
-          footer.classList.remove('reduce-opacity');
+          toggleReducePageOpacity(false);
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
@@ -143,31 +138,15 @@
     document.body.addEventListener('click', (event) => {
       // Check if nav hamburger button is clicked and simulate a click on
       // the checkbox to toggle `checked` state
-      // TODO: Clean up these nested ifs and write this section better
       if (event.target.id === 'nav-btn') {
+        event.preventDefault();
         navMenu.classList.remove('anim-off');
         navToggler.click();
-        if (navToggler.checked) {
-          if (isHomepage) {
-            homepageHero.classList.add('reduce-opacity');
-          }
-          mainEl.classList.add('reduce-opacity');
-          footer.classList.add('reduce-opacity');
-        } else {
-          if (isHomepage) {
-            homepageHero.classList.remove('reduce-opacity');
-          }
-          mainEl.classList.remove('reduce-opacity');
-          footer.classList.remove('reduce-opacity');
-        }
+        toggleReducePageOpacity(navToggler.checked);
       } else if (navToggler.checked) {
         // Hide toggler menu if user clicks outside of it
         navToggler.click();
-        if (isHomepage) {
-          homepageHero.classList.remove('reduce-opacity');
-        }
-        mainEl.classList.remove('reduce-opacity');
-        footer.classList.remove('reduce-opacity');
+        toggleReducePageOpacity(false);
       }
     });
 
@@ -185,7 +164,10 @@
     }
   }
 
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
     // DOMContentLoaded has already fired
     pageSetup();
     return;

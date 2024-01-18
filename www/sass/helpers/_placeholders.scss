@@ -27,8 +27,8 @@
   border-width: 0.125rem 0;
   background: 0 0;
   font-family: $font-headings;
-  font-size: $nav-link-fontsize--fb-static;
-  font-size: $nav-link-fontsize--fb;
+  font-size: $nav-link-fontsize-fb-static;
+  font-size: $nav-link-fontsize-fb;
   font-size: $nav-link-fontsize;
   font-weight: 700;
   line-height: 1.15;
@@ -55,7 +55,7 @@
 
 @mixin links-tab-focus-state() {
   border-bottom-color: transparent !important;
-  outline: 1px solid $color-blue;
+  outline: 2px solid $color-blue;
 }
 
 %content-links {
@@ -87,7 +87,7 @@
   }
 }
 
-@mixin _contact-link-hover-focus-state {
+@mixin contact-link-hover-focus-state_ {
   border-bottom-color: inherit;
   color: $color-brand;
 }
@@ -102,13 +102,13 @@
   }
 
   &:-moz-focusring {
-    @include _contact-link-hover-focus-state;
+    @include contact-link-hover-focus-state_;
     @include links-tab-focus-state;
   }
 
   &:hover,
   &:focus-visible {
-    @include _contact-link-hover-focus-state;
+    @include contact-link-hover-focus-state_;
   }
 
   &:focus-visible {
@@ -148,11 +148,11 @@
   @extend %links-footer-base;
 
   &:-moz-focusring {
-    outline: 1px solid $color-brand-contrast;
+    outline: 2px solid $color-brand-contrast;
   }
 
   &:focus-visible {
-    outline: 1px solid $color-brand-contrast;
+    outline: 2px solid $color-brand-contrast;
   }
 }
 

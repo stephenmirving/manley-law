@@ -1,7 +1,7 @@
-$_color--card-shadow: $color-brand;
+$color--card-shadow_: $color-brand;
 
 %card {
-  @include card-depth(3, $_color--card-shadow);
+  @include card-depth(3, $color--card-shadow_);
 
   display: flex;
   flex-direction: column;
@@ -33,12 +33,12 @@ $_color--card-shadow: $color-brand;
 
     .content__section-title,
     .content__text {
-      padding: 0 $card-padding;
+      padding: 0 0.75rem;
     }
 
     @media screen and (min-width: $bp-m) {
       &:-moz-focusring {
-        @include card-depth(5, $_color--card-shadow);
+        @include card-depth(5, $color--card-shadow_);
 
         border-color: rgba($color-brand, 0.9);
         transform: translateY(-0.125rem) scale(1.0125);
@@ -46,7 +46,7 @@ $_color--card-shadow: $color-brand;
 
       &:hover,
       &:focus-visible {
-        @include card-depth(5, $_color--card-shadow);
+        @include card-depth(5, $color--card-shadow_);
 
         border-color: rgba($color-brand, 0.9);
         transform: translateY(-0.125rem) scale(1.0125);

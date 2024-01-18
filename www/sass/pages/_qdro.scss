@@ -50,25 +50,26 @@
   }
 
   &__brand-q {
-    $_square-size: 7.75rem;
-    $_square-offset: 1.25rem;
-    position: relative;
-    top: $_square-offset;
-    left: $_square-offset;
-    width: min($_square-size, 100%);
-    height: $_square-size;
+    $square-size_: 7.75rem;
+    $square-offset_: 1.25rem;
 
-    background-color: rgba(#4A5B6E, 0.3);
+    position: relative;
+    top: $square-offset_;
+    left: $square-offset_;
+    width: min($square-size_, 100%);
+    height: $square-size_;
+
+    background-color: rgba(#4a5b6e, 0.3);
 
     > div {
       position: absolute;
-      top: -#{$_square-offset};
-      left: -#{$_square-offset};
+      top: -#{$square-offset_};
+      left: -#{$square-offset_};
       display: flex;
       align-items: center;
       justify-content: center;
-      width: min($_square-size, 100%);
-      height: $_square-size;
+      width: min($square-size_, 100%);
+      height: $square-size_;
       background-color: rgba($color-silver, 1);
 
       > span {

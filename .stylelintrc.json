@@ -42,7 +42,7 @@
     },
     "block-no-empty": true,
     "color-hex-length": "short",
-    "color-function-notation": "legacy",
+    "color-function-notation": "modern",
     "color-no-invalid-hex": true,
     "comment-empty-line-before": [
       "always",
@@ -400,7 +400,8 @@
         "animation-delay",
         "animation-iteration-count",
         "animation-direction",
-        "animation-fill-mode"
+        "animation-fill-mode",
+        "perspective"
       ],
       {
         "unspecified": "bottom"
@@ -494,7 +495,7 @@
           "1140px"
         ],
         "ignoreAtRules": ["media"],
-        "ignoreFunctions": ["url"],
+        "ignoreFunctions": ["url", "calc", "min", "max", "clamp", "minmax"],
         "fontSize": 16
       }
     ],
@@ -537,7 +538,7 @@
           "geometricPrecision"
         ],
         "ignoreProperties": [
-          "/^\\$_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$/"
+          "/^\\$[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$/"
         ]
       }
     ],
@@ -545,14 +546,14 @@
     "scss/at-else-if-parentheses-space-before": "always",
     "scss/at-extend-no-missing-placeholder": true,
     "scss/at-function-parentheses-space-before": "never",
-    "scss/at-function-pattern": "^_?[a-z]+(?:-[a-z]+)*$",
+    "scss/at-function-pattern": "^[a-z]+(?:-[a-z]+)*_?$",
     "scss/at-if-closing-brace-space-after": "always-intermediate",
     "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
     "scss/at-if-no-null": true,
     "scss/at-import-partial-extension": "never",
     "scss/at-mixin-argumentless-call-parentheses": "never",
     "scss/at-mixin-parentheses-space-before": "never",
-    "scss/at-mixin-pattern": "^_?[a-z]+(?:-[a-z]+)*$",
+    "scss/at-mixin-pattern": "^[a-z]+(?:-[a-z]+)*_?$",
     "scss/at-rule-no-unknown": [
       true,
       {
@@ -613,8 +614,6 @@
     ],
     "scss/dollar-variable-first-in-block": null,
     "scss/dollar-variable-no-missing-interpolation": true,
-    "scss/dollar-variable-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
-    "scss/percent-placeholder-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/block-no-redundant-nesting": null,
     "scss/comment-no-empty": true,

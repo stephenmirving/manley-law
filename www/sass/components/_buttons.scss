@@ -1,5 +1,6 @@
-@mixin _btn-state-hover-and-focus() {
-  background-color: $color-btn-bg--hover;
+@mixin btn-state-hover-and-focus_() {
+  border-radius: 0;
+  background-color: $color-btn-bg-hover;
 }
 
 %btn {
@@ -9,14 +10,14 @@
   max-width: 100%;
   padding: 0.875rem 1.125rem;
   border: 0;
-  border-radius: 4px;
+  border-radius: 2px;
   margin: 0.5rem;
   background: $color-brand-light padding-box;
   color: $color-btn-text;
   box-shadow:
-    inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+    inset 2px 2px 2px 0 rgb(255 255 255 / 0.5),
+    7px 7px 20px 0 rgb(0 0 0 / 0.1),
+    4px 4px 5px 0 rgb(0 0 0 / 0.1);
   font: 700 1rem/1.15 $font-headings;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
@@ -27,7 +28,7 @@
   transition: $btn-transition;
 
   &:-moz-focusring {
-    @include _btn-state-hover-and-focus;
+    @include btn-state-hover-and-focus_;
 
     outline: 2px solid $color-brand solid;
     outline-offset: 5px;
@@ -35,13 +36,13 @@
 
   &:hover,
   &:focus-visible {
-    @include _btn-state-hover-and-focus;
+    @include btn-state-hover-and-focus_;
   }
 
   &:active {
     background: shade($color-brand-green, 15%);
     color: $color-violet-faint;
-    box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0.0625rem 0.125rem rgb(0 0 0 / 0.24);
   }
 
   &:focus-visible {
@@ -54,45 +55,42 @@
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
     width: 0;
     height: 0.125rem;
     background-color: $color-brand;
     box-shadow:
       -1px -1px 5px 0 $color-violet,
-      7px 7px 20px 0 rgba(0, 0, 0, 0.2),
-      4px 4px 5px 0 rgba(0, 0, 0, 0.1333);
+      7px 7px 20px 0 rgb(0 0 0 / 0.2),
+      4px 4px 5px 0 rgb(0 0 0 / 0.1333);
     transition:
       background-color $btn-transition-time,
       box-shadow $btn-transition-time,
       width $btn-transition-time;
   }
 
+  &:before {
+    right: 2px;
+  }
+
   &:after {
     top: inherit;
     right: inherit;
     bottom: 0;
-    left: 0;
+    left: 2px;
   }
 
   &:-moz-focusring:before,
   &:-moz-focusring:after {
-    width: 100%;
-    transition:
-      background-color $btn-transition-time--dbl,
-      box-shadow $btn-transition-time--dbl,
-      width $btn-transition-time--dbl;
+    width: calc(100% - 4px);
+    transition: $btn-transition-2;
   }
 
   &:hover:before,
   &:hover:after,
   &:focus-visible:before,
   &:focus-visible:after {
-    width: 100%;
-    transition:
-      background-color $btn-transition-time--dbl,
-      box-shadow $btn-transition-time--dbl,
-      width $btn-transition-time--dbl;
+    width: calc(100% - 4px);
+    transition: $btn-transition-2;
   }
 }
 
