@@ -5,6 +5,7 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "experimentalTernaries": true,
+  "selfClosing": false,
   "printWidth": 80,
   "proseWrap": "always",
   "quoteProps": "consistent",
@@ -25,7 +26,7 @@
       "files": "*.html",
       "options": {
         "useTabs": true,
-        "printWidth": 115
+        "printWidth": 115,
       }
     }
   ]

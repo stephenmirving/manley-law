@@ -5,8 +5,6 @@ TODO:
     ☐ Ensure redirect to www is on
     ☐ Add and remove any other rules as you see fit to optimize it
   ☐ Install Google analytics - Email them instructions
-  ☐ Run validators on HTML, CSS, and JS
-  ☐ Run schema validator
   ☐ Run SEO extension validators
   ☐ Run site through lighthouse
   ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
@@ -17,6 +15,11 @@ TODO:
   ☐ Redo parking directions PDF into an HTML page (make printable too)
 
 Archive:
+  ✔ Run validators on HTML, CSS, and JS @done(24-01-18 17:11) @project(TODO)
+  ✔ Validate HTML @done(24-01-18 15:47) @project(TODO)
+  ✔ Validate CSS @done(24-01-18 16:57) @project(TODO)
+  ✔ Validate JS @done(24-01-18 15:47) @project(TODO)
+  ✔ Run schema validator @started(24-01-18 18:21) @done(24-01-18 18:21) @project(TODO)
   ✔ Calendar not displaying Unavailable dates on small screen, only showing the dates marked busy @done(24-01-18 04:05) @project(TODO)
   ✔ Maybe figure out how to mark them all busy? @done(24-01-18 04:05) @project(TODO)
   ✔ **** Google social media link goes to Pappy Jr **** @started(23-12-18 23:10) @done(23-12-18 23:48) @lasted(38m39s) @project(TODO)

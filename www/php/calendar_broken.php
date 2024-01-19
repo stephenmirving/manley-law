@@ -62,7 +62,7 @@
     <div class="container">
       <div>
         <a href="https://www.manleyandhalverstadt.com/" class="masthead__branding-link" tabindex="0">
-          <h1 class="sr-only" itemprop="name">Manley &amp; Halverstadt</h1>
+          <h1 class="sr-only" itemprop="name">Manley &amp; Halverstadt Law Firm</h1>
           <picture>
             <source
                 type="image/webp"
@@ -227,7 +227,7 @@
           <div class="content__map-wrapper">
             <iframe
                 class="content__map-frame"
-                title="Google Map to Charleston office"
+                title="Google Map to Manley and Halverstadt Charleston law office"
                 aria-label="Google Map to Charleston office"
                 name="charleston-loc-gmap"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9215.921650317374!2d-79.93584082993019!3d32.797668457703175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7b01bd050d7f%3A0x1b205d93ee2224e1!2sManley%20%26%20Halverstadt!5e0!3m2!1sen!2sus!4v1702601025756!5m2!1sen!2sus"
@@ -272,7 +272,7 @@
           <div class="content__map-wrapper">
             <iframe
                 class="content__map-frame"
-                title="Google Map to Moncks Corner office"
+                title="Google Map to Manley and Halverstadt Moncks Corner law office"
                 aria-label="Google Map to Moncks Corner office"
                 name="moncks-corner-loc-gmap"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d834.7241518307857!2d-80.00569733032219!3d33.190583098343325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe5a21bba90819%3A0xd20a775494c2a6e4!2s400%20Altman%20St%2C%20Moncks%20Corner%2C%20SC%2029461!5e0!3m2!1sen!2sus!4v1702603826940!5m2!1sen!2sus"

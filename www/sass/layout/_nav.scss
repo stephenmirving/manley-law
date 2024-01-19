@@ -32,7 +32,7 @@
     -webkit-user-select: none;
     user-select: none;
 
-    @media screen and (max-width: $bp-tiny) {
+    @media screen and (max-width: $bp-256) {
       justify-content: center;
     }
   }
@@ -210,16 +210,16 @@
       top: calc(100% - $patty-thickness_);
     }
 
-    &:-moz-focusring {
-      padding: 0;
-      border: 0;
-      outline: 2px solid $color-brand;
-    }
-
     &:focus-visible {
       padding: 0;
       border: 0;
-      outline: 2px solid $color-brand;
+      outline-width: 3px;
+    }
+
+    &:-moz-focusring {
+      padding: 0;
+      border: 0;
+      outline-width: 4px;
     }
 
     &:hover,

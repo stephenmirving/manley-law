@@ -14,7 +14,7 @@
   user-select: none;
   transition: opacity $opacity-fade-transition-time;
 
-  @media screen and (min-width: $bp-xl) {
+  @media screen and (min-width: $bp-992) {
     text-align: left;
   }
 
@@ -41,7 +41,7 @@
     &--subnav {
       @extend %footer-column;
 
-      @media screen and (min-width: $bp-xl) {
+      @media screen and (min-width: $bp-992) {
         display: flex;
         align-items: center;
       }
@@ -52,7 +52,7 @@
 
       padding: 0;
 
-      @media screen and (min-width: $bp-xl) {
+      @media screen and (min-width: $bp-992) {
         flex-grow: 1;
         flex-basis: 0;
         text-align: right;
@@ -63,20 +63,13 @@
   &__menu {
     vertical-align: baseline;
 
-    @media screen and (min-width: $bp-xs) {
+    @media screen and (min-width: $bp-560) {
       column-count: 2;
       column-gap: 2rem;
     }
 
-    @media screen and (min-width: $bp-xl) {
+    @media screen and (min-width: $bp-992) {
       column-gap: 4rem;
-    }
-
-    > li {
-      @media screen and (min-width: $bp-xs) {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
     }
   }
 
@@ -99,7 +92,7 @@
     display: inline-block;
     margin: 1rem auto 0;
 
-    @media screen and (min-width: $bp-xl) {
+    @media screen and (min-width: $bp-992) {
       margin: 0;
     }
 
@@ -120,7 +113,7 @@
     justify-content: center;
     margin-bottom: 0.5rem;
 
-    @media screen and (min-width: $bp-xl) {
+    @media screen and (min-width: $bp-992) {
       justify-content: flex-start;
     }
 
@@ -154,7 +147,7 @@
       margin: 0.125rem 0.5rem;
       font-size: 0.8125rem;
 
-      @media screen and (min-width: $bp-m) {
+      @media screen and (min-width: $bp-768) {
         margin: 0;
 
         &:not(:first-child) {

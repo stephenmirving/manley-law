@@ -58,13 +58,13 @@ html {
 }
 
 :focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 3px;
+  outline: 2px solid $color-brand;
+  outline-offset: 2px;
 }
 
 :-moz-focusring {
-  outline: 2px solid #000;
-  outline-offset: 4px;
+  outline: 2px solid $color-brand;
+  outline-offset: 3px;
 }
 
 body {
@@ -133,8 +133,7 @@ dialog {
   color: #000;
 }
 
-dialog:not([open]),
-template {
+dialog:not([open]) {
   display: none;
 }
 
@@ -219,7 +218,6 @@ select,
 summary,
 textarea,
 [tabindex='0'] {
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
@@ -275,13 +273,6 @@ legend {
   padding: 0;
 }
 
-// Add the correct vertical alignment in Chrome, Firefox, and Opera.
-
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
 [type='checkbox'],
 [type='radio'] {
   box-sizing: border-box;
@@ -324,8 +315,6 @@ iframe {
   border: 0;
 }
 
-audio,
-canvas,
 iframe,
 img,
 picture,
@@ -334,12 +323,9 @@ video {
   vertical-align: middle;
 }
 
-audio,
-embed,
 iframe,
 input,
 img,
-object,
 picture,
 select,
 textarea,

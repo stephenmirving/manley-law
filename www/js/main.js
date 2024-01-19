@@ -7,10 +7,11 @@
  */
 ((window) => {
   'use strict';
-  const document = window.document;
 
-  // Constants
+  // Point at which non-mobile menu begins, mobile menu is < 878px
   const MOBILE_MAX_WIDTH = 878;
+
+  const document = window.document;
 
   // DOM elements
   const masthead = document.getElementById('masthead');
@@ -29,7 +30,19 @@
     officeWrappers = document.querySelectorAll('.js-office-wrapper');
   }
 
+  function isDescendantOf(element, parent) {
+    while (element) {
+      if (element === parent) {
+        return true;
+      }
+      element = element.parentElement;
+    }
+    return false;
+  }
+
   function applyAnimationWhenInView() {
+    if (window.scrollY < 50) return;
+
     const firstElemRect = officeWrappers[0].getBoundingClientRect();
     const secondElemRect = officeWrappers[1].getBoundingClientRect();
 
@@ -54,7 +67,7 @@
     homepageHero.setAttribute(
       'style',
       `min-height:calc(100vh - ${navHeight}rem);` +
-        `min-height:calc(100svh - ${navHeight}rem);`
+      `min-height:calc(100svh - ${navHeight}rem);`
     );
   }
 
@@ -101,7 +114,8 @@
 
   function pageSetup() {
     if (isHomepage) {
-      applyAnimationWhenInView(); // Check on initial load in case the element is already in view
+      // Check on initial load in case the element is already in view
+      applyAnimationWhenInView();
 
       window.addEventListener('scroll', applyAnimationWhenInView, {
         passive: true
@@ -140,10 +154,12 @@
       // the checkbox to toggle `checked` state
       if (event.target.id === 'nav-btn') {
         event.preventDefault();
+        event.stopPropagation();
         navMenu.classList.remove('anim-off');
         navToggler.click();
         toggleReducePageOpacity(navToggler.checked);
       } else if (navToggler.checked) {
+        event.stopPropagation();
         // Hide toggler menu if user clicks outside of it
         navToggler.click();
         toggleReducePageOpacity(false);
@@ -158,6 +174,13 @@
       },
       { passive: true }
     );
+
+    document.addEventListener('focusin', (event) => {
+      if (navToggler.checked && !isDescendantOf(event.target, navMenuWrapper)) {
+        navToggler.click();
+        toggleReducePageOpacity(false);
+      }
+    }, { passive: true });
 
     if (isHomepage) {
       setHeroSectionMinHeightStyle(masthead.getBoundingClientRect().height);

@@ -1,37 +1,24 @@
-// Breakpoints based on specific breakpoints in the layout
+// Layout breakpoints for width
 $bp-166: 10.375em;
 $bp-186: 11.625em;
 $bp-228: 14.25em;
+$bp-237: 14.8125em;
+$bp-256: 16rem;
 $bp-308: 19.25em;
 $bp-309: 19.3125em;
-$bp-336: 21em;
 $bp-390: 24.375em;
-$bp-430: 26.875em;
-$bp-476: 29.75em;
-$bp-640: 40em;
-$bp-756: 47.25em;
-$bp-768: 48em;
-$bp-878: 54.875rem; // Nav toggles here
-$bp-1080: 67.5em;
-$bp-1280: 80em;
-$bp-1440: 90em;
-
-// Breakpoints based on general device sizes
-
-$bp-xtiny: 14.8125em; // 237px
-$bp-tiny: 16rem; // 256px
-$bp-xxxs: 17.5em; // 280px
-$bp-xxs: 23.5em; // 376px
-$bp-xs: 35em; // 560px
-$bp-s: 42em; // 672px
-$bp-m: $bp-768;
-$bp-l: 52em; // 832px
-$bp-xl: 62em; // 992px
-$bp-xxl: 75em; // 1200px
-$bp-xxxl: $bp-1440;
-$bp-widescreen: $bp-878;
 $bp-max-phone-width: 27.25em; // 436px
 $bp-max-phone-width-plusone: 27.3125em; // 437px
+$bp-560: 35em;
+$bp-672: 42em;
+$bp-768: 48em; // Medium size breakpoint
+$bp-widescreen: 54.875em; // 878px - Nav toggles here
+$bp-992: 62em;
+$bp-1080: 67.5em;
+$bp-1200: 75em;
+$bp-1280: 80em;
+
+// Height breakpoints
 $bp-height-tiny: 22.75em; // 364px
 $bp-height: 37.5em; // 600px
 $bp-heightplusone: 37.5625em; // 601px
@@ -55,10 +42,8 @@ $color-black-light: #222;
 $color-black-lighter: #323232;
 $color-black-lightest: #333445;
 $color-off-white: #f3faff;
-$color-off-white-2: #e2f1ed;
 $color-white: #f0fafa;
 $color-faint-blue: #d0e5de;
-$color-gray: #95a8a4;
 $color-silver: #737e8b;
 
 $color-body-text: $color-black-light;
@@ -85,12 +70,7 @@ $color-btn-bg-hover: shade($color-brand-green, 5%);
 $color-btn-border: $color-faint-blue;
 $color-btn-border-hover: $color-brand;
 
-$color-card-bg: rgba($color-off-white, 0.9);
-$color-card-bg-gradient: linear-gradient(
-  180deg,
-  $color-card-bg 0%,
-  tint(rgba($color-tan, 0.5), 20%) 100%
-);
+$color-card-bg: rgba($color-off-white, 1);
 
 $color-contact-bg-gradient: linear-gradient(
   135deg,

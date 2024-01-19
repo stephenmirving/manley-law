@@ -27,13 +27,6 @@
   user-select: none;
   transition: $btn-transition;
 
-  &:-moz-focusring {
-    @include btn-state-hover-and-focus_;
-
-    outline: 2px solid $color-brand solid;
-    outline-offset: 5px;
-  }
-
   &:hover,
   &:focus-visible {
     @include btn-state-hover-and-focus_;
@@ -46,8 +39,13 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $color-brand;
     outline-offset: 4px;
+  }
+
+  &:-moz-focusring {
+    @include btn-state-hover-and-focus_;
+
+    outline-offset: 5px;
   }
 
   &:before,

@@ -4,7 +4,7 @@
     width: 100%;
     padding-top: 75%; // Maintain aspect ratio of iframe (height/width of iframe * width%)
 
-    @media only screen and (min-width: $bp-s) {
+    @media only screen and (min-width: $bp-672) {
       width: 80%;
       padding-top: 60%; // Maintain aspect ratio of iframe (height/width of iframe * width%)
       margin: 0 auto;
@@ -26,7 +26,7 @@
     width: 100%;
     text-align: center;
 
-    @media only screen and (min-width: $bp-s) {
+    @media only screen and (min-width: $bp-672) {
       width: 80%;
       margin: 0 auto;
     }
