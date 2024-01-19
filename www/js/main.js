@@ -113,6 +113,8 @@
   }
 
   function pageSetup() {
+    toggleNavBurgerBtnDisplay(window.innerWidth);
+
     if (isHomepage) {
       // Check on initial load in case the element is already in view
       applyAnimationWhenInView();
@@ -121,8 +123,6 @@
         passive: true
       });
     }
-
-    toggleNavBurgerBtnDisplay(window.innerWidth);
 
     window.addEventListener(
       'resize',

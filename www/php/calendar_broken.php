@@ -88,7 +88,7 @@
             >
           </picture>
         </a>
-          <h2 class="masthead__branding-subhead" itemprop="description">Attorneys and Mediators</h2>
+          <h2 class="masthead__branding-subhead" itemprop="description">Attorneys and Mediators<span class="sr-only"> in the Charleston, SC area with offices downtown and in Moncks Corner</span></h2>
       </div>
       <nav id="nav" class="nav">
         <input
@@ -435,7 +435,7 @@
               </ul>
               <p class="footer__info">
                 <small>
-                  Copyright &copy; <time datetime="2024">2024</time> Manley &amp; Halverstadt, LLC. All Rights Reserved.
+                  Copyright &copy; <time datetime="2024">2024</time> <span itemprop="legalName">Manley &amp; Halverstadt, LLC.</span> All Rights Reserved.
                 </small>
               </p>
               <p class="footer__info">

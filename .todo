@@ -8,13 +8,12 @@ TODO:
   ☐ Run SEO extension validators
   ☐ Run site through lighthouse
   ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
-  ☐ Make nav animate to a smaller height when the user scrolls down.
+  ☐ Make nav animate to a smaller height when wthe user scrolls down.
     ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
-  ☐ See if possible to get tooltips in brand colors
-  ☐ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages
   ☐ Redo parking directions PDF into an HTML page (make printable too)
 
 Archive:
+  ✔ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages @started(24-01-19 00:28) @done(24-01-19 00:59) @lasted(31m32s) @project(TODO)
   ✔ Run validators on HTML, CSS, and JS @done(24-01-18 17:11) @project(TODO)
   ✔ Validate HTML @done(24-01-18 15:47) @project(TODO)
   ✔ Validate CSS @done(24-01-18 16:57) @project(TODO)
