@@ -8,9 +8,8 @@
     font-size: 1.875rem;
     font-size: min(max(1.625rem, calc(0.5rem + 1.625vw)), 2.625rem);
     font-size: clamp(1.625rem, calc(0.5rem + 1.625vw), 2.625rem);
-
-    text-align: center;
     text-transform: uppercase;
+    text-align: center;
   }
 
   &__section-title {
@@ -135,9 +134,6 @@
 
   .tel {
     display: block;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
     margin: 0 auto 0.125rem;
 
     &:before {

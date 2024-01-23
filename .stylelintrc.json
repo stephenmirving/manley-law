@@ -369,12 +369,12 @@
         "column-rule-width",
         "column-rule-style",
         "column-rule-color",
-        "page-break-before",
-        "page-break-inside",
-        "page-break-after",
         "break-before",
         "break-inside",
         "break-after",
+        "page-break-before",
+        "page-break-inside",
+        "page-break-after",
         "orphans",
         "widows",
         "zoom",
@@ -448,12 +448,6 @@
       "grid-gap",
       "grid-column-gap",
       "grid-row-gap",
-      "page-break-inside",
-      "page-break-after",
-      "page-break-before",
-      "-webkit-column-break-inside",
-      "-webkit-column-break-after",
-      "-webkit-column-break-before",
       "-webkit-border-image",
       "-moz-border-image",
       "-webkit-order",
@@ -501,7 +495,7 @@
           "1140px"
         ],
         "ignoreAtRules": ["media"],
-        "ignoreFunctions": ["url", "calc", "min", "max", "clamp", "minmax"],
+        "ignoreFunctions": ["url"],
         "fontSize": 16
       }
     ],
@@ -544,7 +538,7 @@
           "geometricPrecision"
         ],
         "ignoreProperties": [
-          "/^\\$[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$/"
+          "/^\\$_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$/"
         ]
       }
     ],
@@ -620,6 +614,8 @@
     ],
     "scss/dollar-variable-first-in-block": null,
     "scss/dollar-variable-no-missing-interpolation": true,
+    "scss/dollar-variable-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
+    "scss/percent-placeholder-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/block-no-redundant-nesting": null,
     "scss/comment-no-empty": true,
