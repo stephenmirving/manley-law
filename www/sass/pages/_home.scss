@@ -26,6 +26,7 @@
     min-height: calc(100svh - 9.875rem);
   }
 
+  // >= 878px
   @media screen and (min-width: $bp-widescreen) {
     background-image: url('../img/bridge-sunset-bg-980x1040.webp');
   }
@@ -35,6 +36,7 @@
     min-height: calc(100svh - 13.375rem);
   }
 
+  // >= 1200px
   @media screen and (min-width: $bp-1200) {
     background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
   }
