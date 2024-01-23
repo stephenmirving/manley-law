@@ -1,6 +1,5 @@
 @keyframes move-in-left {
   0% {
-    opacity: 0;
     transform: translateX(-20rem);
   }
 
@@ -9,14 +8,12 @@
   }
 
   100% {
-    opacity: 1;
     transform: translate(0);
   }
 }
 
 @keyframes move-in-right {
   0% {
-    opacity: 0;
     transform: translateX(20rem);
   }
 
@@ -25,7 +22,6 @@
   }
 
   100% {
-    opacity: 1;
     transform: translate(0);
   }
 }
@@ -58,12 +54,22 @@
   }
 }
 
+.animated-office-wrapper {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
 // Animations applied by JS
 
+.move-in-left,
+.move-in-right {
+  opacity: 1;
+}
+
 .move-in-left {
-  animation: move-in-left 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: move-in-left 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .move-in-right {
-  animation: move-in-right 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: move-in-right 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }

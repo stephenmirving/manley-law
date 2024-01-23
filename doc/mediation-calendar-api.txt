@@ -1,0 +1,12 @@
+PUBLIC URL
+https://calendar.google.com/calendar/embed?src=c_a42d3e04f05eab30a5fd8b695a009a4b2455fb12cbe6bc2ddb34d75bf10a80b1%40group.calendar.google.com&ctz=America%2FNew_York
+
+EMBED CODE
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTz=1&showCalendars=0&showTabs=0&title=Mediation%20Calendar%20for%20Todd%20Manley&src=Y19hNDJkM2UwNGYwNWVhYjMwYTVmZDhiNjk1YTAwOWE0YjI0NTVmYjEyY2JlNmJjMmRkYjM0ZDc1YmYxMGE4MGIxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%239E69AF" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+PUBLIC ICAL ADDRESS
+https://calendar.google.com/calendar/ical/c_a42d3e04f05eab30a5fd8b695a009a4b2455fb12cbe6bc2ddb34d75bf10a80b1%40group.calendar.google.com/public/basic.ics
+
+Secret address for ical
+https://calendar.google.com/calendar/ical/c_a42d3e04f05eab30a5fd8b695a009a4b2455fb12cbe6bc2ddb34d75bf10a80b1%40group.calendar.google.com/private-1f81fb4b49a36c521780857a83628a87/basic.ics
