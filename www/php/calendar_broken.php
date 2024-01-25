@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://calendar.google.com">
 
-  <link rel="stylesheet" href="css/style-v104.css">
+  <link rel="stylesheet" href="css/style-v105.css">
 
   <meta
     name="description"
