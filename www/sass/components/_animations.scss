@@ -42,6 +42,22 @@
   }
 }
 
+@keyframes slide-down-landscape {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes slide-from-right {
   0% {
     opacity: 0;
@@ -67,9 +83,9 @@
 }
 
 .move-in-left {
-  animation: move-in-left 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  animation: move-in-left 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .move-in-right {
-  animation: move-in-right 1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  animation: move-in-right 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }

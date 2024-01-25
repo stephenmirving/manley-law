@@ -1,14 +1,35 @@
 {
-  "short_name": "M&amp;H Law",
-  "name": "Manley &amp; Halverstadt Law",
-  "description": "The website for the Manley &amp; Halverstadt law firm, which provides legal service to individuals &amp; businesses throughout the South Carolina coastal region, including Mt. Pleasant, Charleston, Moncks Corner, and Summerville. Manley & Halverstadt, LLC offers a mediation and litigation practice with a focus on family law.",
+  "short_name": "M & H Law",
+  "name": "Manley & Halverstadt Law",
+  "description": "The website for the Manley & Halverstadt law firm, which provides legal service to individuals & businesses throughout South Carolina.",
   "display": "standalone",
-  "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "tile.png",
+      "type": "image/png",
+      "sizes": "558x558"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/screenshots/screenshot-narrow.png",
+      "type": "image/png",
+      "sizes": "358x742"
+    },
+    {
+      "src": "/images/screenshot-wide.jpg",
+      "type": "image/jpg",
+      "sizes": "1411x916"
+    }
+    ],
   "start_url": "https://www.manleyandhalverstadt.com/",
+  "id": "/",
   "background_color": "#F3FAFF",
   "theme_color": "#223752"
 }

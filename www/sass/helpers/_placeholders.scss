@@ -90,6 +90,10 @@
 %contact-links {
   @extend %content-link-base;
 
+  @media screen and (min-width: $bp-308) {
+    white-space: nowrap;
+  }
+
   &,
   &:link,
   &:visited {

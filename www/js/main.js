@@ -8,7 +8,8 @@
 ((window) => {
   'use strict';
 
-  // Point at which non-mobile menu begins, mobile menu is < 878px
+  // Point at which non-mobile menu begins,
+  // mobile menu (includes tablets) is < 878px
   const MOBILE_MAX_WIDTH = 878;
 
   const document = window.document;
@@ -59,16 +60,6 @@
     if (isSecondInView) {
       officeWrappers[1].classList.add('move-in-right');
     }
-  }
-
-  function setHeroSectionMinHeightStyle(navHeight) {
-    navHeight /= 16; // Get value in rem
-
-    homepageHero.setAttribute(
-      'style',
-      `min-height:calc(100vh - ${navHeight}rem);` +
-      `min-height:calc(100svh - ${navHeight}rem);`
-    );
   }
 
   function toggleNavBurgerBtnDisplay(viewWidth) {
@@ -140,10 +131,6 @@
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
-
-        if (isHomepage) {
-          setHeroSectionMinHeightStyle(masthead.getBoundingClientRect().height);
-        }
       },
       { passive: true }
     );
@@ -175,16 +162,19 @@
       { passive: true }
     );
 
-    document.addEventListener('focusin', (event) => {
-      if (navToggler.checked && !isDescendantOf(event.target, navMenuWrapper)) {
-        navToggler.click();
-        toggleReducePageOpacity(false);
-      }
-    }, { passive: true });
-
-    if (isHomepage) {
-      setHeroSectionMinHeightStyle(masthead.getBoundingClientRect().height);
-    }
+    document.addEventListener(
+      'focusin',
+      (event) => {
+        if (
+          navToggler.checked &&
+          !isDescendantOf(event.target, navMenuWrapper)
+        ) {
+          navToggler.click();
+          toggleReducePageOpacity(false);
+        }
+      },
+      { passive: true }
+    );
   }
 
   if (

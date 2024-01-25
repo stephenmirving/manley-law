@@ -20,6 +20,7 @@ $bp-1280: 80em;
 
 // Height breakpoints
 $bp-height-tiny: 22.75em; // 364px
+$bp-phone-height-landscape: $bp-max-phone-width;
 $bp-height: 37.5em; // 600px
 $bp-heightplusone: 37.5625em; // 601px
 
@@ -79,7 +80,7 @@ $color-contact-bg-gradient: linear-gradient(
 );
 
 $font-main-stack:
-  Roboto,
+  'Roboto',
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -89,7 +90,7 @@ $font-main-stack:
   'Segoe UI Emoji',
   'Segoe UI Symbol';
 $font-headings:
-  Lato,
+  'Lato',
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -133,7 +134,6 @@ $btn-transition-2:
   width $btn-transition-2-time;
 
 $nav-slide-animation-time: 0.6s;
-$nav-puff-animation-time: 0.6s;
 $nav-dropdown-animation-time: 0.3s;
 $nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 $nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;

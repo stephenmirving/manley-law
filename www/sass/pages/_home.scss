@@ -8,8 +8,6 @@
   margin: 0;
   background: url('../img/bridge-sunset-bg-980x676.webp') 50% 50% / cover
     no-repeat fixed border-box border-box $color-off-white;
-  image-rendering: smooth;
-  image-rendering: high-quality;
   -webkit-user-select: none;
   user-select: none;
   transition: opacity $opacity-fade-transition-time;
@@ -41,8 +39,13 @@
     background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
   }
 
+  @media screen and (max-height: $bp-phone-height-landscape) {
+    min-height: calc(100vh - 5.1875rem);
+    min-height: calc(100lvh - 5.6875rem);
+  }
+
   > .container {
-    @include zoom-in($timing: 3.5s, $delay: 0.6s);
+    @include zoom-in($timing: 3.5s, $delay: 0.333s);
 
     position: relative;
     height: 100%;

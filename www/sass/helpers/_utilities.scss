@@ -97,3 +97,9 @@
 .reduce-opacity {
   opacity: 0.65;
 }
+
+.no-wrap {
+  @media screen and (min-width: $bp-308) {
+    white-space: nowrap;
+  }
+}

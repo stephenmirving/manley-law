@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://calendar.google.com">
 
-  <link rel="stylesheet" href="css/style-v102.css">
+  <link rel="stylesheet" href="css/style-v104.css">
 
   <meta
     name="description"
-    content="The scheduling calendar for the law firm of Manley &amp; Halverstadt, LLC with listed dates of availability."
+    content="The scheduling calendar for the law firm of Manley &amp; Halverstadt with listed dates of availability."
   >
 
   <!-- Google Analytics Go Here -->
@@ -312,7 +312,7 @@
             </ul>
           </div>
           <div class="footer__col">
-            <a class="footer__logo" href="https://www.manleyandhalverstadt.com">
+            <a class="footer__branding-link" href="https://www.manleyandhalverstadt.com" tabindex="0">
               <picture>
                 <source
                     type="image/webp"
@@ -449,6 +449,6 @@
         </div>
     </div>
   </footer>
-  <script src="js/main-v1.min.js"></script>
+  <script src="js/main-v102.min.js"></script>
 </body>
 </html>

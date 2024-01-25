@@ -38,10 +38,7 @@
   }
 
   &__branding-link {
-    &:focus-visible {
-      outline: $color-brand solid 1px;
-      outline-offset: 4px;
-    }
+    display: block;
   }
 
   &__logo {
@@ -178,8 +175,6 @@
   &__burger-btn {
     $patty-thickness_: 0.25rem;
 
-    @include puff($timing: $nav-puff-animation-time, $timing-func: ease-in);
-
     position: relative;
     width: 3.125rem;
     height: 1.875rem;
@@ -295,6 +290,7 @@
           width: calc(100% + 0.25rem);
           border: 0;
           transform: none;
+          animation-name: slide-down-landscape;
         }
 
         > .nav__menu {
