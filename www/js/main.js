@@ -131,6 +131,7 @@
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
+        applyAnimationWhenInView();
       },
       { passive: true }
     );

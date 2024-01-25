@@ -80,7 +80,7 @@ $color-contact-bg-gradient: linear-gradient(
 );
 
 $font-main-stack:
-  'Roboto',
+  Roboto,
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -90,7 +90,7 @@ $font-main-stack:
   'Segoe UI Emoji',
   'Segoe UI Symbol';
 $font-headings:
-  'Lato',
+  Lato,
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
@@ -113,11 +113,11 @@ $link-transition:
   color $link-transition-time,
   border-bottom-color $link-transition-time;
 
-$link-transition-time-nav: 0.45s;
+$link-transition-time-nav: 0.5s;
 $link-transition-nav:
-  background-color $link-transition-time-nav ease-in,
-  border-color $link-transition-time-nav ease-in,
-  color $link-transition-time-nav ease-in;
+  background-color $link-transition-time-nav,
+  border-color $link-transition-time-nav,
+  color $link-transition-time-nav;
 
 $icon-transition-time: 0.2s;
 $icon-transition: color $icon-transition-time ease-out;

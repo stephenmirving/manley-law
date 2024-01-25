@@ -14,7 +14,6 @@
   padding: 0.25rem 0;
   border: 2px solid transparent;
   background: $color-nav-bg-gradient $color-nav-bg;
-  font-family: $font-headings;
   transition: border-color 0.3s $nav-dropdown-animation-func;
 
   @media screen and (max-width: $bp-237) {
