@@ -3,7 +3,11 @@ $bp-166: 10.375em;
 $bp-186: 11.625em;
 $bp-228: 14.25em;
 $bp-237: 14.8125em;
-$bp-256: 16rem;
+$bp-240: 15em;
+$bp-244: 15.25em;
+$bp-256: 16em;
+$bp-258: 16.125em;
+$bp-268: 16.75em;
 $bp-308: 19.25em;
 $bp-309: 19.3125em;
 $bp-390: 24.375em;
@@ -12,7 +16,7 @@ $bp-max-phone-width-plusone: 27.3125em; // 437px
 $bp-560: 35em;
 $bp-672: 42em;
 $bp-768: 48em; // Medium size breakpoint
-$bp-widescreen: 54.875em; // 878px - Nav toggles here
+$bp-widescreen: 51.3125em; // 821px - Nav toggles here 821px
 $bp-992: 62em;
 $bp-1080: 67.5em;
 $bp-1200: 75em;
@@ -144,8 +148,8 @@ $opacity-fade-transition-time: $nav-slide-animation-time +
 $container-padding-x: 1rem;
 
 $nav-link-fontsize-fb-static: 1.375rem;
-$nav-link-fontsize-fb: min(max(1.25rem, calc(0.125rem + 1.8125vw)), 1.625rem);
-$nav-link-fontsize: clamp(1.25rem, calc(0.125rem + 1.8125vw), 1.625rem);
+$nav-link-fontsize-fb: min(max(1.375rem, calc(0.125rem + 1.8125vw)), 1.75rem);
+$nav-link-fontsize: clamp(1.375rem, calc(0.125rem + 1.8125vw), 1.75rem);
 
 $grid-gap-size: 2rem;
 
@@ -155,9 +159,3 @@ $symbol-quotes-double-thick-left: '\275D';
 $symbol-quotes-double-thick-right: '\275E';
 $symbol-telephone: '\260F';
 $symbol-mail: '\2709';
-
-:root {
-  --default-text-size-static: 1em;
-  --default-text-size-fb: min(max(1em, calc(0.5rem + 0.5vw)), 1.375rem);
-  --default-text-size: clamp(1em, calc(0.5rem + 0.5vw), 1.375rem);
-}

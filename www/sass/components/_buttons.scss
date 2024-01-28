@@ -19,8 +19,9 @@
     7px 7px 20px 0 rgb(0 0 0 / 0.1),
     4px 4px 5px 0 rgb(0 0 0 / 0.1);
   font: 700 1rem/1.15 $font-headings;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 0.09438em;
   text-transform: uppercase;
+  white-space: nowrap;
   text-align: center;
   cursor: pointer;
   -webkit-user-select: none;

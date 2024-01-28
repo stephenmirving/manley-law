@@ -61,7 +61,7 @@
       }
     ],
     "custom-property-no-missing-var-function": true,
-    "custom-property-pattern": "^[a-z]+[a-z0-9-]*[a-z0-9]+$",
+    "custom-property-pattern": "^[a-z]+[a-z0-9-]*[a-z0-9]+_?$",
     "declaration-block-no-duplicate-properties": [
       true,
       {
@@ -386,10 +386,10 @@
         "stroke",
 
         "transition",
-        "transition-delay",
-        "transition-timing-function",
-        "transition-duration",
         "transition-property",
+        "transition-duration",
+        "transition-timing-function",
+        "transition-delay",
         "transform",
         "transform-origin",
         "animation",

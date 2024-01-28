@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://calendar.google.com">
 
-  <link rel="stylesheet" href="css/style-v106.css">
+  <link rel="stylesheet" href="css/style-v107.css">
 
   <meta
     name="description"
@@ -449,6 +449,6 @@
         </div>
     </div>
   </footer>
-  <script src="js/main-v102.min.js"></script>
+  <script src="js/main-v103.min.js"></script>
 </body>
 </html>

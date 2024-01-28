@@ -86,6 +86,7 @@ h6,
 blockquote {
   color: $color-brand;
   font-family: $font-headings;
+  font-weight: 900;
   white-space: unset;
   text-wrap: balance;
 }
@@ -158,17 +159,13 @@ sup {
 }
 
 img {
+  display: block;
   border-style: none;
   background-size: cover;
   background-repeat: no-repeat;
   image-rendering: smooth;
   font-style: italic;
   shape-margin: 1rem;
-}
-
-img,
-picture {
-  display: block;
 }
 
 textarea {
@@ -299,7 +296,6 @@ iframe {
 
 iframe,
 img,
-picture,
 svg,
 video {
   vertical-align: middle;
@@ -308,7 +304,6 @@ video {
 iframe,
 input,
 img,
-picture,
 select,
 textarea,
 video {

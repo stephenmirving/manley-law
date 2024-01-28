@@ -63,9 +63,9 @@
   }
 
   .content__text {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 1.5em;
     }
   }

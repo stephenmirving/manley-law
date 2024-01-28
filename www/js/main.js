@@ -9,8 +9,8 @@
   'use strict';
 
   // Point at which non-mobile menu begins,
-  // mobile menu (includes tablets) is < 878px
-  const MOBILE_MAX_WIDTH = 878;
+  // mobile menu (includes tablets) is < 821px
+  const MOBILE_MAX_WIDTH = 821;
 
   const document = window.document;
 

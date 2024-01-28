@@ -243,10 +243,10 @@ module.exports = {
         //
 
         'transition',
-        'transition-delay',
-        'transition-timing-function',
-        'transition-duration',
         'transition-property',
+        'transition-duration',
+        'transition-timing-function',
+        'transition-delay',
         'transform',
         'transform-origin',
         'animation',

@@ -3,6 +3,9 @@
   --default-text-size-static: 1em;
   --default-text-size-fb: min(max(1em, calc(0.5rem + 0.5vw)), 1.375rem);
   --default-text-size: clamp(1em, calc(0.5rem + 0.5vw), 1.375rem);
+  --masthead-fluid-height: clamp(8rem, 12vw, 15rem);
+  --masthead-fluid-height-fb: min(max(8rem, 12vw), 15rem);
+  --burger-btn-size-multiple: 1;
 }
 
 @font-face {
@@ -10,6 +13,14 @@
   font-weight: 700;
   font-style: normal;
   src: local("Lato"), url("../fonts/lato-bold.woff2") format("woff2"), url("../fonts/Lato-Bold.ttf") format("truetype");
+  font-display: swap;
+  unicode-range: U+0041-005A, U+0061-007A, U+2C, U+26;
+}
+@font-face {
+  font-family: Lato;
+  font-weight: 900;
+  font-style: normal;
+  src: local("Lato"), url("../fonts/lato-black.woff2") format("woff2"), url("../fonts/Lato-Black.ttf") format("truetype");
   font-display: swap;
   unicode-range: U+0041-005A, U+0061-007A, U+2C, U+26;
 }
@@ -132,6 +143,7 @@ h6,
 blockquote {
   color: #223752;
   font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 900;
   white-space: unset;
   text-wrap: balance;
 }
@@ -193,17 +205,13 @@ sup {
 }
 
 img {
+  display: block;
   border-style: none;
   background-size: cover;
   background-repeat: no-repeat;
   image-rendering: smooth;
   font-style: italic;
   shape-margin: 1rem;
-}
-
-img,
-picture {
-  display: block;
 }
 
 textarea {
@@ -321,7 +329,6 @@ iframe {
 
 iframe,
 img,
-picture,
 svg,
 video {
   vertical-align: middle;
@@ -330,7 +337,6 @@ video {
 iframe,
 input,
 img,
-picture,
 select,
 textarea,
 video {
@@ -509,10 +515,10 @@ svg:not([fill]) {
   background: 0 0;
   font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.375rem;
-  font-size: min(max(1.25rem, 0.125rem + 1.8125vw), 1.625rem);
-  font-size: clamp(1.25rem, 0.125rem + 1.8125vw, 1.625rem);
+  font-size: min(max(1.25rem, 0.125rem + 1.8125vw), 1.75rem);
+  font-size: clamp(1.25rem, 0.125rem + 1.8125vw, 1.75rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1;
 }
 .nav__link--active:focus, .nav__link:focus {
   outline: 0;
@@ -646,26 +652,12 @@ svg:not([fill]) {
   align-items: center;
   justify-content: space-between;
   align-self: start;
-  height: 7.6875rem;
+  height: var(--masthead-fluid-height-fb);
+  height: var(--masthead-fluid-height);
   padding: 0.25rem 0;
   border: 2px solid transparent;
   background: linear-gradient(135deg, #c5c5bb, #adada5) #c5c5bb;
   transition: border-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-}
-@media screen and (max-width: 14.8125em) {
-  .masthead {
-    height: 9.6875rem;
-  }
-}
-@media screen and (min-width: 19.3125em) and (max-resolution: 144dpi), screen and (min-width: 19.3125em) and (max-resolution: 1.5dppx), screen and (min-width: 27.3125em) {
-  .masthead {
-    height: 9.875rem;
-  }
-}
-@media screen and (min-width: 67.5em) {
-  .masthead {
-    height: 13.375rem;
-  }
 }
 .masthead:before {
   content: "";
@@ -673,57 +665,58 @@ svg:not([fill]) {
   inset: 0;
   z-index: -1;
 }
-.masthead > .container {
+.masthead__content {
+  position: relative;
   display: flex;
-  flex-wrap: inherit;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
   -webkit-user-select: none;
   user-select: none;
 }
-@media screen and (max-width: 16rem) {
-  .masthead > .container {
-    justify-content: center;
+@media screen and (max-width: 16.75em) {
+  .masthead__content {
+    padding: 0 0.25rem;
+  }
+}
+.masthead__branding-wrapper {
+  display: flex;
+  flex-shrink: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 0.5rem;
+}
+@media screen and (max-width: 16.125em) {
+  .masthead__branding-wrapper {
+    flex-shrink: 2;
   }
 }
 .masthead__branding-link {
   display: block;
+  height: 90%;
+}
+@media screen and (max-width: 236px) {
+  .masthead__branding-link {
+    height: auto;
+  }
 }
 .masthead__logo {
-  width: 12.5rem;
-  height: 8.25rem;
-  margin: 0 auto;
-}
-@media screen and (max-width: 19.25em), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5em) {
-  .masthead__logo {
-    width: 9.5rem;
-    height: 6.25rem;
-  }
-}
-@media screen and (min-width: 67.5em) and (min-height: 37.5625em) {
-  .masthead__logo {
-    width: 17.5rem;
-    height: 11.5rem;
-  }
+  width: auto;
+  height: 100%;
+  max-height: 100%;
 }
 .masthead__branding-subhead {
   padding: 0;
   margin: 0;
   color: #333445;
   font-family: "Minion Pro", "Times New Roman", serif;
-  font-size: 0.875rem;
+  font-size: clamp(0.8125rem, 0.25rem + 1vw, 1.25rem);
   line-height: 1;
+  white-space: nowrap;
   text-align: center;
-}
-@media screen and (max-width: 19.25em), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5em) {
-  .masthead__branding-subhead {
-    font-size: 0.6875rem;
-  }
-}
-@media screen and (min-width: 67.5em) and (min-height: 37.5625em) {
-  .masthead__branding-subhead {
-    font-size: 1.125rem;
-  }
 }
 
 .nav__menu-wrapper {
@@ -783,13 +776,14 @@ svg:not([fill]) {
 }
 .nav .btn {
   padding: 0.75rem 1rem;
-  padding: min(max(0.625rem, 0.125rem + 0.9vw), 0.875rem) min(max(0.75rem, 0.125rem + 1.25vw), 1.125rem);
-  padding: clamp(0.625rem, 0.125rem + 0.9vw, 0.875rem) clamp(0.75rem, 0.125rem + 1.25vw, 1.125rem);
+  padding: min(max(0.625rem, 0.125rem + 0.875vw), 0.9375rem) min(max(0.75rem, 0.125rem + 1.25vw), 1.125rem);
+  padding: clamp(0.625rem, 0.125rem + 0.875vw, 0.9375rem) clamp(0.75rem, 0.125rem + 1.25vw, 1.125rem);
 }
 .nav__burger-btn {
+  --patty-thickness_: calc(0.25rem * var(--burger-btn-size-multiple));
   position: relative;
-  width: 3.125rem;
-  height: 1.875rem;
+  width: calc(3.125rem * var(--burger-btn-size-multiple));
+  height: calc(1.875rem * var(--burger-btn-size-multiple));
   border: 0;
   background: transparent;
   outline-offset: 5px;
@@ -798,20 +792,21 @@ svg:not([fill]) {
 .nav__burger-btn:before, .nav__burger-btn:after {
   content: "";
   left: 0;
-  width: 3.125rem;
-  height: 0.25rem;
+  width: calc(3.125rem * var(--burger-btn-size-multiple));
+  height: var(--patty-thickness_);
   background: rgba(48, 79, 116, 0.784);
-  transition: all 0.75s;
+  transition-property: top, background-color, box-shadow, transform;
+  transition-duration: 0.75s;
   backface-visibility: hidden;
 }
 .nav__burger-btn:before {
   position: absolute;
   top: 0;
-  box-shadow: rgba(48, 79, 116, 0.784) 0 14px 0 0;
+  box-shadow: rgba(48, 79, 116, 0.784) 0 calc(0.875rem * var(--burger-btn-size-multiple)) 0 0;
 }
 .nav__burger-btn:after {
   position: absolute;
-  top: calc(100% - 0.25rem);
+  top: calc(100% - var(--patty-thickness_));
 }
 .nav__burger-btn:focus-visible {
   padding: 0;
@@ -827,9 +822,14 @@ svg:not([fill]) {
   background: #294b53;
 }
 .nav__burger-btn:hover:before, .nav__burger-btn:focus-visible:before {
-  box-shadow: #294b53 0 14px 0 0;
+  box-shadow: #294b53 0 calc(0.875rem * var(--burger-btn-size-multiple)) 0 0;
 }
-@media screen and (min-width: 54.875em) {
+@media screen and (max-width: 16.75em) {
+  .nav__burger-btn {
+    --burger-btn-size-multiple: 0.75;
+  }
+}
+@media screen and (min-width: 51.3125em) {
   .nav__burger-btn {
     display: none;
   }
@@ -1420,10 +1420,11 @@ body:not(.homepage) .contact {
   color: #fff;
   box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
   font: 700 1rem/1.15 Lato, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 0.09438rem;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
+  white-space: nowrap;
   -webkit-user-select: none;
   user-select: none;
   transition: background-color 0.55s, box-shadow 0.4s;
@@ -1503,7 +1504,7 @@ body:not(.homepage) .contact {
     min-height: calc(100svh - 9.875rem);
   }
 }
-@media screen and (min-width: 54.875em) {
+@media screen and (min-width: 51.3125em) {
   .hero {
     background-image: url("../img/bridge-sunset-bg-980x1040.webp");
   }
@@ -1547,7 +1548,7 @@ body:not(.homepage) .contact {
     background: rgba(197, 197, 187, 0.8);
   }
 }
-@media screen and (min-width: 54.875em) {
+@media screen and (min-width: 51.3125em) {
   .hero__text-box {
     top: 22%;
     left: 50%;
@@ -1563,7 +1564,7 @@ body:not(.homepage) .contact {
   font-weight: 700;
   text-align: center;
 }
-@media screen and (max-width: 16rem) and (min-height: 37.5625em) {
+@media screen and (max-width: 16em) and (min-height: 37.5625em) {
   .hero__text {
     padding: 0.625rem 1.25rem;
     font-size: 0.875rem;
@@ -1581,7 +1582,7 @@ body:not(.homepage) .contact {
     font-size: 0.6875rem;
   }
 }
-@media screen and (min-width: 54.875em) and (min-height: 37.5625em) {
+@media screen and (min-width: 51.3125em) and (min-height: 37.5625em) {
   .hero__text {
     padding: 1rem 2rem;
     font-size: 1.25rem;

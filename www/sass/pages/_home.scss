@@ -2,8 +2,8 @@
   grid-area: hero;
   overflow: hidden;
   width: 100%;
-  min-height: calc(100vh - 7.6875rem);
-  min-height: calc(100svh - 7.6875rem);
+  min-height: calc(100vh - var(--masthead--fluid-height-fb));
+  min-height: calc(100lvh - var(--masthead-fluid-height));
   border: 0;
   margin: 0;
   background: url('../img/bridge-sunset-bg-980x676.webp') 50% 50% / cover
@@ -12,26 +12,9 @@
   user-select: none;
   transition: opacity $opacity-fade-transition-time;
 
-  @media screen and (max-width: $bp-237) {
-    min-height: calc(100vh - 9.6875rem);
-    min-height: calc(100svh - 9.6875rem);
-  }
-
-  @media screen and (min-width: $bp-309) and (max-resolution: 144dpi),
-    screen and (min-width: $bp-309) and (max-resolution: 1.5dppx),
-    screen and (min-width: $bp-max-phone-width-plusone) {
-    min-height: calc(100vh - 9.875rem);
-    min-height: calc(100svh - 9.875rem);
-  }
-
-  // >= 878px
+  // >= 821px
   @media screen and (min-width: $bp-widescreen) {
     background-image: url('../img/bridge-sunset-bg-980x1040.webp');
-  }
-
-  @media screen and (min-width: $bp-1080) {
-    min-height: calc(100vh - 13.375rem);
-    min-height: calc(100svh - 13.375rem);
   }
 
   // >= 1200px
@@ -39,15 +22,10 @@
     background-image: url('../img/bridge-sunset-bg-1429x1055.webp');
   }
 
-  @media screen and (max-height: $bp-phone-height-landscape) {
-    min-height: calc(100vh - 5.1875rem);
-    min-height: calc(100lvh - 5.6875rem);
-  }
-
   > .container {
     position: relative;
     height: 100%;
-    animation: zoom-in 3.5s ease-out 0.6s both;
+    animation: zoom-in 3.6s ease-out 1450ms both;
   }
 
   &__text-box {
@@ -59,7 +37,7 @@
     border-radius: 10px;
     background: rgba($color-tan, 0.83);
     transform: translate(-50%, -50%);
-    animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 1500ms ease-in both;
 
     @media screen and (max-width: $bp-166) {
       top: 57.5%;

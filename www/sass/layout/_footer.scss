@@ -213,6 +213,10 @@
     &:focus {
       outline: 0;
     }
+
+    > strong {
+      font-weight: 500;
+    }
   }
 }
 
