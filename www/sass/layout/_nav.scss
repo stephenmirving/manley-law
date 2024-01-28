@@ -10,24 +10,24 @@
   align-items: center;
   justify-content: space-between;
   align-self: start;
-  max-height: 7.6875rem;
+  height: 7.6875rem;
   padding: 0.25rem 0;
   border: 2px solid transparent;
   background: $color-nav-bg-gradient $color-nav-bg;
   transition: border-color 0.3s $nav-dropdown-animation-func;
 
   @media screen and (max-width: $bp-237) {
-    max-height: 9.6875rem;
+    height: 9.6875rem;
   }
 
   @media screen and (min-width: $bp-309) and (max-resolution: 144dpi),
     screen and (min-width: $bp-309) and (max-resolution: 1.5dppx),
     screen and (min-width: $bp-max-phone-width-plusone) {
-    max-height: 9.875rem;
+    height: 9.875rem;
   }
 
   @media screen and (min-width: $bp-1080) {
-    max-height: 13.375rem;
+    height: 13.375rem;
   }
 
   // For the slidedown menu

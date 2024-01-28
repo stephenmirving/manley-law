@@ -45,15 +45,12 @@
   }
 
   > .container {
-    @include zoom-in($timing: 3.5s, $delay: 0.333s);
-
     position: relative;
     height: 100%;
+    animation: zoom-in 3.5s ease-out 0.6s both;
   }
 
   &__text-box {
-    @include fade($timing: 2s);
-
     position: relative;
     top: 50%;
     left: 50%;
@@ -62,6 +59,7 @@
     border-radius: 10px;
     background: rgba($color-tan, 0.83);
     transform: translate(-50%, -50%);
+    animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
     @media screen and (max-width: $bp-166) {
       top: 57.5%;

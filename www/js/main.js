@@ -20,6 +20,7 @@
   const burgerBtn = masthead.querySelector('#nav-btn');
   const navMenuWrapper = masthead.querySelector('#nav-menu-wrapper');
   const navMenu = masthead.querySelector('#nav-menu');
+  const mastheadLogo = masthead.querySelector('#masthead-logo');
   const mainEl = document.getElementById('main');
   const footer = document.getElementById('footer');
   const isHomepage = !!document.getElementById('homepage');
@@ -114,6 +115,12 @@
         passive: true
       });
     }
+
+    window.addEventListener('scroll', (event) => {
+      mastheadLogo.style =
+        ``
+    }, { passive: true });
+
 
     window.addEventListener(
       'resize',
