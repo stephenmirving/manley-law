@@ -1,24 +1,25 @@
 TODO:
-  ✔ Get the htaccess file ready for production @done(24-01-22 05:00)
-  ☐ Fix the phone numbers in the contact section of home, firm, and calendar
-  ☐ Fix the bug with the contact section animation on phones
+  ☐ Make a smaller hero section image optimized for phone screens
+  ☐ Move all my scripts to the head and use defer
   ☐ Fix the masthead so that it resizes more fluidly and decreases in size on scrolling
     ☐ Image shrinks and masthead shrinks responsively to screen size until it hits a min size
     ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
   ☐ Fix the email icon to just the letter without the @ in it
-  ✔ Get calendar issues worked out @done(24-01-22 16:51)
-  ✔ Install Google analytics - Email them instructions @done(24-01-22 16:51)
-  ✔ Modify htaccess for production @done(24-01-22 16:51)
-    ✔ Ensure redirect to https is on @done(24-01-22 16:51)
-    ✔ Ensure redirect to www is on @done(24-01-22 16:51)
-    ✔ Add and remove any other rules as you see fit to optimize it @done(24-01-22 16:51)
   ☐ Run SEO extension validators
-  ☐ Run site through lighthouse
   ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
-  ☐ Make nav animate to a smaller height when wthe user scrolls down.
   ☐ Redo parking directions PDF into an HTML page (make printable too)
 
 Archive:
+  ✔ Get the htaccess file ready for production @done(24-01-22 05:00) @project(TODO)
+  ✔ Fix the phone numbers in the contact section of home, firm, and calendar @done(24-01-25 05:15) @project(TODO)
+  ✔ Fix the bug with the contact section animation on phones @done(24-01-25 05:15) @project(TODO)
+  ✔ Get calendar issues worked out @done(24-01-22 16:51) @project(TODO)
+  ✔ Install Google analytics - Email them instructions @done(24-01-22 16:51) @project(TODO)
+  ✔ Modify htaccess for production @done(24-01-22 16:51) @project(TODO)
+  ✔ Ensure redirect to https is on @done(24-01-22 16:51) @project(TODO)
+  ✔ Ensure redirect to www is on @done(24-01-22 16:51) @project(TODO)
+  ✔ Add and remove any other rules as you see fit to optimize it @done(24-01-22 16:51) @project(TODO)
+  ✔ Run site through lighthouse @done(24-01-25 05:16) @project(TODO)
   ✔ Fill out more areas with schema https://schema.org/LegalService on firm and calendar pages @started(24-01-19 00:28) @done(24-01-19 00:59) @lasted(31m32s) @project(TODO)
   ✔ Run validators on HTML, CSS, and JS @done(24-01-18 17:11) @project(TODO)
   ✔ Validate HTML @done(24-01-18 15:47) @project(TODO)
