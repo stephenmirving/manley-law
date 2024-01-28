@@ -70,11 +70,8 @@ body {
   overflow-x: clip;
   margin: 0;
   background: $color-body-bg;
-  text-rendering: optimizeSpeed;
-
-  @media screen and (min-width: 80em) {
-    text-rendering: optimizeLegibility;
-  }
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
