@@ -1,11 +1,13 @@
 TODO:
-  ☐ Make a smaller hero section image optimized for phone screens
+  ✔ Make a smaller hero section image optimized for phone screens @done(24-01-29 00:40)
+    ✔ Make the image @done(24-01-28 20:04)
+    ✔ Add the image into the code for phone screens @done(24-01-29 00:40)
   ✔ Move all my scripts to the head and use defer @done(24-01-28 05:30)
   ✔ Fix the masthead so that it resizes more fluidly and decreases in size on scrolling @done(24-01-28 05:31)
     ✔ Image shrinks and masthead shrinks responsively to screen size until it hits a min size @done(24-01-28 05:31)
-  ☐ Make navbar smaller height when viewport height is small
-  ☐ Make the navbar shrink more when the page is scrolled down
-    ☐ Make "Attorneys and mediators" below logo sr-only on scroll down.
+  ✔ Make navbar smaller height when viewport height is small @done(24-01-28 19:50)
+  ✔ Make the navbar shrink more when the page is scrolled down @done(24-01-28 20:03)
+    ✔ Make "Attorneys and mediators" below logo sr-only on scroll down. @done(24-01-28 20:03)
   ☐ Rerun Lighthouse
   ✔ Fix the email icon to just the letter without the @ in it @done(24-01-28 05:31)
   ☐ Run SEO extension validators

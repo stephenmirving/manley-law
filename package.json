@@ -1,6 +1,6 @@
 {
   "name": "manley-law",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "The business website for the Manley Law Firm in Moncks Corner, SC",
   "main": "index.html",
   "scripts": {
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/stephenmirving/manley-law#readme",
   "devDependencies": {
-    "@babel/cli": "^7.23.4",
+    "@babel/cli": "^7.23.9",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",

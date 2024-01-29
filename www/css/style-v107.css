@@ -22,6 +22,10 @@
     var(--masthead-fixed-height-max)
   );
   --masthead-fluid-height-nofunc: var(--masthead-fluid-height-responsive);
+  --masthead-scroll-transition: border-color 0.3s
+      cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    height 0.6s;
+  --masthead-padding-y: 0.25rem;
   --burger-btn-size-multiple: 1;
 }
 
@@ -635,8 +639,8 @@ svg:not([fill]) {
 }
 
 .legal__section, .article, .content__title {
-  scroll-margin-top: calc(var(--masthead-fluid-height-fb) - 0.25rem);
-  scroll-margin-top: calc(var(--masthead-fluid-height) - 0.25rem);
+  scroll-margin-top: calc(var(--masthead-fluid-height-fb) - 2rem);
+  scroll-margin-top: calc(var(--masthead-fluid-height) - 2rem);
 }
 
 /* stylelint-disable selector-max-specificity */
@@ -654,7 +658,7 @@ svg:not([fill]) {
   height: var(--masthead-fluid-height-nofunc);
   height: var(--masthead-fluid-height-fb);
   height: var(--masthead-fluid-height);
-  padding: 0.25rem 0;
+  padding: var(--masthead-padding-y) 0;
   border: 2px solid transparent;
   background: linear-gradient(135deg, #c5c5bb, #adada5) #c5c5bb;
   transition: border-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -739,8 +743,15 @@ svg:not([fill]) {
   line-height: 1;
   white-space: nowrap;
   text-align: center;
+  transition: font-size 0.6s;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 .nav__menu-wrapper {
   border-color: transparent;
   transition: border-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -883,7 +894,7 @@ svg:not([fill]) {
 }
 .nav__checkbox:checked ~ .nav__menu-wrapper {
   position: absolute;
-  top: 100%;
+  top: calc(var(--masthead-padding-y) + 100%);
   left: 100%;
   z-index: 9;
   border-width: 0 0 2px 2px;
@@ -1072,7 +1083,8 @@ svg:not([fill]) {
   object-fit: contain;
   width: 100%;
   height: 100%;
-  border: 0.25rem solid #223752;
+  border: 4px ridge #2d535c;
+  border-radius: 4px;
 }
 
 .article:not(:first-child) {
@@ -1089,7 +1101,6 @@ svg:not([fill]) {
   margin-top: 0;
 }
 .contact .tel {
-  display: block;
   margin: 0 auto 0.125rem;
 }
 .contact .tel:before {
@@ -1123,7 +1134,7 @@ body:not(.homepage) .contact {
   user-select: none;
   transition: opacity 0.75s;
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer {
     text-align: left;
   }
@@ -1142,7 +1153,7 @@ body:not(.homepage) .contact {
   width: 100%;
   margin: 0;
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer__col--subnav {
     display: flex;
     align-items: center;
@@ -1151,7 +1162,7 @@ body:not(.homepage) .contact {
 .footer__col--legal {
   padding: 0;
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer__col--legal {
     flex-grow: 1;
     flex-basis: 0;
@@ -1161,13 +1172,13 @@ body:not(.homepage) .contact {
 .footer__menu {
   vertical-align: baseline;
 }
-@media screen and (min-width: 35em) {
+@media (min-width: 35em) {
   .footer__menu {
     column-count: 2;
     column-gap: 2rem;
   }
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer__menu {
     column-gap: 4rem;
   }
@@ -1185,7 +1196,7 @@ body:not(.homepage) .contact {
 .footer__branding-link:focus-visible {
   outline-color: #b6c9eb;
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer__branding-link {
     margin: 0;
   }
@@ -1204,7 +1215,7 @@ body:not(.homepage) .contact {
   justify-content: center;
   margin-bottom: 0.5rem;
 }
-@media screen and (min-width: 62em) {
+@media (min-width: 62em) {
   .footer__social-menu {
     justify-content: flex-start;
   }
@@ -1445,9 +1456,8 @@ body:not(.homepage) .contact {
   max-width: 100%;
   padding: 0.875rem 1.125rem;
   border: 0;
-  border-radius: 2px;
   margin: 0.5rem;
-  background: rgba(11, 47, 91, 0.76) padding-box;
+  background: #223752 padding-box;
   color: #fff;
   box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
   font: 700 1rem/1.15 Lato, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1458,11 +1468,11 @@ body:not(.homepage) .contact {
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
-  transition: background-color 0.55s, box-shadow 0.4s;
+  transition: background-color 0.4s, box-shadow 0.4s, color 0.4s;
 }
 .btn:hover, .btn:focus-visible {
-  border-radius: 0;
-  background-color: #2b4f57;
+  background-color: rgba(11, 47, 91, 0.76);
+  color: #fff;
 }
 .btn:active {
   background: #26474e;
@@ -1473,8 +1483,8 @@ body:not(.homepage) .contact {
   outline-offset: 4px;
 }
 .btn:-moz-focusring {
-  border-radius: 0;
-  background-color: #2b4f57;
+  background-color: rgba(11, 47, 91, 0.76);
+  color: #fff;
   outline-offset: 5px;
 }
 .btn:before, .btn:after {
@@ -1483,26 +1493,24 @@ body:not(.homepage) .contact {
   top: 0;
   width: 0;
   height: 0.125rem;
-  background-color: #223752;
+  background-color: #0db694;
   box-shadow: -1px -1px 5px 0 #cfb2f3, 7px 7px 20px 0 rgba(0, 0, 0, 0.2), 4px 4px 5px 0 rgba(0, 0, 0, 0.1333);
-  transition: background-color 0.4s, box-shadow 0.4s, width 0.4s;
+  transition: box-shadow 0.55s, width 0.55s;
 }
 .btn:before {
-  right: 2px;
+  right: 0;
 }
 .btn:after {
   top: inherit;
   right: inherit;
   bottom: 0;
-  left: 2px;
+  left: 0;
 }
 .btn:-moz-focusring:before, .btn:-moz-focusring:after {
-  width: calc(100% - 4px);
-  transition: background-color 0.55s, box-shadow 0.55s, width 0.55s;
+  width: 100%;
 }
 .btn:hover:before, .btn:hover:after, .btn:focus-visible:before, .btn:focus-visible:after {
-  width: calc(100% - 4px);
-  transition: background-color 0.55s, box-shadow 0.55s, width 0.55s;
+  width: 100%;
 }
 
 .icon--map-pin {
@@ -1523,6 +1531,11 @@ body:not(.homepage) .contact {
   -webkit-user-select: none;
   user-select: none;
   transition: opacity 0.75s;
+}
+@media screen and (max-width: 27.25em) and (min-resolution: 192dpi), (max-width: 27.25em) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../img/bridge-sunset-bg-436x932.webp");
+  }
 }
 @media screen and (min-width: 51.3125em) {
   .hero {
@@ -1617,7 +1630,10 @@ body:not(.homepage) .contact {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  border: 0.0625rem solid #223752;
+  padding: 0.75rem;
+  border: 4px ridge #2d535c;
+  border-radius: 4px;
+  background-color: #fff;
 }
 .calendar__info-wrapper {
   width: 100%;
@@ -1894,16 +1910,6 @@ body:not(.homepage) .contact {
   a:visited {
     text-decoration: underline;
   }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
   blockquote {
     border: 1px solid #999;
     break-inside: avoid;
@@ -1925,8 +1931,24 @@ body:not(.homepage) .contact {
   h3 {
     break-after: avoid;
   }
-  .footer__menu > li {
+  .masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .animated-office-wrapper {
+    opacity: 1;
+  }
+  .footer,
+  .footer > li {
     break-inside: avoid;
+  }
+  .footer__row {
+    justify-content: center;
+  }
+  .footer > .container .footer__row,
+  .footer__social-menu {
+    display: none;
   }
 }
 

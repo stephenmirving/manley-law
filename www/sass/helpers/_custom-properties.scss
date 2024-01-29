@@ -21,5 +21,9 @@
     var(--masthead-fixed-height-max)
   );
   --masthead-fluid-height-nofunc: var(--masthead-fluid-height-responsive);
+  --masthead-scroll-transition: border-color 0.3s
+      cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    height 0.6s;
+  --masthead-padding-y: 0.25rem;
   --burger-btn-size-multiple: 1;
 }

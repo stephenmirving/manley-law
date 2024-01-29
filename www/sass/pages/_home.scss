@@ -13,6 +13,12 @@
   user-select: none;
   transition: opacity $opacity-fade-transition-time;
 
+  // Target Phones screen size <= 436px
+  @media screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
+    (max-width: $bp-max-phone-width) and (min-resolution: 2dppx) {
+    background-image: url('../img/bridge-sunset-bg-436x932.webp');
+  }
+
   // >= 821px
   @media screen and (min-width: $bp-widescreen) {
     background-image: url('../img/bridge-sunset-bg-980x1040.webp');

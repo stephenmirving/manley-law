@@ -19,7 +19,10 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    border: 0.0625rem solid $color-brand;
+    padding: 0.75rem;
+    border: $iframe-border;
+    border-radius: $iframe-border-radius;
+    background-color: #fff;
   }
 
   &__info-wrapper {

@@ -19,22 +19,6 @@
     text-decoration: underline;
   }
 
-  a[href]:after {
-    content: ' (' attr(href) ')';
-  }
-
-  // Don't show links that are fragment identifiers,
-  // or use the `javascript:` pseudo protocol
-
-  a[href^='#']:after,
-  a[href^='javascript:']:after {
-    content: '';
-  }
-
-  abbr[title]:after {
-    content: ' (' attr(title) ')';
-  }
-
   blockquote {
     border: 1px solid #999;
     break-inside: avoid;
@@ -66,7 +50,27 @@
     break-after: avoid;
   }
 
-  .footer__menu > li {
+  .masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .animated-office-wrapper {
+    opacity: 1;
+  }
+
+  .footer,
+  .footer > li {
     break-inside: avoid;
+  }
+
+  .footer__row {
+    justify-content: center;
+  }
+
+  .footer > .container .footer__row,
+  .footer__social-menu {
+    display: none;
   }
 }

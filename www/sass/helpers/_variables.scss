@@ -67,9 +67,10 @@ $color-footer-bg-gradient: linear-gradient(
 
 $color-btn-text: #fff;
 $color-btn-bg: $color-brand;
-$color-btn-bg-hover: shade($color-brand-green, 5%);
-$color-btn-border: $color-faint-blue;
-$color-btn-border-hover: $color-brand;
+$color-btn-bg-hover: $color-brand-light;
+$color-btn-text-hover: #fff;
+$color-btn-hover-border: $color-green-lime;
+$color-btn-hover-border-glow: $color-violet;
 
 $color-card-bg: rgba($color-off-white, 1);
 
@@ -125,11 +126,11 @@ $icon-transition: color $icon-transition-time ease-out;
 $btn-transition-time: 0.4s;
 $btn-transition-2-time: 0.55s;
 $btn-transition:
-  background-color $btn-transition-2-time,
-  box-shadow $btn-transition-time;
+  background-color $btn-transition-time,
+  box-shadow $btn-transition-time,
+  color $btn-transition-time;
 
 $btn-transition-2:
-  background-color $btn-transition-2-time,
   box-shadow $btn-transition-2-time,
   width $btn-transition-2-time;
 
@@ -146,6 +147,9 @@ $container-padding-x: 1rem;
 $nav-link-fontsize-fb-static: 1.375rem;
 $nav-link-fontsize-fb: min(max(1.375rem, calc(0.125rem + 1.8125vw)), 1.75rem);
 $nav-link-fontsize: clamp(1.375rem, calc(0.125rem + 1.8125vw), 1.75rem);
+
+$iframe-border: 4px ridge $color-brand-green;
+$iframe-border-radius: 4px;
 
 $grid-gap-size: 2rem;
 

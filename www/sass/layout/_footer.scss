@@ -14,7 +14,7 @@
   user-select: none;
   transition: opacity $opacity-fade-transition-time;
 
-  @media screen and (min-width: $bp-992) {
+  @media (min-width: $bp-992) {
     text-align: left;
   }
 
@@ -41,7 +41,7 @@
     &--subnav {
       @extend %footer-column;
 
-      @media screen and (min-width: $bp-992) {
+      @media (min-width: $bp-992) {
         display: flex;
         align-items: center;
       }
@@ -52,7 +52,7 @@
 
       padding: 0;
 
-      @media screen and (min-width: $bp-992) {
+      @media (min-width: $bp-992) {
         flex-grow: 1;
         flex-basis: 0;
         text-align: right;
@@ -63,12 +63,12 @@
   &__menu {
     vertical-align: baseline;
 
-    @media screen and (min-width: $bp-560) {
+    @media (min-width: $bp-560) {
       column-count: 2;
       column-gap: 2rem;
     }
 
-    @media screen and (min-width: $bp-992) {
+    @media (min-width: $bp-992) {
       column-gap: 4rem;
     }
   }
@@ -96,7 +96,7 @@
       outline-color: $color-brand-contrast;
     }
 
-    @media screen and (min-width: $bp-992) {
+    @media (min-width: $bp-992) {
       margin: 0;
     }
   }
@@ -108,7 +108,7 @@
   &__bottom {
     width: 100%;
     padding-top: 2rem;
-    border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+    border-top: 1px solid hsl(0 0% 100% / 0.3);
     margin-top: 2rem;
   }
 
@@ -117,7 +117,7 @@
     justify-content: center;
     margin-bottom: 0.5rem;
 
-    @media screen and (min-width: $bp-992) {
+    @media (min-width: $bp-992) {
       justify-content: flex-start;
     }
 
