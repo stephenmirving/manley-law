@@ -10,12 +10,31 @@
   align-items: center;
   justify-content: space-between;
   align-self: start;
+  height: var(--masthead-fluid-height-nofunc);
   height: var(--masthead-fluid-height-fb);
   height: var(--masthead-fluid-height);
   padding: 0.25rem 0;
   border: 2px solid transparent;
   background: $color-nav-bg-gradient $color-nav-bg;
   transition: border-color 0.3s $nav-dropdown-animation-func;
+
+  @media screen and (max-width: 67.5em) {
+    --masthead--fluid-height: calc(
+      var(--masthead-fluid-height-min) * var(--masthead-height-multiple)
+    );
+    --masthead--fluid-height-fb: calc(
+      var(--masthead-fluid-height-min) * var(--masthead-height-multiple)
+    );
+    --masthead--fluid-height-nofunc: calc(
+      var(--masthead-fluid-height-min) * var(--masthead-height-multiple)
+    );
+  }
+
+  @media screen and (min-width: 126.5625em) {
+    --masthead--fluid-height: var(--masthead-fluid-height-max);
+    --masthead--fluid-height-fb: var(--masthead-fluid-height-max);
+    --masthead--fluid-height-nofunc: var(--masthead-fluid-height-max);
+  }
 
   // For the slidedown menu
   &:before {
@@ -74,7 +93,15 @@
     margin: 0;
     color: $color-black-lightest;
     font-family: $font-serif;
-    font-size: clamp(0.875rem, calc(0.25rem + 1vw), 1.25rem);
+    font-size: calc(1rem * var(--masthead-height-multiple));
+    font-size: calc(
+      min(max(0.875rem, calc(0.25rem + 1vw), 1.25rem)) *
+        var(--masthead-height-multiple)
+    );
+    font-size: calc(
+      clamp(0.875rem, calc(0.25rem + 1vw), 1.25rem) *
+        var(--masthead-height-multiple)
+    );
     line-height: 1;
     white-space: nowrap;
     text-align: center;

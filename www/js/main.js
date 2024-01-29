@@ -15,12 +15,13 @@
   const document = window.document;
 
   // DOM elements
+  const root = document.documentElement;
   const masthead = document.getElementById('masthead');
   const navToggler = masthead.querySelector('#nav-toggler');
   const burgerBtn = masthead.querySelector('#nav-btn');
+  const brandSubhead = masthead.querySelector('#brand-subhead');
   const navMenuWrapper = masthead.querySelector('#nav-menu-wrapper');
   const navMenu = masthead.querySelector('#nav-menu');
-  const mastheadLogo = masthead.querySelector('#masthead-logo');
   const mainEl = document.getElementById('main');
   const footer = document.getElementById('footer');
   const isHomepage = !!document.getElementById('homepage');
@@ -116,16 +117,27 @@
       });
     }
 
-    window.addEventListener('scroll', (event) => {
-      mastheadLogo.style =
-        ``
-    }, { passive: true });
-
+    window.addEventListener(
+      'scroll',
+      () => {
+        masthead.style =
+          `transition:border-color 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53)` +
+          `, height 0.6s`;
+        if (window.scrollY > 300) {
+          root.style.setProperty('--masthead-height-multiple', '0.8');
+        } else {
+          root.style.setProperty('--masthead-height-multiple', '1');
+        }
+      },
+      { passive: true }
+    );
 
     window.addEventListener(
       'resize',
       () => {
         const vWidth = window.innerWidth;
+
+        masthead.style = '';
 
         navMenu.classList.add('anim-off');
 

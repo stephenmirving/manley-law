@@ -2,6 +2,7 @@
   grid-area: hero;
   overflow: hidden;
   width: 100%;
+  min-height: calc(100vh - var(--masthead-fluid-height-nofunc));
   min-height: calc(100vh - var(--masthead--fluid-height-fb));
   min-height: calc(100lvh - var(--masthead-fluid-height));
   border: 0;

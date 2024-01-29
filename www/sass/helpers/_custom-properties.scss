@@ -2,7 +2,24 @@
   --default-text-size-static: 1em;
   --default-text-size-fb: min(max(1em, calc(0.5rem + 0.5vw)), 1.375rem);
   --default-text-size: clamp(1em, calc(0.5rem + 0.5vw), 1.375rem);
-  --masthead-fluid-height: clamp(8rem, 12vw, 15rem);
-  --masthead-fluid-height-fb: min(max(8rem, 12vw), 15rem);
+  --masthead-height-multiple: 1;
+  --masthead-fixed-height-min: calc(8rem * var(--masthead-height-multiple));
+  --masthead-fixed-height-max: calc(15rem * var(--masthead-height-multiple));
+  --masthead-fluid-height-responsive: calc(
+    11.852vw * var(--masthead-height-multiple)
+  );
+  --masthead-fluid-height: clamp(
+    var(--masthead-fixed-height-min),
+    var(--masthead-fluid-height-responsive),
+    var(--masthead-fixed-height-max)
+  );
+  --masthead-fluid-height-fb: min(
+    max(
+      var(--masthead-fixed-height-min),
+      var(--masthead-fluid-height-responsive)
+    ),
+    var(--masthead-fixed-height-max)
+  );
+  --masthead-fluid-height-nofunc: var(--masthead-fluid-height-responsive);
   --burger-btn-size-multiple: 1;
 }

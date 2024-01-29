@@ -495,7 +495,7 @@
           "1140px"
         ],
         "ignoreAtRules": ["media"],
-        "ignoreFunctions": ["url"],
+        "ignoreFunctions": ["url", "calc"],
         "fontSize": 16
       }
     ],
