@@ -1,6 +1,11 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
+# PROJECT
+
+    Manley & Halverstadt Law Firm Web Site
+    https://www.manleyandhalverstadt.com/
+
 # TEAM
 
     Metric Design & Development
@@ -13,5 +18,6 @@
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3, Sass, JavaScript
+    HTML5, CSS, Sass, JavaScript
     Apache Server Configs
+    Google Maps & Calendar
