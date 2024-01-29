@@ -23,7 +23,7 @@
 
 .container {
   width: 100%;
-  padding: 0 $container-padding-x;
+  padding: 0 var(--container-padding-x);
   margin: 0 auto;
 
   @media screen and (min-width: $bp-768) {

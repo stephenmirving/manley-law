@@ -1,3 +1,4 @@
+/* stylelint-disable max-nesting-depth */
 /* stylelint-disable selector-max-specificity */
 .masthead {
   position: sticky;
@@ -339,11 +340,18 @@
 
         @include target-tiny-height-screens {
           right: 0;
-          left: -0.125rem;
-          width: calc(100% + 0.25rem);
+          left: calc((var(--container-padding-x) * -1) - 1px);
+          width: calc(100vw + (2 * var(--container-padding-x)) + 1px);
+          max-width: calc(100vw + (2 * var(--container-padding-x)) + 1px);
           border: 0;
           transform: none;
           animation-name: slide-down-landscape;
+
+          @at-root {
+            .masthead {
+              border-bottom-color: transparent !important;
+            }
+          }
         }
 
         > .nav__menu {

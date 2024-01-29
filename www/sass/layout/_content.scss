@@ -25,9 +25,11 @@
   }
 
   &__text {
+    margin: 0.75em 0;
     font-size: var(--default-text-size-static);
     font-size: var(--default-text-size-fb);
     font-size: var(--default-text-size);
+    line-height: 1.5;
 
     &--legal {
       margin: 1rem auto;

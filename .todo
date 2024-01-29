@@ -8,6 +8,7 @@ TODO:
   ✔ Make navbar smaller height when viewport height is small @done(24-01-28 19:50)
   ✔ Make the navbar shrink more when the page is scrolled down @done(24-01-28 20:03)
     ✔ Make "Attorneys and mediators" below logo sr-only on scroll down. @done(24-01-28 20:03)
+  ☐ Shrink the padding around the calendar on small screens
   ☐ Rerun Lighthouse
   ✔ Fix the email icon to just the letter without the @ in it @done(24-01-28 05:31)
   ☐ Run SEO extension validators

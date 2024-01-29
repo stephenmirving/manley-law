@@ -4,15 +4,24 @@
     transition: none !important;
   }
 
-  .homepage .nav__menu,
-  .homepage .hero > .container,
-  .homepage .hero__text-box {
+  .homepage .nav__menu {
+    animation: none !important;
+  }
+}
+
+@media screen and (max-height: $bp-max-phone-width) and (min-resolution: 192dpi),
+  screen and (max-height: $bp-max-phone-width) and (min-resolution: 2dppx),
+  (prefers-reduced-motion: reduce) {
+  .animated-office-wrapper {
+    opacity: 1 !important;
     animation: none !important;
   }
 }
 
 @media screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
   screen and (max-width: $bp-max-phone-width) and (min-resolution: 2dppx),
+  screen and (max-height: $bp-max-phone-width) and (min-resolution: 192dpi),
+  screen and (max-height: $bp-max-phone-width) and (min-resolution: 2dppx),
   (prefers-reduced-motion: reduce) {
   .hero,
   .firm {

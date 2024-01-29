@@ -23,7 +23,12 @@
   --masthead-fluid-height-nofunc: var(--masthead-fluid-height-responsive);
   --masthead-scroll-transition: border-color 0.3s
       cubic-bezier(0.55, 0.085, 0.68, 0.53),
-    height 0.6s;
+    height 0.5s;
   --masthead-padding-y: 0.25rem;
   --burger-btn-size-multiple: 1;
+  --container-padding-x: 1rem;
+
+  @include target-phones-and-tiny-width-screens {
+    --container-padding-x: 0.5rem;
+  }
 }
