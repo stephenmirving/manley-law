@@ -26,8 +26,9 @@ $bp-heightplusone: 37.5625em; // 601px
 
 // Colors
 $color-brand: #223752;
-$color-brand-lightest: rgb(11 47 91 / 0.36);
-$color-brand-light: rgb(11 47 91 / 0.76);
+$color-brand-tint: #0b2f5b;
+$color-brand-lightest: rgba($color-brand-tint, 0.36);
+$color-brand-light: rgba($color-brand-tint, 0.76);
 $color-brand-green: #2d535c;
 $color-green-lime: #0db694;
 $color-violet: #cfb2f3; // brand-green contrast ??
@@ -66,11 +67,13 @@ $color-footer-bg-gradient: linear-gradient(
 );
 
 $color-btn-text: #fff;
-$color-btn-bg: $color-brand;
-$color-btn-bg-hover: $color-brand-light;
+$color-btn-bg: rgba($color-brand, 1);
+$color-btn-bg-hover: rgba($color-brand-tint, 0.9);
 $color-btn-text-hover: #fff;
 $color-btn-hover-border: $color-green-lime;
 $color-btn-hover-border-glow: $color-violet;
+$color-btn-bg-active: shade($color-brand-green, 15%);
+$color-btn-text-active: $color-blue-faint;
 
 $color-card-bg: rgba($color-off-white, 1);
 

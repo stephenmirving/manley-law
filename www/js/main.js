@@ -7,7 +7,6 @@
  */
 ((window) => {
   'use strict';
-
   // Point at which non-mobile menu begins,
   // mobile menu (includes tablets) is < 821px
   const MOBILE_MAX_WIDTH = 821;
@@ -21,11 +20,14 @@
   const burgerBtn = masthead.querySelector('#nav-btn');
   const navMenuWrapper = masthead.querySelector('#nav-menu-wrapper');
   const navMenu = masthead.querySelector('#nav-menu');
+  const brandSubhead = masthead.querySelector('#brand-subhead');
   const mainEl = document.getElementById('main');
   const footer = document.getElementById('footer');
   const isHomepage = !!document.getElementById('homepage');
 
-  let homepageHero, officeWrappers;
+  let homepageHero;
+  let officeWrappers;
+  let resizeTimeout;
 
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
@@ -104,16 +106,16 @@
     footer.classList.toggle('reduce-opacity', isReduced);
   }
 
+  /**
+   * Updates the multiple in the calculation of the masthead height based on
+   * the user's scroll position.
+   *
+   * @param {Number} scrollPos - The scroll position of the user, window.scrollY.
+   */
   function updateMastheadHeightMultiple(scrollPos) {
-    if (scrollPos === 0) return;
-
-    if (scrollPos > 250) {
-      root.style.setProperty('--masthead-height-multiple', '0.8');
-    } else if (scrollPos > 120) {
-      root.style.setProperty('--masthead-height-multiple', '0.904');
-    } else {
-      root.style.setProperty('--masthead-height-multiple', '1');
-    }
+    root.style.setProperty(
+      '--masthead-height-multiple', scrollPos < 140 ? '1' : '0.8'
+    );
   }
 
   function mastheadScrollTransition() {
@@ -138,14 +140,18 @@
     }
 
     updateMastheadHeightMultiple(window.scrollY);
-    window.addEventListener('scroll', mastheadScrollTransition, { passive: true });
+    window.addEventListener('scroll', mastheadScrollTransition, {
+      passive: true
+    });
 
     window.addEventListener(
       'resize',
       () => {
         const vWidth = window.innerWidth;
 
-        masthead.style = '';
+        clearTimeout(resizeTimeout);
+        masthead.removeAttribute('style');
+        brandSubhead.style = 'transition:none';
 
         navMenu.classList.add('anim-off');
 
@@ -159,6 +165,10 @@
 
         toggleNavBurgerBtnDisplay(vWidth);
         applyAnimationWhenInView();
+
+        resizeTimeout = setTimeout(() => {
+          brandSubhead.removeAttribute('style');
+        }, 800);
       },
       { passive: true }
     );

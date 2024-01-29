@@ -14,9 +14,9 @@
   background: $color-btn-bg padding-box;
   color: $color-btn-text;
   box-shadow:
-    inset 2px 2px 2px 0 rgb(255 255 255 / 0.5),
-    7px 7px 20px 0 rgb(0 0 0 / 0.1),
-    4px 4px 5px 0 rgb(0 0 0 / 0.1);
+    inset 0.125rem 0.125rem 0.125rem 0 rgba(255, 255, 255, 0.5),
+    0.4375rem 0.4375rem 1.25rem 0 rgba(0, 0, 0, 0.1),
+    0.25rem 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.1);
   font: 700 1rem/1.15 $font-headings;
   letter-spacing: 0.09438em;
   text-transform: uppercase;
@@ -33,9 +33,9 @@
   }
 
   &:active {
-    background: shade($color-brand-green, 15%);
-    color: $color-violet-faint;
-    box-shadow: 0 0.0625rem 0.125rem rgb(0 0 0 / 0.24);
+    background: $color-btn-bg-active;
+    color: $color-btn-text-active;
+    box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
   }
 
   &:focus-visible {
@@ -57,9 +57,9 @@
     height: 0.125rem;
     background-color: $color-btn-hover-border;
     box-shadow:
-      -1px -1px 5px 0 $color-btn-hover-border-glow,
-      7px 7px 20px 0 rgb(0 0 0 / 0.2),
-      4px 4px 5px 0 rgb(0 0 0 / 0.1333);
+      -0.0625rem -0.0625rem 0.3125rem 0 $color-btn-hover-border-glow,
+      0.4375rem 0.4375rem 1.25rem 0 rgba(0, 0, 0, 0.2),
+      0.25rem 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.14);
     transition: $btn-transition-2;
   }
 

@@ -84,43 +84,28 @@ AddDefaultCharset utf-8
                      .webmanifest \
                      .xloc
 </IfModule>
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
     Options +FollowSymlinks
-
     RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
     RewriteCond %{SCRIPT_FILENAME} -d [OR]
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
-
     RewriteCond %{HTTPS} !=on
     RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
     RewriteCond %{HTTP_HOST} !^www\. [NC]
     RewriteCond %{HTTP_HOST} ^(.+)$ [NC]
     RewriteRule ^ http://www.%1%{REQUEST_URI} [L,R=301]
-
-    # Redirect /file.html to /file with POST (enabled)
-
     RewriteCond %{REQUEST_METHOD} !POST
     RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
     RewriteRule ^ /%1 [NE,L,R]
-
-    # Add trailing slash to url
-
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
     RewriteRule ^(.*)$ $1/ [L]
-
-    # Remove .html extension from url
-
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}\.html -f
     RewriteRule ^([^\.]+)/$ $1.html
-
-    # Redirect index.html requests to the homepage
     RewriteRule ^index\.html$ / [R=301,L]
 </IfModule>
 
@@ -136,9 +121,6 @@ AddDefaultCharset utf-8
 
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
-</IfModule>
-
-<IfModule mod_headers.c>
     Header unset X-Powered-By
     Header always unset X-Powered-By
 </IfModule>
