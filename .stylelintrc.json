@@ -139,6 +139,7 @@
         "all",
         "content",
         "isolation",
+        "appearance",
         "position",
         "inset",
         "top",

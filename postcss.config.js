@@ -5,6 +5,8 @@ module.exports = {
       'properties-order': [
         'all',
         'content',
+        'isolation',
+        'appearance',
         'position',
         'inset',
         'top',
@@ -61,8 +63,6 @@ module.exports = {
         'overflow-y',
         'overflow-scrolling',
         'clip',
-
-        //
 
         'box-sizing',
         'width',
@@ -200,8 +200,6 @@ module.exports = {
         'hyphens',
         'interpolation-mode',
 
-        //
-
         'opacity',
         'visibility',
         'filter',
@@ -209,8 +207,6 @@ module.exports = {
         'cursor',
         'pointer-events',
         'user-select',
-
-        //
 
         'unicode-bidi',
         'direction',
@@ -239,8 +235,6 @@ module.exports = {
         'orientation',
         'fill',
         'stroke',
-
-        //
 
         'transition',
         'transition-property',
