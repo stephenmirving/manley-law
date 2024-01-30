@@ -9,7 +9,8 @@
   }
 }
 
-@media screen and (max-height: $bp-max-phone-width) and (min-resolution: 192dpi),
+@media screen and (max-height: $bp-max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (max-height: $bp-max-phone-width) and (min-resolution: 192dpi),
   screen and (max-height: $bp-max-phone-width) and (min-resolution: 2dppx),
   (prefers-reduced-motion: reduce) {
   .animated-office-wrapper {
@@ -18,8 +19,10 @@
   }
 }
 
-@media screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
+@media screen and (max-width: $bp-max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
+  screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
   screen and (max-width: $bp-max-phone-width) and (min-resolution: 2dppx),
+  screen and (max-height: $bp-max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
   screen and (max-height: $bp-max-phone-width) and (min-resolution: 192dpi),
   screen and (max-height: $bp-max-phone-width) and (min-resolution: 2dppx),
   (prefers-reduced-motion: reduce) {

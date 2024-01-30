@@ -14,8 +14,9 @@
   transition: opacity $opacity-fade-transition-time;
 
   // Target Phones screen size <= 436px
-  @media screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
-    (max-width: $bp-max-phone-width) and (min-resolution: 2dppx) {
+  @media screen and (max-width: $bp-max-phone-width) and (-webkit-min-device-pixel-ratio: 2),
+    screen and (max-width: $bp-max-phone-width) and (min-resolution: 192dpi),
+    screen and (max-width: $bp-max-phone-width) and (min-resolution: 2dppx) {
     background-image: url('../img/bridge-sunset-bg-436x932.webp');
   }
 

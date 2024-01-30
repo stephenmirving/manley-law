@@ -171,6 +171,7 @@
 }
 
 %scroll-margin-top {
-  scroll-margin-top: calc(var(--masthead-fluid-height-fb) - 2rem);
-  scroll-margin-top: calc(var(--masthead-fluid-height) - 2rem);
+  scroll-snap-margin-top: calc(var(--masthead-fluid-height-fb) - 1.5rem);
+  scroll-margin-top: calc(var(--masthead-fluid-height-fb) - 1.5rem);
+  scroll-margin-top: calc(var(--masthead-fluid-height) - 1.5rem);
 }

@@ -9681,6 +9681,10 @@
 
          screen
          and (max-width: $bp-max-phone-width)
+         and (-webkit-min-device-pixel-ratio: 2),
+
+         screen
+         and (max-width: $bp-max-phone-width)
          and (min-resolution: 192dpi),
 
          screen
