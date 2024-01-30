@@ -150,6 +150,7 @@ $nav-link-fontsize-fb: min(max(1.375rem, calc(0.125rem + 1.8125vw)), 1.75rem);
 $nav-link-fontsize: clamp(1.375rem, calc(0.125rem + 1.8125vw), 1.75rem);
 
 $iframe-border: 4px ridge $color-brand-green;
+$iframe-border-phones: 2px solid $color-brand-green;
 $iframe-border-radius: 4px;
 
 $grid-gap-size: 2rem;

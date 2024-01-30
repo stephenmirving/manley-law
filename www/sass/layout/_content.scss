@@ -112,6 +112,11 @@
     height: 100%;
     border: $iframe-border;
     border-radius: $iframe-border-radius;
+
+    @include target-phones-and-tiny-width-screens {
+      border: $iframe-border-phones;
+      border-radius: 0;
+    }
   }
 }
 

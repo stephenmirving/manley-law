@@ -23,6 +23,12 @@
     border: $iframe-border;
     border-radius: $iframe-border-radius;
     background-color: #fff;
+
+    @include target-phones-and-tiny-width-screens {
+      padding: 0.125rem;
+      border: $iframe-border-phones;
+      border-radius: 0;
+    }
   }
 
   &__info-wrapper {
