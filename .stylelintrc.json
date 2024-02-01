@@ -322,6 +322,7 @@
         "letter-spacing",
         "text-transform",
         "quotes",
+        "hanging-punctuation",
         "counter-increment",
         "counter-reset",
         "-ms-writing-mode",
@@ -346,8 +347,10 @@
         "word-wrap",
         "word-break",
         "overflow-wrap",
-        "tab-size",
+        "-webkit-hyphens",
         "hyphens",
+        "-moz-tab-size",
+        "tab-size",
         "interpolation-mode",
 
         "opacity",
@@ -392,6 +395,7 @@
         "transition-timing-function",
         "transition-delay",
         "transform",
+        "transform-style",
         "transform-origin",
         "animation",
         "animation-name",
@@ -496,7 +500,16 @@
           "1140px"
         ],
         "ignoreAtRules": ["media"],
-        "ignoreFunctions": ["url", "calc"],
+        "ignoreFunctions": [
+          "url",
+          "calc",
+          "translate",
+          "translateX",
+          "translateY",
+          "translateZ",
+          "translate3d",
+          "blur"
+        ],
         "fontSize": 16
       }
     ],
@@ -541,6 +554,12 @@
         "ignoreProperties": [
           "/^\\$_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$/"
         ]
+      }
+    ],
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["grab", "fit-content", "min-content", "max-content"]
       }
     ],
     "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
@@ -615,7 +634,7 @@
     ],
     "scss/dollar-variable-first-in-block": null,
     "scss/dollar-variable-no-missing-interpolation": true,
-    "scss/dollar-variable-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
+    "scss/dollar-variable-pattern": "^[a-z0-9]+(?:-{1,2}(?!-)[a-z0-9]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z0-9]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
     "scss/percent-placeholder-pattern": "^[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?_?$",
     "scss/double-slash-comment-whitespace-inside": "always",
     "scss/block-no-redundant-nesting": null,

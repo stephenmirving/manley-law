@@ -196,8 +196,8 @@ module.exports = {
         'word-wrap',
         'word-break',
         'overflow-wrap',
-        'tab-size',
         'hyphens',
+        'tab-size',
         'interpolation-mode',
 
         'opacity',
@@ -242,6 +242,7 @@ module.exports = {
         'transition-timing-function',
         'transition-delay',
         'transform',
+        'transform-style',
         'transform-origin',
         'animation',
         'animation-name',

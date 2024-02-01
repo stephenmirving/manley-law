@@ -10,6 +10,8 @@
   // Point at which non-mobile menu begins,
   // mobile menu (includes tablets) is < 821px
   const MOBILE_MAX_WIDTH = 821;
+  const MASTHEAD_SCROLL_BREAKPOINT = 140;
+  const MASTHEAD_SIZE_MULTIPLE = 0.8;
 
   const document = window.document;
 
@@ -25,9 +27,9 @@
   const footer = document.getElementById('footer');
   const isHomepage = !!document.getElementById('homepage');
 
-  let homepageHero;
-  let officeWrappers;
-  let resizeTimeout;
+  let homepageHero,
+      officeWrappers,
+      resizeTimeout;
 
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
@@ -110,11 +112,12 @@
    * Updates the multiple in the calculation of the masthead height based on
    * the user's scroll position.
    *
-   * @param {Number} scrollPos - The scroll position of the user, window.scrollY.
+   * @param {Number} scrollPosition - window.scrollY.
    */
-  function updateMastheadHeightMultiple(scrollPos) {
+  function updateMastheadHeightMultiple(scrollPosition) {
     root.style.setProperty(
-      '--masthead-height-multiple', scrollPos < 140 ? '1' : '0.8'
+      '--masthead-height-multiple',
+      scrollPosition < MASTHEAD_SCROLL_BREAKPOINT ? '1' : MASTHEAD_SIZE_MULTIPLE
     );
   }
 

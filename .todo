@@ -1,21 +1,22 @@
 TODO:
-  ✔ Make a smaller hero section image optimized for phone screens @done(24-01-29 00:40)
-    ✔ Make the image @done(24-01-28 20:04)
-    ✔ Add the image into the code for phone screens @done(24-01-29 00:40)
-  ✔ Move all my scripts to the head and use defer @done(24-01-28 05:30)
-  ✔ Fix the masthead so that it resizes more fluidly and decreases in size on scrolling @done(24-01-28 05:31)
-    ✔ Image shrinks and masthead shrinks responsively to screen size until it hits a min size @done(24-01-28 05:31)
-  ✔ Make navbar smaller height when viewport height is small @done(24-01-28 19:50)
-  ✔ Make the navbar shrink more when the page is scrolled down @done(24-01-28 20:03)
-    ✔ Make "Attorneys and mediators" below logo sr-only on scroll down. @done(24-01-28 20:03)
-  ☐ Shrink the padding around the calendar on small screens
+  ☐ Add <noscript> section to all main pages
   ☐ Rerun Lighthouse
-  ✔ Fix the email icon to just the letter without the @ in it @done(24-01-28 05:31)
   ☐ Run SEO extension validators
   ☐ Get the sitemap submitted to google, bing, qwant, duckduckgo, yahoo, etc.
   ☐ Redo parking directions PDF into an HTML page (make printable too)
 
 Archive:
+  ✔ Make a smaller hero section image optimized for phone screens @done(24-01-29 00:40) @project(TODO)
+  ✔ Make the image @done(24-01-28 20:04) @project(TODO)
+  ✔ Add the image into the code for phone screens @done(24-01-29 00:40) @project(TODO)
+  ✔ Move all my scripts to the head and use defer @done(24-01-28 05:30) @project(TODO)
+  ✔ Fix the masthead so that it resizes more fluidly and decreases in size on scrolling @done(24-01-28 05:31) @project(TODO)
+  ✔ Image shrinks and masthead shrinks responsively to screen size until it hits a min size @done(24-01-28 05:31) @project(TODO)
+  ✔ Make navbar smaller height when viewport height is small @done(24-01-28 19:50) @project(TODO)
+  ✔ Make the navbar shrink more when the page is scrolled down @done(24-01-28 20:03) @project(TODO)
+  ✔ Make "Attorneys and mediators" below logo sr-only on scroll down. @done(24-01-28 20:03) @project(TODO)
+  ✔ Shrink the padding around the calendar on small screens @done(24-02-01 00:54) @project(TODO)
+  ✔ Fix the email icon to just the letter without the @ in it @done(24-01-28 05:31) @project(TODO)
   ✔ Get the htaccess file ready for production @done(24-01-22 05:00) @project(TODO)
   ✔ Fix the phone numbers in the contact section of home, firm, and calendar @done(24-01-25 05:15) @project(TODO)
   ✔ Fix the bug with the contact section animation on phones @done(24-01-25 05:15) @project(TODO)

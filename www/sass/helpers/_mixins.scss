@@ -8322,6 +8322,7 @@
   @if not $anim-num {
     $anim-num: null;
   }
+
   animation: txt-glitch#{$anim-num} #{$timing} #{$timing-func}
               #{$delay} #{$iterations} #{$anim-dir} both;
 
@@ -8332,9 +8333,9 @@
         $percent: 0% + $i;
 
         #{$percent} {
-          $color: nth($colors, random(length($colors)));
-          text-shadow: random(70px) - 35px 0px 0px $color;
-          left: random(12px) - 6px;
+          $color: list.nth($colors, math.random(list.length($colors)));
+          text-shadow: math.random(70px) - 35px 0px 0px $color;
+          left: math.random(12px) - 6px;
         }
       }
     }
