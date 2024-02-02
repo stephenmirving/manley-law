@@ -13,7 +13,7 @@ $color-card-shadow_: $color-brand;
   border: 0.1875rem solid rgba(tint($color-brand, 10%), 0.9);
   border-radius: 12px;
   margin: 0 0 $grid-gap-size;
-  background-color: $color-card-bg;
+  background-color: $card-color-bg;
   background-clip: padding-box;
   color: $color-black-lightest;
   -webkit-user-select: none;

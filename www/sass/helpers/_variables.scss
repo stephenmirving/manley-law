@@ -48,41 +48,7 @@ $color-white: #f0fafa;
 $color-faint-blue: #d0e5de;
 $color-silver: #737e8b;
 
-$color-body-text: $color-black-light;
-$color-body-heading: $color-brand;
-$color-body-bg: $color-off-white;
-$color-nav-bg: $color-tan;
-
-$color-nav-bg-gradient: linear-gradient(
-  135deg,
-  $color-nav-bg,
-  shade($color-nav-bg, 12%)
-);
-
-$color-footer-bg: $color-brand;
-$color-footer-bg-gradient: linear-gradient(
-  135deg,
-  $color-footer-bg,
-  shade($color-footer-bg, 30%)
-);
-
-$color-btn-text: #fff;
-$color-btn-bg: rgba($color-brand, 1);
-$color-btn-bg-hover: rgba($color-brand-tint, 0.9);
-$color-btn-text-hover: #fff;
-$color-btn-hover-border: $color-green-lime;
-$color-btn-hover-border-glow: $color-violet;
-$color-btn-bg-active: shade($color-brand-green, 15%);
-$color-btn-text-active: $color-blue-faint;
-
-$color-card-bg: rgba($color-off-white, 1);
-
-$color-contact-bg-gradient: linear-gradient(
-  135deg,
-  rgba($color-tan, 0.8),
-  rgba(shade($color-tan, 7.5%), 1)
-);
-
+// Font stacks
 $font-main-stack:
   Roboto,
   system-ui,
@@ -112,50 +78,98 @@ $font-fast-load:
   sans-serif;
 $font-serif: 'Minion Pro', 'Times New Roman', serif;
 
-$link-transition-time: 0.4s;
-$link-transition:
-  color $link-transition-time,
-  border-bottom-color $link-transition-time;
+// Element configuration variables
 
-$link-transition-time-nav: 0.5s;
-$link-transition-nav:
-  background-color $link-transition-time-nav,
-  border-color $link-transition-time-nav,
-  color $link-transition-time-nav;
+// Body
+$body-color-text: $color-black-light;
+$body-color-heading: $color-brand;
+$body-color-bg: $color-off-white;
 
-$icon-transition-time: 0.2s;
-$icon-transition: color $icon-transition-time ease-out;
+// Masthead and navigation
+$nav-color-bg: $color-tan;
+$nav-color-bg-gradient: linear-gradient(
+  135deg,
+  $nav-color-bg,
+  shade($nav-color-bg, 12%)
+);
+$nav-link-fontsize-fb-static: 1.375rem;
+$nav-link-fontsize-fb: min(max(1.375rem, calc(0.125rem + 1.8125vw)), 1.75rem);
+$nav-link-fontsize: clamp(1.375rem, calc(0.125rem + 1.8125vw), 1.75rem);
+$nav-link-transition-time: 0.5s;
+$nav-link-transition:
+  background-color $nav-link-transition-time,
+  border-color $nav-link-transition-time,
+  color $nav-link-transition-time;
+$nav-slide-animation-time: 0.6s;
+$nav-dropdown-animation-time: 0.3s;
+$nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
 
+// Hamburger button in navigation
+$hamburger-width: calc(3.125rem * var(--burger-btn-size-multiple));
+$hamburger-height: calc(1.875rem * var(--burger-btn-size-multiple));
+$hamburger-height-patty: calc(0.25rem * var(--burger-btn-size-multiple));
+$hamburger-color-patty: tint($color-brand-light, 10%);
+$hamburger-color-patty-hover: shade($color-brand-green, 10%);
+$hamburger-color-x: $color-brand;
+$hamburger-color-x-hover: $color-brand-light;
+$hamburger-transition-properties: top, background-color, box-shadow, transform;
+$hamburger-transition-time: 0.75s;
+
+// Primary button variables
+$btn-color-text: #fff;
+$btn-color-bg: rgba($color-brand, 1);
+$btn-color-bg-hover: rgba($color-brand-tint, 0.9);
+$btn-color-text-hover: #fff;
+$btn-color-border-hover: $color-green-lime;
+$btn-color-border-glow-hover: $color-violet;
+$btn-color-bg-active: shade($color-brand-green, 15%);
+$btn-color-text-active: $color-blue-faint;
 $btn-transition-time: 0.4s;
 $btn-transition-2-time: 0.55s;
 $btn-transition:
   background-color $btn-transition-time,
   box-shadow $btn-transition-time,
   color $btn-transition-time;
-
 $btn-transition-2:
   box-shadow $btn-transition-2-time,
   width $btn-transition-2-time;
 
-$nav-slide-animation-time: 0.6s;
-$nav-dropdown-animation-time: 0.3s;
-$nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
+// Card container elements
+$card-color-bg: rgba($color-off-white, 1);
+
+// Contact section
+$contact-color-bg-gradient: linear-gradient(
+  135deg,
+  rgba($color-tan, 0.8),
+  rgba(shade($color-tan, 7.5%), 1)
+);
+
+// Footer variables
+$footer-color-bg: $color-brand;
+$footer-color-bg-gradient: linear-gradient(
+  135deg,
+  $footer-color-bg,
+  shade($footer-color-bg, 30%)
+);
+
+// Links
+$link-transition-time: 0.4s;
+$link-transition:
+  color $link-transition-time,
+  border-bottom-color $link-transition-time;
+
+$icon-transition-time: 0.2s;
+$icon-transition: color $icon-transition-time ease-out;
 
 $opacity-fade-transition-time: $nav-slide-animation-time +
   $nav-dropdown-animation-2-delay;
-
-$nav-link-fontsize-fb-static: 1.375rem;
-$nav-link-fontsize-fb: min(max(1.375rem, calc(0.125rem + 1.8125vw)), 1.75rem);
-$nav-link-fontsize: clamp(1.375rem, calc(0.125rem + 1.8125vw), 1.75rem);
 
 $iframe-border: 4px ridge $color-brand-green;
 $iframe-border-phones: 2px solid $color-brand-green;
 $iframe-border-radius: 4px;
 
 $grid-gap-size: 2rem;
-
-$burger-transition: all $btn-transition-time ease-out;
 
 $symbol-quotes-double-thick-left: '\275D';
 $symbol-quotes-double-thick-right: '\275E';

@@ -9,7 +9,6 @@
 html {
   overflow: hidden scroll;
   box-sizing: border-box;
-  color: $color-body-text;
   font-family: $font-main-stack;
   font-size: 1em;
   line-height: 1.4;
@@ -69,7 +68,8 @@ html {
 body {
   overflow-x: clip;
   margin: 0;
-  background: $color-body-bg;
+  background: $body-color-bg;
+  color: $body-color-text;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -81,7 +81,7 @@ h4,
 h5,
 h6,
 blockquote {
-  color: $color-brand;
+  color: $body-color-heading;
   font-family: $font-headings;
   font-weight: 900;
   white-space: unset;

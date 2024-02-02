@@ -16,7 +16,7 @@
   height: var(--masthead-fluid-height);
   padding: var(--masthead-padding-y) 0;
   border: 2px solid transparent;
-  background: $color-nav-bg-gradient $color-nav-bg;
+  background: $nav-color-bg-gradient $nav-color-bg;
   transition: border-color 0.3s $nav-dropdown-animation-func;
 
   @media screen and (max-width: 67.5em) {
@@ -68,19 +68,11 @@
     justify-content: center;
     height: 100%;
     margin-right: 0.5rem;
-
-    @media screen and (max-width: $bp-258) {
-      flex-shrink: 2;
-    }
   }
 
   &__branding-link {
     display: block;
     height: 90%;
-
-    @media screen and (max-width: 236px) {
-      height: auto;
-    }
   }
 
   &__logo {
@@ -138,7 +130,7 @@
   &__link {
     @extend %links-nav-widescreen;
 
-    transition: $link-transition-nav;
+    transition: $nav-link-transition;
 
     &,
     &:link,
@@ -164,7 +156,7 @@
     &--active {
       @extend %links-nav-widescreen;
 
-      transition: $link-transition-nav;
+      transition: $nav-link-transition;
 
       &,
       &:link,
@@ -221,11 +213,9 @@
   }
 
   &__burger-btn {
-    --patty-thickness_: calc(0.25rem * var(--burger-btn-size-multiple));
-
     position: relative;
-    width: calc(3.125rem * var(--burger-btn-size-multiple));
-    height: calc(1.875rem * var(--burger-btn-size-multiple));
+    width: $hamburger-width;
+    height: $hamburger-height;
     border: 0;
     background: transparent;
     outline-offset: 5px;
@@ -235,24 +225,24 @@
     &:after {
       content: '';
       left: 0;
-      width: calc(3.125rem * var(--burger-btn-size-multiple));
-      height: var(--patty-thickness_);
-      background: tint($color-brand-light, 10%);
-      transition-property: top, background-color, box-shadow, transform;
-      transition-duration: 0.75s;
+      width: $hamburger-width;
+      height: $hamburger-height-patty;
+      background: $hamburger-color-patty;
+      transition-property: $hamburger-transition-properties;
+      transition-duration: $hamburger-transition-time;
       backface-visibility: hidden;
     }
 
     &:before {
       position: absolute;
       top: 0;
-      box-shadow: tint($color-brand-light, 10%) 0
+      box-shadow: $hamburger-color-patty 0
         calc(0.875rem * var(--burger-btn-size-multiple)) 0 0;
     }
 
     &:after {
       position: absolute;
-      top: calc(100% - var(--patty-thickness_));
+      top: calc(100% - $hamburger-height-patty);
     }
 
     &:focus-visible {
@@ -271,11 +261,11 @@
     &:focus-visible {
       &:before,
       &:after {
-        background: shade($color-brand-green, 10%);
+        background: $hamburger-color-patty-hover;
       }
 
       &:before {
-        box-shadow: shade($color-brand-green, 10%) 0
+        box-shadow: $hamburger-color-patty-hover 0
           calc(0.875rem * var(--burger-btn-size-multiple)) 0 0;
       }
     }
@@ -308,14 +298,14 @@
 
         &:before,
         &:after {
-          background: $color-brand;
+          background: $hamburger-color-x;
         }
 
         &:hover,
         &:focus-visible {
           &:before,
           &:after {
-            background: $color-brand-light;
+            background: $hamburger-color-x-hover;
           }
         }
       }
@@ -330,8 +320,8 @@
         border-color: $color-brand;
         background-image: linear-gradient(
           180deg,
-          $color-nav-bg,
-          shade($color-nav-bg, 15%)
+          $nav-color-bg,
+          shade($nav-color-bg, 15%)
         );
         transform: translate(calc(0.125rem - 100%));
 

@@ -163,7 +163,7 @@
   function updateMastheadHeightMultiple(scrollPosition) {
     root.style.setProperty(
       '--masthead-height-multiple',
-      scrollPosition < MASTHEAD_SCROLL_BREAKPOINT ? '1' : MASTHEAD_SIZE_MULTIPLE
+      scrollPosition < MASTHEAD_SCROLL_BREAKPOINT ? 1 : MASTHEAD_SIZE_MULTIPLE
     );
   }
 
