@@ -9698,6 +9698,12 @@
   }
 }
 
+@mixin target-small-screens {
+  @media screen and (max-width: $bp-max-phone-width) {
+    @content;
+  }
+}
+
 /// Media query mixin that targets phones in landscape and with a view height
 /// less than 600px as well as any screen lower than 364px view height.
 ///

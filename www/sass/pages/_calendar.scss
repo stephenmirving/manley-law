@@ -24,7 +24,7 @@
     border-radius: $iframe-border-radius;
     background-color: #fff;
 
-    @include target-phones-and-tiny-width-screens {
+    @include target-small-screens {
       padding: 0.125rem;
       border: $iframe-border-phones;
       border-radius: 0;
