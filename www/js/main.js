@@ -1,16 +1,25 @@
 // @ts-check
 /**
- * @fileOverview JavaScript file for the Manley & Halverstadt Law website.
+ * @fileOverview Primary JavaScript file for the Manley & Halverstadt Law
+ * website.
  *
  * This file contains the main JavaScript code for the website, including
  * DOM manipulation, event handling, and other functionality.
+ *
+ * @author Stephen M Irving
+ * @version 1.0.8
+ * @lastmodified 2021-02-01
  */
 ((window) => {
   'use strict';
+
   // Point at which non-mobile menu begins,
   // mobile menu (includes tablets) is < 821px
   const MOBILE_MAX_WIDTH = 821;
-  const MASTHEAD_SCROLL_BREAKPOINT = 140;
+  // point at window.scrollY that the masthead should shrink
+  const MASTHEAD_SCROLL_BREAKPOINT = 200;
+  // The multiplier in the masthead height calculation
+  // The value the masthead should be shrunk by
   const MASTHEAD_SIZE_MULTIPLE = 0.8;
 
   const document = window.document;
@@ -27,15 +36,22 @@
   const footer = document.getElementById('footer');
   const isHomepage = !!document.getElementById('homepage');
 
-  let homepageHero,
-      officeWrappers,
-      resizeTimeout;
+  let homepageHero, officeWrappers, resizeTimeout;
 
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
     officeWrappers = document.querySelectorAll('.js-office-wrapper');
   }
 
+  /**
+   * Checks if a given element is a descendant of the given parent element.
+   *
+   * @param {HTMLElement} element - The element being checked.
+   * @param {HTMLElement} parent - The element the function determines whether
+   * or not is the parent of the first element passed.
+   * @return {Boolean} True if the element is a descendant of the parent,
+   * false if not.
+   */
   function isDescendantOf(element, parent) {
     while (element) {
       if (element === parent) {
@@ -46,27 +62,43 @@
     return false;
   }
 
-  function applyAnimationWhenInView() {
-    if (window.scrollY < 50) return;
+  /**
+   * Checks if an element is inside the viewport.
+   *
+   * @param {HTMLElement} element - An HTML element from the DOM.
+   * @return {Boolean} Returns true if the element is inside the viewport, false
+   * if it is not.
+   */
+  function isElementInView(element) {
+    const elementRectangle = element.getBoundingClientRect();
 
-    const firstElemRect = officeWrappers[0].getBoundingClientRect();
-    const secondElemRect = officeWrappers[1].getBoundingClientRect();
+    return (
+      elementRectangle.top <= window.innerHeight && elementRectangle.bottom >= 0
+    );
+  }
 
-    const isFirstInView =
-      firstElemRect.top <= window.innerHeight && firstElemRect.bottom >= 0;
+  /**
+   * Applies the slide in animation on the office location wrappers when they
+   * are visible on the screen.
+   */
+  function applySlideAnimationWhenInView() {
+    if (window.scrollY < 50 || !officeWrappers) return;
 
-    const isSecondInView =
-      secondElemRect.top <= window.innerHeight && secondElemRect.bottom >= 0;
-
-    if (isFirstInView) {
+    if (isElementInView(officeWrappers[0])) {
       officeWrappers[0].classList.add('move-in-left');
     }
 
-    if (isSecondInView) {
+    if (isElementInView(officeWrappers[1])) {
       officeWrappers[1].classList.add('move-in-right');
     }
   }
 
+  /**
+   * Toggles the display of the navbar hamburger button in the masthead based on
+   * the width of the viewport. The breakpoint is determined by MOBILE_MAX_WIDTH.
+   *
+   * @param {Number} viewWidth - The current width of the viewport.
+   */
   function toggleNavBurgerBtnDisplay(viewWidth) {
     const isNavTogglerChecked = navToggler.checked;
 
@@ -92,6 +124,13 @@
     }
   }
 
+  /**
+   * Toggles the hamburger button's dropdown menu based on whether or not the
+   * hidden checkbox in the nav, called the toggler, is checked.
+   *
+   * @param {Boolean} isTogglerChecked - Pass the .checked state of the checkbox
+   * toggler.
+   */
   function updateDomToggleDropdown(isTogglerChecked) {
     navMenuWrapper.hidden = !isTogglerChecked;
     navMenu.hidden = !isTogglerChecked;
@@ -100,6 +139,13 @@
     masthead.classList.toggle('nav-dropdown-open', isTogglerChecked);
   }
 
+  /**
+   * Reduces the opacity of the page when the user has the hamburger button's
+   * dropdown menu open.
+   *
+   * @param {Boolean} isReduced - Pass true to toggle on reduced opacity. Pass
+   * false to toggle off reduced opacity.
+   */
   function toggleReducePageOpacity(isReduced) {
     if (isHomepage) {
       homepageHero.classList.toggle('reduce-opacity', isReduced);
@@ -121,6 +167,10 @@
     );
   }
 
+  /**
+   * Applies the masthead height transition effect and updates the multiple that
+   * is in the calculation used for the masthead height.
+   */
   function mastheadScrollTransition() {
     const scrollPos = window.scrollY;
 
@@ -130,14 +180,23 @@
     updateMastheadHeightMultiple(scrollPos);
   }
 
+  /**
+   * Sets up the page.
+   *
+   * @return {void}
+   */
   function pageSetup() {
     toggleNavBurgerBtnDisplay(window.innerWidth);
 
     if (isHomepage) {
       // Check on initial load in case the element is already in view
-      applyAnimationWhenInView();
+      applySlideAnimationWhenInView();
 
-      window.addEventListener('scroll', applyAnimationWhenInView, {
+      window.addEventListener('scroll', applySlideAnimationWhenInView, {
+        passive: true
+      });
+    } else {
+      window.removeEventListener('scroll', applySlideAnimationWhenInView, {
         passive: true
       });
     }
@@ -167,7 +226,7 @@
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
-        applyAnimationWhenInView();
+        applySlideAnimationWhenInView();
 
         resizeTimeout = setTimeout(() => {
           brandSubhead.removeAttribute('style');

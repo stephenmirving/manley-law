@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "sass --watch --update --style=expanded www/sass/style.scss:www/css/style-v107.css",
-    "prod": "sass --charset --no-source-map --style=compressed www/sass/style.scss:www/css/style-v107.css && cleancss --inline 'local,remote,!fonts.googleapis.com' -o www/css/style-v107.css www/css/style-v107.css && terser www/js/main.js --compress ecma=2021,unsafe_comps=true,unsafe_arrows=true,unsafe_undefined=true,passes=3 --mangle --output www/js/main-v107.min.js",
+    "prod": "sass --charset --no-source-map --style=compressed www/sass/style.scss:www/css/style-v107.css && cleancss --inline 'local,remote,!fonts.googleapis.com' -o www/css/style-v107.css www/css/style-v107.css && terser www/js/main.js --compress ecma=2021,unsafe_comps,unsafe_arrows,unsafe_undefined,passes=10 --mangle --output www/js/main-v107.min.js",
     "payment-style": "sass --watch --update --no-charset --no-source-map --style=compressed www/sass/cardpointe/sass/cardpointe.scss:www/sass/cardpointe/css/cardpointe.css",
     "payment-style-remin": "cleancss -o www/sass/cardpointe/css/cardpointe.min.css www/sass/cardpointe/css/cardpointe.css",
     "test": "echo \"Error: no test specified\" && exit 1"
