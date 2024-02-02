@@ -81,7 +81,7 @@
    * Applies the slide in animation on the office location wrappers when they
    * are visible on the screen.
    */
-  function applySlideAnimationWhenInView() {
+  function triggerSlideAnimationWhenInView() {
     if (window.scrollY < 50 || !officeWrappers) return;
 
     if (isElementInView(officeWrappers[0])) {
@@ -190,13 +190,13 @@
 
     if (isHomepage) {
       // Check on initial load in case the element is already in view
-      applySlideAnimationWhenInView();
+      triggerSlideAnimationWhenInView();
 
-      window.addEventListener('scroll', applySlideAnimationWhenInView, {
+      window.addEventListener('scroll', triggerSlideAnimationWhenInView, {
         passive: true
       });
     } else {
-      window.removeEventListener('scroll', applySlideAnimationWhenInView, {
+      window.removeEventListener('scroll', triggerSlideAnimationWhenInView, {
         passive: true
       });
     }
@@ -226,7 +226,7 @@
         }
 
         toggleNavBurgerBtnDisplay(vWidth);
-        applySlideAnimationWhenInView();
+        triggerSlideAnimationWhenInView();
 
         resizeTimeout = setTimeout(() => {
           brandSubhead.removeAttribute('style');
