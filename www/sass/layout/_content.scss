@@ -163,3 +163,24 @@ body:not(.homepage) .contact {
   background-color: $color-tan;
   background-image: $contact-color-bg-gradient;
 }
+
+.no-js {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+
+.no-js-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1.25rem;
+  background-color: #fff;
+  color: #000;
+}

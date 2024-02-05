@@ -101,9 +101,9 @@ $nav-link-transition:
   border-color $nav-link-transition-time,
   color $nav-link-transition-time;
 $nav-slide-animation-time: 0.6s;
-$nav-dropdown-animation-time: 0.3s;
-$nav-dropdown-animation-func: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-$nav-dropdown-animation-2-delay: $nav-dropdown-animation-time - 0.15s;
+$nav-animation-time-dropdown: 0.3s;
+$nav-animation-func-dropdown: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$nav-dropdown-animation-2-delay: $nav-animation-time-dropdown - 0.15s;
 
 // Hamburger button in navigation
 $hamburger-width: calc(3.125rem * var(--burger-btn-size-multiple));

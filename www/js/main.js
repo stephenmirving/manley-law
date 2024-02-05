@@ -8,7 +8,7 @@
  *
  * @author Stephen M Irving
  * @version 1.0.8
- * @lastmodified 2021-02-01
+ * @lastmodified 2021-02-003
  */
 ((window) => {
   'use strict';
@@ -17,10 +17,11 @@
   // mobile menu (includes tablets) is < 821px
   const MOBILE_MAX_WIDTH = 821;
   // point at window.scrollY that the masthead should shrink
-  const MASTHEAD_SCROLL_BREAKPOINT = 200;
+  // const MASTHEAD_SCROLL_BREAKPOINT = 182;
+  // const MASTHEAD_SCROLL_BREAKPOINT = 182;
   // The multiplier in the masthead height calculation
   // The value the masthead should be shrunk by
-  const MASTHEAD_SIZE_MULTIPLE = 0.8;
+  // const MASTHEAD_SIZE_MULTIPLE = 0.8;
 
   const document = window.document;
 
@@ -34,10 +35,19 @@
   const brandSubhead = masthead.querySelector('#brand-subhead');
   const mainEl = document.getElementById('main');
   const footer = document.getElementById('footer');
-  const isHomepage = !!document.getElementById('homepage');
 
-  let homepageHero, officeWrappers, resizeTimeout;
+  const isHomepage = window.location.pathname === '/';
+  // TESTING: Need to use this version of isHomepage for testing,
+  // comment the above line and uncomment the declaration below when in testing.
+  // const isHomepage =
+  //   window.location.pathname === '/' ||
+  //   window.location.pathname === '/www/' ||
+  //   window.location.pathname == '/www/index' ||
+  //   window.location.pathname === '/www/index.html';
 
+  let homepageHero, officeWrappers, scrollTransitionTimeout, resizeTimeout;
+
+  // Get DOM elements only present on the homepage
   if (isHomepage) {
     homepageHero = document.querySelector('.hero');
     officeWrappers = document.querySelectorAll('.js-office-wrapper');
@@ -59,6 +69,7 @@
       }
       element = element.parentElement;
     }
+
     return false;
   }
 
@@ -163,7 +174,7 @@
   function updateMastheadHeightMultiple(scrollPosition) {
     root.style.setProperty(
       '--masthead-height-multiple',
-      scrollPosition < MASTHEAD_SCROLL_BREAKPOINT ? 1 : MASTHEAD_SIZE_MULTIPLE
+      scrollPosition < 182 ? '1' : '0.8'
     );
   }
 
@@ -186,8 +197,15 @@
    * @return {void}
    */
   function pageSetup() {
+    // Remove any styling or effects specific to not having JavaScript enabled.
+    // If any additional classes are added to the html element other than no-js,
+    // this will have to be ammended to classList.remove('no-js');
+    root.removeAttribute('class');
+
+    // If the viewport width is less than MOBILE_MAX_WIDTH, display hamburger btn
     toggleNavBurgerBtnDisplay(window.innerWidth);
 
+    // Deal with office location wrappers slide-in animation on homepage
     if (isHomepage) {
       // Check on initial load in case the element is already in view
       triggerSlideAnimationWhenInView();
@@ -201,11 +219,14 @@
       });
     }
 
-    updateMastheadHeightMultiple(window.scrollY);
-    window.addEventListener('scroll', mastheadScrollTransition, {
-      passive: true
-    });
+    clearTimeout(scrollTransitionTimeout);
+    scrollTransitionTimeout = setTimeout(() => {
+      window.addEventListener('scroll', mastheadScrollTransition, {
+        passive: true
+      });
+    }, 500);
 
+    // Handle page responsiveness during resize events
     window.addEventListener(
       'resize',
       () => {
@@ -275,6 +296,10 @@
       },
       { passive: true }
     );
+
+    setTimeout(() => {
+      updateMastheadHeightMultiple(window.scrollY);
+    }, 90);
   }
 
   if (

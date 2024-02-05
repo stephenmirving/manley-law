@@ -95,8 +95,7 @@ p {
 blockquote p {
   &:before,
   &:after {
-    color: $color-black-lightest;
-    opacity: 0.9;
+    color: rgba($color-black-lightest, 0.9);
   }
 
   &:before {

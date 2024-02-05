@@ -17,7 +17,7 @@
   padding: var(--masthead-padding-y) 0;
   border: 2px solid transparent;
   background: $nav-color-bg-gradient $nav-color-bg;
-  transition: border-color 0.3s $nav-dropdown-animation-func;
+  transition: border-color 0.3s $nav-animation-func-dropdown;
 
   @media screen and (max-width: 67.5em) {
     --masthead--fluid-height: calc(
@@ -111,7 +111,7 @@
 
   &__menu-wrapper {
     border-color: transparent;
-    transition: border-color 0.3s $nav-dropdown-animation-func;
+    transition: border-color 0.3s $nav-animation-func-dropdown;
   }
 
   &__menu {
@@ -145,12 +145,13 @@
 
     &:hover,
     &:focus-visible {
-      border-color: $color-brand;
-      color: $color-brand;
+      border-color: $color-brand-tint;
+      color: $color-brand-tint;
     }
 
     &:active {
-      color: shade($color-green-lime, 20%);
+      border-color: shade($color-brand, 10%);
+      color: shade($color-brand, 10%);
     }
 
     &--active {
@@ -168,18 +169,18 @@
 
       &:-moz-focusring {
         border-color: rgba($color-brand-green, 0.7);
-        color: $color-black-light;
+        color: rgba($color-brand-green, 0.7);
       }
 
       &:hover,
       &:focus-visible {
         border-color: rgba($color-brand-green, 0.7);
-        color: $color-black-light;
+        color: rgba($color-brand-green, 0.7);
       }
 
       &:active {
-        border-color: shade($color-brand, 20%);
-        color: $color-black;
+        border-color: shade($color-brand, 10%);
+        color: shade($color-brand, 10%);
       }
     }
 
@@ -326,8 +327,8 @@
         transform: translate(calc(0.125rem - 100%));
 
         // Menu wrapper styles when burger btn clicked
-        animation: slide-down $nav-dropdown-animation-time
-          $nav-dropdown-animation-func both;
+        animation: slide-down $nav-animation-time-dropdown
+          $nav-animation-func-dropdown both;
 
         @include target-tiny-height-screens {
           right: 0;

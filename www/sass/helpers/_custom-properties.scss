@@ -21,7 +21,7 @@
     var(--masthead-fixed-height-max)
   );
   --masthead-fluid-height-nofunc: var(--masthead-fluid-height-responsive);
-  --masthead-transition-duration: 0.6s;
+  --masthead-transition-duration: 0.5s;
   --masthead-scroll-transition: border-color 0.3s
       cubic-bezier(0.55, 0.085, 0.68, 0.53),
     height var(--masthead-transition-duration) ease-out;

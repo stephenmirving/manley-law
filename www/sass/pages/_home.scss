@@ -43,9 +43,11 @@
     min-width: min(17.5rem, 100%);
     max-width: 40%;
     border-radius: 10px;
-    background: rgba($color-tan, 0.83);
+    background: rgba($color-tan, 0.75);
     transform: translate(-50%, -50%);
     animation: fade-in 1500ms ease-in both;
+    -webkit-backdrop-filter: brightness(1.4);
+    backdrop-filter: brightness(1.4);
 
     @media screen and (max-width: $bp-166) {
       top: 57.5%;
