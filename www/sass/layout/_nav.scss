@@ -60,7 +60,7 @@
     }
   }
 
-  &__branding-wrapper {
+  &__brand-wrapper {
     display: flex;
     flex-shrink: 2;
     flex-direction: column;
@@ -70,9 +70,19 @@
     margin-right: 0.5rem;
   }
 
-  &__branding-link {
+  &__brand-link {
     display: block;
     height: 90%;
+
+    &:focus-visible {
+      outline-width: 1px;
+      outline-offset: 1px;
+    }
+
+    &:-moz-focusring {
+      outline-width: 1px;
+      outline-offset: 2px;
+    }
   }
 
   &__logo {
@@ -81,7 +91,7 @@
     max-height: 100%;
   }
 
-  &__branding-subhead {
+  &__brand-subhead {
     padding: 0;
     margin: 0;
     color: $color-brand-green;

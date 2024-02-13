@@ -687,7 +687,7 @@ svg:not([fill]) {
     justify-content: center;
   }
 }
-.masthead__branding-link {
+.masthead__brand-link {
   display: block;
 }
 .masthead__logo {
@@ -707,7 +707,7 @@ svg:not([fill]) {
     height: 11.5rem;
   }
 }
-.masthead__branding-subhead {
+.masthead__brand-subhead {
   padding: 0;
   margin: 0;
   color: #333445;
@@ -717,12 +717,12 @@ svg:not([fill]) {
   text-align: center;
 }
 @media screen and (max-width: 19.25em), screen and (max-width: 27.25em) and (min-resolution: 192dpi), screen and (max-width: 27.25em) and (min-resolution: 2dppx), screen and (max-height: 37.5em) {
-  .masthead__branding-subhead {
+  .masthead__brand-subhead {
     font-size: 0.6875rem;
   }
 }
 @media screen and (min-width: 67.5em) and (min-height: 37.5625em) {
-  .masthead__branding-subhead {
+  .masthead__brand-subhead {
     font-size: 1.125rem;
   }
 }
@@ -1151,15 +1151,15 @@ body:not(.homepage) .contact {
 .footer__link--legal:link, .footer__link--legal:visited {
   text-decoration: underline;
 }
-.footer__branding-link {
+.footer__brand-link {
   display: block;
   margin: 1rem auto 0;
 }
-.footer__branding-link:focus-visible {
+.footer__brand-link:focus-visible {
   outline-color: #b6c9eb;
 }
 @media screen and (min-width: 62em) {
-  .footer__branding-link {
+  .footer__brand-link {
     margin: 0;
   }
 }

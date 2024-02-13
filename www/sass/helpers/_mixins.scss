@@ -1454,10 +1454,11 @@
 
 
 /// Gives an element a depth effect based on Google's Material Design principles.
-/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
+/// @link https://material.io/design/environment/light-shadows.html
+/// @link https://material.io/design/environment/elevation.html
 ///
 /// @param {Number} $depth - Depth level (must be between 0 and 5)
-/// @param {Color} $color [#000] - The color of the s
+/// @param {Color} $color [#000] - The color of the shadow
 ///
 /// @group Utilities
 /// @require {function} top-shadow
@@ -1467,7 +1468,7 @@
   @if ($depth == 0) {
     box-shadow: none;
   } @else if (type-of($depth) != 'number' or $depth < 0 or $depth > 5) {
-    @error 'Invalid $depth of `#{inspect($depth)}` for `card` mixin. The ' +
+    @error 'Invalid $depth of `#{inspect($depth)}` for `card-depth` mixin. The ' +
         '$depth value must be a number greater than 0 and less than 5.';
   } @else {
     box-shadow: bottom-shadow($depth, $color), top-shadow($depth, $color);
@@ -9682,15 +9683,15 @@
 
          screen
          and (max-width: $bp-max-phone-width)
-         and (-webkit-min-device-pixel-ratio: 2),
+         and (-webkit-min-device-pixel-ratio: 1.8),
 
          screen
          and (max-width: $bp-max-phone-width)
-         and (min-resolution: 192dpi),
+         and (min-resolution: 172dpi),
 
          screen
          and (max-width: $bp-max-phone-width)
-         and (min-resolution: 2dppx),
+         and (min-resolution: 1.8dppx),
 
          screen and (max-height: $bp-height)
   {

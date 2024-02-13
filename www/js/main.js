@@ -312,4 +312,4 @@
   }
   // Loading hasn't finished yet
   document.addEventListener('DOMContentLoaded', pageSetup, { passive: true });
-})(window);
+})(window)
